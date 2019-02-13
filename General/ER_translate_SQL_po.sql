@@ -1,12 +1,24 @@
 -- stand alone table
 CREATE TABLE player(
 	p_id int PRIMARY KEY,
-	name text NOT NULL
+	first_name text NOT NULL,
+	last_name text NOT NULL,
+	-- IS-A
+	position text NOT NULL,
+	CHECK (position = 'PG' OR 
+		   position = 'SG' OR
+		   position = 'C' OR
+		   position = 'PF' OR
+		   position = 'SF')
+	-- IS-A shooting hand 
+	shooting_hand text NOT NULL,
+	CHECK (shooting_hand = 'L' OR shooting_hand = 'R')
 );
 
 CREATE TABLE team(
 	t_id int PRIMARY KEY,
-	name text UNIQUE NOT NULL
+	name text UNIQUE NOT NULL,
+	city text UNIQUE NOT NULL
 );
 
 CREATE TABLE arena (
@@ -16,15 +28,10 @@ CREATE TABLE arena (
 	CHECK (capacity > 0)
 );
 
-CREATE TABLE match(
-	m_id int PRIMARY KEY,
-	match_data date NOT NULL
-);
-
 CREATE TABLE user (
 	u_id int PRIMARY KEY,
 	name text NOT NULL,
-	join_date date NOT NULL
+	join_date date NOT NULL -- i think this is not required
 );
 
 CREATE TABLE referee (
@@ -37,38 +44,17 @@ CREATE TABLE sportbook (
 	name text NOT NULL
 )
 
--- RELATIONSHIP TABLE
-CREATE TABLE sb_match_odds(
-	m_id REFERENCES match (m_id) ON DELETE CASCADE,
-	sb_id REFERENCES sportbook (sb_id) ON DELETE CASCADE,
-	PRIMARY KEY (m_id, sb_id),
-	h_odds int NOT NULL,
-	h_lines int NOT NULL,
-	a_odds int NOT NULL,
-	a_lines int NOT NULL
-);
+-- aggreage by match
 
-CREATE TABLE place_bet(
-	b_id int PRIMARY KEY,
-	u_id int REFERENCES user (u_id) ON DELETE CASCADE,
-	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
-	sb_id int REFERENCES sportbook (sb_id) ON DELETE CASCADE,
-	bet_how_much_on_lines int,
-	bet_how_much_on_spreads int 
+CREATE TABLE match(
+	m_id int PRIMARY KEY,
+	match_data date NOT NULL
 );
-
 
 CREATE TABLE match_arena (
 	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
 	a_id int REFERENCES arena (a_id),
 	attendance int NOT NULL,
-	PRIMARY KEY (m_id)
-);
-
-CREATE TABLE match_statistic (
-	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
-	home_game_statistics int,
-	away_game_statistics int,
 	PRIMARY KEY (m_id)
 );
 
@@ -78,44 +64,84 @@ CREATE TABLE match_referee (
 	PRIMARY KEY (m_id)
 );
 
-CREATE TABLE team_player_match_tri_relationship (
+CREATE TABLE match_team_stats (
 	ma_id REFERENCES match (m_id) ON DELETE CASCADE,
 	away_t_id REFERENCES team (t_id),
 	home_t_id REFERENCES team (t_id),
 	CHECK (away_team_id != home_team_id),
-	h_p1_id NOT NULL REFERENCES player (p_id),
-	h_p2_id NOT NULL REFERENCES player (p_id),
-	h_p3_id NOT NULL REFERENCES player (p_id),
-	h_p4_id NOT NULL REFERENCES player (p_id),
-	h_p5_id NOT NULL REFERENCES player (p_id),
-	h_p6_id REFERENCES player (p_id),
-	a_p1_id NOT NULL REFERENCES player (p_id),
-	a_p2_id NOT NULL REFERENCES player (p_id),
-	a_p3_id NOT NULL REFERENCES player (p_id),
-	a_p4_id NOT NULL REFERENCES player (p_id),
-	a_p5_id NOT NULL REFERENCES player (p_id),
-	a_p6_id REFERENCES player (p_id),
-	CHECK (all 12 players are unique)
+	home_q1_score int NOT NULL,
+	home_q2_score int NOT NULL,
+	home_q3_score int NOT NULL,
+	home_q4_score int NOT NULL,
+	away_q1_score int NOT NULL,
+	away_q2_score int NOT NULL,
+	away_q3_score int NOT NULL,
+	away_q4_score int NOT NULL,
+	home_extend_score int NOT NULL,
+	away_extend_score int NOT NULL,
+	PRIMARY KEY (m_id)
 );
 
-
--- this table is redundent because we can extract 
--- this info from match table
-CREATE TABLE player_in_team(
-	p_id int NOT NULL REFERENCES player (p_id),
-	current_t_id int NOT NULL REFERENCES team (t_id),
-	previous_t_id int REFERENCES team (t_id),
-	CHECK (current_t_id != previous_t_id),
-	PRIMARY KEY (p_id, current_t_id)
+CREATE TABLE match_player_stats (
+	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
+	p_id int REFERENCES player (p_id),
+	PRIMARY KEY (m_id, p_id)
+	t_id int REFERENCES team (t_id),
+	Minutes_played int,
+  	Field_goals_made int,
+  	Field_goal_attempts int, 
+  	Three_pointers_made int,
+  	Three_point_attempts int,
+  	Free_throws_made int,
+  	Free_throw_attempts int,
+  	Offensive_rebounds int,
+  	Defensive_rebounds int,
+  	Assists int,
+  	Steals int,
+  	Blocks int,
+  	Turnovers int,
+  	Personal_fouls int,
+  	Points int,
+  	Plus_minus int,
+  	Offensive_rebound_percentage int,
+  	Defensive_rebound_percentage int,
+  	Total_rebound_percentage int,
+  	Assist_percentage int, 
+  	Steal_percentage int,
+  	Block_percentage int,
+  	Turnover_percentage int,
+  	Usage_percentage int,
+  	Offensive_rating int,
+  	Defensive_rating int
 );
 
+-- sportbook attr table
+CREATE TABLE sb_match_odds(
+	m_id REFERENCES match (m_id) ON DELETE CASCADE,
+	sb_id REFERENCES sportbook (sb_id) ON DELETE CASCADE,
+	PRIMARY KEY (m_id, sb_id),
+	h_money_line int NOT NULL,
+	a_money_line int NOT NULL,
+	h_spread int NOT NULL,
+	a_spread int NOT NULL,
+	over_line int NOT NULL,
+	under_line int NOT NULL,
+	spread_value int NOT NULL,
+	over_under_value int NOT NULL
+);
 
-
-
-
-
-
-
-
-
-
+-- user bet table
+CREATE TABLE place_bet(
+	b_id int PRIMARY KEY,
+	u_id int REFERENCES user (u_id) ON DELETE CASCADE,
+	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
+	sb_id int REFERENCES sportbook (sb_id) ON DELETE CASCADE,
+	bet_h_money_line int,
+	bet_a_money_line int,
+	bet_h_spread int,
+	bet_a_spread int,
+	bet_over_line int,
+	bet_under_line int,
+	bet_spread_value int,
+	bet_over_under_value int
+);
