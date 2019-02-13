@@ -1,0 +1,51 @@
+Extended list of attributes for entities and relationships:
+
+PLAYER Descriptive Attributes:
+  First name
+  Last name
+  Birthday
+  Position
+  Shooting hand
+
+TEAM Descriptive Attributes:
+  Name
+  City
+
+PLAYED IN Game Statistics:
+  Minutes played
+  Field goals made
+  Field goal attempts
+  Three pointers made 
+  Three point attempts
+  Free throws made
+  Free throw attempts
+  Offensive rebounds
+  Defensive rebounds
+  Assists
+  Steals
+  Blocks
+  Turnovers
+  Personal fouls
+  Points
+  Plus/minus
+  Offensive rebound percentage
+  Defensive rebound percentage
+  Total rebound percentage
+  Assist percentage
+  Steal percentage
+  Block percentage
+  Turnover percentage
+  Usage percentage
+  Offensive rating
+  Defensive rating 
+
+MAKE ODDS Odds Lines:
+  Home money line
+  Away money line
+  Home spread line
+  Away spread line
+  Over line
+  Under line
+  Spread value
+  Over/under value
+  
