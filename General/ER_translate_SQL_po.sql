@@ -53,13 +53,15 @@ CREATE TABLE place_bet(
 	u_id int REFERENCES user (u_id) ON DELETE CASCADE,
 	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
 	sb_id int REFERENCES sportbook (sb_id) ON DELETE CASCADE,
+	bet_how_much_on_lines int,
+	bet_how_much_on_spreads int 
 );
 
 
 CREATE TABLE match_arena (
 	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
 	a_id int REFERENCES arena (a_id),
-	attendance int,
+	attendance int NOT NULL,
 	PRIMARY KEY (m_id)
 );
 
@@ -76,10 +78,10 @@ CREATE TABLE match_referee (
 	PRIMARY KEY (m_id)
 );
 
-CREATE TABLE team_player_match_tri (
-	match_id REFERENCES match (match_id) ON DELETE CASCADE,
-	away_team_id REFERENCES team (t_id),
-	home_team_id REFERENCES team (t_id),
+CREATE TABLE team_player_match_tri_relationship (
+	ma_id REFERENCES match (m_id) ON DELETE CASCADE,
+	away_t_id REFERENCES team (t_id),
+	home_t_id REFERENCES team (t_id),
 	CHECK (away_team_id != home_team_id),
 	h_p1_id NOT NULL REFERENCES player (p_id),
 	h_p2_id NOT NULL REFERENCES player (p_id),
