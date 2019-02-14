@@ -106,7 +106,7 @@ CREATE TABLE match_player_stats (
 CREATE TABLE sb_match_odds(
 	m_id REFERENCES match (m_id) ON DELETE CASCADE,
 	sb_id REFERENCES sportbook (sb_id) ON DELETE CASCADE,
-	odds_timestamp time, -- sportbook will update odds from timet to time
+	odds_timestamp datetime, -- sportbook will update odds from timet to time
 	PRIMARY KEY (m_id, sb_id, odds_time), 
 	h_money_line int,
 	a_money_line int,
@@ -124,7 +124,7 @@ CREATE TABLE place_bet(
 	u_id int REFERENCES user (u_id) ON DELETE CASCADE,
 	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
 	sb_id int REFERENCES sportbook (sb_id) ON DELETE CASCADE,
-	bet_time time NOT NULL,
+	bet_time datetime NOT NULL,
 	bet_h_money_line int,
 	bet_a_money_line int,
 	bet_h_spread int,
