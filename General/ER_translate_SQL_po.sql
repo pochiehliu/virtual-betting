@@ -9,7 +9,7 @@ CREATE TABLE player(
 		   position = 'SG' OR
 		   position = 'C' OR
 		   position = 'PF' OR
-		   position = 'SF')
+		   position = 'SF'),
 	-- IS-A shooting hand 
 	shooting_hand text NOT NULL,
 	CHECK (shooting_hand = 'L' OR shooting_hand = 'R')
@@ -28,10 +28,9 @@ CREATE TABLE arena (
 	CHECK (capacity > 0)
 );
 
-CREATE TABLE user (
+CREATE TABLE users (
 	u_id int PRIMARY KEY,
-	name text NOT NULL,
-	join_date date NOT NULL -- i think this is not required
+	name text NOT NULL
 );
 
 CREATE TABLE referee (
@@ -46,29 +45,13 @@ CREATE TABLE sportbook (
 
 -- aggreage by match
 
-CREATE TABLE match(
+CREATE TABLE matches(
 	m_id int PRIMARY KEY,
-	match_data date NOT NULL
-);
-
-CREATE TABLE match_arena (
-	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
+	match_date date NOT NULL,
 	a_id int REFERENCES arena (a_id),
-	attendance int NOT NULL,
-	PRIMARY KEY (m_id)
-);
-
-CREATE TABLE match_referee (
-	m_id REFERENCES match (m_id) ON DELETE CASCADE,
-	r_id REFERENCES referee (r_id),
-	PRIMARY KEY (m_id)
-);
-
-CREATE TABLE match_team_stats (
-	ma_id REFERENCES match (m_id) ON DELETE CASCADE,
-	away_t_id REFERENCES team (t_id),
-	home_t_id REFERENCES team (t_id),
-	CHECK (away_team_id != home_team_id),
+	t_id_home int REFERENCES team (t_id),
+	t_id_away int REFERENCES team (t_id),
+	CHECK (t_id_home != t_id_away),
 	home_q1_score int NOT NULL,
 	home_q2_score int NOT NULL,
 	home_q3_score int NOT NULL,
@@ -78,8 +61,14 @@ CREATE TABLE match_team_stats (
 	away_q3_score int NOT NULL,
 	away_q4_score int NOT NULL,
 	home_extend_score int NOT NULL,
-	away_extend_score int NOT NULL,
-	PRIMARY KEY (m_id)
+	away_extend_score int NOT NULL
+);
+
+
+CREATE TABLE match_referee (
+	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
+	r_id int REFERENCES referee (r_id),
+	PRIMARY KEY (m_id, r_id)
 );
 
 CREATE TABLE match_player_stats (
