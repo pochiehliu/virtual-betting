@@ -1,25 +1,25 @@
--- stand alone table
-CREATE TABLE player(
+-- stand alone tables
+CREATE TABLE player (
 	p_id int PRIMARY KEY,
 	first_name text NOT NULL,
 	last_name text NOT NULL,
-	-- IS-A
-	position text NOT NULL,
-	CHECK (position = 'PG' OR 
-		   position = 'SG' OR
-		   position = 'C' OR
-		   position = 'PF' OR
-		   position = 'SF'),
-	-- IS-A shooting hand 
+	posit text NOT NULL,
+	CHECK (posit = 'PG' OR
+		   posit = 'SG' OR
+		   posit = 'C' OR
+		   posit = 'PF' OR
+		   posit = 'SF'),
 	shooting_hand text NOT NULL,
 	CHECK (shooting_hand = 'L' OR shooting_hand = 'R')
 );
 
-CREATE TABLE team(
+
+CREATE TABLE team (
 	t_id int PRIMARY KEY,
-	name text UNIQUE NOT NULL,
-	city text UNIQUE NOT NULL
+	name text NOT NULL,
+	city text NOT NULL
 );
+
 
 CREATE TABLE arena (
 	a_id int PRIMARY KEY,
@@ -28,25 +28,28 @@ CREATE TABLE arena (
 	CHECK (capacity > 0)
 );
 
+
 CREATE TABLE users (
 	u_id int PRIMARY KEY,
 	name text NOT NULL
 );
+
 
 CREATE TABLE referee (
 	r_id int PRIMARY KEY,
 	name text NOT NULL
 );
 
-CREATE TABLE sportbook (
+
+CREATE TABLE sportsbook (
 	sb_id int PRIMARY KEY,
 	name text NOT NULL
 );
 
--- aggreage by matches
-CREATE TABLE matches(
-	m_id int PRIMARY KEY,
-    match_time timestamp NOT NULL,
+
+CREATE TABLE game(
+	g_id int PRIMARY KEY,
+    game_time timestamp NOT NULL,
 	a_id int REFERENCES arena (a_id),
 	t_id_home int REFERENCES team (t_id),
 	t_id_away int REFERENCES team (t_id),
@@ -59,32 +62,40 @@ CREATE TABLE matches(
 	away_q2_score int NOT NULL,
 	away_q3_score int NOT NULL,
 	away_q4_score int NOT NULL,
-	home_extend_score int NOT NULL,
-	away_extend_score int NOT NULL,
+	home_ot_score int NOT NULL,
+	away_ot_score int NOT NULL,
 	CHECK (
 		home_q1_score >= 0 AND
 		home_q2_score >= 0 AND
 		home_q3_score >= 0 AND
 		home_q4_score >= 0 AND
-		home_extend_score >= 0 AND
 		away_q1_score >= 0 AND
 		away_q2_score >= 0 AND
 		away_q3_score >= 0 AND
-		away_q4_score >= 0 AND
-		away_extend_score >= 0
-		)
+		away_q4_score >= 0
+		),
+	CHECK (
+	    home_ot_score >= 0 OR
+	    home_ot_score IS NULL
+	    ),
+	CHECK (
+	    away_ot_score >= 0 OR
+	    away_ot_score IS NULL
+	    )
 );
 
-CREATE TABLE match_referee (
-	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
+
+CREATE TABLE game_referee (
+	g_id int REFERENCES game (g_id) ON DELETE CASCADE,
 	r_id int REFERENCES referee (r_id),
-	PRIMARY KEY (m_id, r_id)
+	PRIMARY KEY (g_id, r_id)
 );
 
-CREATE TABLE match_player_stats (
-	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
+
+CREATE TABLE player_game_stats (
+	g_id int REFERENCES game (g_id) ON DELETE CASCADE,
 	p_id int REFERENCES player (p_id),
-	PRIMARY KEY (m_id, p_id),
+	PRIMARY KEY (g_id, p_id),
 	t_id int REFERENCES team (t_id),
 	Minutes_played int NOT NULL,
   	Field_goals_made int NOT NULL,
@@ -111,15 +122,46 @@ CREATE TABLE match_player_stats (
   	Turnover_percentage int NOT NULL,
   	Usage_percentage int NOT NULL,
   	Offensive_rating int NOT NULL,
-  	Defensive_rating int NOT NULL
+  	Defensive_rating int NOT NULL,
+  	CHECK (
+  	    Field_goals_made <= Field_goal_attempts AND
+  	    Three_pointers_made <= Three_point_attempts AND
+  	    Free_throws_made <= Free_throw_attempts
+  	    ),
+  	CHECK (
+  	    Minutes_played >= 0 AND
+  	    Field_goals_made >= 0 AND
+  	    Field_goal_attempts >= 0 AND
+  	    Three_pointers_made >= 0 AND
+  	    Three_point_attempts >= 0 AND
+  	    Free_throws_made >= 0 AND
+  	    Free_throw_attempts >= 0 AND
+  	    Offensive_rebounds >= 0 AND
+  	    Defensive_rebounds >= 0 AND
+  	    Steals >= 0 AND
+  	    Blocks >= 0 AND
+  	    Turnovers >= 0 AND
+  	    Personal_fouls >= 0 AND
+  	    Points >= 0 AND
+  	    Offensive_rebound_percentage >= 0 AND
+  	    Defensive_rebound_percentage >= 0 AND
+  	    Total_rebound_percentage >= 0 AND
+  	    Assist_percentage >= 0 AND
+  	    Steal_percentage >= 0 AND
+        Block_percentage >= 0 AND
+  	    Turnover_percentage >= 0 AND
+  	    Usage_percentage >= 0 AND
+  	    Offensive_rating >= 0 AND
+  	    Defensive_rating >= 0
+  	    )
 );
 
--- sportbook attr table
-CREATE TABLE sb_match_odds(
-	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
-	sb_id int REFERENCES sportbook (sb_id) ON DELETE CASCADE,
-    odds_time timestamp, -- sportbook will update odds from timet to time
-	PRIMARY KEY (m_id, sb_id, odds_time), 
+-- sportsbook table
+CREATE TABLE sb_game_odds(
+	g_id int REFERENCES game (g_id) ON DELETE CASCADE,
+	sb_id int REFERENCES sportsbook (sb_id) ON DELETE CASCADE,
+    odds_time timestamp, -- sportsbook will update odds intermittently
+	PRIMARY KEY (g_id, sb_id, odds_time), 
 	h_money_line int,
 	a_money_line int,
 	h_spread int,
@@ -134,8 +176,8 @@ CREATE TABLE sb_match_odds(
 CREATE TABLE place_bet(
 	b_id int PRIMARY KEY,
 	u_id int REFERENCES users (u_id) ON DELETE CASCADE,
-	m_id int REFERENCES matches (m_id) ON DELETE CASCADE,
-	sb_id int REFERENCES sportbook (sb_id) ON DELETE CASCADE,
+	g_id int REFERENCES game (g_id) ON DELETE CASCADE,
+	sb_id int REFERENCES sportsbook (sb_id) ON DELETE CASCADE,
 	bet_time timestamp NOT NULL,
 	bet_h_money_line int,
 	bet_a_money_line int,
