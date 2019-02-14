@@ -41,12 +41,12 @@ CREATE TABLE referee (
 CREATE TABLE sportbook (
 	sb_id int PRIMARY KEY,
 	name text NOT NULL
-)
+);
 
 -- aggreage by matches
 CREATE TABLE matches(
 	m_id int PRIMARY KEY,
-	match_date datetime NOT NULL,
+    match_time timestamp NOT NULL,
 	a_id int REFERENCES arena (a_id),
 	t_id_home int REFERENCES team (t_id),
 	t_id_away int REFERENCES team (t_id),
@@ -84,11 +84,11 @@ CREATE TABLE match_referee (
 CREATE TABLE match_player_stats (
 	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
 	p_id int REFERENCES player (p_id),
-	PRIMARY KEY (m_id, p_id)
+	PRIMARY KEY (m_id, p_id),
 	t_id int REFERENCES team (t_id),
 	Minutes_played int NOT NULL,
   	Field_goals_made int NOT NULL,
-  	Field_goal_attempts int NOT NULL 
+  	Field_goal_attempts int NOT NULL, 
   	Three_pointers_made int NOT NULL,
   	Three_point_attempts int NOT NULL,
   	Free_throws_made int NOT NULL,
@@ -116,9 +116,9 @@ CREATE TABLE match_player_stats (
 
 -- sportbook attr table
 CREATE TABLE sb_match_odds(
-	m_id REFERENCES match (m_id) ON DELETE CASCADE,
-	sb_id REFERENCES sportbook (sb_id) ON DELETE CASCADE,
-	odds_time datetime, -- sportbook will update odds from timet to time
+	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
+	sb_id int REFERENCES sportbook (sb_id) ON DELETE CASCADE,
+    odds_time timestamp, -- sportbook will update odds from timet to time
 	PRIMARY KEY (m_id, sb_id, odds_time), 
 	h_money_line int,
 	a_money_line int,
@@ -133,10 +133,10 @@ CREATE TABLE sb_match_odds(
 -- user bet table
 CREATE TABLE place_bet(
 	b_id int PRIMARY KEY,
-	u_id int REFERENCES user (u_id) ON DELETE CASCADE,
-	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
+	u_id int REFERENCES users (u_id) ON DELETE CASCADE,
+	m_id int REFERENCES matches (m_id) ON DELETE CASCADE,
 	sb_id int REFERENCES sportbook (sb_id) ON DELETE CASCADE,
-	bet_time datetime NOT NULL,
+	bet_time timestamp NOT NULL,
 	bet_h_money_line int,
 	bet_a_money_line int,
 	bet_h_spread int,
