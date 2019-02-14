@@ -43,8 +43,7 @@ CREATE TABLE sportbook (
 	name text NOT NULL
 )
 
--- aggreage by match
-
+-- aggreage by matches
 CREATE TABLE matches(
 	m_id int PRIMARY KEY,
 	match_date date NOT NULL,
@@ -63,7 +62,6 @@ CREATE TABLE matches(
 	home_extend_score int NOT NULL,
 	away_extend_score int NOT NULL
 );
-
 
 CREATE TABLE match_referee (
 	m_id int REFERENCES match (m_id) ON DELETE CASCADE,
