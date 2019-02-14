@@ -46,7 +46,7 @@ CREATE TABLE sportbook (
 -- aggreage by matches
 CREATE TABLE matches(
 	m_id int PRIMARY KEY,
-	match_date date NOT NULL,
+	match_date datetime NOT NULL,
 	a_id int REFERENCES arena (a_id),
 	t_id_home int REFERENCES team (t_id),
 	t_id_away int REFERENCES team (t_id),
@@ -60,7 +60,19 @@ CREATE TABLE matches(
 	away_q3_score int NOT NULL,
 	away_q4_score int NOT NULL,
 	home_extend_score int NOT NULL,
-	away_extend_score int NOT NULL
+	away_extend_score int NOT NULL,
+	CHECK (
+		home_q1_score >= 0 AND
+		home_q2_score >= 0 AND
+		home_q3_score >= 0 AND
+		home_q4_score >= 0 AND
+		home_extend_score >= 0 AND
+		away_q1_score >= 0 AND
+		away_q2_score >= 0 AND
+		away_q3_score >= 0 AND
+		away_q4_score >= 0 AND
+		away_extend_score >= 0
+		)
 );
 
 CREATE TABLE match_referee (
@@ -74,39 +86,39 @@ CREATE TABLE match_player_stats (
 	p_id int REFERENCES player (p_id),
 	PRIMARY KEY (m_id, p_id)
 	t_id int REFERENCES team (t_id),
-	Minutes_played int,
-  	Field_goals_made int,
-  	Field_goal_attempts int, 
-  	Three_pointers_made int,
-  	Three_point_attempts int,
-  	Free_throws_made int,
-  	Free_throw_attempts int,
-  	Offensive_rebounds int,
-  	Defensive_rebounds int,
-  	Assists int,
-  	Steals int,
-  	Blocks int,
-  	Turnovers int,
-  	Personal_fouls int,
-  	Points int,
-  	Plus_minus int,
-  	Offensive_rebound_percentage int,
-  	Defensive_rebound_percentage int,
-  	Total_rebound_percentage int,
-  	Assist_percentage int, 
-  	Steal_percentage int,
-  	Block_percentage int,
-  	Turnover_percentage int,
-  	Usage_percentage int,
-  	Offensive_rating int,
-  	Defensive_rating int
+	Minutes_played int NOT NULL,
+  	Field_goals_made int NOT NULL,
+  	Field_goal_attempts int NOT NULL 
+  	Three_pointers_made int NOT NULL,
+  	Three_point_attempts int NOT NULL,
+  	Free_throws_made int NOT NULL,
+  	Free_throw_attempts int NOT NULL,
+  	Offensive_rebounds int NOT NULL,
+  	Defensive_rebounds int NOT NULL,
+  	Assists int NOT NULL,
+  	Steals int NOT NULL,
+  	Blocks int NOT NULL,
+  	Turnovers int NOT NULL,
+  	Personal_fouls int NOT NULL,
+  	Points int NOT NULL,
+  	Plus_minus int NOT NULL,
+  	Offensive_rebound_percentage int NOT NULL,
+  	Defensive_rebound_percentage int NOT NULL,
+  	Total_rebound_percentage int NOT NULL,
+  	Assist_percentage int NOT NULL, 
+  	Steal_percentage int NOT NULL,
+  	Block_percentage int NOT NULL,
+  	Turnover_percentage int NOT NULL,
+  	Usage_percentage int NOT NULL,
+  	Offensive_rating int NOT NULL,
+  	Defensive_rating int NOT NULL
 );
 
 -- sportbook attr table
 CREATE TABLE sb_match_odds(
 	m_id REFERENCES match (m_id) ON DELETE CASCADE,
 	sb_id REFERENCES sportbook (sb_id) ON DELETE CASCADE,
-	odds_timestamp datetime, -- sportbook will update odds from timet to time
+	odds_time datetime, -- sportbook will update odds from timet to time
 	PRIMARY KEY (m_id, sb_id, odds_time), 
 	h_money_line int,
 	a_money_line int,
