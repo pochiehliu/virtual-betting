@@ -191,6 +191,7 @@ CREATE TABLE overunder (
 	over_under_value int
 );
 
+-- betting table
 CREATE TABLE place_bet(
 	b_id int PRIMARY KEY,
 	u_id int REFERENCES users (u_id) ON DELETE CASCADE,
