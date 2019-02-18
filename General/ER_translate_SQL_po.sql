@@ -57,7 +57,7 @@ CREATE TABLE bet_type (
 
 CREATE TABLE game(
 	g_id int PRIMARY KEY,
-  game_time timestamp NOT NULL,
+	game_time timestamp NOT NULL,
 	a_id int REFERENCES arena (a_id),
 	t_id_home int REFERENCES team (t_id),
 	t_id_away int REFERENCES team (t_id),
@@ -110,7 +110,7 @@ CREATE TABLE player_game_stats (
 	field_goal_attempts int NOT NULL,
 	three_pointers_made int NOT NULL,
 	three_point_attempts int NOT NULL,
-  free_throws_made int NOT NULL,
+	free_throws_made int NOT NULL,
 	free_throw_attempts int NOT NULL,
 	offensive_rebounds int NOT NULL,
 	defensive_rebounds int NOT NULL,
@@ -152,13 +152,21 @@ CREATE TABLE player_game_stats (
 		personal_fouls >= 0 AND
 		points >= 0 AND
 		offensive_rebound_percentage >= 0 AND
+		offensive_rebound_percentage <= 100 AND
 		defensive_rebound_percentage >= 0 AND
+		defensive_rebound_percentage <= 100 AND
 		total_rebound_percentage >= 0 AND
+		total_rebound_percentage <= 100 AND
 		assist_percentage >= 0 AND
+		assist_percentage <= 100 AND
 		steal_percentage >= 0 AND
+		steal_percentage <= 100 AND
 		block_percentage >= 0 AND
+		block_percentage <= 100 AND
 		turnover_percentage >= 0 AND
+		turnover_percentage <= 100 AND
 		usage_percentage >= 0 AND
+		usage_percentage <= 100 AND
 		offensive_rating >= 0 AND
 		defensive_rating >= 0
 	)
@@ -169,10 +177,10 @@ CREATE TABLE make_odds (
 	g_id int REFERENCES game (g_id) ON DELETE NO ACTION,
 	sb_id int REFERENCES sportsbook (sb_id) ON DELETE NO ACTION,
 	bt_id int REFERENCES bet_type (bt_id) ON DELETE NO ACTION,
-  odds_time timestamp NOT NULL, -- sportsbook will update odds intermittently
+	odds_time timestamp NOT NULL, -- sportsbook will update odds intermittently
 	PRIMARY KEY (g_id, sb_id, bt_id, odds_time),
 	odds_line int NOT NULL,
-  CHECK (odds_line)
+	CHECK (odds_line >= 1) -- will use decimal odds
 );
 
 
