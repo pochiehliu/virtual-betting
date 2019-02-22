@@ -1,0 +1,4 @@
+Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+0,201806030GSW,"8:00 PM, June 3, 2018",2018,"Oracle Arena, Oakland, California",Cleveland Cavaliers,Golden State Warriors,"19,596",93.4,Mike Callahan, David Guthrie, Derrick Stafford,28,18,34,23,0,103,110.3,130.7,32,27,31,32,0,122,130.7,110.3
+1,201806060CLE,"9:00 PM, June 6, 2018",2018,"Quicken Loans Arena, Cleveland, Ohio",Golden State Warriors,Cleveland Cavaliers,"20,562",92.8,Marc Davis, John Goble, Zach Zarba,28,24,31,27,0,110,118.5,109.9,29,29,23,21,0,102,109.9,118.5
+2,201806080CLE,"9:00 PM, June 8, 2018",2018,"Quicken Loans Arena, Cleveland, Ohio",Golden State Warriors,Cleveland Cavaliers,"20,562",87.2,James Capers, Scott Foster, Jason Phillips,34,27,25,22,0,108,123.8,97.4,25,27,13,20,0,85,97.4,123.8
