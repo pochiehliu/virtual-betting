@@ -12,7 +12,9 @@ from multiprocessing import Pool
 
 def get_page(link):
     """
-    Gets the page content from a given link
+    Gets the page content from a given link; gives it a second try
+    in case internet connection is lost for a moment to result in
+    timeout error.
     :param link:
     :return: page content, or None if the link doesn't work
     """
@@ -125,7 +127,7 @@ def main(season):
         # ensures link is valid
         if month_page is None:
             print("failed for link: {}".format(month_link))
-            return None
+            continue
 
         # loop every game
         for game in month_page.find_all('th', csk=True):
