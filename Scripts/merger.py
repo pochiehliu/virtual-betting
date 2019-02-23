@@ -22,9 +22,9 @@ def merge(loc, kind):
 
 
 def main():
-    loc = 'Data/bask_ref_csvs'
+    loc = 'Data/bask_ref_csvs/'
     master_player = merge(loc, 'player')
-    master_game = merge(loc, 'player')
+    master_game = merge(loc, 'game')
     master_player.to_csv('Data/full_player.csv', index_label='Index')
     master_game.to_csv('Data/full_game.csv', index_label='Index')
 
