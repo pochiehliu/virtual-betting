@@ -84,11 +84,10 @@ def looping(date):
 
 def main():
     sbr_basic = pd.DataFrame(columns=['date', 'time', 'away', 'home',
-                                      'p_fg_w', 'p_1st_w', 'p_2nd_w',
+                                      'p_fg_w',
                                       'p_fg', 'p_1st', 'p_2nd',
-                                      'm_fg_w', 'm_1st_w', 'm_2nd_w',
                                       'm_fg', 'm_1st', 'm_2nd',
-                                      't_fg_w', 't_1st_w', 't_2nd_w',
+                                      't_fg_w',
                                       't_fg', 't_1st', 't_2nd'
                                       ])
     date_list = ['20161031']    # list of all dates that t

@@ -1,0 +1,6 @@
+Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+0,201106020MIA,"9:00 PM, June 2, 2011",2011,"AmericanAirlines Arena, Miami, Florida",Dallas Mavericks,Miami Heat,"20,003",88.0,Joe Crawford, Ed Malloy, Ken Mauer,28,23,20,24,0,95,108.0,105.7,28,23,24,18,0,93,105.7,108.0
+1,201106050DAL,"8:00 PM, June 5, 2011",2011,"American Airlines Center, Dallas, Texas",Miami Heat,Dallas Mavericks,"20,340",82.1,Dan Crawford, Scott Foster, Derrick Stafford,29,18,20,21,0,88,107.2,104.8,22,20,22,22,0,86,104.8,107.2
+2,201106070DAL,"9:00 PM, June 7, 2011",2011,"American Airlines Center, Dallas, Texas",Miami Heat,Dallas Mavericks,"20,430",82.1,Marc Davis, Monty McCutchen, Greg Willard,21,26,22,14,0,83,101.1,104.8,21,24,20,21,0,86,104.8,101.1
+3,201106090DAL,"9:00 PM, June 9, 2011",2011,"American Airlines Center, Dallas, Texas",Miami Heat,Dallas Mavericks,"20,433",86.4,Mike Callahan, Joe Crawford, Bill Kennedy,31,26,22,24,0,103,119.2,129.6,30,30,24,28,0,112,129.6,119.2
+4,201106120MIA,"8:00 PM, June 12, 2011",2011,"AmericanAirlines Arena, Miami, Florida",Dallas Mavericks,Miami Heat,"20,003",92.0,Scott Foster, Steve Javie, Derrick Stafford,32,21,28,24,0,105,114.1,103.2,27,24,21,23,0,95,103.2,114.1

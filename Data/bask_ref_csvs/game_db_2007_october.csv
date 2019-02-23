@@ -1,0 +1,3 @@
+Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+0,200610310LAL,"10:30 PM, October 31, 2006",2007,"STAPLES Center, Los Angeles, California",Phoenix Suns,Los Angeles Lakers,"18,997",100.0,Steve Javie, Eric Lewis, Tom Washington,41,17,21,27,0,106,106.0,114.0,26,27,34,27,0,114,114.0,106.0
+1,200610310MIA,"8:00 PM, October 31, 2006",2007,"AmericanAirlines Arena, Miami, Florida",Chicago Bulls,Miami Heat,"20,229",91.8,Tim Donaghy, Bernie Fryer, Derek Richardson,22,37,21,28,0,108,117.6,71.9,16,14,21,15,0,66,71.9,117.6

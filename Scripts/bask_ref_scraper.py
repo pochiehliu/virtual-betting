@@ -8,6 +8,7 @@ import numpy as np
 from bs4 import BeautifulSoup
 import requests
 from multiprocessing import Pool
+import os
 
 
 def get_page(link):
@@ -86,14 +87,15 @@ def get_refs(box_page):
     :param box_page:
     :return: list of three referee names
     """
-    refs = list(box_page.children)[3].get_text().split('Officials:')[1].split('\n')[0].strip('\xa0').split(',')
+    refs = list(box_page.children)[3].get_text().split('Officials:')[1].split('\n')[0].strip('\xa0').split(', ')
     if len(refs) != 3:
         new = []
         for i in range(3):
             try:
                 new.append(refs[i])
             except IndexError:
-                new.append(np.nan)
+                new.append('MISSING')
+        return new
     return refs
 
 
@@ -189,8 +191,12 @@ def main(season):
                     full_game_line.append(list(list(team_adv_stats.children)[0].children)[stat].get_text())
 
                 full_game_line = full_game_line + home_line if team == 'away' else full_game_line
-            print(full_game_line)
-            game_df.loc[len(game_df)] = full_game_line
+            try:
+                game_df.loc[len(game_df)] = full_game_line
+            except ValueError:
+                print('error for {y}/{m}'.format(y=season, m=month))
+                print(full_game_line)
+                print('only has {} cols'.format(len(full_game_line)))
 
         # save monthly results as CSVs
         player_df.to_csv("./../Data/bask_ref_csvs/player_db_" + str(season) + '_' + month + ".csv", index_label="Index")
@@ -202,5 +208,24 @@ if __name__ == '__main__':
     seasons = np.arange(2001, 2019)
     pool = Pool(processes=len(seasons))
     pool.map(main, seasons)
+
+
+def get_missing():
+    """
+    Little function use to get list of missing months after a botched
+    run.
+    :return: list of missing months in format '<season>_<month>'
+    """
+    files = os.listdir('./../Data/bask_ref_csvs/')
+    missing = []
+    for year in np.arange(2001, 2019):
+        for month in ["october", "november", "december", "january",
+                      "february", "march", "april", "may", 'june']:
+            if 'game_db_' + str(year) + '_' + month + '.csv' in files:
+                if 'player_db_' + str(year) + '_' + month + '.csv' in files:
+                    continue
+            missing.append(str(year) + '_' + month)
+    return missing
+
 
 
