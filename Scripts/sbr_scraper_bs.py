@@ -1,7 +1,7 @@
 """
-NOT COMPLETE
-This script will get all relevant data that can be scraped from the source
-code from sports book review.
+This script will get team names, game times, and game number
+(as listed on www.sportsbookreview.com) for all NBA matches.
+This data is dumped to a CSV.
 """
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -9,7 +9,7 @@ import requests
 import os
 import datetime as dt
 
-base_url = 'https://www.sportsbookreview.com/betting-odds/nba-basketball/pointspread/'
+BASE_URL = 'https://www.sportsbookreview.com/betting-odds/nba-basketball/pointspread/'
 
 
 def get_page(link):
@@ -35,7 +35,7 @@ def get_dates():
     :return: pandas series with dates of games
     """
     loc = './../Data/bask_ref_csvs/'
-    file_list = [file for file in os.listdir(loc) if not file.startswith(('.', 'full')) and file.startswith('game')]
+    file_list = [file for file in os.listdir(loc) if file.startswith('game')]
     all_csv = []
     for file in file_list:
         all_csv.append(pd.read_csv(loc + file, index_col='Index', header=0))
@@ -52,7 +52,7 @@ def get_basics(date):
     :param date:
     :return: dictionary with team names and game lines
     """
-    page = get_page(base_url + '?date=' + date)
+    page = get_page(BASE_URL + '?date=' + date)
 
     teams = list(page.find_all(class_='_3O1Gx'))
     teams = [teams[i].get_text() for i in range(len(teams))]
@@ -63,19 +63,22 @@ def get_basics(date):
 
 
 def main():
-    sbr_basic = pd.DataFrame(columns=['date', 'time', 'away', 'home'])
+    sbr_basic = pd.DataFrame(columns=['date', 'time', 'game_num', 'away', 'home'])
     date_list = get_dates()
     date_list.sort()
 
     for date in date_list:
         teams, game_times = get_basics(date)
         for game in range(len(game_times)):
-            entry = [date, game_times[game], teams[game * 2], teams[game * 2 + 1]]
-            sbr_basic.loc[sbr_basic.shape[0]] = entry
+            entry = [date, game_times[game], game, teams[game * 2], teams[game * 2 + 1]]
+            sbr_basic.loc[len(sbr_basic)] = entry
+
     sbr_basic.to_csv('./../Data/sbr_team_list.csv', index_label='Index')
 
 
 if __name__ == '__main__':
+    if 'README.md' in os.listdir('.'):
+        os.chdir('Scripts/')
     main()
 
 

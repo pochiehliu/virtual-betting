@@ -1,9 +1,16 @@
 """
-This imports all the individual csv files from every month and merges
-them to a single 'player' and 'game' csv file.
+This imports all the individual csv files starting with
+a certain prefix, and dumps them to a single CSV file that
+is one level up in the supplied directory of the collection
+of CSV files to be merged.
 """
 import pandas as pd
 import os
+# directory of files to be merged
+LOCATION = 'Data/bask_ref_csvs/'
+
+# prefix of the files you want to merge
+PREFIX = ['player', 'game']
 
 
 def merge(loc, kind):
@@ -22,11 +29,10 @@ def merge(loc, kind):
 
 
 def main():
-    loc = 'Data/bask_ref_csvs/'
-    master_player = merge(loc, 'player')
-    master_game = merge(loc, 'game')
-    master_player.to_csv('Data/full_player.csv', index_label='Index')
-    master_game.to_csv('Data/full_game.csv', index_label='Index')
+    for kind in PREFIX:
+        master = merge(LOCATION, kind)
+        master.to_csv(LOCATION.split('/')[0] + '/full_' + kind + '.csv',
+                      index_label='Index')
 
 
 if __name__ == '__main__':
