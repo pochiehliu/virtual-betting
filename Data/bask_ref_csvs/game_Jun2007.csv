@@ -1,0 +1,6 @@
+Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+0,200706020CLE,"8:30 PM, June 2, 2007",2007,"Quicken Loans Arena, Cleveland, Ohio",Detroit Pistons,Cleveland Cavaliers,"20,562",88.3,Joe DeRosa, Jack Nies, Eddie F. Rush,21,27,18,16,0,82,92.9,111.0,27,21,19,31,0,98,111.0,92.9
+1,200706070SAS,"9:00 PM, June 7, 2007",2007,"AT&T Center, San Antonio, Texas",Cleveland Cavaliers,San Antonio Spurs,"18,797",78.3,Mike Callahan, Steve Javie, Ken Mauer,15,20,14,27,0,76,97.0,108.5,20,20,24,21,0,85,108.5,97.0
+2,200706100SAS,"9:00 PM, June 10, 2007",2007,"AT&T Center, San Antonio, Texas",Cleveland Cavaliers,San Antonio Spurs,"18,797",87.1,Dick Bavetta, Jim Clark, Joe DeRosa,17,16,29,30,0,92,105.6,118.2,28,30,31,14,0,103,118.2,105.6
+3,200706120CLE,"9:00 PM, June 12, 2007",2007,"Quicken Loans Arena, Cleveland, Ohio",San Antonio Spurs,Cleveland Cavaliers,"20,562",80.8,Dan Crawford, Bob Delaney, Bernie Fryer,16,24,15,20,0,75,92.9,89.1,18,20,12,22,0,72,89.1,92.9
+4,200706140CLE,"9:00 PM, June 14, 2007",2007,"Quicken Loans Arena, Cleveland, Ohio",San Antonio Spurs,Cleveland Cavaliers,"20,562",85.1,Joe Forte, Eddie F. Rush, Bennett Salvatore,19,20,21,23,0,83,97.5,96.3,20,14,18,30,0,82,96.3,97.5
