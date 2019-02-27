@@ -2,6 +2,11 @@
 This program will scrape basketball reference and create a player
 date base with game stats for all players in all games. This is then
 saved to a CSV file.
+It must be run from command line and given argument of either 'full'
+or 'update', where the former will do a complete scraping from Oct
+2000 to present, and update will only get data from days since our
+most recent data.
+
 NOTE - The naming convention for the CSV files is "*_<MONTH><YEAR>",
        where * is either 'player' or 'game', MONTH is the three
        letter abbreviation, and YEAR is in the format YYYY.

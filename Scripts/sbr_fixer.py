@@ -1,6 +1,7 @@
 """
 This program will fix the dates that sbr_scraper_sel.py
-was not able to scrape on first run.
+was not able to scrape on first run; fetches these dates
+from output file produced by sbr_scraper.sel.py.
 """
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options

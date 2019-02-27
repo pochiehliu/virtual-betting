@@ -11,14 +11,13 @@ from multiprocessing import Pool
 import time
 import os
 import datetime as dt
-import numpy as np
 import calendar
 
 # global variable
 BASE_URL = 'https://www.sportsbookreview.com/betting-odds/nba-basketball/'
 
 
-def get_dates():
+def get_dates(unique):
     """
     Function that gets a pandas series of all the dates to be
     searched.
@@ -33,7 +32,16 @@ def get_dates():
     df.date = df.date.apply(lambda x: dt.datetime.strptime(x, "%I:%M %p, %B %d, %Y"))
     dates = df.date.apply(lambda x: str(x.year) + (str(x.month) if x.month > 9 else '0' + str(x.month)) + (str(x.day) if x.day > 9 else '0' + str(x.day)))
     dates = dates.loc[dates.astype(int) > 20061000]
-    return dates.unique()
+    return dates.unique() if unique else dates.groupby(dates).count()
+
+
+def get_driver():
+    options = Options()
+    options.add_argument("--headless")
+    driver = webdriver.Chrome('./../Misc/chromedriver', options=options)
+    driver.set_window_position(0, 0)
+    driver.set_window_size(1500, 950)
+    return driver
 
 
 def update(df, date, lists):
@@ -52,20 +60,35 @@ def update(df, date, lists):
     return df
 
 
-def day_loop(driver, date, sleep, run):
+def check_data(full_list, date):
+    entry_counts = [len(x) for x in full_list]  # list with number of entries for from each page
+    uniques = len(set(entry_counts))  # = 1 if all pages give same number of data entries
+    status = None
+    if uniques != 1:
+        if uniques > 1:  # unequal number of entries for different pages,
+            status = "slow load"
+        elif uniques < 1:
+            status = "no load"
+    else:
+        if 0 in set(entry_counts):
+            status = 'no data'
+        elif int(len(full_list[0]) / 24) != expected_counts[date]:
+            status = 'unexpected game count'
+        else:
+            status = 'pass'
+    return status
+
+
+def scrape(driver, date, sleep, run):
     """
     For a give day, will return a list of lists, where each individual list
     contains data for a bet type + length type combination on given date.
     :param driver: chromedriver
     :param date: in format 'YYYYMMDD'
     :param sleep: to ensure page loads, needs a sleep
-    :param run: a counter to limit number of re-attempts for a failing page
+    :param run: run number
     :return: list of lists
     """
-    # list that will hold the entry count for bet type/length type combination;
-    # should equal (10 (# books) + 2 (wager + opener)) * n_games * 2 (teams per game)
-    game_check = []
-
     full_list = []
     for bet_type in ['pointspread/', 'money-line/', 'totals/']:
         for length_type in ['', '1st-half/', '2nd-half/']:      # blank length is for full game
@@ -75,62 +98,72 @@ def day_loop(driver, date, sleep, run):
 
             test = driver.find_elements_by_class_name('_1QEDd')
             singles = [t.text for t in test]
-            game_check.append(len(singles))
             full_list.append(singles)
 
-    # checks that everything was scraped correctly
-    uniques = len(set(game_check))  # = 1 if all pages give same number of data entries
-    if uniques != 1:
-        if uniques > 1:  # unequal number of entries for different pages,
-            if run < 3:    # need to re-run with a longer sleep interval.
-                text_file = open("drive/My Drive/scraping/Output.txt", "a")
-                print('\nGoing round {}'.format(run + 2), file=text_file)
-                text_file.close()
-                full_list = day_loop(driver, date, sleep + 0.15, run + 1)
-            else:
-                text_file = open("drive/My Drive/scraping/Output.txt", "a")
-                print('\nCould not get match entries for {}'.format(date),
-                      file=text_file)
-                text_file.close()
-                return None
-        elif 0 in set(game_check):
-            text_file = open("drive/My Drive/scraping/Output.txt", "a")
-            print('\nNo games on date: {}'.format(date), file=text_file)
+    status = check_data(full_list, date)
+
+    if status == 'pass':
+        pass
+    elif run == 2:
+        text_file = open('./../Data/Output.txt', "a")
+        print('Issue on {d} because: {s}'.format(d=date, s=status), file=text_file)
+        text_file.close()
+        if status == 'unexpected game count':
+            text_file = open('./../Data/Output.txt', "a")
+            print("Should've had {e} but got {g} games".format(e=expected_counts[date],
+                                                               g=int(len(full_list[0]) / 24)),
+                  file=text_file)
             text_file.close()
+        else:
             return None
+    else:
+        if status == 'unexpected game count' and expected_counts[date] - int(len(full_list[0]) / 24) == 1:
+            pass
+        else:
+            full_list = scrape(driver, date, 1, 2)
     return full_list
 
 
-def day_caller(month_list):
+def day_caller(month):
     """
     Will initialize a data frame to store data, initialize a
-    webdriver to scrape data, call dates for given month linearly.
-    :param month_list: list with all game dates for a given month
+    webdriver to scrape data, call day for given month linearly.
+    :param month: as string in format YYYYMM
     :return:
     """
+    start = dt.datetime.now()
     column_names = ['date', 'bet', 'length', 'game_num', 'aw', 'hw', 'ao', 'ho',
                     'ab1', 'hb1', 'ab2', 'hb2', 'ab3', 'hb3', 'ab4', 'hb4',
                     'ab5', 'hb5', 'ab6', 'hb6', 'ab7', 'hb7', 'ab8', 'hb8',
                     'ab9', 'hb9', 'ab10', 'hb10']
     df = pd.DataFrame(columns=column_names)
 
-    # configure the driver
-    options = Options()
-    options.add_argument("--headless")
-    driver = webdriver.Chrome('./../Misc/chromedriver', options=options)
-    driver.set_window_position(0, 0)
-    driver.set_window_size(1500, 950)
+    # get driver
+    driver = get_driver()
 
-    # loop every day for the month
-    for date in month_list:
-        list_of_lists = day_loop(driver, date, 0.15, 0)
+    days_in_month = [x for x in dates if x[:6] == month]
+
+    for date in days_in_month:
+        # scrape data
+        list_of_lists = scrape(driver, date, 0.35, 1)
+
+        # paste data to data frame
         if list_of_lists is not None:
             df = update(df, date, list_of_lists)
+        else:
+            text_file = open('./../Data/Output.txt', "a")
+            print('Skipped {d} because None was returned.'.format(d=date), file=text_file)
+            text_file.close()
 
-    # push monthly data frame to a csv
-    year = str(month_list[0][:4])
-    month = calendar.month_abbr[int(month_list[0][4:6])]
-    df.to_csv('./../Data/sbr_csvs/' + month + year + '.csv', index_label='Index')
+    driver.quit()
+
+    # dump to csv
+    y = month[:4]
+    m = calendar.month_abbr[int(month[4:])]
+    df.to_csv('./../Data/sbr_csvs/' + m + y + '.csv', index_label='Index')
+    end = dt.datetime.now()
+
+    print("Did {d} in {t} for {g} games.".format(d=month, t=end-start, g=int(len(df)/9)))
 
 
 def main():
@@ -140,38 +173,22 @@ def main():
     - For given year, will scrape each month in parallel
     :return:
     """
-    dates = get_dates()
-    dates.sort()
-    completed = os.listdir('./../Data/sbr_csvs/')
-
-    for year in np.arange(2006, 2019):
-        year_list = []
-
-        for mon in np.arange(1, 13):
-
-            # if not already done
-            if calendar.month_abbr[mon] + str(year) + '.csv' not in completed:
-                month = '0' + str(mon) if mon < 10 else mon
-
-                # get every game day for the month and append if non-empty
-                month_dates = [date for date in dates if str(year) + str(month) == date[:6]]
-                if len(month_dates) != 0:
-                    year_list.append(month_dates)
-
-        # process each individual month for a given year in parallel
-        if len(year_list) > 0:
-            print('Starting {}'.format(year))
-            pool = Pool(processes=len(year_list))
-            pool.map(day_caller, year_list)
+    for year in range(2006, 2020):
+        months = pd.Series([x[:6] for x in dates if int(x[:4]) == year]).unique()
+        pool = Pool(processes=len(months))
+        pool.map(day_caller, months)
 
 
 if __name__ == '__main__':
     if 'README.md' in os.listdir('.'):
         os.chdir('Scripts/')
+
+    # get all unique dates for which we need to scrape data
+    dates = get_dates(unique=True)
+    dates.sort()
+
+    # get the expected number of games for each date counts
+    expected_counts = get_dates(unique=False)
+
     main()
-
-
-
-
-
 
