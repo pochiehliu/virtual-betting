@@ -7,8 +7,7 @@ CREATE TABLE player (
 
 CREATE TABLE team (
 	t_id int PRIMARY KEY,
-	name text NOT NULL,
-	city text NOT NULL
+	name text NOT NULL
 );
 
 CREATE TABLE users (
