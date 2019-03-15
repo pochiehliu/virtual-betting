@@ -1,0 +1,12 @@
+DATABASE INSERTIONS:
+Complete:
+	1) users
+	2) sportsbook
+	3) bet_type
+Incomplete:
+	1) player
+	2) team
+	3) game
+	4) player_game_stats
+	5) make_odds
+	6) place_bet

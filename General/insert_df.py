@@ -8,6 +8,7 @@ game_df = pd.read_csv('game_db_2018_june.csv')
 count = 1
 player_dict = {}
 
+# TODO: NEED TO CHANGE THE FIRST LAST; SOME PEOPLE HAVE > 2 NAMES
 for name in player_df.name.unique():
 	player_dict[name] = count
 	first, last = name.split(' ')
@@ -15,12 +16,14 @@ for name in player_df.name.unique():
 	INSERT INTO player VALUES (count, first, last)
 	count += 1
 
-##### build team	
+##### build team
 count = 1
 team_dict = {}
+
+# TODO: NEED TO UPDATE TEAM INSERTS TO NEW SCHEMA
 # need a city list
 for team in player_df.team.unique():
-	team_dict[team] =  count 
+	team_dict[team] =  count
 	%%sql
 	INSERT INTO team VALUES (count, name, city)
 	count += 1
