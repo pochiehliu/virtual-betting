@@ -2,7 +2,7 @@
 CREATE TABLE player (
 	p_id int PRIMARY KEY,
 	first_name text NOT NULL,
-	last_name text NOT NULL,
+	last_name text NOT NULL
 );
 
 CREATE TABLE team (
@@ -14,7 +14,7 @@ CREATE TABLE team (
 CREATE TABLE users (
 	u_id int PRIMARY KEY,
 	name text NOT NULL,
-	password NOT NULL,
+	password text NOT NULL
 );
 
 CREATE TABLE sportsbook (
