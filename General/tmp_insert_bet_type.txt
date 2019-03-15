@@ -1,3 +1,3 @@
-INSERT INT bet_type VALUES (1,	'moneyline');
-INSERT INT bet_type VALUES (2,	'overunder');
-INSERT INT bet_type VALUES (3,	'spread');
+INSERT INTO bet_type VALUES (1,	'moneyline');
+INSERT INTO bet_type VALUES (2,	'overunder');
+INSERT INTO bet_type VALUES (3,	'spread');
