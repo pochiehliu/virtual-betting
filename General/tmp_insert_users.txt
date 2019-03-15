@@ -1,0 +1,10 @@
+INSERT INTO users VALUE(1,  'Peter', 'abc');
+INSERT INTO users VALUE(2,'Paul' 'def');
+INSERT INTO users VALUE(3,'Eugen' 'ghi');
+INSERT INTO users VALUE(4,'Bob' '123');
+INSERT INTO users VALUE(5,'Alice' '444');
+INSERT INTO users VALUE(6,'Kuo' '555');
+INSERT INTO users VALUE(7,'John' '666');
+INSERT INTO users VALUE(8,'Muller' '0000');
+INSERT INTO users VALUE(9,'Zhao' '9453');
+INSERT INTO users VALUE(10,'Kiki' '0909');
