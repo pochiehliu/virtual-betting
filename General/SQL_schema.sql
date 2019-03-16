@@ -28,7 +28,7 @@ CREATE TABLE bet_type (
 );
 
 CREATE TABLE game(
-	g_id int PRIMARY KEY,
+	g_id VARCHAR (12) PRIMARY KEY,
 	game_time timestamp NOT NULL,
 	t_id_home int REFERENCES team (t_id),
 	t_id_away int REFERENCES team (t_id),
@@ -64,11 +64,11 @@ CREATE TABLE game(
 );
 
 CREATE TABLE player_game_stats (
-	g_id int REFERENCES game (g_id) ON DELETE NO ACTION,
+	g_id VARCHAR (12) REFERENCES game (g_id) ON DELETE NO ACTION,
 	p_id int REFERENCES player (p_id) ON DELETE NO ACTION,
 	PRIMARY KEY (g_id, p_id),
 	t_id int REFERENCES team (t_id),
-	minutes_played int NOT NULL,
+	minutes_played float NOT NULL,
 	field_goals_made int NOT NULL,
 	field_goal_attempts int NOT NULL,
 	three_pointers_made int NOT NULL,
@@ -84,14 +84,14 @@ CREATE TABLE player_game_stats (
 	personal_fouls int NOT NULL,
 	points int NOT NULL,
 	plus_minus int NOT NULL,
-	offensive_rebound_percentage int NOT NULL,
-	defensive_rebound_percentage int NOT NULL,
-	total_rebound_percentage int NOT NULL,
-	assist_percentage int NOT NULL,
-	steal_percentage int NOT NULL,
-	block_percentage int NOT NULL,
-	turnover_percentage int NOT NULL,
-	usage_percentage int NOT NULL,
+	offensive_rebound_percentage float NOT NULL,
+	defensive_rebound_percentage float NOT NULL,
+	total_rebound_percentage float NOT NULL,
+	assist_percentage float NOT NULL,
+	steal_percentage float NOT NULL,
+	block_percentage float NOT NULL,
+	turnover_percentage float NOT NULL,
+	usage_percentage float NOT NULL,
 	offensive_rating int NOT NULL,
 	defensive_rating int NOT NULL,
 	CHECK (
@@ -137,11 +137,10 @@ CREATE TABLE player_game_stats (
 
 -- odds lines table
 CREATE TABLE make_odds (
-	g_id int REFERENCES game (g_id) ON DELETE NO ACTION,
+	g_id VARCHAR (12) REFERENCES game (g_id) ON DELETE NO ACTION,
 	sb_id int REFERENCES sportsbook (sb_id) ON DELETE NO ACTION,
 	bt_id int REFERENCES bet_type (bt_id) ON DELETE NO ACTION,
 	odds_time timestamp NOT NULL, -- sportsbook will update odds intermittently
-	PRIMARY KEY (g_id, sb_id, bt_id, odds_time),
 	odds_side char NOT NULL,
 	CHECK (
 		odds_side = 'H' OR
@@ -149,19 +148,22 @@ CREATE TABLE make_odds (
 		odds_side = 'O' OR
 		odds_side = 'U'
 	),
+	PRIMARY KEY (g_id, sb_id, bt_id, odds_time, odds_side),
 	odds_payout float NOT NULL,
-	CHECK (odds_line >= 1), -- will use decimal odds
+	CHECK (odds_payout >= 1), -- will use decimal odds
 	odds_line float NOT NULL
 );
 
 
 -- user bet table
 CREATE TABLE place_bet(
-	g_id int,
+	g_id VARCHAR (12),
 	sb_id int,
 	bt_id int,
 	odds_time timestamp NOT NULL,
-	FOREIGN KEY (g_id, sb_id, bt_id, odds_time) REFERENCES make_odds(g_id, sb_id, bt_id, odds_time),
+	odds_side char NOT NULL,
+	FOREIGN KEY (g_id, sb_id, bt_id, odds_time, odds_side)
+	REFERENCES make_odds(g_id, sb_id, bt_id, odds_time, odds_side),
 	bet_time timestamp NOT NULL,
 	u_id int REFERENCES users (u_id) ON DELETE NO ACTION,
 	PRIMARY KEY (u_id, g_id, sb_id, bt_id, odds_time, bet_time)

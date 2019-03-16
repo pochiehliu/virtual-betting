@@ -3,10 +3,11 @@ Complete:
 	1) users
 	2) sportsbook
 	3) bet_type
+	4) player
+	5) team
+	6) game
+	7) player_game_stats
+	8) make_odds
+
 Incomplete:
-	1) player
-	2) team
-	3) game
-	4) player_game_stats
-	5) make_odds
-	6) place_bet
+	1) place_bet
