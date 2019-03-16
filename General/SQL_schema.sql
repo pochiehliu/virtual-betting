@@ -142,8 +142,16 @@ CREATE TABLE make_odds (
 	bt_id int REFERENCES bet_type (bt_id) ON DELETE NO ACTION,
 	odds_time timestamp NOT NULL, -- sportsbook will update odds intermittently
 	PRIMARY KEY (g_id, sb_id, bt_id, odds_time),
-	odds_line int NOT NULL,
-	CHECK (odds_line >= 1) -- will use decimal odds
+	odds_side char NOT NULL,
+	CHECK (
+		odds_side = 'H' OR
+		odds_side = 'V' OR
+		odds_side = 'O' OR
+		odds_side = 'U'
+	),
+	odds_payout float NOT NULL,
+	CHECK (odds_line >= 1), -- will use decimal odds
+	odds_line float NOT NULL
 );
 
 
