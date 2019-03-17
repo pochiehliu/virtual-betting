@@ -12,7 +12,9 @@ CREATE TABLE team (
 
 CREATE TABLE users (
 	u_id int PRIMARY KEY,
-	name text NOT NULL,
+	username text UNIQUE NOT NULL,
+	first_name text NOT NULL,
+	last_name text NOT NULL,
 	password text NOT NULL
 );
 
