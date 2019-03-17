@@ -137,6 +137,7 @@ CREATE TABLE player_game_stats (
 
 -- odds lines table
 CREATE TABLE make_odds (
+	o_id int PRIMARY KEY,
 	g_id VARCHAR (12) REFERENCES game (g_id) ON DELETE NO ACTION,
 	sb_id int REFERENCES sportsbook (sb_id) ON DELETE NO ACTION,
 	bt_id int REFERENCES bet_type (bt_id) ON DELETE NO ACTION,
@@ -148,7 +149,7 @@ CREATE TABLE make_odds (
 		odds_side = 'O' OR
 		odds_side = 'U'
 	),
-	PRIMARY KEY (g_id, sb_id, bt_id, odds_time, odds_side),
+	UNIQUE (g_id, sb_id, bt_id, odds_time, odds_side),
 	odds_payout float NOT NULL,
 	CHECK (odds_payout >= 1), -- will use decimal odds
 	odds_line float NOT NULL
@@ -157,14 +158,10 @@ CREATE TABLE make_odds (
 
 -- user bet table
 CREATE TABLE place_bet(
-	g_id VARCHAR (12),
-	sb_id int,
-	bt_id int,
-	odds_time timestamp NOT NULL,
-	odds_side char NOT NULL,
-	FOREIGN KEY (g_id, sb_id, bt_id, odds_time, odds_side)
-	REFERENCES make_odds(g_id, sb_id, bt_id, odds_time, odds_side),
+	o_id int REFERENCES make_odds (o_id),
 	bet_time timestamp NOT NULL,
 	u_id int REFERENCES users (u_id) ON DELETE NO ACTION,
-	PRIMARY KEY (u_id, g_id, sb_id, bt_id, odds_time, bet_time)
+	bet_size decimal(12, 2) NOT NULL,
+	CHECK (bet_size > 0),
+	PRIMARY KEY (o_id, bet_time, u_id)
 );
