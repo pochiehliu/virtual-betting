@@ -29,7 +29,7 @@ PLAYER_COLS = ['game_id', 'date', 'season', 'team', 'opp', 'starting_five', 'nam
                'tsp', 'efgp', 'tpar', 'ftr', 'orbp', 'drbp', 'trbp',
                'astp', 'stlp', 'blkp', 'tovp', 'usgp', 'ortg', 'drtg'
                ]
-GAME_COLS = ['game_id', 'date', 'season', 'arena', 'away_name', 'home_name', 'attendance',
+GAME_COLS = ['game_id', 'date', 'season', 'arena', 'away_name', 'home_name', 'att',
              'pace', 'ref1', 'ref2', 'ref3',
              'away_q1', 'away_q2', 'away_q3', 'away_q4', 'away_ot', 'away_final',
              'away_ortg', 'away_drtg',

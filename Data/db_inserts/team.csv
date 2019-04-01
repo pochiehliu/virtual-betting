@@ -1,0 +1,36 @@
+t_id,name,short,sbr_name
+0,Los Angeles Lakers,LAL,L.A. Lakers
+1,New Orleans Pelicans,NOP,New Orleans
+2,San Antonio Spurs,SAS,San Antonio
+3,Boston Celtics,BOS,Boston
+4,Charlotte Hornets,CHO,Charlotte
+5,Denver Nuggets,DEN,Denver
+6,Indiana Pacers,IND,Indiana
+7,Memphis Grizzlies,MEM,Memphis
+8,Miami Heat,MIA,Miami
+9,New York Knicks,NYK,New York
+10,Phoenix Suns,PHO,Phoenix
+11,Portland Trail Blazers,POR,Portland
+12,Sacramento Kings,SAC,Sacramento
+13,Toronto Raptors,TOR,Toronto
+14,Utah Jazz,UTA,Utah
+15,Cleveland Cavaliers,CLE,Cleveland
+16,Dallas Mavericks,DAL,Dallas
+17,Los Angeles Clippers,LAC,L.A. Clippers
+18,Minnesota Timberwolves,MIN,Minnesota
+19,Orlando Magic,ORL,Orlando
+20,Chicago Bulls,CHI,Chicago
+21,Milwaukee Bucks,MIL,Milwaukee
+22,Charlotte Bobcats,CHA,Charlotte
+23,Detroit Pistons,DET,Detroit
+24,Golden State Warriors,GSW,Golden State
+25,Washington Wizards,WAS,Washington
+26,Atlanta Hawks,ATL,Atlanta
+27,New Jersey Nets,NJN,NULL
+28,Philadelphia 76ers,PHI,Philadelphia
+29,Oklahoma City Thunder,OKC,Oklahoma City
+30,Houston Rockets,HOU,Houston
+31,New Orleans Hornets,NOH,New Orleans
+32,Brooklyn Nets,BRK,Brooklyn
+33,Seattle SuperSonics,SEA,NULL
+34,New Orleans/Oklahoma City Hornets,NOK,New Orleans
