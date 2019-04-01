@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200406010DET,"8:00 PM, June 1, 2004",2004,"The Palace of Auburn Hills, Auburn Hills, Michigan",Indiana Pacers,Detroit Pistons,"22,076",80.2,Mike Callahan, Dan Crawford, Jack Nies,23,10,17,15,0,65,81.0,86.0,11,16,19,23,0,69,86.0,81.0
 1,200406060LAL,"9:00 PM, June 6, 2004",2004,"STAPLES Center, Los Angeles, California",Detroit Pistons,Los Angeles Lakers,"18,997",80.3,Joe Crawford, Bob Delaney, Bernie Fryer,22,18,24,23,0,87,108.3,93.4,19,22,17,17,0,75,93.4,108.3
 2,200406080LAL,"9:00 PM, June 8, 2004",2004,"STAPLES Center, Los Angeles, California",Detroit Pistons,Los Angeles Lakers,"18,997",81.2,Joe DeRosa, Steve Javie, Bennett Salvatore,16,20,30,23,2,91,101.4,110.4,18,26,24,21,10,99,110.4,101.4

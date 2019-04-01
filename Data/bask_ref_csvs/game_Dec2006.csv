@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200612010ATL,"7:30 PM, December 1, 2006",2007,"Philips Arena, Atlanta, Georgia",Cleveland Cavaliers,Atlanta Hawks,"19,650",89.3,James Capers, Kevin Fehr, Tom Washington,32,30,17,27,0,106,118.7,106.4,26,26,27,16,0,95,106.4,118.7
 1,200612010DAL,"8:30 PM, December 1, 2006",2007,"American Airlines Center, Dallas, Texas",Sacramento Kings,Dallas Mavericks,"20,277",98.6,Derrick Collins, Ron Garretson, Scott Wall,19,22,24,25,0,90,91.3,110.5,38,24,28,19,0,109,110.5,91.3
 2,200612010DET,"8:00 PM, December 1, 2006",2007,"The Palace of Auburn Hills, Auburn Hills, Michigan",New York Knicks,Detroit Pistons,"22,076",90.5,Matt Boland, Scott Foster, Jess Kersey,25,24,22,29,0,100,110.5,119.3,29,27,28,24,0,108,119.3,110.5

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200603010BOS,"7:30 PM, March 1, 2006",2006,"TD Banknorth Garden, Boston, Massachusetts",Miami Heat,Boston Celtics,"18,624",82.8,James Capers, Bernie Fryer, Tommy Nunez,26,20,27,30,0,103,124.4,115.9,28,20,20,28,0,96,115.9,124.4
 1,200603010CLE,"7:00 PM, March 1, 2006",2006,"Gund Arena, Cleveland, Ohio",Sacramento Kings,Cleveland Cavaliers,"17,363",88.5,Derrick Collins, Dan Crawford, Rodney Mott,18,25,35,19,0,97,109.5,101.6,29,18,26,17,0,90,101.6,109.5
 2,200603010DEN,"9:00 PM, March 1, 2006",2006,"Pepsi Center, Denver, Colorado",Detroit Pistons,Denver Nuggets,"19,099",86.1,Scott Foster, Ron Garretson, Leroy Richardson,30,26,16,15,0,87,101.0,113.8,24,31,27,16,0,98,113.8,101.0

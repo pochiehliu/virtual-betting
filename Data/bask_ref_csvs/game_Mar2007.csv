@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200703010DAL,"8:00 PM, March 1, 2007",2007,"American Airlines Center, Dallas, Texas",Cleveland Cavaliers,Dallas Mavericks,"20,428",89.6,James Capers, Bob Delaney, Kevin Fehr,23,19,20,30,0,92,102.7,106.0,27,25,22,21,0,95,106.0,102.7
 1,200703010POR,"10:00 PM, March 1, 2007",2007,"Rose Garden Arena, Portland, Oregon",Charlotte Bobcats,Portland Trail Blazers,"15,063",92.1,Ron Garretson, Tommy Nunez, Ron Olesiak,16,24,26,24,0,90,97.7,137.8,31,29,43,24,0,127,137.8,97.7
 2,200703010SEA,"10:30 PM, March 1, 2007",2007,"KeyArena at Seattle Center, Seattle, Washington",Los Angeles Clippers,Seattle SuperSonics,"14,601",80.4,Bennie Adams, Jess Kersey, Mark Wunderlich,21,13,23,18,0,75,93.3,95.7,26,15,16,20,0,77,95.7,93.3

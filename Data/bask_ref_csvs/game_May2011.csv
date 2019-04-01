@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201105010MIA,"3:30 PM, May 1, 2011",2011,"AmericanAirlines Arena, Miami, Florida",Boston Celtics,Miami Heat,"20,021",89.5,Derrick Collins, Dan Crawford, Ed Malloy,14,22,26,28,0,90,100.6,110.7,20,31,25,23,0,99,110.7,100.6
 1,201105010OKC,"1:00 PM, May 1, 2011",2011,"Chesapeake Energy Arena, Oklahoma City, Oklahoma",Memphis Grizzlies,Oklahoma City Thunder,"18,203",90.1,Joe Crawford, Marc Davis, Zach Zarba,28,29,27,30,0,114,126.5,112.1,24,23,24,30,0,101,112.1,126.5
 2,201105020CHI,"8:00 PM, May 2, 2011",2011,"United Center, Chicago, Illinois",Atlanta Hawks,Chicago Bulls,"22,890",86.8,John Goble, Ken Mauer, Monty McCutchen,28,23,21,31,0,103,118.7,109.4,18,32,21,24,0,95,109.4,118.7

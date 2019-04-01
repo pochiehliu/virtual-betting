@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201204010BOS,"3:30 PM, April 1, 2012",2012,"TD Garden, Boston, Massachusetts",Miami Heat,Boston Celtics,"18,624",89.7,Dick Bavetta, Joe Crawford, Scott Wall,19,25,12,16,0,72,80.2,101.4,29,20,31,11,0,91,101.4,80.2
 1,201204010HOU,"7:00 PM, April 1, 2012",2012,"Toyota Center, Houston, Texas",Indiana Pacers,Houston Rockets,"18,197",84.2,Mike Callahan, Karl Lane, Leon Wood,27,17,19,30,11,104,111.8,109.7,23,19,31,20,9,102,109.7,111.8
 2,201204010LAL,"9:30 PM, April 1, 2012",2012,"STAPLES Center, Los Angeles, California",Golden State Warriors,Los Angeles Lakers,"18,997",92.2,Tony Brown, Kevin Cutler, Monty McCutchen,26,28,22,36,0,112,121.5,130.2,27,30,32,31,0,120,130.2,121.5

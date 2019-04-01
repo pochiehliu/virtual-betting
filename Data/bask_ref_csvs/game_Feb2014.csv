@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201402010ATL,"7:30 PM, February 1, 2014",2014,"Philips Arena, Atlanta, Georgia",Minnesota Timberwolves,Atlanta Hawks,"13,018",100.9,Brian Forte, Marat Kogut, Jason Phillips,24,30,21,38,0,113,111.9,118.9,25,23,38,34,0,120,118.9,111.9
 1,201402010DET,"7:30 PM, February 1, 2014",2014,"The Palace of Auburn Hills, Auburn Hills, Michigan",Philadelphia 76ers,Detroit Pistons,"16,649",101.6,Mark Ayotte, James Capers, Pat Fraher,22,27,21,26,0,96,94.5,111.2,32,25,36,20,0,113,111.2,94.5
 2,201402010HOU,"8:00 PM, February 1, 2014",2014,"Toyota Center, Houston, Texas",Cleveland Cavaliers,Houston Rockets,"18,309",96.4,Derrick Collins, John Goble, Haywoode Workman,23,29,21,19,0,92,95.5,110.0,31,30,23,22,0,106,110.0,95.5

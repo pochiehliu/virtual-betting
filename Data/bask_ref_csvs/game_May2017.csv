@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201705010CLE,"7:00 PM, May 1, 2017",2017,"Quicken Loans Arena, Cleveland, Ohio",Toronto Raptors,Cleveland Cavaliers,"20,562",100.1,Eric Lewis, Monty McCutchen, Derrick Stafford,18,30,26,31,0,105,104.8,115.8,30,32,34,20,0,116,115.8,104.8
 1,201705010SAS,"9:30 PM, May 1, 2017",2017,"AT&T Center, San Antonio, Texas",Houston Rockets,San Antonio Spurs,"18,418",102.4,Ed Malloy, Ken Mauer, Josh Tiven,34,35,27,30,0,126,123.0,96.7,23,16,28,32,0,99,96.7,123.0
 2,201705020BOS,"8:00 PM, May 2, 2017",2017,"TD Garden, Boston, Massachusetts",Washington Wizards,Boston Celtics,"18,624",96.0,Marc Davis, Rodney Mott, Tom Washington,42,25,22,25,5,119,112.3,121.7,29,35,20,30,15,129,121.7,112.3

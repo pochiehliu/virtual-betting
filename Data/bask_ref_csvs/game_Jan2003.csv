@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200301010ATL,"2:00 PM, January 1, 2003",2003,"Philips Arena, Atlanta, Georgia",Miami Heat,Atlanta Hawks,"8,414",90.8,Pat Fraher, David Jones, Greg Willard,22,33,28,24,0,107,117.8,80.4,25,17,18,13,0,73,80.4,117.8
 1,200301010NYK,"7:00 PM, January 1, 2003",2003,"Madison Square Garden (IV), New York, New York",Toronto Raptors,New York Knicks,"18,540",86.3,Tony Brothers, Bennett Salvatore, Leon Wood,23,14,25,13,0,75,86.9,110.1,22,28,22,23,0,95,110.1,86.9
 2,200301020CHI,"7:30 PM, January 2, 2003",2003,"United Center, Chicago, Illinois",Washington Wizards,Chicago Bulls,"23,049",95.3,Joe Crawford, Ronnie Nunn, Violet Palmer,32,23,27,25,0,107,112.3,86.0,20,17,19,26,0,82,86.0,112.3

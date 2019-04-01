@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201203010ORL,"8:00 PM, March 1, 2012",2012,"Amway Center, Orlando, Florida",Oklahoma City Thunder,Orlando Magic,"18,846",89.2,Kevin Fehr, David Jones, Ken Mauer,20,30,20,35,0,105,117.8,114.4,23,30,28,21,0,102,114.4,117.8
 1,201203010PHO,"9:00 PM, March 1, 2012",2012,"US Airways Center, Phoenix, Arizona",Minnesota Timberwolves,Phoenix Suns,"15,071",90.7,Kane Fitzgerald, Michael Smith, Scott Twardoski,23,28,23,21,0,95,104.7,114.6,22,24,31,27,0,104,114.6,104.7
 2,201203010POR,"10:30 PM, March 1, 2012",2012,"Rose Garden Arena, Portland, Oregon",Miami Heat,Portland Trail Blazers,"20,597",89.6,Eric Dalen, Bill Kennedy, J.T. Orr,32,28,27,20,0,107,119.5,103.8,24,18,27,24,0,93,103.8,119.5

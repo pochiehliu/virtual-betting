@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201811010ATL,"7:30 PM, November 1, 2018",2019,"State Farm Arena, Atlanta, Georgia",Sacramento Kings,Atlanta Hawks,"12,095",112.9,Mike Callahan,Jason Goldenberg,Josh Tiven,35,34,46,31,0,146,129.4,101.9,29,35,23,28,0,115,101.9,129.4
 1,201811010BOS,"8:00 PM, November 1, 2018",2019,"TD Garden, Boston, Massachusetts",Milwaukee Bucks,Boston Celtics,"18,624",100.8,Mitchell Ervin,Mark Lindsay,Tom Washington,16,37,25,35,0,113,112.1,116.1,23,32,38,24,0,117,116.1,112.1
 2,201811010CHO,"7:00 PM, November 1, 2018",2019,"Spectrum Center, Charlotte, North Carolina",Oklahoma City Thunder,Charlotte Hornets,"14,583",103.5,Matt Boland,Brett Nansel,Zach Zarba,24,20,29,38,0,111,107.2,103.3,22,26,29,30,0,107,103.3,107.2

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201201010CHI,"8:00 PM, January 1, 2012",2012,"United Center, Chicago, Illinois",Memphis Grizzlies,Chicago Bulls,"22,763",89.7,Violet Palmer, Eli Roe, Derrick Stafford,12,16,16,20,0,64,71.3,115.9,25,29,30,20,0,104,115.9,71.3
 1,201201010CLE,"6:00 PM, January 1, 2012",2012,"Quicken Loans Arena, Cleveland, Ohio",New Jersey Nets,Cleveland Cavaliers,"15,084",91.0,David Jones, Mark Lindsay, Derek Richardson,27,22,18,15,0,82,90.1,107.7,24,19,30,25,0,98,107.7,90.1
 2,201201010DEN,"8:00 PM, January 1, 2012",2012,"Pepsi Center, Denver, Colorado",Los Angeles Lakers,Denver Nuggets,"19,155",97.3,Bill Kennedy, Tommy Nunez, Leon Wood,21,15,35,19,0,90,92.5,101.8,26,21,25,27,0,99,101.8,92.5

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200203010BOS,"7:30 PM, March 1, 2002",2002,"FleetCenter, Boston, Massachusetts",Charlotte Hornets,Boston Celtics,"17,872",90.8,Dan Crawford, Scott Wall, Leon Wood,24,30,30,16,0,100,110.1,95.8,14,25,22,26,0,87,95.8,110.1
 1,200203010CHI,"8:30 PM, March 1, 2002",2002,"United Center, Chicago, Illinois",Washington Wizards,Chicago Bulls,"22,623",89.2,Dick Bavetta, James Capers, Dee Kantner,16,21,21,23,0,81,90.8,100.9,23,23,19,25,0,90,100.9,90.8
 2,200203010DEN,"9:00 PM, March 1, 2002",2002,"Pepsi Center, Denver, Colorado",Memphis Grizzlies,Denver Nuggets,"16,177",85.4,Pat Fraher, Michael Smith, Tom Washington,25,24,11,23,0,83,97.2,112.4,27,22,31,16,0,96,112.4,97.2

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200702010MIA,"8:00 PM, February 1, 2007",2007,"AmericanAirlines Arena, Miami, Florida",Cleveland Cavaliers,Miami Heat,"20,125",87.8,Sean Corbin, Monty McCutchen, Leroy Richardson,16,25,25,23,0,89,101.4,104.8,17,21,20,34,0,92,104.8,101.4
 1,200702010PHO,"10:30 PM, February 1, 2007",2007,"US Airways Center, Phoenix, Arizona",San Antonio Spurs,Phoenix Suns,"18,422",94.3,Dick Bavetta, Tony Brown, David Jones,22,31,17,17,0,87,92.3,109.2,16,34,22,31,0,103,109.2,92.3
 2,200702020ATL,"7:30 PM, February 2, 2007",2007,"Philips Arena, Atlanta, Georgia",Toronto Raptors,Atlanta Hawks,"13,200",83.6,Matt Boland, Mike Callahan, Jess Kersey,31,32,21,19,0,103,123.2,108.8,21,25,26,19,0,91,108.8,123.2

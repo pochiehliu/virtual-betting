@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200711010MIA,"8:00 PM, November 1, 2007",2008,"AmericanAirlines Arena, Miami, Florida",Detroit Pistons,Miami Heat,"19,600",90.3,Matt Boland, Joe DeRosa, Courtney Kirkland,26,22,18,25,0,91,100.8,88.6,22,20,20,18,0,80,88.6,100.8
 1,200711010SEA,"10:30 PM, November 1, 2007",2008,"KeyArena at Seattle Center, Seattle, Washington",Phoenix Suns,Seattle SuperSonics,"17,072",107.0,Ron Garretson, Jason Phillips, Leon Wood,27,28,24,27,0,106,99.0,92.5,26,32,24,17,0,99,92.5,99.0
 2,200711010UTA,"9:00 PM, November 1, 2007",2008,"EnergySolutions Arena, Salt Lake City, Utah",Houston Rockets,Utah Jazz,"19,911",96.4,Pat Fraher, Bill Kennedy, Eddie F. Rush,24,33,21,28,0,106,109.9,98.5,29,20,17,29,0,95,98.5,109.9

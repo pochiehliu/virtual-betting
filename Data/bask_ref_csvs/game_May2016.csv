@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201605010GSW,"3:30 PM, May 1, 2016",2016,"Oracle Arena, Oakland, California",Portland Trail Blazers,Golden State Warriors,"19,596",98.2,James Capers, John Goble, Monty McCutchen,17,34,22,33,0,106,107.9,120.1,37,28,28,25,0,118,120.1,107.9
 1,201605010MIA,"1:00 PM, May 1, 2016",2016,"AmericanAirlines Arena, Miami, Florida",Charlotte Hornets,Miami Heat,"19,868",92.6,Mike Callahan, Bill Kennedy, Ed Malloy,18,24,11,20,0,73,78.8,114.5,29,25,29,23,0,106,114.5,78.8
 2,201605010TOR,"8:00 PM, May 1, 2016",2016,"Air Canada Centre, Toronto, Canada",Indiana Pacers,Toronto Raptors,"20,669",83.2,Dan Crawford, Ron Garretson, Bill Spooner,23,21,20,20,0,84,100.9,106.9,28,22,28,11,0,89,106.9,100.9

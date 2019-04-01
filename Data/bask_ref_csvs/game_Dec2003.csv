@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200312010BOS,"7:00 PM, December 1, 2003",2004,"FleetCenter, Boston, Massachusetts",Memphis Grizzlies,Boston Celtics,"12,478",93.1,Luis Grillo, Bill Kennedy, Eddie F. Rush,19,25,27,25,0,96,103.1,95.6,23,20,27,19,0,89,95.6,103.1
 1,200312010CHI,"8:30 PM, December 1, 2003",2004,"United Center, Chicago, Illinois",Milwaukee Bucks,Chicago Bulls,"17,140",94.3,Mike Callahan, Violet Palmer, Gary Zielinski,27,16,26,18,0,87,92.2,102.8,19,30,19,29,0,97,102.8,92.2
 2,200312010LAC,"10:30 PM, December 1, 2003",2004,"STAPLES Center, Los Angeles, California",San Antonio Spurs,Los Angeles Clippers,"12,514",91.6,Sean Corbin, Ed Malloy, Derrick Stafford,18,14,19,32,0,83,90.6,99.4,18,28,16,29,0,91,99.4,90.6

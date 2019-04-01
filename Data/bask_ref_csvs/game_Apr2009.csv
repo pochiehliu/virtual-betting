@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200904010BOS,"7:30 PM, April 1, 2009",2009,"TD Banknorth Garden, Boston, Massachusetts",Charlotte Bobcats,Boston Celtics,"18,624",81.1,Dick Bavetta, Kevin Fehr, Mark Lindsay,33,18,26,16,16,109,111.2,113.2,26,28,17,22,18,111,113.2,111.2
 1,200904010DAL,"8:30 PM, April 1, 2009",2009,"American Airlines Center, Dallas, Texas",Miami Heat,Dallas Mavericks,"20,021",85.1,Jim Clark, Joe Crawford, Eric Dalen,27,20,26,23,0,96,112.9,115.2,26,20,25,27,0,98,115.2,112.9
 2,200904010GSW,"10:30 PM, April 1, 2009",2009,"Oracle Arena, Oakland, California",Sacramento Kings,Golden State Warriors,"18,743",108.1,Bob Delaney, Joe Forte, Eli Roe,40,36,30,26,9,141,118.2,119.8,37,30,43,22,11,143,119.8,118.2

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201002010DEN,"9:00 PM, February 1, 2010",2010,"Pepsi Center, Denver, Colorado",Sacramento Kings,Denver Nuggets,"15,544",94.2,Mark Ayotte, Curtis Blair, Greg Willard,26,38,14,21,10,109,104.8,107.6,26,24,23,26,13,112,107.6,104.8
 1,201002010MEM,"8:00 PM, February 1, 2010",2010,"FedEx Forum, Memphis, Tennessee",Los Angeles Lakers,Memphis Grizzlies,"18,119",92.6,Matt Boland, Brian Forte, Eddie F. Rush,24,26,21,22,0,93,100.4,102.6,24,28,18,25,0,95,102.6,100.4
 2,201002010MIA,"7:30 PM, February 1, 2010",2010,"AmericanAirlines Arena, Miami, Florida",Milwaukee Bucks,Miami Heat,"15,858",87.3,Scott Foster, David Guthrie, Courtney Kirkland,21,33,22,21,0,97,111.1,92.8,17,21,21,22,0,81,92.8,111.1

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200303010DAL,"8:30 PM, March 1, 2003",2003,"American Airlines Center, Dallas, Texas",Memphis Grizzlies,Dallas Mavericks,"19,828",94.0,Tony Brown, Blane Reichelt, Bill Spooner,28,21,17,21,0,87,92.5,121.2,32,20,28,34,0,114,121.2,92.5
 1,200303010GSW,"10:30 PM, March 1, 2003",2003,"The Arena in Oakland, Oakland, California",Detroit Pistons,Golden State Warriors,"17,348",82.6,Joe Crawford, Michael Henderson, Tom Washington,14,27,22,27,0,90,108.9,111.3,23,17,26,26,0,92,111.3,108.9
 2,200303010LAC,"10:30 PM, March 1, 2003",2003,"STAPLES Center, Los Angeles, California",Seattle SuperSonics,Los Angeles Clippers,"17,471",85.0,Bob Delaney, Jess Kersey, Mark Wunderlich,28,28,25,28,0,109,128.2,118.8,25,27,16,33,0,101,118.8,128.2

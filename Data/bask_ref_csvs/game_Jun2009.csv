@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200906040LAL,"9:00 PM, June 4, 2009",2009,"STAPLES Center, Los Angeles, California",Orlando Magic,Los Angeles Lakers,"18,997",86.2,Dan Crawford, Joe DeRosa, Ken Mauer,24,19,15,17,0,75,87.0,115.9,22,31,29,18,0,100,115.9,87.0
 1,200906070LAL,"8:00 PM, June 7, 2009",2009,"STAPLES Center, Los Angeles, California",Orlando Magic,Los Angeles Lakers,"18,997",88.0,Steve Javie, Monty McCutchen, Tom Washington,15,20,30,23,8,96,98.8,104.0,15,25,23,25,13,101,104.0,98.8
 2,200906090ORL,"9:00 PM, June 9, 2009",2009,"Amway Arena, Orlando, Florida",Los Angeles Lakers,Orlando Magic,"17,461",85.8,Joe Crawford, Derrick Stafford, Mark Wunderlich,31,23,21,29,0,104,121.3,125.9,27,32,22,27,0,108,125.9,121.3

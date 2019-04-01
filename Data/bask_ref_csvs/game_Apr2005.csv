@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200504010ATL,"7:30 PM, April 1, 2005",2005,"Philips Arena, Atlanta, Georgia",Boston Celtics,Atlanta Hawks,"16,602",90.4,Scott Foster, David Jones, Robbie Robinson,32,36,22,26,0,116,128.3,110.6,18,28,31,23,0,100,110.6,128.3
 1,200504010CHA,"7:00 PM, April 1, 2005",2005,"Charlotte Coliseum, Charlotte, North Carolina",Toronto Raptors,Charlotte Bobcats,"13,550",92.1,Tony Brown, Leroy Richardson, Bill Spooner,31,30,27,31,0,119,129.3,116.2,18,34,28,27,0,107,116.2,129.3
 2,200504010CLE,"8:00 PM, April 1, 2005",2005,"Gund Arena, Cleveland, Ohio",Sacramento Kings,Cleveland Cavaliers,"20,562",91.0,Joe Crawford, Luis Grillo, Olandis Poole,32,41,31,24,0,128,140.6,119.8,33,19,30,27,0,109,119.8,140.6

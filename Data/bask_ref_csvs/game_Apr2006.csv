@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200604010CHI,"8:30 PM, April 1, 2006",2006,"United Center, Chicago, Illinois",Boston Celtics,Chicago Bulls,"21,799",95.9,Scott Foster, Ron Garretson, Sean Wright,28,27,19,20,0,94,98.0,104.3,19,28,27,26,0,100,104.3,98.0
 1,200604010CLE,"2:00 PM, April 1, 2006",2006,"Gund Arena, Cleveland, Ohio",Miami Heat,Cleveland Cavaliers,"20,562",90.8,Joe Crawford, Jack Nies, Scott Wall,24,29,20,26,0,99,109.1,116.8,26,18,25,37,0,106,116.8,109.1
 2,200604010MIL,"8:30 PM, April 1, 2006",2006,"Bradley Center, Milwaukee, Wisconsin",Indiana Pacers,Milwaukee Bucks,"18,717",85.7,Mike Callahan, David Guthrie, Mark Wunderlich,21,26,25,17,0,89,103.9,112.0,19,22,33,22,0,96,112.0,103.9

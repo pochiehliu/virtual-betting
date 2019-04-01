@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200503010CHA,"7:00 PM, March 1, 2005",2005,"Charlotte Coliseum, Charlotte, North Carolina",Sacramento Kings,Charlotte Bobcats,"11,790",97.4,Bernie Fryer, Courtney Kirkland, Blane Reichelt,26,19,15,27,0,87,89.3,96.5,27,28,18,21,0,94,96.5,89.3
 1,200503010CHI,"8:30 PM, March 1, 2005",2005,"United Center, Chicago, Illinois",Houston Rockets,Chicago Bulls,"21,755",90.1,James Capers, Sean Corbin, Anthony Jordan,36,30,31,22,0,119,132.1,98.8,24,15,26,24,0,89,98.8,132.1
 2,200503010DEN,"9:00 PM, March 1, 2005",2005,"Pepsi Center, Denver, Colorado",Atlanta Hawks,Denver Nuggets,"15,341",87.4,Bob Delaney, Bill Kennedy, Jason Phillips,18,16,16,24,0,74,84.7,111.0,13,20,32,32,0,97,111.0,84.7

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200305010BOS,"7:00 PM, May 1, 2003",2003,"FleetCenter, Boston, Massachusetts",Indiana Pacers,Boston Celtics,"18,624",84.6,Joe Crawford, Luis Grillo, Bill Spooner,15,19,24,32,0,90,106.4,130.0,33,17,29,31,0,110,130.0,106.4
 1,200305010LAL,"10:30 PM, May 1, 2003",2003,"STAPLES Center, Los Angeles, California",Minnesota Timberwolves,Los Angeles Lakers,"18,997",91.7,Ron Garretson, Blane Reichelt, Bennett Salvatore,30,13,20,22,0,85,92.7,110.2,25,22,22,32,0,101,110.2,92.7
 2,200305010MIL,"8:00 PM, May 1, 2003",2003,"Bradley Center, Milwaukee, Wisconsin",New Jersey Nets,Milwaukee Bucks,"18,717",88.1,David Jones, Jack Nies, Derrick Stafford,30,26,32,25,0,113,128.2,114.6,18,26,26,31,0,101,114.6,128.2

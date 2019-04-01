@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201606020GSW,"9:00 PM, June 2, 2016",2016,"Oracle Arena, Oakland, California",Cleveland Cavaliers,Golden State Warriors,"19,596",89.5,Marc Davis, Ed Malloy, Ken Mauer,24,19,25,21,0,89,99.5,116.3,28,24,22,30,0,104,116.3,99.5
 1,201606050GSW,"8:00 PM, June 5, 2016",2016,"Oracle Arena, Oakland, California",Cleveland Cavaliers,Golden State Warriors,"19,596",93.2,Tony Brothers, James Capers, Scott Foster,21,23,18,15,0,77,82.6,118.1,19,33,30,28,0,110,118.1,82.6
 2,201606080CLE,"9:00 PM, June 8, 2016",2016,"Quicken Loans Arena, Cleveland, Ohio",Golden State Warriors,Cleveland Cavaliers,"20,562",93.7,Monty McCutchen, Derrick Stafford, Zach Zarba,16,27,26,21,0,90,96.1,128.1,33,18,38,31,0,120,128.1,96.1

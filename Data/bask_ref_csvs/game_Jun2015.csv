@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201506040GSW,"9:00 PM, June 4, 2015",2015,"Oracle Arena, Oakland, California",Cleveland Cavaliers,Golden State Warriors,"19,596",87.3,James Capers, Monty McCutchen, Jason Phillips,29,22,22,25,2,100,103.8,112.1,19,29,25,25,10,108,112.1,103.8
 1,201506070GSW,"8:00 PM, June 7, 2015",2015,"Oracle Arena, Oakland, California",Cleveland Cavaliers,Golden State Warriors,"19,596",91.0,Tony Brothers, Scott Foster, Zach Zarba,20,27,15,25,8,95,94.6,92.6,20,25,14,28,6,93,92.6,94.6
 2,201506090CLE,"9:00 PM, June 9, 2015",2015,"Quicken Loans Arena, Cleveland, Ohio",Golden State Warriors,Cleveland Cavaliers,"20,562",90.9,Dan Crawford, Marc Davis, Ed Malloy,20,17,18,36,0,91,100.1,105.6,24,20,28,24,0,96,105.6,100.1

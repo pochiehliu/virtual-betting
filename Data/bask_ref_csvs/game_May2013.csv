@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201305010IND,"8:00 PM, May 1, 2013",2013,"Bankers Life Fieldhouse, Indianapolis, Indiana",Atlanta Hawks,Indiana Pacers,"18,165",89.3,Derrick Collins, Monty McCutchen, Bennett Salvatore,22,21,24,16,0,83,93.0,118.7,21,29,31,25,0,106,118.7,93.0
 1,201305010NYK,"7:00 PM, May 1, 2013",2013,"Madison Square Garden (IV), New York, New York",Boston Celtics,New York Knicks,"19,033",86.3,James Capers, Sean Corbin, Joe Crawford,20,25,24,23,0,92,106.7,99.7,22,17,21,26,0,86,99.7,106.7
 2,201305010OKC,"10:30 PM, May 1, 2013",2013,"Chesapeake Energy Arena, Oklahoma City, Oklahoma",Houston Rockets,Oklahoma City Thunder,"18,203",92.0,Ed Malloy, Ken Mauer, Bill Spooner,30,20,37,20,0,107,116.3,108.7,26,17,32,25,0,100,108.7,116.3

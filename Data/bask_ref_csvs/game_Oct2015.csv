@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201510270ATL,"8:00 PM, October 27, 2015",2016,"Philips Arena, Atlanta, Georgia",Detroit Pistons,Atlanta Hawks,"19,187",95.3,Eli Roe, Michael Smith, Zach Zarba,25,23,34,24,0,106,111.2,98.6,25,18,23,28,0,94,98.6,111.2
 1,201510270CHI,"8:00 PM, October 27, 2015",2016,"United Center, Chicago, Illinois",Cleveland Cavaliers,Chicago Bulls,"21,957",99.5,Mark Ayotte, Scott Foster, Ben Taylor,17,23,28,27,0,95,95.5,97.5,26,20,25,26,0,97,97.5,95.5
 2,201510270GSW,"10:30 PM, October 27, 2015",2016,"Oracle Arena, Oakland, California",New Orleans Pelicans,Golden State Warriors,"19,596",100.1,James Capers, Derrick Collins, Scott Twardoski,35,14,26,20,0,95,94.9,110.9,39,20,35,17,0,111,110.9,94.9

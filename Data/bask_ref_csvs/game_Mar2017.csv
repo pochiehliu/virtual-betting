@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201703010ATL,"7:30 PM, March 1, 2017",2017,"Philips Arena, Atlanta, Georgia",Dallas Mavericks,Atlanta Hawks,"12,483",91.1,Mark Lindsay, Monty McCutchen, Justin Van Duyne,22,30,24,19,0,95,104.3,109.8,27,36,18,19,0,100,109.8,104.3
 1,201703010BOS,"8:00 PM, March 1, 2017",2017,"TD Garden, Boston, Massachusetts",Cleveland Cavaliers,Boston Celtics,"18,624",92.8,Tyler Ford, Scott Foster, Pat Fraher,26,24,21,28,0,99,106.6,110.9,20,29,25,29,0,103,110.9,106.6
 2,201703010LAC,"10:30 PM, March 1, 2017",2017,"STAPLES Center, Los Angeles, California",Houston Rockets,Los Angeles Clippers,"19,060",94.7,Derrick Collins, Bill Kennedy, Gediminas Petraitis,34,36,38,14,0,122,128.9,108.8,37,21,20,25,0,103,108.8,128.9

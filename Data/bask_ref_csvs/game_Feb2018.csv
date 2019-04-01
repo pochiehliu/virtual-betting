@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201802010DEN,"10:30 PM, February 1, 2018",2018,"Pepsi Center, Denver, Colorado",Oklahoma City Thunder,Denver Nuggets,"18,407",102.4,Tony Brown, Justin Van Duyne, Zach Zarba,33,24,32,35,0,124,121.1,124.0,40,32,32,23,0,127,124.0,121.1
 1,201802010DET,"7:00 PM, February 1, 2018",2018,"Little Caesars Arena, Detroit, Michigan",Memphis Grizzlies,Detroit Pistons,"17,481",95.8,Jason Goldenberg, Rodney Mott, Leroy Richardson,25,26,25,26,0,102,106.5,108.6,27,24,31,22,0,104,108.6,106.5
 2,201802010MIN,"8:00 PM, February 1, 2018",2018,"Target Center, Minneapolis, Minnesota",Milwaukee Bucks,Minnesota Timberwolves,"17,199",93.6,Pat Fraher, Ken Mauer, Jonathan Sterling,17,22,22,28,0,89,95.1,115.4,23,37,19,29,0,108,115.4,95.1

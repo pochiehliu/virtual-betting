@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200811010ATL,"7:00 PM, November 1, 2008",2009,"Philips Arena, Atlanta, Georgia",Philadelphia 76ers,Atlanta Hawks,"19,651",88.7,Mark Ayotte, Jim Clark, Bob Delaney,34,23,18,13,0,88,99.3,107.2,18,26,22,29,0,95,107.2,99.3
 1,200811010CHA,"7:00 PM, November 1, 2008",2009,"Time Warner Cable Arena, Charlotte, North Carolina",Miami Heat,Charlotte Bobcats,"19,238",84.6,David Jones, Eli Roe, Mark Wunderlich,18,23,27,19,0,87,102.9,118.2,24,28,25,23,0,100,118.2,102.9
 2,200811010CHI,"8:30 PM, November 1, 2008",2009,"United Center, Chicago, Illinois",Memphis Grizzlies,Chicago Bulls,"21,785",89.5,Joe DeRosa, Olandis Poole, Leon Wood,19,31,20,16,0,86,96.1,107.2,19,23,33,21,0,96,107.2,96.1

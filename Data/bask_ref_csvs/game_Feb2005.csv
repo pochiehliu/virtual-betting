@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200502010DAL,"8:30 PM, February 1, 2005",2005,"American Airlines Center, Dallas, Texas",Miami Heat,Dallas Mavericks,"20,465",94.5,Joe Forte, David Jones, Olandis Poole,26,27,25,26,0,104,110.0,115.3,24,26,37,22,0,109,115.3,110.0
 1,200502010DEN,"9:00 PM, February 1, 2005",2005,"Pepsi Center, Denver, Colorado",New York Knicks,Denver Nuggets,"15,821",90.9,Derrick Collins, Tim Donaghy, Eddie F. Rush,21,24,12,19,0,76,83.6,105.6,25,32,18,21,0,96,105.6,83.6
 2,200502010LAL,"10:30 PM, February 1, 2005",2005,"STAPLES Center, Los Angeles, California",Portland Trail Blazers,Los Angeles Lakers,"18,116",89.7,Bob Delaney, Violet Palmer, Gary Zielinski,29,10,20,20,0,79,88.0,102.5,26,23,20,23,0,92,102.5,88.0

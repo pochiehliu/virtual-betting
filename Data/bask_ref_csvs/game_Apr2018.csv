@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201804010ATL,"6:00 PM, April 1, 2018",2018,"Philips Arena, Atlanta, Georgia",Orlando Magic,Atlanta Hawks,"13,587",93.0,Marc Davis, J.B. DeRosa, Karl Lane,18,25,21,24,0,88,94.6,101.0,21,35,13,25,0,94,101.0,94.6
 1,201804010BRK,"6:00 PM, April 1, 2018",2018,"Barclays Center, Brooklyn, New York",Detroit Pistons,Brooklyn Nets,"16,097",96.5,Derrick Collins, David Guthrie, Jonathan Sterling,33,29,21,25,0,108,111.9,99.4,28,20,22,26,0,96,99.4,111.9
 2,201804010CHI,"3:30 PM, April 1, 2018",2018,"United Center, Chicago, Illinois",Washington Wizards,Chicago Bulls,"20,466",96.1,Jason Goldenberg, Kevin Scott, Derrick Stafford,27,32,16,19,0,94,97.8,117.6,36,32,19,26,0,113,117.6,97.8

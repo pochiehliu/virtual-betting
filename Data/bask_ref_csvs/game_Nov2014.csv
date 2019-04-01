@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201411010ATL,"7:30 PM, November 1, 2014",2015,"Philips Arena, Atlanta, Georgia",Indiana Pacers,Atlanta Hawks,"19,118",92.7,Steve Anderson, Mark Ayotte, James Capers,18,26,19,29,0,92,99.2,110.0,27,24,19,32,0,102,110.0,99.2
 1,201411010CHO,"7:00 PM, November 1, 2014",2015,"Time Warner Cable Arena, Charlotte, North Carolina",Memphis Grizzlies,Charlotte Hornets,"18,133",93.1,Brian Forte, Bill Spooner, Scott Twardoski,23,13,15,20,0,71,76.3,74.1,15,15,16,23,0,69,74.1,76.3
 2,201411010DET,"7:30 PM, November 1, 2014",2015,"The Palace of Auburn Hills, Auburn Hills, Michigan",Brooklyn Nets,Detroit Pistons,"19,904",86.8,Mike Callahan, Derek Richardson, Leroy Richardson,33,26,22,21,0,102,117.6,103.7,25,22,28,15,0,90,103.7,117.6

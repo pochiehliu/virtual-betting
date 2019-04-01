@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200804010CHI,"8:30 PM, April 1, 2008",2008,"United Center, Chicago, Illinois",Boston Celtics,Chicago Bulls,"22,225",90.6,Tony Brothers, Mike Callahan, Ed Malloy,22,28,29,27,0,106,117.0,101.5,17,26,30,19,0,92,101.5,117.0
 1,200804010DEN,"9:00 PM, April 1, 2008",2008,"Pepsi Center, Denver, Colorado",Phoenix Suns,Denver Nuggets,"18,870",107.5,Marc Davis, Kevin Fehr, Eddie F. Rush,28,37,30,25,0,120,111.6,117.2,36,34,31,25,0,126,117.2,111.6
 2,200804010MIL,"8:00 PM, April 1, 2008",2008,"Bradley Center, Milwaukee, Wisconsin",New York Knicks,Milwaukee Bucks,"13,579",97.0,Mark Ayotte, Derrick Collins, Mark Wunderlich,31,30,27,21,6,115,107.3,111.1,27,32,18,32,10,119,111.1,107.3

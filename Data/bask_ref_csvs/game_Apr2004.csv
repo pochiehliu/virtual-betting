@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200404010DAL,"8:00 PM, April 1, 2004",2004,"American Airlines Center, Dallas, Texas",Sacramento Kings,Dallas Mavericks,"20,533",100.2,Jess Kersey, Ed Malloy, Jack Nies,30,20,31,36,0,117,116.8,126.7,30,37,34,26,0,127,126.7,116.8
 1,200404010LAL,"10:30 PM, April 1, 2004",2004,"STAPLES Center, Los Angeles, California",Houston Rockets,Los Angeles Lakers,"18,997",97.1,Steve Javie, Derrick Stafford, Leon Wood,23,17,26,19,0,85,87.5,95.8,18,29,20,26,0,93,95.8,87.5
 2,200404010PHI,"7:00 PM, April 1, 2004",2004,"Wachovia Center, Philadelphia, Pennsylvania",Portland Trail Blazers,Philadelphia 76ers,"17,738",80.2,Bennie Adams, Joe Crawford, Luis Grillo,24,24,18,22,0,88,109.8,102.3,15,25,20,22,0,82,102.3,109.8

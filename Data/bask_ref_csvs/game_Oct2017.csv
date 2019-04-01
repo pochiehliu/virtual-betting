@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201710170CLE,"8:01 PM, October 17, 2017",2018,"Quicken Loans Arena, Cleveland, Ohio",Boston Celtics,Cleveland Cavaliers,"20,562",99.3,Brian Forte, Monty McCutchen, Michael Smith,19,19,33,28,0,99,99.7,102.7,29,25,18,30,0,102,102.7,99.7
 1,201710170GSW,"10:30 PM, October 17, 2017",2018,"Oracle Arena, Oakland, California",Houston Rockets,Golden State Warriors,"19,596",102.0,Scott Foster, Ron Garretson, Tre Maddox,34,28,26,34,0,122,119.6,118.6,35,36,30,20,0,121,118.6,119.6
 2,201710180BOS,"7:30 PM, October 18, 2017",2018,"TD Garden, Boston, Massachusetts",Milwaukee Bucks,Boston Celtics,"18,624",97.9,Jason Goldenberg, Mark Lindsay, Tom Washington,24,34,18,32,0,108,110.4,102.2,26,27,27,20,0,100,102.2,110.4

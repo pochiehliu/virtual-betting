@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201702010BOS,"7:30 PM, February 1, 2017",2017,"TD Garden, Boston, Massachusetts",Toronto Raptors,Boston Celtics,"18,624",93.7,Bennie Adams, Tony Brothers, Mitchell Ervin,30,32,23,19,0,104,111.0,116.3,28,23,26,32,0,109,116.3,111.0
 1,201702010BRK,"7:30 PM, February 1, 2017",2017,"Barclays Center, Brooklyn, New York",New York Knicks,Brooklyn Nets,"17,732",100.3,David Guthrie, Marat Kogut, Justin Van Duyne,15,23,26,31,0,95,94.7,89.7,27,18,24,21,0,90,89.7,94.7
 2,201702010CLE,"7:00 PM, February 1, 2017",2017,"Quicken Loans Arena, Cleveland, Ohio",Minnesota Timberwolves,Cleveland Cavaliers,"20,562",95.4,Tony Brown, Tyler Ford, Ed Malloy,32,28,19,18,0,97,101.7,131.0,36,27,30,32,0,125,131.0,101.7

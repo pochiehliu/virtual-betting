@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200102010CLE,"7:30 PM, February 1, 2001",2001,"Gund Arena, Cleveland, Ohio",Minnesota Timberwolves,Cleveland Cavaliers,"13,904",91.2,Joe Forte, Ron Olesiak, Michael Smith,23,21,20,26,0,90,98.7,88.8,21,18,20,22,0,81,88.8,98.7
 1,200102010DAL,"8:00 PM, February 1, 2001",2001,"Reunion Arena, Dallas, Texas",Miami Heat,Dallas Mavericks,"14,497",83.2,Joe Crawford, Blane Reichelt, Phil Robinson,24,22,19,22,4,91,99.1,103.4,24,24,24,15,8,95,103.4,99.1
 2,200102010HOU,"8:30 PM, February 1, 2001",2001,"Compaq Center, Houston, Texas",Los Angeles Clippers,Houston Rockets,"11,124",82.4,Ron Garretson, Leroy Richardson, Derrick Stafford,22,28,29,22,0,101,122.6,102.0,14,22,21,27,0,84,102.0,122.6

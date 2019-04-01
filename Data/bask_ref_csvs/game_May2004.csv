@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200405020NOH,"1:00 PM, May 2, 2004",2004,"New Orleans Arena, New Orleans, Louisiana",Miami Heat,New Orleans Hornets,"17,297",89.4,Sean Corbin, Joe Crawford, Blane Reichelt,14,19,22,28,0,83,92.9,99.6,21,22,26,20,0,89,99.6,92.9
 1,200405020SAS,"3:30 PM, May 2, 2004",2004,"SBC Center, San Antonio, Texas",Los Angeles Lakers,San Antonio Spurs,"18,797",91.6,Dick Bavetta, Lorenzo Bronson, Jim Clark,14,19,32,13,0,78,85.2,96.1,21,20,21,26,0,88,96.1,85.2
 2,200405030DET,"8:00 PM, May 3, 2004",2004,"The Palace of Auburn Hills, Auburn Hills, Michigan",New Jersey Nets,Detroit Pistons,"22,076",81.8,Mike Callahan, Luis Grillo, Eddie F. Rush,14,11,14,17,0,56,68.5,95.3,18,19,20,21,0,78,95.3,68.5

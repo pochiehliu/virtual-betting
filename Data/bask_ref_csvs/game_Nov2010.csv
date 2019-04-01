@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201011010CHI,"8:00 PM, November 1, 2010",2011,"United Center, Chicago, Illinois",Portland Trail Blazers,Chicago Bulls,"21,057",88.4,Rodney Mott, Greg Willard, Haywoode Workman,21,26,26,25,0,98,110.8,124.4,32,24,32,22,0,110,124.4,110.8
 1,201011010LAC,"10:30 PM, November 1, 2010",2011,"STAPLES Center, Los Angeles, California",San Antonio Spurs,Los Angeles Clippers,"14,964",94.4,Kane Fitzgerald, Derrick Stafford, Zach Zarba,26,24,25,22,0,97,102.7,93.2,26,18,21,23,0,88,93.2,102.7
 2,201011010SAC,"10:00 PM, November 1, 2010",2011,"Power Balance Pavilion, Sacramento, California",Toronto Raptors,Sacramento Kings,"17,317",90.4,Joe Crawford, Pat Fraher, Marat Kogut,33,29,24,22,0,108,119.5,122.8,16,35,27,33,0,111,122.8,119.5

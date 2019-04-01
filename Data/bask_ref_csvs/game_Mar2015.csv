@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201503010BOS,"6:00 PM, March 1, 2015",2015,"TD Garden, Boston, Massachusetts",Golden State Warriors,Boston Celtics,"18,624",96.9,James Capers,Mark Lindsay,Violet Palmer,25,24,26,31,0,106,109.4,104.2,38,27,21,15,0,101,104.2,109.4
 1,201503010CHI,"1:00 PM, March 1, 2015",2015,"United Center, Chicago, Illinois",Los Angeles Clippers,Chicago Bulls,"21,680",90.8,Joe Crawford,David Jones,Leroy Richardson,26,17,26,27,0,96,105.7,94.7,18,23,28,17,0,86,94.7,105.7
 2,201503010DEN,"8:00 PM, March 1, 2015",2015,"Pepsi Center, Denver, Colorado",New Orleans Pelicans,Denver Nuggets,"13,109",91.7,Ron Garretson,David Guthrie,Dedric Taylor,21,16,28,34,0,99,107.9,100.3,16,21,28,27,0,92,100.3,107.9

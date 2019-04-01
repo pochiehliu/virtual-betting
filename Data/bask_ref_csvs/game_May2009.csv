@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200905010MIA,"8:00 PM, May 1, 2009",2009,"AmericanAirlines Arena, Miami, Florida",Atlanta Hawks,Miami Heat,"19,600",81.2,Sean Corbin, Marc Davis, Mark Wunderlich,18,24,14,16,0,72,88.7,120.7,32,19,27,20,0,98,120.7,88.7
 1,200905020BOS,"8:00 PM, May 2, 2009",2009,"TD Banknorth Garden, Boston, Massachusetts",Chicago Bulls,Boston Celtics,"18,624",95.0,Steve Javie, Monty McCutchen, Greg Willard,28,11,33,27,0,99,104.2,114.8,23,29,26,31,0,109,114.8,104.2
 2,200905030ATL,"1:00 PM, May 3, 2009",2009,"Philips Arena, Atlanta, Georgia",Miami Heat,Atlanta Hawks,"18,864",79.5,Joe Crawford, Ron Garretson, Bennett Salvatore,18,18,16,26,0,78,98.1,114.4,20,29,19,23,0,91,114.4,98.1

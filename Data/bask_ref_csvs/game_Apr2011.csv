@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201104010ATL,"8:00 PM, April 1, 2011",2011,"Philips Arena, Atlanta, Georgia",Boston Celtics,Atlanta Hawks,"19,763",85.3,Tony Brown, Monty McCutchen, Jason Phillips,21,31,16,15,0,83,97.4,103.2,23,21,18,26,0,88,103.2,97.4
 1,201104010DET,"7:30 PM, April 1, 2011",2011,"The Palace of Auburn Hills, Auburn Hills, Michigan",Chicago Bulls,Detroit Pistons,"22,076",91.9,Eric Dalen, Marc Davis, Tom Washington,31,27,22,21,0,101,109.9,104.4,21,26,25,24,0,96,104.4,109.9
 2,201104010HOU,"8:30 PM, April 1, 2011",2011,"Toyota Center, Houston, Texas",San Antonio Spurs,Houston Rockets,"18,059",93.7,Dick Bavetta, Matt Boland, Derrick Collins,27,29,29,23,6,114,110.2,115.0,31,33,23,21,11,119,115.0,110.2

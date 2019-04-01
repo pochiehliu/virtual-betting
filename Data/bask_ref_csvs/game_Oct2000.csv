@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200010310ATL,"7:30 PM, October 31, 2000",2001,"Philips Arena, Atlanta, Georgia",Charlotte Hornets,Atlanta Hawks,"18,465",88.4,Hank Armstrong, Hue Hollins, Tom Washington,28,22,33,23,0,106,119.9,92.8,13,34,15,20,0,82,92.8,119.9
 1,200010310CHI,"8:30 PM, October 31, 2000",2001,"United Center, Chicago, Illinois",Sacramento Kings,Chicago Bulls,"21,814",90.4,Tim Donaghy, Don Vaden, Leon Wood,25,21,23,31,0,100,110.6,89.6,19,23,22,17,0,81,89.6,110.6
 2,200010310DAL,"8:00 PM, October 31, 2000",2001,"Reunion Arena, Dallas, Texas",Milwaukee Bucks,Dallas Mavericks,"16,600",93.8,Bob Delaney, Leroy Richardson, Derrick Stafford,21,25,27,20,0,93,99.1,103.4,30,23,28,16,0,97,103.4,99.1

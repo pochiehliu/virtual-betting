@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201004010DAL,"8:00 PM, April 1, 2010",2010,"American Airlines Center, Dallas, Texas",Orlando Magic,Dallas Mavericks,"19,965",86.2,Dan Crawford, David Guthrie, Ed Malloy,18,25,29,25,0,97,112.5,95.1,16,20,20,26,0,82,95.1,112.5
 1,201004010DEN,"10:30 PM, April 1, 2010",2010,"Pepsi Center, Denver, Colorado",Portland Trail Blazers,Denver Nuggets,"19,155",90.1,Ron Garretson, Eli Roe, Michael Smith,24,31,21,16,0,92,102.1,121.0,27,29,31,22,0,109,121.0,102.1
 2,201004020BOS,"7:30 PM, April 2, 2010",2010,"TD Garden, Boston, Massachusetts",Houston Rockets,Boston Celtics,"18,624",88.7,Pat Fraher, Leroy Richardson, Eddie F. Rush,32,25,30,22,10,119,121.5,116.4,30,23,30,26,5,114,116.4,121.5

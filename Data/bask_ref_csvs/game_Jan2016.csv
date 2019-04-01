@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201601010CHI,"8:00 PM, January 1, 2016",2016,"United Center, Chicago, Illinois",New York Knicks,Chicago Bulls,"22,443",88.1,Mike Callahan, Karl Lane, Mark Lindsay,18,32,23,8,0,81,91.9,122.5,34,22,21,31,0,108,122.5,91.9
 1,201601010LAL,"10:30 PM, January 1, 2016",2016,"STAPLES Center, Los Angeles, California",Philadelphia 76ers,Los Angeles Lakers,"18,997",94.4,Mitchell Ervin, Monty McCutchen, Josh Tiven,21,20,19,24,0,84,89.0,98.5,21,19,22,31,0,93,98.5,89.0
 2,201601010MIA,"7:30 PM, January 1, 2016",2016,"AmericanAirlines Arena, Miami, Florida",Dallas Mavericks,Miami Heat,"19,748",88.6,Steve Anderson, Scott Foster, David Jones,10,35,16,21,0,82,92.5,119.6,22,36,22,26,0,106,119.6,92.5

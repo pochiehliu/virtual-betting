@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200204020ATL,"7:30 PM, April 2, 2002",2002,"Philips Arena, Atlanta, Georgia",Milwaukee Bucks,Atlanta Hawks,"9,149",91.5,Bennie Adams, Dick Bavetta, David Jones,25,19,21,27,0,92,100.6,109.3,14,30,31,25,0,100,109.3,100.6
 1,200204020CLE,"7:00 PM, April 2, 2002",2002,"Gund Arena, Cleveland, Ohio",Phoenix Suns,Cleveland Cavaliers,"13,688",94.0,Tony Brothers, Bob Delaney, Violet Palmer,24,25,16,31,0,96,102.2,107.5,25,28,22,26,0,101,107.5,102.2
 2,200204020DEN,"9:00 PM, April 2, 2002",2002,"Pepsi Center, Denver, Colorado",Utah Jazz,Denver Nuggets,"17,042",96.3,Ted Bernhardt, Bill Kennedy, Ron Olesiak,27,17,17,29,0,90,93.5,101.8,23,15,29,31,0,98,101.8,93.5

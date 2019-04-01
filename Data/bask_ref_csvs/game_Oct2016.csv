@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201610250CLE,"7:30 PM, October 25, 2016",2017,"Quicken Loans Arena, Cleveland, Ohio",New York Knicks,Cleveland Cavaliers,"20,562",99.9,Bennie Adams, Bill Kennedy, Karl Lane,18,27,19,24,0,88,88.1,117.1,28,20,34,35,0,117,117.1,88.1
 1,201610250GSW,"10:30 PM, October 25, 2016",2017,"Oracle Arena, Oakland, California",San Antonio Spurs,Golden State Warriors,"19,596",98.3,Dan Crawford, Pat Fraher, Tre Maddox,31,33,33,32,0,129,131.3,101.8,20,26,31,23,0,100,101.8,131.3
 2,201610250POR,"10:00 PM, October 25, 2016",2017,"Moda Center, Portland, Oregon",Utah Jazz,Portland Trail Blazers,"19,446",90.5,Tony Brown, Nick Buchert, Mike Callahan,26,20,37,21,0,104,114.9,124.8,26,28,23,36,0,113,124.8,114.9

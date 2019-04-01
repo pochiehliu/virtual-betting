@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201502010BOS,"1:00 PM, February 1, 2015",2015,"TD Garden, Boston, Massachusetts",Miami Heat,Boston Celtics,"17,366",90.6,Matt Boland, Derrick Stafford, Haywoode Workman,25,19,17,22,0,83,91.6,82.8,15,16,28,16,0,75,82.8,91.6
 1,201502010NYK,"2:00 PM, February 1, 2015",2015,"Madison Square Garden (IV), New York, New York",Los Angeles Lakers,New York Knicks,"19,812",86.8,Mike Callahan, Kevin Cutler, Pat Fraher,19,20,18,23,0,80,92.2,106.0,32,15,25,20,0,92,106.0,92.2
 2,201502020BRK,"7:30 PM, February 2, 2015",2015,"Barclays Center, Brooklyn, New York",Los Angeles Clippers,Brooklyn Nets,"16,037",96.3,Eli Roe, Bennett Salvatore, Kevin Scott,22,14,36,28,0,100,103.9,105.9,22,16,32,32,0,102,105.9,103.9

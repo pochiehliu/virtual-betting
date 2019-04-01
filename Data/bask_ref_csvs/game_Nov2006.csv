@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200611010BOS,"7:30 PM, November 1, 2006",2007,"TD Banknorth Garden, Boston, Massachusetts",New Orleans/Oklahoma City Hornets,Boston Celtics,"18,624",100.7,Bennie Adams, Bill Kennedy, Bill Spooner,26,28,21,16,0,91,90.3,86.4,16,25,24,22,0,87,86.4,90.3
 1,200611010CHA,"7:00 PM, November 1, 2006",2007,"Charlotte Bobcats Arena, Charlotte, North Carolina",Indiana Pacers,Charlotte Bobcats,"18,518",101.2,David Guthrie, David Jones, Eli Roe,23,26,28,29,0,106,104.7,97.8,27,23,23,26,0,99,97.8,104.7
 2,200611010CLE,"8:00 PM, November 1, 2006",2007,"Quicken Loans Arena, Cleveland, Ohio",Washington Wizards,Cleveland Cavaliers,"20,562",89.4,Dan Crawford, Kevin Fehr, Jack Nies,28,17,24,25,0,94,105.1,108.5,26,21,28,22,0,97,108.5,105.1

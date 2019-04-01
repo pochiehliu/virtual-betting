@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201406050SAS,"9:00 PM, June 5, 2014",2014,"AT&T Center, San Antonio, Texas",Miami Heat,San Antonio Spurs,"18,581",92.1,Marc Davis, Scott Foster, Ken Mauer,20,29,29,17,0,95,103.2,119.5,26,28,20,36,0,110,119.5,103.2
 1,201406080SAS,"8:00 PM, June 8, 2014",2014,"AT&T Center, San Antonio, Texas",Miami Heat,San Antonio Spurs,"18,581",87.2,James Capers, Dan Crawford, Jason Phillips,19,24,34,21,0,98,112.4,110.1,26,17,35,18,0,96,110.1,112.4
 2,201406100MIA,"9:00 PM, June 10, 2014",2014,"AmericanAirlines Arena, Miami, Florida",San Antonio Spurs,Miami Heat,"19,900",84.8,Tony Brothers, Monty McCutchen, Zach Zarba,41,30,15,25,0,111,131.0,108.5,25,25,25,17,0,92,108.5,131.0

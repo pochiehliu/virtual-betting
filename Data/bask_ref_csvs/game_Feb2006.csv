@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200602010BOS,"7:30 PM, February 1, 2006",2006,"TD Banknorth Garden, Boston, Massachusetts",Phoenix Suns,Boston Celtics,"15,019",92.7,Joe DeRosa,Anthony Jordan,Mark Wunderlich,26,33,16,27,0,102,110.0,101.4,16,22,31,25,0,94,101.4,110.0
 1,200602010CHA,"7:30 PM, February 1, 2006",2006,"Charlotte Bobcats Arena, Charlotte, North Carolina",Atlanta Hawks,Charlotte Bobcats,"14,411",95.9,Bennie Adams,Kevin Fehr,Jack Nies,25,20,29,28,0,102,106.4,95.9,25,15,23,29,0,92,95.9,106.4
 2,200602010CLE,"7:00 PM, February 1, 2006",2006,"Gund Arena, Cleveland, Ohio",New Jersey Nets,Cleveland Cavaliers,"19,460",91.9,Pat Fraher,Monty McCutchen,Greg Willard,15,20,27,23,0,85,92.5,99.0,17,17,28,29,0,91,99.0,92.5

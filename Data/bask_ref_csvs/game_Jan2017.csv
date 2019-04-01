@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201701010ATL,"6:00 PM, January 1, 2017",2017,"Philips Arena, Atlanta, Georgia",San Antonio Spurs,Atlanta Hawks,"18,088",91.5,Tony Brown,Pat Fraher,Haywoode Workman,27,19,28,26,12,112,110.8,112.8,25,19,25,31,14,114,112.8,110.8
 1,201701010IND,"6:00 PM, January 1, 2017",2017,"Bankers Life Fieldhouse, Indianapolis, Indiana",Orlando Magic,Indiana Pacers,"17,530",98.3,James Capers,Kane Fitzgerald,Tyler Ford,17,34,22,31,0,104,105.8,119.1,27,35,27,28,0,117,119.1,105.8
 2,201701010LAL,"9:30 PM, January 1, 2017",2017,"STAPLES Center, Los Angeles, California",Toronto Raptors,Los Angeles Lakers,"18,997",95.6,Eric Dalen,Scott Foster,Ben Taylor,27,31,27,38,0,123,128.6,119.2,33,24,26,31,0,114,119.2,128.6

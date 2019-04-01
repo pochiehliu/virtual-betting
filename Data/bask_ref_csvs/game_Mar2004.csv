@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200403010BOS,"7:00 PM, March 1, 2004",2004,"FleetCenter, Boston, Massachusetts",Orlando Magic,Boston Celtics,"13,636",93.2,Tim Donaghy, Phil Robinson, Greg Willard,26,31,25,14,0,96,103.0,125.5,27,29,31,30,0,117,125.5,103.0
 1,200403010CHI,"8:30 PM, March 1, 2004",2004,"United Center, Chicago, Illinois",Cleveland Cavaliers,Chicago Bulls,"19,203",84.6,James Capers, Dan Crawford, Leroy Richardson,23,14,19,25,0,81,95.8,108.8,21,30,23,18,0,92,108.8,95.8
 2,200403010SAS,"8:30 PM, March 1, 2004",2004,"SBC Center, San Antonio, Texas",Memphis Grizzlies,San Antonio Spurs,"16,705",88.4,Bob Delaney, Kevin Fehr, Derrick Stafford,21,22,14,24,0,81,91.7,90.5,26,21,21,12,0,80,90.5,91.7

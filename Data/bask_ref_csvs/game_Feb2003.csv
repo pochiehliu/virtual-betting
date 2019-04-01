@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200302010DAL,"8:30 PM, February 1, 2003",2003,"American Airlines Center, Dallas, Texas",Denver Nuggets,Dallas Mavericks,"19,889",95.5,James Capers, Joe Forte, Gary Zielinski,31,23,16,30,0,100,104.8,127.8,29,29,40,24,0,122,127.8,104.8
 1,200302010DET,"7:30 PM, February 1, 2003",2003,"The Palace of Auburn Hills, Auburn Hills, Michigan",New Jersey Nets,Detroit Pistons,"22,076",84.0,Tim Donaghy, Michael Henderson, Tom Washington,25,16,20,23,0,84,99.9,126.1,34,25,17,30,0,106,126.1,99.9
 2,200302010IND,"7:00 PM, February 1, 2003",2003,"Conseco Fieldhouse, Indianapolis, Indiana",Boston Celtics,Indiana Pacers,"18,345",96.5,Kevin Fehr, Scott Foster, Greg Willard,23,29,26,22,0,100,103.6,112.9,30,28,30,21,0,109,112.9,103.6

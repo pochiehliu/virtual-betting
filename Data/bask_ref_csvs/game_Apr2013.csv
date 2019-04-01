@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201304010ATL,"7:30 PM, April 1, 2013",2013,"Philips Arena, Atlanta, Georgia",Cleveland Cavaliers,Atlanta Hawks,"13,026",91.7,Brent Barnaky, John Goble, Ken Mauer,19,25,24,26,0,94,102.5,111.2,25,27,27,23,0,102,111.2,102.5
 1,201304010HOU,"8:00 PM, April 1, 2013",2013,"Toyota Center, Houston, Texas",Orlando Magic,Houston Rockets,"16,273",94.0,Dan Crawford, Tre Maddox, Scott Wall,14,29,31,29,0,103,109.6,118.1,32,33,25,21,0,111,118.1,109.6
 2,201304010LAC,"10:30 PM, April 1, 2013",2013,"STAPLES Center, Los Angeles, California",Indiana Pacers,Los Angeles Clippers,"19,384",87.7,Violet Palmer, Derrick Stafford, Zach Zarba,29,22,30,28,0,109,124.4,120.9,21,22,22,41,0,106,120.9,124.4

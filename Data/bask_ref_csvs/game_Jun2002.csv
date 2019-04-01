@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200206020SAC,"7:30 PM, June 2, 2002",2002,"ARCO Arena (II), Sacramento, California",Los Angeles Lakers,Sacramento Kings,"17,317",94.4,Dan Crawford, Bernie Fryer, Eddie F. Rush,22,30,21,27,12,112,107.4,101.7,21,33,20,26,6,106,101.7,107.4
 1,200206050LAL,"9:00 PM, June 5, 2002",2002,"STAPLES Center, Los Angeles, California",New Jersey Nets,Los Angeles Lakers,"18,997",90.2,Joe Crawford, Ron Garretson, Jack Nies,14,22,27,31,0,94,104.2,109.8,29,19,24,27,0,99,109.8,104.2
 2,200206070LAL,"9:00 PM, June 7, 2002",2002,"STAPLES Center, Los Angeles, California",New Jersey Nets,Los Angeles Lakers,"18,997",88.7,Steve Javie, Bennett Salvatore, Don Vaden,21,22,18,22,0,83,93.6,119.6,27,22,28,29,0,106,119.6,93.6

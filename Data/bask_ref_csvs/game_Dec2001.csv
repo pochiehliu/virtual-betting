@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200112010ATL,"2:00 PM, December 1, 2001",2002,"Philips Arena, Atlanta, Georgia",Toronto Raptors,Atlanta Hawks,"18,628",95.0,Ted Bernhardt, Ken Mauer, Phil Robinson,25,25,30,24,0,104,109.5,108.4,19,23,30,31,0,103,108.4,109.5
 1,200112010CHI,"8:30 PM, December 1, 2001",2002,"United Center, Chicago, Illinois",Philadelphia 76ers,Chicago Bulls,"20,212",91.2,Joe Forte, Courtney Kirkland, Mike Mathis,31,25,16,21,0,93,102.0,83.4,11,29,8,28,0,76,83.4,102.0
 2,200112010CLE,"7:30 PM, December 1, 2001",2002,"Gund Arena, Cleveland, Ohio",Charlotte Hornets,Cleveland Cavaliers,"12,498",88.5,Marc Davis, Joe DeRosa, Leroy Richardson,19,26,17,19,0,81,91.6,105.1,16,30,27,20,0,93,105.1,91.6

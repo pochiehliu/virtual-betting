@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200412010BOS,"7:00 PM, December 1, 2004",2005,"FleetCenter, Boston, Massachusetts",Milwaukee Bucks,Boston Celtics,"13,180",94.0,Tim Donaghy, Jack Nies, Tommy Nunez,28,30,22,20,0,100,106.4,107.5,30,24,29,18,0,101,107.5,106.4
 1,200412010CHI,"8:30 PM, December 1, 2004",2005,"United Center, Chicago, Illinois",Los Angeles Lakers,Chicago Bulls,"18,524",90.2,Marc Davis, Pat Fraher, Bernie Fryer,20,20,25,19,0,84,93.2,102.0,20,25,26,21,0,92,102.0,93.2
 2,200412010GSW,"10:30 PM, December 1, 2004",2005,"Oakland Arena, Oakland, California",Minnesota Timberwolves,Golden State Warriors,"15,706",94.5,Violet Palmer, Tom Washington, Zach Zarba,29,22,27,29,0,107,113.2,104.8,27,27,30,15,0,99,104.8,113.2

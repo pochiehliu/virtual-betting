@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200810280BOS,"8:00 PM, October 28, 2008",2009,"TD Banknorth Garden, Boston, Massachusetts",Cleveland Cavaliers,Boston Celtics,"18,624",92.9,James Capers, Joe DeRosa, Olandis Poole,28,22,13,22,0,85,91.5,96.9,22,21,24,23,0,90,96.9,91.5
 1,200810280CHI,"8:30 PM, October 28, 2008",2009,"United Center, Chicago, Illinois",Milwaukee Bucks,Chicago Bulls,"21,762",89.8,Mark Ayotte, Jim Clark, Bob Delaney,26,26,23,20,0,95,105.8,120.3,26,29,27,26,0,108,120.3,105.8
 2,200810280LAL,"10:30 PM, October 28, 2008",2009,"STAPLES Center, Los Angeles, California",Portland Trail Blazers,Los Angeles Lakers,"18,997",89.1,Joe Forte, David Guthrie, Ken Mauer,14,20,19,23,0,76,85.3,107.7,24,25,23,24,0,96,107.7,85.3

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200912010CHA,"7:00 PM, December 1, 2009",2010,"Time Warner Cable Arena, Charlotte, North Carolina",Boston Celtics,Charlotte Bobcats,"15,129",86.7,Matt Boland, Derek Richardson, Mark Wunderlich,29,33,26,20,0,108,124.5,103.8,18,21,27,24,0,90,103.8,124.5
 1,200912010DEN,"9:00 PM, December 1, 2009",2010,"Pepsi Center, Denver, Colorado",Golden State Warriors,Denver Nuggets,"14,570",104.3,Kevin Cutler, Joe DeRosa, John Goble,28,27,29,23,0,107,102.6,129.4,25,44,38,28,0,135,129.4,102.6
 2,200912010LAL,"10:30 PM, December 1, 2009",2010,"STAPLES Center, Los Angeles, California",New Orleans Hornets,Los Angeles Lakers,"18,997",98.6,Joe Forte, Ron Garretson, Eric Lewis,27,15,27,30,0,99,100.4,111.5,31,31,28,20,0,110,111.5,100.4

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200402010MIN,"2:00 PM, February 1, 2004",2004,"Target Center, Minneapolis, Minnesota",Philadelphia 76ers,Minnesota Timberwolves,"16,987",93.0,Tony Brown, Michael Smith, Greg Willard,36,27,17,21,0,101,108.6,114.0,23,29,27,27,0,106,114.0,108.6
 1,200402010TOR,"12:30 PM, February 1, 2004",2004,"Air Canada Centre, Toronto, Canada",Los Angeles Lakers,Toronto Raptors,"20,116",89.4,Derrick Collins, Scott Foster, Luis Grillo,23,31,17,13,0,84,93.9,92.8,23,15,23,22,0,83,92.8,93.9
 2,200402010WAS,"12:00 PM, February 1, 2004",2004,"MCI Center, Washington, District of Columbia",Cleveland Cavaliers,Washington Wizards,"15,541",99.7,Ted Bernhardt, Tony Brothers, Pat Fraher,24,18,36,26,0,104,104.3,100.3,18,29,17,36,0,100,100.3,104.3

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201206010BOS,"8:30 PM, June 1, 2012",2012,"TD Garden, Boston, Massachusetts",Miami Heat,Boston Celtics,"18,624",87.0,Mike Callahan, Scott Foster, Rodney Mott,28,14,21,28,0,91,104.6,116.1,30,25,30,16,0,101,116.1,104.6
 1,201206020OKC,"8:30 PM, June 2, 2012",2012,"Chesapeake Energy Arena, Oklahoma City, Oklahoma",San Antonio Spurs,Oklahoma City Thunder,"18,203",90.5,James Capers, Ed Malloy, Ken Mauer,26,17,28,32,0,103,113.8,120.4,26,29,20,34,0,109,120.4,113.8
 2,201206030BOS,"8:30 PM, June 3, 2012",2012,"TD Garden, Boston, Massachusetts",Miami Heat,Boston Celtics,"18,624",86.7,Joe Crawford, Bill Kennedy, Greg Willard,23,24,21,21,2,91,95.1,97.2,34,27,12,16,4,93,97.2,95.1

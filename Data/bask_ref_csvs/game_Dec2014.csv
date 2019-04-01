@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201412010LAC,"10:30 PM, December 1, 2014",2015,"STAPLES Center, Los Angeles, California",Minnesota Timberwolves,Los Angeles Clippers,"19,060",99.6,Brent Barnaky, Kevin Cutler, Bill Kennedy,34,16,18,33,0,101,101.4,127.5,31,34,36,26,0,127,127.5,101.4
 1,201412010PHI,"7:00 PM, December 1, 2014",2015,"Wells Fargo Center, Philadelphia, Pennsylvania",San Antonio Spurs,Philadelphia 76ers,"12,843",99.4,Matt Boland, Eric Lewis, Ed Malloy,27,34,23,25,0,109,109.7,103.6,20,26,27,30,0,103,103.6,109.7
 2,201412010UTA,"9:00 PM, December 1, 2014",2015,"EnergySolutions Arena, Salt Lake City, Utah",Denver Nuggets,Utah Jazz,"16,768",94.2,Curtis Blair, Marc Davis, Leroy Richardson,26,36,21,20,0,103,109.3,107.2,23,20,34,24,0,101,107.2,109.3

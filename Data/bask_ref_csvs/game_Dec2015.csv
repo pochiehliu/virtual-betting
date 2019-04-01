@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201512010BRK,"7:30 PM, December 1, 2015",2016,"Barclays Center, Brooklyn, New York",Phoenix Suns,Brooklyn Nets,"12,787",96.2,Eric Lewis, Mark Lindsay, Tre Maddox,20,22,31,18,0,91,94.6,97.7,25,26,19,24,0,94,97.7,94.6
 1,201512010CLE,"7:00 PM, December 1, 2015",2016,"Quicken Loans Arena, Cleveland, Ohio",Washington Wizards,Cleveland Cavaliers,"20,562",98.3,Brent Barnaky, Derrick Stafford, Justin Van Duyne,27,27,26,17,0,97,98.6,86.4,24,19,24,18,0,85,86.4,98.6
 2,201512010MIN,"8:00 PM, December 1, 2015",2016,"Target Center, Minneapolis, Minnesota",Orlando Magic,Minnesota Timberwolves,"10,694",93.0,Derrick Collins, Lauren Holtkamp, Rodney Mott,21,33,22,20,0,96,103.3,100.0,14,27,26,26,0,93,100.0,103.3

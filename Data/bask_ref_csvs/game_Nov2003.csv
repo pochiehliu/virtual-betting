@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200311010ATL,"7:00 PM, November 1, 2003",2004,"Philips Arena, Atlanta, Georgia",Indiana Pacers,Atlanta Hawks,"18,818",90.8,Gary Benson, Bernie Fryer, David Jones,15,20,32,23,13,103,102.7,98.7,26,23,18,23,9,99,98.7,102.7
 1,200311010DAL,"8:30 PM, November 1, 2003",2004,"American Airlines Center, Dallas, Texas",Utah Jazz,Dallas Mavericks,"19,923",92.0,Jim Clark, Sean Corbin, Kevin Fehr,26,18,31,27,0,102,110.9,138.0,29,27,41,30,0,127,138.0,110.9
 2,200311010DEN,"9:00 PM, November 1, 2003",2004,"Pepsi Center, Denver, Colorado",Sacramento Kings,Denver Nuggets,"18,111",98.3,Tim Donaghy, Phil Robinson, Mark Wunderlich,25,30,23,10,0,88,89.5,110.9,34,32,21,22,0,109,110.9,89.5

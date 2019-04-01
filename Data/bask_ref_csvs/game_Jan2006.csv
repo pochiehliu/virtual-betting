@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200601010LAL,"9:30 PM, January 1, 2006",2006,"STAPLES Center, Los Angeles, California",Utah Jazz,Los Angeles Lakers,"18,310",84.6,Tony Brothers, Mike Callahan, Ed Malloy,22,31,23,22,0,98,115.8,111.1,22,27,24,21,0,94,111.1,115.8
 1,200601010MIA,"6:00 PM, January 1, 2006",2006,"AmericanAirlines Arena, Miami, Florida",Minnesota Timberwolves,Miami Heat,"20,274",82.9,Bennie Adams, Mark Ayotte, Ken Mauer,23,21,15,11,0,70,84.4,117.0,15,26,32,24,0,97,117.0,84.4
 2,200601010POR,"9:00 PM, January 1, 2006",2006,"Rose Garden Arena, Portland, Oregon",Los Angeles Clippers,Portland Trail Blazers,"13,792",87.6,Matt Boland, Rodney Mott, Jack Nies,26,29,25,20,0,100,114.2,107.4,20,26,22,26,0,94,107.4,114.2
