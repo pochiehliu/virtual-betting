@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201101010CHI,"7:00 PM, January 1, 2011",2011,"United Center, Chicago, Illinois",Cleveland Cavaliers,Chicago Bulls,"21,416",95.4,Marc Davis, Pat Fraher, Derek Richardson,28,33,9,21,0,91,95.4,104.8,24,29,32,15,0,100,104.8,95.4
 1,201101010DEN,"9:00 PM, January 1, 2011",2011,"Pepsi Center, Denver, Colorado",Sacramento Kings,Denver Nuggets,"17,466",101.2,Mike Callahan, Tommy Nunez, Leon Wood,23,16,21,26,0,86,85.0,102.8,23,28,18,35,0,104,102.8,85.0
 2,201101010MIA,"7:30 PM, January 1, 2011",2011,"AmericanAirlines Arena, Miami, Florida",Golden State Warriors,Miami Heat,"20,254",95.4,Courtney Kirkland, Derrick Stafford, Haywoode Workman,36,36,12,23,0,107,112.2,119.6,28,30,25,31,0,114,119.6,112.2

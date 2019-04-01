@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200712010CHI,"8:30 PM, December 1, 2007",2008,"United Center, Chicago, Illinois",Charlotte Bobcats,Chicago Bulls,"21,729",89.3,Dick Bavetta, Derrick Collins, Mark Lindsay,23,34,18,20,0,95,106.4,124.4,31,27,28,25,0,111,124.4,106.4
 1,200712010MEM,"8:00 PM, December 1, 2007",2008,"FedEx Forum, Memphis, Tennessee",Minnesota Timberwolves,Memphis Grizzlies,"12,896",96.5,Ron Garretson, Violet Palmer, Leroy Richardson,21,19,15,25,0,80,82.9,113.0,26,23,30,30,0,109,113.0,82.9
 2,200712010MIL,"8:30 PM, December 1, 2007",2008,"Bradley Center, Milwaukee, Wisconsin",Detroit Pistons,Milwaukee Bucks,"17,326",90.5,Joe Forte, Phil Robinson, Michael Smith,28,28,28,33,0,117,129.3,100.5,22,20,23,26,0,91,100.5,129.3

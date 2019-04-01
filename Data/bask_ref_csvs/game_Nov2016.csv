@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201611010CLE,"6:00 PM, November 1, 2016",2017,"Quicken Loans Arena, Cleveland, Ohio",Houston Rockets,Cleveland Cavaliers,"20,562",92.8,Kevin Cutler, Courtney Kirkland, Sean Wright,35,24,25,36,0,120,129.3,138.0,29,34,22,43,0,128,138.0,129.3
 1,201611010DET,"7:30 PM, November 1, 2016",2017,"The Palace of Auburn Hills, Auburn Hills, Michigan",New York Knicks,Detroit Pistons,"13,087",94.7,John Goble, Ed Malloy, Brett Nansel,29,26,24,10,0,89,93.9,107.7,32,32,22,16,0,102,107.7,93.9
 2,201611010IND,"7:00 PM, November 1, 2016",2017,"Bankers Life Fieldhouse, Indianapolis, Indiana",Los Angeles Lakers,Indiana Pacers,"15,348",102.9,Derrick Collins, Dan Crawford, Jacyn Goble,18,33,28,29,0,108,104.9,111.7,27,35,22,31,0,115,111.7,104.9

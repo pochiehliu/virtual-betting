@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201505010BRK,"8:00 PM, May 1, 2015",2015,"Barclays Center, Brooklyn, New York",Atlanta Hawks,Brooklyn Nets,"17,732",97.1,John Goble, Ed Malloy, Ken Mauer,36,15,41,19,0,111,114.3,89.6,23,22,21,21,0,87,89.6,114.3
 1,201505020LAC,"8:00 PM, May 2, 2015",2015,"STAPLES Center, Los Angeles, California",San Antonio Spurs,Los Angeles Clippers,"19,588",92.6,James Capers, Monty McCutchen, Jason Phillips,30,25,23,31,0,109,117.7,119.9,28,29,22,32,0,111,119.9,117.7
 2,201505030ATL,"1:00 PM, May 3, 2015",2015,"Philips Arena, Atlanta, Georgia",Washington Wizards,Atlanta Hawks,"18,148",92.4,Scott Foster, Pat Fraher, Ron Garretson,26,27,28,23,0,104,112.6,106.1,37,26,20,15,0,98,106.1,112.6

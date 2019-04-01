@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200705010DAL,"9:30 PM, May 1, 2007",2007,"American Airlines Center, Dallas, Texas",Golden State Warriors,Dallas Mavericks,"21,041",96.0,Jim Clark, Bernie Fryer, Ken Mauer,28,27,32,25,0,112,116.7,122.9,38,24,28,28,0,118,122.9,116.7
 1,200705010TOR,"7:00 PM, May 1, 2007",2007,"Air Canada Centre, Toronto, Canada",New Jersey Nets,Toronto Raptors,"20,511",85.4,Mike Callahan, Bob Delaney, Monty McCutchen,13,29,25,29,0,96,112.5,114.8,33,26,20,19,0,98,114.8,112.5
 2,200705020PHO,"10:30 PM, May 2, 2007",2007,"US Airways Center, Phoenix, Arizona",Los Angeles Lakers,Phoenix Suns,"18,422",100.1,Scott Foster, Eddie F. Rush, Greg Willard,23,29,33,25,0,110,109.9,118.9,32,32,27,28,0,119,118.9,109.9

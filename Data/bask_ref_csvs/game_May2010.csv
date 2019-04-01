@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201005010CLE,"8:00 PM, May 1, 2010",2010,"Quicken Loans Arena, Cleveland, Ohio",Boston Celtics,Cleveland Cavaliers,"20,562",90.1,Jason Phillips, Eddie F. Rush, Bill Spooner,26,28,24,15,0,93,103.2,112.1,20,23,36,22,0,101,112.1,103.2
 1,201005020ATL,"1:00 PM, May 2, 2010",2010,"Philips Arena, Atlanta, Georgia",Milwaukee Bucks,Atlanta Hawks,"19,241",79.2,Joe Crawford, Scott Foster, Greg Willard,13,27,20,14,0,74,93.4,119.9,20,33,20,22,0,95,119.9,93.4
 2,201005020LAL,"3:30 PM, May 2, 2010",2010,"STAPLES Center, Los Angeles, California",Utah Jazz,Los Angeles Lakers,"18,997",91.6,Mike Callahan, James Capers, Monty McCutchen,23,22,28,26,0,99,108.1,113.5,30,23,28,23,0,104,113.5,108.1

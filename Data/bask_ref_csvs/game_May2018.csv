@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201805010GSW,"10:30 PM, May 1, 2018",2018,"Oracle Arena, Oakland, California",New Orleans Pelicans,Golden State Warriors,"19,596",109.7,Mike Callahan, Jason Phillips, Sean Wright,29,26,31,30,0,116,105.8,110.3,27,31,30,33,0,121,110.3,105.8
 1,201805010TOR,"8:00 PM, May 1, 2018",2018,"Air Canada Centre, Toronto, Canada",Cleveland Cavaliers,Toronto Raptors,"19,954",89.1,Pat Fraher, Derrick Stafford, Tom Washington,19,38,25,23,8,113,114.9,113.9,33,27,27,18,7,112,113.9,114.9
 2,201805020HOU,"8:00 PM, May 2, 2018",2018,"Toyota Center, Houston, Texas",Utah Jazz,Houston Rockets,"18,055",102.7,Tony Brothers, Scott Foster, Rodney Mott,36,28,22,30,0,116,113.0,105.2,28,27,30,23,0,108,105.2,113.0

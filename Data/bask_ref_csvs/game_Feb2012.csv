@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201202010BOS,"7:30 PM, February 1, 2012",2012,"TD Garden, Boston, Massachusetts",Toronto Raptors,Boston Celtics,"18,624",84.1,James Capers, David Jones, Courtney Kirkland,16,19,14,15,0,64,76.1,119.0,29,28,20,23,0,100,119.0,76.1
 1,201202010DAL,"8:00 PM, February 1, 2012",2012,"American Airlines Center, Dallas, Texas",Oklahoma City Thunder,Dallas Mavericks,"20,316",94.5,Mark Ayotte, Ron Garretson, Michael Smith,21,28,22,24,0,95,100.6,91.0,29,23,14,20,0,86,91.0,100.6
 2,201202010MIL,"8:00 PM, February 1, 2012",2012,"Bradley Center, Milwaukee, Wisconsin",Miami Heat,Milwaukee Bucks,"16,116",92.8,Curtis Blair, Eddie F. Rush, Leon Wood,40,20,19,18,0,97,104.5,113.2,23,24,29,29,0,105,113.2,104.5

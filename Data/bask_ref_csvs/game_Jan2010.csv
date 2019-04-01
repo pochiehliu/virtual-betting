@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201001010ATL,"7:30 PM, January 1, 2010",2010,"Philips Arena, Atlanta, Georgia",New York Knicks,Atlanta Hawks,"17,366",87.7,Matt Boland, Joe Crawford, Derek Richardson,22,33,12,32,13,112,115.7,111.5,26,28,26,19,9,108,111.5,115.7
 1,201001010LAL,"10:30 PM, January 1, 2010",2010,"STAPLES Center, Los Angeles, California",Sacramento Kings,Los Angeles Lakers,"18,997",93.2,Rodney Mott, Bill Spooner, Scott Twardoski,28,36,22,22,0,108,115.9,116.9,23,26,30,30,0,109,116.9,115.9
 2,201001010MIN,"8:00 PM, January 1, 2010",2010,"Target Center, Minneapolis, Minnesota",Orlando Magic,Minnesota Timberwolves,"17,065",90.7,Courtney Kirkland, Ed Malloy, Ken Mauer,24,27,22,33,0,106,116.9,103.7,26,19,26,23,0,94,103.7,116.9

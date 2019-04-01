@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200110300CLE,"7:00 PM, October 30, 2001",2002,"Gund Arena, Cleveland, Ohio",Boston Celtics,Cleveland Cavaliers,"17,748",96.8,Dan Crawford, Scott Foster, Pat Fraher,33,32,27,16,0,108,111.6,92.0,19,26,14,30,0,89,92.0,111.6
 1,200110300DAL,"8:30 PM, October 30, 2001",2002,"American Airlines Center, Dallas, Texas",Detroit Pistons,Dallas Mavericks,"19,200",87.5,Dick Bavetta, Leroy Richardson, Michael Smith,25,19,20,23,0,87,99.4,107.4,17,23,29,25,0,94,107.4,99.4
 2,200110300HOU,"8:30 PM, October 30, 2001",2002,"Compaq Center, Houston, Texas",Atlanta Hawks,Houston Rockets,"9,500",88.4,Jim Clark, Terry Durham, Bill Kennedy,22,19,17,18,8,84,86.1,91.2,19,26,18,13,13,89,91.2,86.1

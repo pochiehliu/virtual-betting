@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200704010ATL,"2:00 PM, April 1, 2007",2007,"Philips Arena, Atlanta, Georgia",Chicago Bulls,Atlanta Hawks,"17,687",92.9,Dick Bavetta, Violet Palmer, Robbie Robinson,32,20,23,30,0,105,113.0,104.4,31,25,17,24,0,97,104.4,113.0
 1,200704010BOS,"6:00 PM, April 1, 2007",2007,"TD Banknorth Garden, Boston, Massachusetts",Cleveland Cavaliers,Boston Celtics,"17,204",95.8,Jim Clark, Derrick Collins, Tom Washington,16,33,20,27,0,96,100.3,102.3,28,25,27,18,0,98,102.3,100.3
 2,200704010DET,"1:00 PM, April 1, 2007",2007,"The Palace of Auburn Hills, Auburn Hills, Michigan",Miami Heat,Detroit Pistons,"22,076",84.3,Tony Brothers, Dan Crawford, Jason Phillips,24,22,23,19,0,88,104.3,111.5,13,28,24,29,0,94,111.5,104.3

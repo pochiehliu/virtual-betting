@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200606010DAL,"8:30 PM, June 1, 2006",2006,"American Airlines Center, Dallas, Texas",Phoenix Suns,Dallas Mavericks,"20,977",90.6,Dan Crawford, Ken Mauer, Jack Nies,23,32,26,20,0,101,111.5,129.1,36,22,24,35,0,117,129.1,111.5
 1,200606020MIA,"8:00 PM, June 2, 2006",2006,"AmericanAirlines Arena, Miami, Florida",Detroit Pistons,Miami Heat,"20,258",82.8,Mike Callahan, Steve Javie, Eddie F. Rush,20,16,17,25,0,78,94.2,114.8,25,22,25,23,0,95,114.8,94.2
 2,200606030PHO,"10:30 PM, June 3, 2006",2006,"America West Arena, Phoenix, Arizona",Dallas Mavericks,Phoenix Suns,"18,422",91.0,Dick Bavetta, Bob Delaney, Bernie Fryer,14,25,23,40,0,102,112.1,102.2,29,22,15,27,0,93,102.2,112.1

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201604010ATL,"8:00 PM, April 1, 2016",2016,"Philips Arena, Atlanta, Georgia",Cleveland Cavaliers,Atlanta Hawks,"19,427",101.4,Ron Garretson, Tre Maddox, Sean Wright,32,23,22,19,14,110,98.2,96.4,23,18,30,25,12,108,96.4,98.2
 1,201604010CHO,"7:00 PM, April 1, 2016",2016,"Time Warner Cable Arena, Charlotte, North Carolina",Philadelphia 76ers,Charlotte Hornets,"19,244",97.3,Eric Dalen, Michael Smith, Scott Twardoski,25,25,16,25,0,91,93.5,102.7,25,34,22,19,0,100,102.7,93.5
 2,201604010DET,"7:30 PM, April 1, 2016",2016,"The Palace of Auburn Hills, Auburn Hills, Michigan",Dallas Mavericks,Detroit Pistons,"19,031",90.3,Pat Fraher, Ben Taylor, Tom Washington,25,26,20,27,0,98,108.5,98.5,25,11,25,28,0,89,98.5,108.5

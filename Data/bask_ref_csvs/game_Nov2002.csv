@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200211010CHI,"8:30 PM, November 1, 2002",2003,"United Center, Chicago, Illinois",New Orleans Hornets,Chicago Bulls,"21,246",86.2,James Capers, Bernie Fryer, Leon Wood,17,22,17,23,0,79,91.6,97.4,18,24,19,23,0,84,97.4,91.6
 1,200211010DEN,"9:00 PM, November 1, 2002",2003,"Pepsi Center, Denver, Colorado",Houston Rockets,Denver Nuggets,"18,030",86.4,Joe Crawford, Jason Phillips, Derrick Stafford,29,11,16,27,0,83,96.1,85.7,23,15,15,21,0,74,85.7,96.1
 2,200211010DET,"8:00 PM, November 1, 2002",2003,"The Palace of Auburn Hills, Auburn Hills, Michigan",Memphis Grizzlies,Detroit Pistons,"18,113",93.4,Bob Delaney, Courtney Kirkland, Ken Mauer,18,16,23,29,0,86,92.1,116.7,31,23,26,29,0,109,116.7,92.1

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200511010NOK,"8:00 PM, November 1, 2005",2006,"Ford Center, Oklahoma City, Oklahoma",Sacramento Kings,New Orleans/Oklahoma City Hornets,"19,163",94.6,Jess Kersey, Robbie Robinson, Derrick Stafford,21,12,19,15,0,67,70.8,98.3,22,22,28,21,0,93,98.3,70.8
 1,200511010PHI,"7:00 PM, November 1, 2005",2006,"Wachovia Center, Philadelphia, Pennsylvania",Milwaukee Bucks,Philadelphia 76ers,"17,705",90.2,Ron Garretson, Jason Phillips, Michael Smith,29,21,23,29,15,117,117.4,108.4,32,23,19,28,6,108,108.4,117.4
 2,200511010PHO,"10:30 PM, November 1, 2005",2006,"America West Arena, Phoenix, Arizona",Dallas Mavericks,Phoenix Suns,"17,961",93.1,Dick Bavetta, Sean Corbin, Violet Palmer,24,19,20,27,21,111,98.7,96.0,25,28,21,16,18,108,96.0,98.7

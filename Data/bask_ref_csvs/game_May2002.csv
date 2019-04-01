@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200205010PHI,"8:00 PM, May 1, 2002",2002,"First Union Center, Philadelphia, Pennsylvania",Boston Celtics,Philadelphia 76ers,"20,904",85.7,Dick Bavetta, Mike Callahan, Ron Garretson,20,16,25,20,0,81,94.5,96.8,16,22,18,27,0,83,96.8,94.5
 1,200205010SEA,"10:30 PM, May 1, 2002",2002,"KeyArena at Seattle Center, Seattle, Washington",San Antonio Spurs,Seattle SuperSonics,"17,072",86.9,Bennett Salvatore, Bill Spooner, Don Vaden,13,18,28,20,0,79,90.9,104.7,24,33,19,15,0,91,104.7,90.9
 2,200205020DET,"8:30 PM, May 2, 2002",2002,"The Palace of Auburn Hills, Auburn Hills, Michigan",Toronto Raptors,Detroit Pistons,"22,076",85.2,Joe DeRosa, Steve Javie, Eddie F. Rush,26,22,11,23,0,82,96.2,99.7,21,25,17,22,0,85,99.7,96.2

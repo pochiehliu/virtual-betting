@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200105010DAL,"9:30 PM, May 1, 2001",2001,"Reunion Arena, Dallas, Texas",Utah Jazz,Dallas Mavericks,"18,300",86.4,Bernie Fryer, Steve Javie, Mark Wunderlich,24,18,21,14,0,77,89.1,123.8,17,28,36,26,0,107,123.8,89.1
 1,200105010ORL,"7:00 PM, May 1, 2001",2001,"TD Waterhouse Centre, Orlando, Florida",Milwaukee Bucks,Orlando Magic,"17,248",90.8,Jim Clark, Joe Crawford, Joe DeRosa,22,35,40,15,0,112,123.3,114.5,36,25,26,17,0,104,114.5,123.3
 2,200105020IND,"9:00 PM, May 2, 2001",2001,"Conseco Fieldhouse, Indianapolis, Indiana",Philadelphia 76ers,Indiana Pacers,"18,345",83.0,Mike Mathis, Monty McCutchen, Bennett Salvatore,25,17,22,24,0,88,106.0,102.4,27,21,21,16,0,85,102.4,106.0

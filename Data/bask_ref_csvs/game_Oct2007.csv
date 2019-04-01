@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200710300GSW,"10:30 PM, October 30, 2007",2008,"Oracle Arena, Oakland, California",Utah Jazz,Golden State Warriors,"19,832",105.1,Mark Ayotte, Ron Garretson, Jason Phillips,28,34,24,31,0,117,111.3,91.3,30,21,21,24,0,96,91.3,111.3
 1,200710300LAL,"10:30 PM, October 30, 2007",2008,"STAPLES Center, Los Angeles, California",Houston Rockets,Los Angeles Lakers,"18,997",93.0,Bennie Adams, Rodney Mott, Jack Nies,16,27,27,25,0,95,102.1,99.9,25,18,19,31,0,93,99.9,102.1
 2,200710300SAS,"8:00 PM, October 30, 2007",2008,"AT&T Center, San Antonio, Texas",Portland Trail Blazers,San Antonio Spurs,"18,797",91.8,James Capers, Jim Clark, Tommy Nunez,26,23,28,20,0,97,105.7,115.5,29,30,22,25,0,106,115.5,105.7

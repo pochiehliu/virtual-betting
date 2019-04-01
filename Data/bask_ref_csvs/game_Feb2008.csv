@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200802010GSW,"10:30 PM, February 1, 2008",2008,"Oracle Arena, Oakland, California",Charlotte Bobcats,Golden State Warriors,"20,064",98.2,Sean Corbin, Bill Spooner, Gary Zielinski,23,25,21,27,0,96,97.7,129.3,32,37,32,26,0,127,129.3,97.7
 1,200802010IND,"7:00 PM, February 1, 2008",2008,"Conseco Fieldhouse, Indianapolis, Indiana",Houston Rockets,Indiana Pacers,"13,784",96.1,James Capers, Jim Clark, John Goble,25,29,25,27,0,106,110.3,107.1,23,30,26,24,0,103,107.1,110.3
 2,200802010MIA,"8:00 PM, February 1, 2008",2008,"AmericanAirlines Arena, Miami, Florida",New Jersey Nets,Miami Heat,"19,600",89.0,Bennie Adams, Eric Lewis, Greg Willard,23,20,27,24,0,94,105.7,95.5,21,10,29,25,0,85,95.5,105.7

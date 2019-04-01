@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201706010GSW,"9:00 PM, June 1, 2017",2017,"Oracle Arena, Oakland, California",Cleveland Cavaliers,Golden State Warriors,"19,596",99.5,Dan Crawford, Derrick Stafford, Zach Zarba,30,22,20,19,0,91,91.4,113.6,35,25,33,20,0,113,113.6,91.4
 1,201706040GSW,"8:00 PM, June 4, 2017",2017,"Oracle Arena, Oakland, California",Cleveland Cavaliers,Golden State Warriors,"19,596",106.4,Tony Brothers, James Capers, Scott Foster,34,30,24,25,0,113,106.2,124.0,40,27,35,30,0,132,124.0,106.2
 2,201706070CLE,"9:00 PM, June 7, 2017",2017,"Quicken Loans Arena, Cleveland, Ohio",Golden State Warriors,Cleveland Cavaliers,"20,562",100.2,Ed Malloy, Ken Mauer, Monty McCutchen,39,28,22,29,0,118,117.7,112.7,32,29,33,19,0,113,112.7,117.7

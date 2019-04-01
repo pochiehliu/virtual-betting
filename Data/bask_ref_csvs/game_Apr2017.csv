@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201704010BRK,"6:00 PM, April 1, 2017",2017,"Barclays Center, Brooklyn, New York",Orlando Magic,Brooklyn Nets,"15,976",100.0,Eric Lewis, Ben Taylor, James Williams,33,20,36,22,0,111,111.0,121.0,33,27,29,32,0,121,121.0,111.0
 1,201704010CHI,"5:00 PM, April 1, 2017",2017,"United Center, Chicago, Illinois",Atlanta Hawks,Chicago Bulls,"22,019",96.0,Pat Fraher, Justin Van Duyne, Sean Wright,21,25,38,20,0,104,108.3,110.4,23,29,27,27,0,106,110.4,108.3
 2,201704010LAC,"3:30 PM, April 1, 2017",2017,"STAPLES Center, Los Angeles, California",Los Angeles Lakers,Los Angeles Clippers,"19,060",95.9,Matt Boland, Tony Brothers, Leon Wood,22,28,22,32,0,104,108.4,119.9,28,27,38,22,0,115,119.9,108.4

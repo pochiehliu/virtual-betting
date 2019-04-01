@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200605010LAC,"10:30 PM, May 1, 2006",2006,"STAPLES Center, Los Angeles, California",Denver Nuggets,Los Angeles Clippers,"18,648",91.2,Tony Brothers, Dan Crawford, Bill Spooner,23,17,17,26,0,83,91.0,110.8,21,25,25,30,0,101,110.8,91.0
 1,200605010MEM,"8:00 PM, May 1, 2006",2006,"FedEx Forum, Memphis, Tennessee",Dallas Mavericks,Memphis Grizzlies,"15,104",83.8,Bob Delaney, Steve Javie, David Jones,26,22,31,23,0,102,121.7,90.7,23,16,22,15,0,76,90.7,121.7
 2,200605010MIL,"8:30 PM, May 1, 2006",2006,"Bradley Center, Milwaukee, Wisconsin",Detroit Pistons,Milwaukee Bucks,"16,296",83.5,Bernie Fryer, Tom Washington, Mark Wunderlich,27,24,23,35,0,109,130.6,118.6,20,25,31,23,0,99,118.6,130.6

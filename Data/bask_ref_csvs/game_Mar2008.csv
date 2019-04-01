@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200803010LAC,"10:30 PM, March 1, 2008",2008,"STAPLES Center, Los Angeles, California",Detroit Pistons,Los Angeles Clippers,"19,271",86.9,Ron Garretson, Leon Wood, Gary Zielinski,31,24,21,27,0,103,118.5,84.0,25,17,21,10,0,73,84.0,118.5
 1,200803010MEM,"8:00 PM, March 1, 2008",2008,"FedEx Forum, Memphis, Tennessee",Utah Jazz,Memphis Grizzlies,"13,232",93.7,Tony Brothers, Brian Forte, Mark Wunderlich,22,31,25,35,0,113,120.7,98.2,28,21,19,24,0,92,98.2,120.7
 2,200803010MIL,"8:30 PM, March 1, 2008",2008,"Bradley Center, Milwaukee, Wisconsin",San Antonio Spurs,Milwaukee Bucks,"16,974",92.9,Tony Brown, Bill Kennedy, Greg Willard,27,20,26,23,0,96,103.3,101.2,28,23,17,26,0,94,101.2,103.3

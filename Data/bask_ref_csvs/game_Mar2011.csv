@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201103010IND,"7:00 PM, March 1, 2011",2011,"Conseco Fieldhouse, Indianapolis, Indiana",Golden State Warriors,Indiana Pacers,"9,557",96.1,Violet Palmer, Greg Willard, Gary Zielinski,19,27,25,29,0,100,104.1,113.4,29,14,37,29,0,109,113.4,104.1
 1,201103010MEM,"8:00 PM, March 1, 2011",2011,"FedEx Forum, Memphis, Tennessee",San Antonio Spurs,Memphis Grizzlies,"13,480",90.5,Dick Bavetta, Rodney Mott, Josh Tiven,30,22,15,26,0,93,102.8,120.5,32,29,22,26,0,109,120.5,102.8
 2,201103010MIL,"8:00 PM, March 1, 2011",2011,"Bradley Center, Milwaukee, Wisconsin",Detroit Pistons,Milwaukee Bucks,"11,364",90.0,Matt Boland, Eric Lewis, Bill Spooner,22,28,25,15,0,90,100.0,102.3,28,23,21,20,0,92,102.3,100.0

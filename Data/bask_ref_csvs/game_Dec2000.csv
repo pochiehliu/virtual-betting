@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200012010BOS,"7:30 PM, December 1, 2000",2001,"FleetCenter, Boston, Massachusetts",Minnesota Timberwolves,Boston Celtics,"14,630",90.5,Tony Brothers, Sean Corbin, Dan Crawford,30,25,19,28,0,102,112.7,108.3,24,22,23,29,0,98,108.3,112.7
 1,200012010CHI,"8:30 PM, December 1, 2000",2001,"United Center, Chicago, Illinois",New York Knicks,Chicago Bulls,"22,099",82.3,Jim Kinsey, Tommy Nunez, Ronnie Nunn,33,18,19,21,0,91,110.6,104.5,22,24,23,17,0,86,104.5,110.6
 2,200012010DET,"8:00 PM, December 1, 2000",2001,"The Palace of Auburn Hills, Auburn Hills, Michigan",Cleveland Cavaliers,Detroit Pistons,"15,323",94.3,Ted Bernhardt, Mike Mathis, Jason Phillips,24,24,27,18,0,93,98.7,109.3,28,29,22,24,0,103,109.3,98.7

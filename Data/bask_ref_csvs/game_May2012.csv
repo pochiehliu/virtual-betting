@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201205010ATL,"7:30 PM, May 1, 2012",2012,"Philips Arena, Atlanta, Georgia",Boston Celtics,Atlanta Hawks,"19,308",90.7,Scott Foster, Ed Malloy, Scott Wall,24,17,20,26,0,87,95.9,88.2,24,20,22,14,0,80,88.2,95.9
 1,201205010CHI,"8:00 PM, May 1, 2012",2012,"United Center, Chicago, Illinois",Philadelphia 76ers,Chicago Bulls,"22,067",85.0,Courtney Kirkland, Rodney Mott, Greg Willard,25,22,36,26,0,109,128.3,108.3,28,27,14,23,0,92,108.3,128.3
 2,201205010LAL,"10:30 PM, May 1, 2012",2012,"STAPLES Center, Los Angeles, California",Denver Nuggets,Los Angeles Lakers,"18,997",93.0,Pat Fraher, Monty McCutchen, Tom Washington,25,23,26,26,0,100,107.5,111.8,32,23,26,23,0,104,111.8,107.5

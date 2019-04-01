@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200401020BOS,"7:30 PM, January 2, 2004",2004,"FleetCenter, Boston, Massachusetts",Indiana Pacers,Boston Celtics,"18,624",90.4,Gary Benson, Nolan Fine, Eddie F. Rush,25,23,25,30,0,103,114.0,99.6,30,24,18,18,0,90,99.6,114.0
 1,200401020DET,"8:00 PM, January 2, 2004",2004,"The Palace of Auburn Hills, Auburn Hills, Michigan",Phoenix Suns,Detroit Pistons,"22,076",85.9,Tony Brothers, Joe Forte, Michael Henderson,22,26,17,16,0,81,94.3,108.2,26,25,25,17,0,93,108.2,94.3
 2,200401020MEM,"8:00 PM, January 2, 2004",2004,"Pyramid Arena, Memphis, Tennessee",Utah Jazz,Memphis Grizzlies,"13,041",85.8,Ed Malloy, Leroy Richardson, Bennett Salvatore,26,26,21,15,0,88,102.6,116.6,25,30,25,20,0,100,116.6,102.6

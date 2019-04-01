@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201310290IND,"7:00 PM, October 29, 2013",2014,"Bankers Life Fieldhouse, Indianapolis, Indiana",Orlando Magic,Indiana Pacers,"18,165",95.0,Matt Boland, Pat Fraher, Rodney Mott,18,26,20,23,0,87,91.6,102.1,23,17,29,28,0,97,102.1,91.6
 1,201310290LAL,"10:30 PM, October 29, 2013",2014,"STAPLES Center, Los Angeles, California",Los Angeles Clippers,Los Angeles Lakers,"18,997",100.4,Dan Crawford, Eric Lewis, Kevin Scott,30,27,22,24,0,103,102.6,115.6,28,27,20,41,0,116,115.6,102.6
 2,201310290MIA,"8:00 PM, October 29, 2013",2014,"AmericanAirlines Arena, Miami, Florida",Chicago Bulls,Miami Heat,"19,964",97.1,Sean Corbin, Joe Crawford, Mark Lindsay,15,18,25,37,0,95,97.9,110.2,17,37,24,29,0,107,110.2,97.9

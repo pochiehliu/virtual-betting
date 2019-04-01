@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200201010LAC,"9:00 PM, January 1, 2002",2002,"STAPLES Center, Los Angeles, California",Portland Trail Blazers,Los Angeles Clippers,"18,964",87.5,Mike Callahan, Ron Garretson, Gary Zielinski,26,24,29,18,0,97,110.9,128.1,32,32,24,24,0,112,128.1,110.9
 1,200201020BOS,"7:00 PM, January 2, 2002",2002,"FleetCenter, Boston, Massachusetts",Orlando Magic,Boston Celtics,"15,003",92.1,Luis Grillo, Tommy Nunez, Ron Olesiak,27,23,12,32,0,94,102.1,119.4,26,40,17,27,0,110,119.4,102.1
 2,200201020CHI,"8:30 PM, January 2, 2002",2002,"United Center, Chicago, Illinois",Dallas Mavericks,Chicago Bulls,"17,824",95.6,Bennie Adams, Jack Nies, Blane Reichelt,17,26,28,36,0,107,111.9,101.5,15,27,26,29,0,97,101.5,111.9

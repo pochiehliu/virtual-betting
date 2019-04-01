@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200103010CLE,"7:30 PM, March 1, 2001",2001,"Gund Arena, Cleveland, Ohio",Seattle SuperSonics,Cleveland Cavaliers,"11,937",91.1,Gary Benson,Ronnie Nunn,Ron Olesiak,18,30,19,26,8,101,100.4,98.4,26,25,21,21,6,99,98.4,100.4
 1,200103010MIL,"8:00 PM, March 1, 2001",2001,"Bradley Center, Milwaukee, Wisconsin",Houston Rockets,Milwaukee Bucks,"15,426",89.5,Dick Bavetta,Marc Davis,Monty McCutchen,30,27,36,15,0,108,120.7,101.7,23,22,30,16,0,91,101.7,120.7
 2,200103010NYK,"7:30 PM, March 1, 2001",2001,"Madison Square Garden (IV), New York, New York",Boston Celtics,New York Knicks,"19,763",86.7,David Jones,Rashan Michel,Bennett Salvatore,16,22,32,18,0,88,101.4,109.5,22,29,26,18,0,95,109.5,101.4

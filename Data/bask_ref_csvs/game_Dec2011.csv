@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201112250DAL,"2:30 PM, December 25, 2011",2012,"American Airlines Center, Dallas, Texas",Miami Heat,Dallas Mavericks,"20,421",99.3,Scott Foster, Rodney Mott, Josh Tiven,32,30,35,8,0,105,105.7,94.7,17,24,24,29,0,94,94.7,105.7
 1,201112250GSW,"10:30 PM, December 25, 2011",2012,"Oracle Arena, Oakland, California",Los Angeles Clippers,Golden State Warriors,"19,596",90.3,Mark Ayotte, Ron Garretson, Leon Wood,24,17,34,30,0,105,116.3,95.3,20,23,25,18,0,86,95.3,116.3
 2,201112250LAL,"5:00 PM, December 25, 2011",2012,"STAPLES Center, Los Angeles, California",Chicago Bulls,Los Angeles Lakers,"18,997",88.0,Bennie Adams, Kevin Cutler, Greg Willard,22,34,12,20,0,88,100.0,98.9,20,29,20,18,0,87,98.9,100.0

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200512010DAL,"8:00 PM, December 1, 2005",2006,"American Airlines Center, Dallas, Texas",San Antonio Spurs,Dallas Mavericks,"20,076",87.8,Mark Ayotte, Marc Davis, Bennett Salvatore,22,23,21,26,0,92,104.8,102.5,23,20,22,25,0,90,102.5,104.8
 1,200512010UTA,"10:30 PM, December 1, 2005",2006,"Delta Center, Salt Lake City, Utah",Los Angeles Lakers,Utah Jazz,"18,008",83.1,Jess Kersey, Ron Olesiak, Tom Washington,26,25,24,17,13,105,114.4,110.1,21,22,25,24,9,101,110.1,114.4
 2,200512020ATL,"7:00 PM, December 2, 2005",2006,"Philips Arena, Atlanta, Georgia",Toronto Raptors,Atlanta Hawks,"12,261",86.8,Monty McCutchen, Olandis Poole, Mark Wunderlich,34,20,23,25,0,102,117.6,116.4,23,22,22,34,0,101,116.4,117.6

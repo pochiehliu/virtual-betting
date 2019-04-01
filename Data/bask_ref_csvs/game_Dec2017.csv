@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201712010CHI,"8:00 PM, December 1, 2017",2018,"United Center, Chicago, Illinois",Sacramento Kings,Chicago Bulls,"19,268",93.6,Brent Barnaky, Kevin Scott, Bill Spooner,29,32,21,25,0,107,114.3,113.2,31,29,21,25,0,106,113.2,114.3
 1,201712010MEM,"8:00 PM, December 1, 2017",2018,"FedEx Forum, Memphis, Tennessee",San Antonio Spurs,Memphis Grizzlies,"16,413",88.3,Pat Fraher, Scott Wall, Sean Wright,24,23,21,27,0,95,107.6,89.5,18,20,21,20,0,79,89.5,107.6
 2,201712010MIA,"8:00 PM, December 1, 2017",2018,"AmericanAirlines Arena, Miami, Florida",Charlotte Hornets,Miami Heat,"19,600",98.9,Ken Mauer, Leroy Richardson, Michael Smith,30,19,26,25,0,100,101.2,106.2,22,28,29,26,0,105,106.2,101.2

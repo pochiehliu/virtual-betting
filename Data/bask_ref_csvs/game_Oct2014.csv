@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201410280LAL,"10:30 PM, October 28, 2014",2015,"STAPLES Center, Los Angeles, California",Houston Rockets,Los Angeles Lakers,"18,997",90.9,Courtney Kirkland, Derek Richardson, Zach Zarba,31,31,23,23,0,108,118.8,99.0,19,26,24,21,0,90,99.0,118.8
 1,201410280NOP,"8:00 PM, October 28, 2014",2015,"Smoothie King Center, New Orleans, Louisiana",Orlando Magic,New Orleans Pelicans,"17,097",95.2,Tony Brothers, David Jones, Dedric Taylor,25,16,23,20,0,84,88.2,106.1,24,24,30,23,0,101,106.1,88.2
 2,201410280SAS,"8:00 PM, October 28, 2014",2015,"AT&T Center, San Antonio, Texas",Dallas Mavericks,San Antonio Spurs,"19,615",86.1,Pat Fraher, Jason Phillips, Haywoode Workman,24,29,20,27,0,100,116.1,117.3,26,19,31,25,0,101,117.3,116.1

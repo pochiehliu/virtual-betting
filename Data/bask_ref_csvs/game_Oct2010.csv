@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201010260BOS,"7:30 PM, October 26, 2010",2011,"TD Garden, Boston, Massachusetts",Miami Heat,Boston Celtics,"18,624",88.5,Tony Brothers, Dan Crawford, Brian Forte,9,21,27,23,0,80,90.4,99.5,16,29,18,25,0,88,99.5,90.4
 1,201010260LAL,"10:30 PM, October 26, 2010",2011,"STAPLES Center, Los Angeles, California",Houston Rockets,Los Angeles Lakers,"18,997",102.6,Bennie Adams, Bill Kennedy, Gary Zielinski,33,29,20,28,0,110,107.2,109.1,26,25,26,35,0,112,109.1,107.2
 2,201010260POR,"10:00 PM, October 26, 2010",2011,"Rose Garden Arena, Portland, Oregon",Phoenix Suns,Portland Trail Blazers,"20,603",89.6,Rodney Mott, Violet Palmer, Bill Spooner,26,20,35,11,0,92,102.7,118.3,28,22,25,31,0,106,118.3,102.7

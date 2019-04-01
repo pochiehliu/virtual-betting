@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201311010ATL,"7:30 PM, November 1, 2013",2014,"Philips Arena, Atlanta, Georgia",Toronto Raptors,Atlanta Hawks,"18,118",93.6,Sean Corbin, Lauren Holtkamp, Tom Washington,24,15,29,27,0,95,101.4,108.9,25,24,30,23,0,102,108.9,101.4
 1,201311010BOS,"7:30 PM, November 1, 2013",2014,"TD Garden, Boston, Massachusetts",Milwaukee Bucks,Boston Celtics,"18,624",88.0,Joe Crawford, Ben Taylor, Leon Wood,16,31,24,34,0,105,119.3,111.3,29,34,20,15,0,98,111.3,119.3
 2,201311010BRK,"8:00 PM, November 1, 2013",2014,"Barclays Center, Brooklyn, New York",Miami Heat,Brooklyn Nets,"17,732",93.0,Brent Barnaky, David Jones, Monty McCutchen,18,29,20,33,0,100,107.5,108.6,27,20,31,23,0,101,108.6,107.5

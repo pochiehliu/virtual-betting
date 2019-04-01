@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201801010BRK,"7:30 PM, January 1, 2018",2018,"Barclays Center, Brooklyn, New York",Orlando Magic,Brooklyn Nets,"16,164",95.2,Ray Acosta, Bill Kennedy, Gediminas Petraitis,27,21,22,25,0,95,99.8,102.9,22,25,24,27,0,98,102.9,99.8
 1,201801010CHI,"8:00 PM, January 1, 2018",2018,"United Center, Chicago, Illinois",Portland Trail Blazers,Chicago Bulls,"20,860",97.9,Mark Ayotte, J.B. DeRosa, Ron Garretson,31,21,31,29,12,124,114.7,111.0,23,30,34,25,8,120,111.0,114.7
 2,201801010MIN,"8:00 PM, January 1, 2018",2018,"Target Center, Minneapolis, Minnesota",Los Angeles Lakers,Minnesota Timberwolves,"18,978",101.7,Jacyn Goble, David Guthrie, Michael Smith,18,30,28,20,0,96,94.4,112.1,30,30,31,23,0,114,112.1,94.4

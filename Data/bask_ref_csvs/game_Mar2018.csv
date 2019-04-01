@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201803010CLE,"8:00 PM, March 1, 2018",2018,"Quicken Loans Arena, Cleveland, Ohio",Philadelphia 76ers,Cleveland Cavaliers,"20,562",94.4,Eric Lewis, Ed Malloy, J.T. Orr,32,27,18,31,0,108,114.4,102.8,29,27,15,26,0,97,102.8,114.4
 1,201803010MIA,"7:30 PM, March 1, 2018",2018,"AmericanAirlines Arena, Miami, Florida",Los Angeles Lakers,Miami Heat,"19,600",95.8,Tony Brown, David Guthrie, Aaron Smith,33,40,31,27,0,131,136.7,117.9,36,26,32,19,0,113,117.9,136.7
 2,201803010POR,"10:30 PM, March 1, 2018",2018,"Moda Center, Portland, Oregon",Minnesota Timberwolves,Portland Trail Blazers,"19,533",99.3,Nick Buchert, Karl Lane, Derrick Stafford,24,25,29,21,0,99,99.7,108.8,19,25,31,33,0,108,108.8,99.7

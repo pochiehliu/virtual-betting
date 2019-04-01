@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201504010BOS,"7:30 PM, April 1, 2015",2015,"TD Garden, Boston, Massachusetts",Indiana Pacers,Boston Celtics,"18,624",93.8,Steve Anderson, John Goble, Courtney Kirkland,16,23,23,25,0,87,92.8,106.6,22,28,18,32,0,100,106.6,92.8
 1,201504010CHO,"7:00 PM, April 1, 2015",2015,"Time Warner Cable Arena, Charlotte, North Carolina",Detroit Pistons,Charlotte Hornets,"15,372",93.0,Curtis Blair, Derrick Collins, Tom Washington,25,20,17,16,0,78,83.8,109.6,33,23,17,29,0,102,109.6,83.8
 2,201504010HOU,"8:00 PM, April 1, 2015",2015,"Toyota Center, Houston, Texas",Sacramento Kings,Houston Rockets,"18,312",102.0,Nick Buchert, Mike Callahan, Gary Zielinski,25,30,31,25,0,111,108.9,112.8,35,23,39,18,0,115,112.8,108.9

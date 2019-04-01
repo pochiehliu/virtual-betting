@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201603010CHO,"7:00 PM, March 1, 2016",2016,"Time Warner Cable Arena, Charlotte, North Carolina",Phoenix Suns,Charlotte Hornets,"16,849",98.3,Bennie Adams, Scott Twardoski, Zach Zarba,18,24,19,31,0,92,93.6,128.1,35,33,30,28,0,126,128.1,93.6
 1,201603010DAL,"8:30 PM, March 1, 2016",2016,"American Airlines Center, Dallas, Texas",Orlando Magic,Dallas Mavericks,"19,546",96.4,Tony Brown, Tyler Ford, Tom Washington,27,34,20,27,0,108,112.1,125.6,35,34,27,25,0,121,125.6,112.1
 2,201603010GSW,"10:30 PM, March 1, 2016",2016,"Oracle Arena, Oakland, California",Atlanta Hawks,Golden State Warriors,"19,596",89.1,Marc Davis, Leroy Richardson, Haywoode Workman,26,22,22,27,8,105,106.7,110.8,32,27,16,22,12,109,110.8,106.7

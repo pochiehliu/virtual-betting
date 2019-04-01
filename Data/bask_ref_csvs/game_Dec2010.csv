@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201012010ATL,"7:00 PM, December 1, 2010",2011,"Philips Arena, Atlanta, Georgia",Memphis Grizzlies,Atlanta Hawks,"11,513",91.1,Bill Kennedy, Courtney Kirkland, Gary Zielinski,29,28,19,33,0,109,119.7,123.0,27,36,23,26,0,112,123.0,119.7
 1,201012010BOS,"7:30 PM, December 1, 2010",2011,"TD Garden, Boston, Massachusetts",Portland Trail Blazers,Boston Celtics,"18,624",86.1,Derek Richardson, Tom Washington, Leon Wood,26,23,23,23,0,95,110.4,115.0,20,28,31,20,0,99,115.0,110.4
 2,201012010CHI,"8:00 PM, December 1, 2010",2011,"United Center, Chicago, Illinois",Orlando Magic,Chicago Bulls,"21,435",84.9,James Capers, John Goble, Haywoode Workman,28,33,24,22,0,107,126.0,91.9,22,15,25,16,0,78,91.9,126.0

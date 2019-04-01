@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201612010BRK,"7:30 PM, December 1, 2016",2017,"Barclays Center, Brooklyn, New York",Milwaukee Bucks,Brooklyn Nets,"12,675",95.5,Brent Barnaky, Scott Foster, Aaron Smith,27,25,38,21,0,111,116.3,97.4,26,25,27,15,0,93,97.4,116.3
 1,201612010CHO,"7:00 PM, December 1, 2016",2017,"Spectrum Center, Charlotte, North Carolina",Dallas Mavericks,Charlotte Hornets,"14,471",92.1,Kane Fitzgerald, Karl Lane, James Williams,14,27,19,27,0,87,94.5,105.4,23,21,24,29,0,97,105.4,94.5
 2,201612010CLE,"8:00 PM, December 1, 2016",2017,"Quicken Loans Arena, Cleveland, Ohio",Los Angeles Clippers,Cleveland Cavaliers,"20,562",94.7,Eric Lewis, Sean Wright, Gary Zielinski,24,34,27,28,0,113,119.3,99.2,28,22,15,29,0,94,99.2,119.3

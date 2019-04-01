@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200701010CHA,"7:00 PM, January 1, 2007",2007,"Charlotte Bobcats Arena, Charlotte, North Carolina",Minnesota Timberwolves,Charlotte Bobcats,"14,827",85.8,Marc Davis, Tim Donaghy, Joe Forte,20,27,21,34,0,102,118.9,111.9,29,26,23,18,0,96,111.9,118.9
 1,200701010POR,"10:00 PM, January 1, 2007",2007,"Rose Garden Arena, Portland, Oregon",Boston Celtics,Portland Trail Blazers,"12,156",88.1,Matt Boland, Violet Palmer, Eddie F. Rush,23,21,26,19,0,89,101.0,91.9,27,17,23,14,0,81,91.9,101.0
 2,200701020CHI,"8:30 PM, January 2, 2007",2007,"United Center, Chicago, Illinois",Phoenix Suns,Chicago Bulls,"22,853",95.2,Joe DeRosa, David Jones, Olandis Poole,18,25,20,34,0,97,101.9,100.9,27,28,18,23,0,96,100.9,101.9

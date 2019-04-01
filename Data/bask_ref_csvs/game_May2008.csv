@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200805010PHI,"8:00 PM, May 1, 2008",2008,"Wachovia Center, Philadelphia, Pennsylvania",Detroit Pistons,Philadelphia 76ers,"14,130",82.0,Jim Clark, Scott Foster, Bennett Salvatore,30,21,28,21,0,100,122.0,93.9,12,21,18,26,0,77,93.9,122.0
 1,200805020ATL,"8:00 PM, May 2, 2008",2008,"Philips Arena, Atlanta, Georgia",Boston Celtics,Atlanta Hawks,"20,425",84.6,Joe Crawford, Bob Delaney, Mark Wunderlich,32,18,32,18,0,100,118.2,121.8,20,29,30,24,0,103,121.8,118.2
 2,200805020UTA,"10:30 PM, May 2, 2008",2008,"EnergySolutions Arena, Salt Lake City, Utah",Houston Rockets,Utah Jazz,"19,911",84.2,Joe DeRosa, Bill Spooner, Derrick Stafford,22,32,11,26,0,91,108.0,134.2,32,26,27,28,0,113,134.2,108.0

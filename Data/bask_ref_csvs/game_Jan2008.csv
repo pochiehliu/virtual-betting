@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200801020BOS,"7:30 PM, January 2, 2008",2008,"TD Banknorth Garden, Boston, Massachusetts",Houston Rockets,Boston Celtics,"18,624",88.7,Derrick Collins, Rodney Mott, Bill Spooner,16,26,26,25,0,93,104.8,109.4,30,23,23,21,0,97,109.4,104.8
 1,200801020CHA,"7:00 PM, January 2, 2008",2008,"Charlotte Bobcats Arena, Charlotte, North Carolina",Chicago Bulls,Charlotte Bobcats,"11,568",91.2,Bennie Adams, Matt Boland, Dan Crawford,23,26,29,31,0,109,119.5,106.3,28,29,22,18,0,97,106.3,119.5
 2,200801020CLE,"7:00 PM, January 2, 2008",2008,"Quicken Loans Arena, Cleveland, Ohio",Atlanta Hawks,Cleveland Cavaliers,"20,562",84.9,Joe Crawford, Olandis Poole, Scott Wall,19,19,30,26,0,94,110.7,115.5,22,15,32,29,0,98,115.5,110.7

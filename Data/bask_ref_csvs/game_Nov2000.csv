@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200011010BOS,"7:00 PM, November 1, 2000",2001,"FleetCenter, Boston, Massachusetts",Detroit Pistons,Boston Celtics,"17,725",96.6,Terry Durham, Courtney Kirkland, Bill Spooner,19,21,22,21,0,83,85.9,106.7,29,27,18,29,0,103,106.7,85.9
 1,200011010CHH,"7:30 PM, November 1, 2000",2001,"Charlotte Coliseum, Charlotte, North Carolina",Washington Wizards,Charlotte Hornets,"16,043",89.4,Joe DeRosa, Kevin Fehr, David Jones,32,19,17,27,0,95,106.2,86.1,21,21,14,21,0,77,86.1,106.2
 2,200011010CLE,"7:30 PM, November 1, 2000",2001,"Gund Arena, Cleveland, Ohio",Sacramento Kings,Cleveland Cavaliers,"17,695",83.4,Jim Clark, Dan Crawford, Dee Kantner,23,23,16,26,12,100,99.2,101.2,27,23,19,19,14,102,101.2,99.2

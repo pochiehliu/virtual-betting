@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200911010BOS,"6:00 PM, November 1, 2009",2010,"TD Garden, Boston, Massachusetts",New Orleans Hornets,Boston Celtics,"18,624",92.7,Sean Corbin, Tommy Nunez, Greg Willard,20,18,31,18,0,87,93.9,104.7,22,25,25,25,0,97,104.7,93.9
 1,200911010DEN,"8:00 PM, November 1, 2009",2010,"Pepsi Center, Denver, Colorado",Memphis Grizzlies,Denver Nuggets,"15,823",103.6,Derrick Collins, Monty McCutchen, Rodney Mott,40,26,28,29,0,123,118.7,128.3,35,32,36,30,0,133,128.3,118.7
 2,200911010LAL,"9:30 PM, November 1, 2009",2010,"STAPLES Center, Los Angeles, California",Atlanta Hawks,Los Angeles Lakers,"18,997",100.5,James Capers, Bob Delaney, Mark Lindsay,25,33,18,34,0,110,109.4,117.4,27,37,34,20,0,118,117.4,109.4

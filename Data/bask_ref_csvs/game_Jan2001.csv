@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200101010MIN,"3:30 PM, January 1, 2001",2001,"Target Center, Minneapolis, Minnesota",Houston Rockets,Minnesota Timberwolves,"14,779",89.9,Ted Bernhardt, Tim Donaghy, Scott Wall,29,16,30,21,0,96,106.8,117.9,25,23,34,24,0,106,117.9,106.8
 1,200101010POR,"10:00 PM, January 1, 2001",2001,"Rose Garden Arena, Portland, Oregon",Charlotte Hornets,Portland Trail Blazers,"19,980",83.3,Bob Delaney, Rashan Michel, Derrick Stafford,12,25,12,18,0,67,80.4,106.9,19,29,19,22,0,89,106.9,80.4
 2,200101020ATL,"7:30 PM, January 2, 2001",2001,"Philips Arena, Atlanta, Georgia",Boston Celtics,Atlanta Hawks,"11,194",87.4,Gary Benson, Eddie F. Rush, Tom Washington,27,19,20,15,0,81,92.7,105.3,23,24,21,24,0,92,105.3,92.7

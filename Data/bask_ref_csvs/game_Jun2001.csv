@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200106010MIL,"9:00 PM, June 1, 2001",2001,"Bradley Center, Milwaukee, Wisconsin",Philadelphia 76ers,Milwaukee Bucks,"18,717",83.7,Joe Crawford, Jack Nies, Eddie F. Rush,15,16,23,46,0,100,119.5,131.5,25,35,20,30,0,110,131.5,119.5
 1,200106030PHI,"7:30 PM, June 3, 2001",2001,"First Union Center, Philadelphia, Pennsylvania",Milwaukee Bucks,Philadelphia 76ers,"21,046",87.5,Dan Crawford, Hugh Evans, Steve Javie,26,24,21,20,0,91,104.0,123.4,25,31,26,26,0,108,123.4,104.0
 2,200106060LAL,"9:00 PM, June 6, 2001",2001,"STAPLES Center, Los Angeles, California",Philadelphia 76ers,Los Angeles Lakers,"18,997",90.4,Dick Bavetta, Joe Crawford, Ron Garretson,22,34,23,15,13,107,107.2,101.2,23,27,27,17,7,101,101.2,107.2

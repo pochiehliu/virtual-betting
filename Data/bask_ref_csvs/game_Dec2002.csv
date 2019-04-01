@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200212010BOS,"6:00 PM, December 1, 2002",2003,"FleetCenter, Boston, Massachusetts",New Orleans Hornets,Boston Celtics,"13,425",92.8,Bennie Adams, Michael Smith, Greg Willard,24,22,19,21,0,86,92.7,102.4,26,25,20,24,0,95,102.4,92.7
 1,200212010LAC,"3:30 PM, December 1, 2002",2003,"STAPLES Center, Los Angeles, California",Indiana Pacers,Los Angeles Clippers,"14,396",90.9,Ted Bernhardt, Derrick Collins, Luis Grillo,20,23,21,28,0,92,101.2,95.7,17,20,26,24,0,87,95.7,101.2
 2,200212010LAL,"9:30 PM, December 1, 2002",2003,"STAPLES Center, Los Angeles, California",Minnesota Timberwolves,Los Angeles Lakers,"18,997",95.2,Joe Forte, Jess Kersey, Courtney Kirkland,28,22,26,34,0,110,115.5,112.3,29,31,16,31,0,107,112.3,115.5

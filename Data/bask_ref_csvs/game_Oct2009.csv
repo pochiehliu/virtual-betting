@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200910270CLE,"7:30 PM, October 27, 2009",2010,"Quicken Loans Arena, Cleveland, Ohio",Boston Celtics,Cleveland Cavaliers,"20,562",88.6,Tony Brothers, Steve Javie, Derek Richardson,21,30,21,23,0,95,107.2,100.4,28,17,20,24,0,89,100.4,107.2
 1,200910270DAL,"8:30 PM, October 27, 2009",2010,"American Airlines Center, Dallas, Texas",Washington Wizards,Dallas Mavericks,"19,871",89.5,Ron Garretson, Michael Smith, Haywoode Workman,21,35,21,25,0,102,113.9,101.6,21,29,24,17,0,91,101.6,113.9
 2,200910270LAL,"10:30 PM, October 27, 2009",2010,"STAPLES Center, Los Angeles, California",Los Angeles Clippers,Los Angeles Lakers,"18,997",97.5,Bill Kennedy, Leroy Richardson, Bill Spooner,22,27,26,17,0,92,94.4,101.6,32,27,17,23,0,99,101.6,94.4

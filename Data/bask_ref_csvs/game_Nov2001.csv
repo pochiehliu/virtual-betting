@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200111010ATL,"8:00 PM, November 1, 2001",2002,"Philips Arena, Atlanta, Georgia",Washington Wizards,Atlanta Hawks,"20,072",91.1,Bennie Adams, Jack Nies, Tom Washington,28,21,25,24,0,98,107.5,96.6,23,30,19,16,0,88,96.6,107.5
 1,200111010DEN,"9:00 PM, November 1, 2001",2002,"Pepsi Center, Denver, Colorado",Milwaukee Bucks,Denver Nuggets,"18,634",87.7,Joe DeRosa, Courtney Kirkland, Don Vaden,27,22,28,25,0,102,116.4,115.2,33,30,22,16,0,101,115.2,116.4
 2,200111010GSW,"10:30 PM, November 1, 2001",2002,"The Arena in Oakland, Oakland, California",Phoenix Suns,Golden State Warriors,"14,624",95.1,Joe Crawford, Dee Kantner, Tommy Nunez,32,23,26,26,0,107,112.5,106.2,20,22,25,34,0,101,106.2,112.5

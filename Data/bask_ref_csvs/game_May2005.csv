@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200505010MEM,"8:00 PM, May 1, 2005",2005,"FedEx Forum, Memphis, Tennessee",Phoenix Suns,Memphis Grizzlies,"17,243",95.5,Ron Garretson, Ken Mauer, Mark Wunderlich,39,24,28,32,0,123,128.8,120.4,20,36,26,33,0,115,120.4,128.8
 1,200505010NJN,"3:30 PM, May 1, 2005",2005,"Continental Airlines Arena, East Rutherford, New Jersey",Miami Heat,New Jersey Nets,"20,174",97.0,Sean Corbin, Monty McCutchen, Eddie F. Rush,27,21,30,32,0,110,113.5,100.0,16,31,23,27,0,97,100.0,113.5
 2,200505010PHI,"1:00 PM, May 1, 2005",2005,"Wachovia Center, Philadelphia, Pennsylvania",Detroit Pistons,Philadelphia 76ers,"15,894",84.4,Bob Delaney, Steve Javie, David Jones,21,20,19,23,14,97,104.1,98.7,24,14,23,22,9,92,98.7,104.1

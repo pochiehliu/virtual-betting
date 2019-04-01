@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201404010BRK,"8:00 PM, April 1, 2014",2014,"Barclays Center, Brooklyn, New York",Houston Rockets,Brooklyn Nets,"17,732",97.3,John Goble, Ken Mauer, Kevin Scott,24,27,28,17,0,96,98.6,107.9,29,25,29,22,0,105,107.9,98.6
 1,201404010DAL,"8:30 PM, April 1, 2014",2014,"American Airlines Center, Dallas, Texas",Golden State Warriors,Dallas Mavericks,"20,423",85.5,Sean Corbin, Dan Crawford, Eric Dalen,30,23,32,23,14,122,129.3,127.1,21,41,19,27,12,120,127.1,129.3
 2,201404010LAL,"10:30 PM, April 1, 2014",2014,"STAPLES Center, Los Angeles, California",Portland Trail Blazers,Los Angeles Lakers,"18,110",102.8,Curtis Blair, Mike Callahan, Sean Wright,29,34,28,33,0,124,120.6,108.9,27,34,22,29,0,112,108.9,120.6

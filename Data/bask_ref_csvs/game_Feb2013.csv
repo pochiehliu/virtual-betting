@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201302010BOS,"7:30 PM, February 1, 2013",2013,"TD Garden, Boston, Massachusetts",Orlando Magic,Boston Celtics,"18,624",93.8,Tre Maddox, Derrick Stafford, Haywoode Workman,18,17,24,25,0,84,89.5,103.4,25,21,26,25,0,97,103.4,89.5
 1,201302010BRK,"7:30 PM, February 1, 2013",2013,"Barclays Center, Brooklyn, New York",Chicago Bulls,Brooklyn Nets,"17,732",84.6,Eric Lewis, Bennett Salvatore, Kevin Scott,14,28,25,22,0,89,105.2,109.9,24,17,22,30,0,93,109.9,105.2
 2,201302010DEN,"9:00 PM, February 1, 2013",2013,"Pepsi Center, Denver, Colorado",New Orleans Hornets,Denver Nuggets,"17,221",94.1,Mark Ayotte, Joe Crawford, Kevin Fehr,26,22,30,20,0,98,104.1,120.1,26,25,34,28,0,113,120.1,104.1

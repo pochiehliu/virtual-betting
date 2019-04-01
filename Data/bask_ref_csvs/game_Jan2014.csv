@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201401010DEN,"9:00 PM, January 1, 2014",2014,"Pepsi Center, Denver, Colorado",Philadelphia 76ers,Denver Nuggets,"16,006",103.6,Nick Buchert, Scott Foster, John Goble,24,44,27,19,0,114,110.0,98.4,30,26,25,21,0,102,98.4,110.0
 1,201401010LAC,"9:30 PM, January 1, 2014",2014,"STAPLES Center, Los Angeles, California",Charlotte Bobcats,Los Angeles Clippers,"19,160",93.1,Mike Callahan, Derrick Collins, Violet Palmer,27,29,13,16,0,85,91.3,120.3,25,31,25,31,0,112,120.3,91.3
 2,201401010MIN,"8:00 PM, January 1, 2014",2014,"Target Center, Minneapolis, Minnesota",New Orleans Pelicans,Minnesota Timberwolves,"14,002",97.6,Tony Brown, James Capers, Olandis Poole,28,19,26,39,0,112,114.8,127.1,33,28,36,27,0,124,127.1,114.8

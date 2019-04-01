@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201405010ATL,"7:00 PM, May 1, 2014",2014,"Philips Arena, Atlanta, Georgia",Indiana Pacers,Atlanta Hawks,"19,044",90.9,Joe Crawford, Bennett Salvatore, Derrick Stafford,20,24,20,31,0,95,104.5,96.8,22,17,28,21,0,88,96.8,104.5
 1,201405010GSW,"10:30 PM, May 1, 2014",2014,"Oracle Arena, Oakland, California",Los Angeles Clippers,Golden State Warriors,"19,596",93.0,John Goble, Monty McCutchen, Bill Spooner,25,26,16,32,0,99,106.5,107.5,25,23,22,30,0,100,107.5,106.5
 2,201405010MEM,"8:00 PM, May 1, 2014",2014,"FedEx Forum, Memphis, Tennessee",Oklahoma City Thunder,Memphis Grizzlies,"18,119",90.1,Ed Malloy, Ken Mauer, Rodney Mott,25,31,26,22,0,104,115.5,93.3,17,24,20,23,0,84,93.3,115.5

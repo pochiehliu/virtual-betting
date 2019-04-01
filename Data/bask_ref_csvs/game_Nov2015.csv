@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201511010BOS,"3:30 PM, November 1, 2015",2016,"TD Garden, Boston, Massachusetts",San Antonio Spurs,Boston Celtics,"17,461",99.4,Dan Crawford, Gediminas Petraitis, Josh Tiven,23,21,20,31,0,95,95.6,87.5,13,18,23,33,0,87,87.5,95.6
 1,201511010CHI,"7:00 PM, November 1, 2015",2016,"United Center, Chicago, Illinois",Orlando Magic,Chicago Bulls,"21,585",95.9,J.T. Orr, Bill Spooner, James Williams,26,14,23,24,0,87,90.7,96.0,29,25,21,17,0,92,96.0,90.7
 2,201511010CHO,"2:00 PM, November 1, 2015",2016,"Time Warner Cable Arena, Charlotte, North Carolina",Atlanta Hawks,Charlotte Hornets,"18,691",92.9,Bennie Adams, Joe Crawford, Justin Van Duyne,28,18,24,24,0,94,101.2,99.0,18,21,37,16,0,92,99.0,101.2

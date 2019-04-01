@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201102010LAL,"10:30 PM, February 1, 2011",2011,"STAPLES Center, Los Angeles, California",Houston Rockets,Los Angeles Lakers,"18,997",89.0,Matt Boland, Ed Malloy, Haywoode Workman,23,25,26,24,8,106,107.8,115.9,31,23,20,24,16,114,115.9,107.8
 1,201102010NOH,"8:00 PM, February 1, 2011",2011,"New Orleans Arena, New Orleans, Louisiana",Washington Wizards,New Orleans Hornets,"13,921",89.1,Jason Phillips, Bill Spooner, Scott Wall,26,18,21,24,0,89,99.9,108.8,29,26,25,17,0,97,108.8,99.9
 2,201102010POR,"10:00 PM, February 1, 2011",2011,"Rose Garden Arena, Portland, Oregon",San Antonio Spurs,Portland Trail Blazers,"20,364",83.8,Mike Callahan, Olandis Poole, Derek Richardson,22,30,19,15,0,86,102.6,118.1,24,23,24,28,0,99,118.1,102.6

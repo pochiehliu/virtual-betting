@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201403010BOS,"8:00 PM, March 1, 2014",2014,"TD Garden, Boston, Massachusetts",Indiana Pacers,Boston Celtics,"18,624",89.9,Mike Callahan, Karl Lane, Michael Smith,28,27,21,26,0,102,113.4,107.9,27,21,30,19,0,97,107.9,113.4
 1,201403010HOU,"8:00 PM, March 1, 2014",2014,"Toyota Center, Houston, Texas",Detroit Pistons,Houston Rockets,"18,330",97.6,Rodney Mott, Kevin Scott, Sean Wright,20,26,34,30,0,110,112.8,121.0,41,28,26,23,0,118,121.0,112.8
 2,201403010LAC,"10:30 PM, March 1, 2014",2014,"STAPLES Center, Los Angeles, California",New Orleans Pelicans,Los Angeles Clippers,"19,060",96.6,Nick Buchert, Derrick Collins, Bill Spooner,17,19,20,20,0,76,78.6,111.8,30,21,28,29,0,108,111.8,78.6

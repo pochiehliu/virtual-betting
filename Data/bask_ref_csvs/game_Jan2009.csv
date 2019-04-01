@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,200901020BOS,"7:30 PM, January 2, 2009",2009,"TD Banknorth Garden, Boston, Massachusetts",Washington Wizards,Boston Celtics,"18,624",86.1,Joe Forte, David Guthrie, Michael Smith,14,20,21,28,0,83,96.4,125.4,28,30,28,22,0,108,125.4,96.4
 1,200901020CLE,"7:30 PM, January 2, 2009",2009,"Quicken Loans Arena, Cleveland, Ohio",Chicago Bulls,Cleveland Cavaliers,"20,562",96.0,Mike Callahan, Eric Lewis, Ed Malloy,17,30,25,20,0,92,95.8,121.9,32,29,28,28,0,117,121.9,95.8
 2,200901020DAL,"8:30 PM, January 2, 2009",2009,"American Airlines Center, Dallas, Texas",Philadelphia 76ers,Dallas Mavericks,"20,327",88.0,Curtis Blair, Joe Crawford, Leon Wood,20,24,22,20,0,86,97.7,109.1,16,24,24,32,0,96,109.1,97.7

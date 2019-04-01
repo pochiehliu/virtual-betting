@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201501010CHI,"8:00 PM, January 1, 2015",2015,"United Center, Chicago, Illinois",Denver Nuggets,Chicago Bulls,"21,794",94.4,Steve Anderson, Joe Crawford, Eric Lewis,23,30,21,27,0,101,106.9,112.2,22,20,35,29,0,106,112.2,106.9
 1,201501010MIN,"8:00 PM, January 1, 2015",2015,"Target Center, Minneapolis, Minnesota",Sacramento Kings,Minnesota Timberwolves,"13,337",95.8,Brent Barnaky, Kevin Scott, Bill Spooner,37,23,24,26,0,110,114.8,111.7,29,29,22,27,0,107,111.7,114.8
 2,201501020BOS,"7:30 PM, January 2, 2015",2015,"TD Garden, Boston, Massachusetts",Dallas Mavericks,Boston Celtics,"18,624",96.0,James Capers, Karl Lane, Sean Wright,31,28,33,27,0,119,123.9,105.2,17,29,18,37,0,101,105.2,123.9

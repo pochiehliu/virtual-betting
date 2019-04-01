@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201602010ATL,"8:00 PM, February 1, 2016",2016,"Philips Arena, Atlanta, Georgia",Dallas Mavericks,Atlanta Hawks,"15,455",96.0,Kane Fitzgerald, Tyler Ford, Zach Zarba,15,31,27,24,0,97,101.1,116.7,27,26,33,26,0,112,116.7,101.1
 1,201602010BRK,"7:30 PM, February 1, 2016",2016,"Barclays Center, Brooklyn, New York",Detroit Pistons,Brooklyn Nets,"13,290",90.8,Kevin Cutler, Eric Lewis, Mark Lindsay,28,26,24,27,0,105,115.7,110.1,26,31,18,25,0,100,110.1,115.7
 2,201602010DEN,"9:00 PM, February 1, 2016",2016,"Pepsi Center, Denver, Colorado",Toronto Raptors,Denver Nuggets,"10,007",97.9,David Jones, Bill Kennedy, Marat Kogut,28,21,16,28,0,93,95.0,114.4,28,32,20,32,0,112,114.4,95.0

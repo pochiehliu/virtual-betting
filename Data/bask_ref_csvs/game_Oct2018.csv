@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201810160BOS,"8:00 PM, October 16, 2018",2019,"TD Garden, Boston, Massachusetts",Philadelphia 76ers,Boston Celtics,"18,624",104.3,Scott Foster,Ron Garretson,Dedric Taylor,21,21,24,21,0,87,83.4,100.7,21,26,30,28,0,105,100.7,83.4
 1,201810160GSW,"10:30 PM, October 16, 2018",2019,"Oracle Arena, Oakland, California",Oklahoma City Thunder,Golden State Warriors,"19,596",102.3,Brian Forte,Gediminas Petraitis,Zach Zarba,23,24,32,21,0,100,97.7,105.6,31,26,26,25,0,108,105.6,97.7
 2,201810170CHO,"7:00 PM, October 17, 2018",2019,"Spectrum Center, Charlotte, North Carolina",Milwaukee Bucks,Charlotte Hornets,"17,889",102.6,Sean Corbin,Scott Foster,Leroy Richardson,36,31,26,20,0,113,110.2,109.2,23,31,29,29,0,112,109.2,110.2

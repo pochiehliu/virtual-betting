@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201003010CHA,"7:00 PM, March 1, 2010",2010,"Time Warner Cable Arena, Charlotte, North Carolina",Dallas Mavericks,Charlotte Bobcats,"15,691",92.8,Joe DeRosa, David Guthrie, Derek Richardson,24,19,23,23,0,89,95.9,90.5,28,25,15,16,0,84,90.5,95.9
 1,201003010CHI,"8:00 PM, March 1, 2010",2010,"United Center, Chicago, Illinois",Atlanta Hawks,Chicago Bulls,"19,011",94.4,Mark Ayotte, Curtis Blair, Joe Crawford,34,25,16,41,0,116,122.9,97.5,23,20,25,24,0,92,97.5,122.9
 2,201003010CLE,"7:00 PM, March 1, 2010",2010,"Quicken Loans Arena, Cleveland, Ohio",New York Knicks,Cleveland Cavaliers,"20,562",103.8,Tony Brown, Bob Delaney, Rodney Mott,26,22,11,34,0,93,89.6,119.4,38,36,27,23,0,124,119.4,89.6
