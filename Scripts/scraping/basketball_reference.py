@@ -1,7 +1,8 @@
 """
 This program will scrape basketball reference and create a player
-date base with game stats for all players in all games. This is then
+data base with game stats for all players in all games. This is then
 saved to a CSV file.
+
 It must be run from command line and given argument of either 'full'
 or 'update', where the former will do a complete scraping from Oct
 2000 to present, and update will only get data from days since our
@@ -13,31 +14,28 @@ NOTE - The naming convention for the CSV files is "*_<MONTH><YEAR>",
 """
 import pandas as pd
 import numpy as np
-from bs4 import BeautifulSoup
-import requests
 from multiprocessing import Pool
-import os
 import sys
 import datetime as dt
-import time
 import calendar
+from general_tools import *
 
+# CONSTANTS
+DATA_LOC = './../../Data/bask_ref_csvs/'  # where to put data
 
-def get_page(link):
-    """
-    Gets the page content from a given link; gives it a second try
-    in case internet connection is lost for a moment to result in
-    timeout error.
-    :param link:
-    :return: page content, or None if the link doesn't work
-    """
-    try:
-        page = requests.get(link)
-    except TimeoutError:
-        page = requests.get(link)
-    if page.status_code != 200:
-        return None
-    return BeautifulSoup(page.content, 'html.parser')
+PLAYER_COLS = ['game_id', 'date', 'season', 'team', 'opp', 'starting_five', 'name', 'mp',
+               'fg', 'fga', 'fgp', 'tp', 'tpa', 'tpp', 'ft', 'fta', 'ftp',
+               'orb', 'drb', 'trb', 'ast', 'stl', 'blk', 'tov', 'pf', 'pts', 'pm',
+               'tsp', 'efgp', 'tpar', 'ftr', 'orbp', 'drbp', 'trbp',
+               'astp', 'stlp', 'blkp', 'tovp', 'usgp', 'ortg', 'drtg'
+               ]
+GAME_COLS = ['game_id', 'date', 'season', 'arena', 'away_name', 'home_name', 'attendance',
+             'pace', 'ref1', 'ref2', 'ref3',
+             'away_q1', 'away_q2', 'away_q3', 'away_q4', 'away_ot', 'away_final',
+             'away_ortg', 'away_drtg',
+             'home_q1', 'home_q2', 'home_q3', 'home_q4', 'home_ot', 'home_final',
+             'home_ortg', 'home_drtg'
+             ]
 
 
 def merge_ot(score_list):
@@ -111,34 +109,57 @@ def get_refs(box_page):
     return refs
 
 
-def get_last():
+def get_player_stats(bas, adv, num, g_id, basics, season, team):
     """
-    Finds last month where basketball-reference has been scraped.
-    :return: integer of format YYYYMM
+    Gets the stats for individual player
+    :param bas: beautiful soup object, contains location of basic stats
+    :param adv: beautiful soup object, contains location of advanced stats
+    :param num: integer indicating player's location in soup
+    :param g_id: game id in format YYYYMMDD0<HOME TEAM ABBREVIATION>
+    :param basics: dictionary of general stats acquired in get_game_stats()
+    :param season: int, season (year that championship is played in)
+    :param team: string, either 'home' or 'away'
+    :return: list of stats for player or None if there are no stats
     """
+    # fill in first few values on in player line
+    player_line = [g_id, basics['date'], season,
+                   basics['away_name'] if team == 'away' else basics['home_name'],
+                   basics['away_name'] if team == 'home' else basics['home_name'],
+                   1 if num < 11 else 0]
 
-    files = os.listdir('./../Data/bask_ref_csvs/')
-    max_date = 200000
+    player_bas_stats, player_adv_stats = bas[num], adv[num]
 
-    for file in files:
-        if file.startswith('game'):
-            year = file[-8:-4]
-            month = time.strptime(file[-11:-8], '%b').tm_mon
-            month = '0' + str(month) if month < 10 else str(month)
-            combo = int(year + month)
+    try:
+        if list(player_bas_stats.children)[1].get_text()[0] not in '1234567890':
+            if list(player_bas_stats.children)[1].get_text() == 'Did Not Play':
+                player_line = player_line + [list(player_bas_stats.children)[0].get_text(),
+                                             '0:00'] + np.zeros(33).tolist()
+            else:
+                player_line = None
+        else:
+            for stat in range(21):  # basic stats
+                player_line.append(list(player_bas_stats.children)[stat].get_text())
+            for stat in range(2, 16):  # advanced stats
+                player_line.append(list(player_adv_stats.children)[stat].get_text())
+    except IndexError:
+        player_line = None
 
-            # if it's the most recent month
-            if combo > max_date:
-                max_date = combo
-
-    return max_date
+    return player_line
 
 
-def game_looper(game, player_df, game_df, season):
-    box_link = 'https://www.basketball-reference.com/boxscores/' + game['csk'] + '.html'
+def get_game_stats(g_id, player_df, game_df, season):
+    """
+    Updates the player and game data frames with stats from a single game
+    :param g_id: game id in format YYYYMMDD0<HOME TEAM ABBREVIATION>
+    :param player_df: player data frame
+    :param game_df: game data frame
+    :param season: int, season (year that championship is played in)
+    :return: player_df, game_df, boolean of whether month is completed
+    """
+    box_link = 'https://www.basketball-reference.com/boxscores/' + g_id + '.html'
     box_page = get_page(box_link)
 
-    # all links are valid, so failing would be result of not having reached this date yet
+    # all links are valid, so failing would be result of not having reached this date's games yet
     if box_page is None:
         print("No game played at link: {}".format(box_link))
         return player_df, game_df, True
@@ -154,8 +175,8 @@ def game_looper(game, player_df, game_df, season):
     pace = list(deep[19].children)[5].split('pace" >')[2].split('<')[0]
 
     # beginning of full game line (row to be inserted to data base)
-    full_game_line = [game['csk'], basics['date'], season, basics['arena'],
-                      basics['away_name'], basics['home_name'], basics['att'], pace] + refs + away_line
+    full_game_line = [g_id, basics['date'], season, basics['arena'], basics['away_name'],
+                      basics['home_name'], basics['att'], pace] + refs + away_line
 
     # get stats for home and away teams; paired with their index in the html
     for team, i in [('away', 23), ('home', 27)]:
@@ -163,70 +184,53 @@ def game_looper(game, player_df, game_df, season):
         bas = list(list(list(list(list(deep[i].children)[3].children)[1].children)[1].children)[6].children)
         adv = list(list(list(list(list(deep[i + 2].children)[3].children)[1].children)[1].children)[6].children)
 
-        for num in range(len(bas) - 1):    # loops every player
+        # loop every player
+        for num in range(len(bas) - 1):
             if num % 2 == 0 or num == 11:  # skip empty locations
                 continue
 
-            # fill in first few values on in player line
-            player_line = [game['csk'], basics['date'], season,
-                           basics['away_name'] if team == 'away' else basics['home_name'],
-                           basics['away_name'] if team == 'home' else basics['home_name'],
-                           1 if num < 11 else 0]
+            # get player stats
+            player_line = get_player_stats(bas, adv, num, g_id, basics, season, team)
 
-            player_bas_stats, player_adv_stats = bas[num], adv[num]
-            try:
-                if list(player_bas_stats.children)[1].get_text()[0] not in '1234567890':
-                    if list(player_bas_stats.children)[1].get_text() == 'Did Not Play':
-                        player_line = player_line + [list(player_bas_stats.children)[0].get_text(),
-                                                     '0:00'] + np.zeros(33).tolist()
-                    else:
-                        continue
-                else:
-                    for stat in range(21):  # basic stats
-                        player_line.append(list(player_bas_stats.children)[stat].get_text())
-                    for stat in range(2, 16): # advanced stats
-                        player_line.append(list(player_adv_stats.children)[stat].get_text())
-            except IndexError:
+            # add player stats to player_df if he exits
+            if player_line is None:
                 continue
-            player_df.loc[len(player_df)] = player_line
+            else:
+                player_df.loc[len(player_df)] = player_line
 
+        # get team stats
         team_adv_stats = list(list(list(list(deep[i + 2].children)[3].children)[1].children)[1].children)[8]
         for stat in range(14, 16):
             full_game_line.append(list(list(team_adv_stats.children)[0].children)[stat].get_text())
         full_game_line = full_game_line + home_line if team == 'away' else full_game_line
 
+    # add team stats to game data frame
     game_df.loc[len(game_df)] = full_game_line
 
-    return player_df, game_df
+    return player_df, game_df, False
 
 
-def month_looper(season, month, update):
+def get_month_stats(season, month, update):
+    """
+    Gets full player and game data frames for entire month by looping games
+    in the month and calling get_game_stats() for each game.
+    :param season: int, season (year that championship is played in)
+    :param month: string, full month name in lower case
+    :param update: boolean, indicates whether to scrape full month or just update
+    :return: None if month page doesn't exist, otherwise nothing
+    """
     if update:
         mon = month[:3].capitalize()
         year = season - 1 if mon in ['Oct', 'Nov', 'Dec'] else season
-        player_df = pd.read_csv('./../Data/bask_ref_csvs/player_' + mon + str(year) + '.csv',
+        player_df = pd.read_csv(DATA_LOC + 'player_' + mon + str(year) + '.csv',
                                 header=0,
                                 index_col='Index')
-        game_df = pd.read_csv('./../Data/bask_ref_csvs/game_' + mon + str(year) + '.csv',
+        game_df = pd.read_csv(DATA_LOC + 'game_' + mon + str(year) + '.csv',
                               header=0,
                               index_col='Index')
     else:
-        # define data frames to store the player and game data in
-        player_cols = ['game_id', 'date', 'season', 'team', 'opp', 'starting_five', 'name', 'mp',
-                       'fg', 'fga', 'fgp', 'tp', 'tpa', 'tpp', 'ft', 'fta', 'ftp',
-                       'orb', 'drb', 'trb', 'ast', 'stl', 'blk', 'tov', 'pf', 'pts', 'pm',
-                       'tsp', 'efgp', 'tpar', 'ftr', 'orbp', 'drbp', 'trbp',
-                       'astp', 'stlp', 'blkp', 'tovp', 'usgp', 'ortg', 'drtg'
-                       ]
-        game_cols = ['game_id', 'date', 'season', 'arena', 'away_name', 'home_name', 'pace',
-                     'attendance', 'ref1', 'ref2', 'ref3',
-                     'away_q1', 'away_q2', 'away_q3', 'away_q4', 'away_ot', 'away_final',
-                     'away_ortg', 'away_drtg',
-                     'home_q1', 'home_q2', 'home_q3', 'home_q4', 'home_ot', 'home_final',
-                     'home_ortg', 'home_drtg'
-                     ]
-        player_df = pd.DataFrame(columns=player_cols)
-        game_df = pd.DataFrame(columns=game_cols)
+        player_df = pd.DataFrame(columns=PLAYER_COLS)
+        game_df = pd.DataFrame(columns=GAME_COLS)
 
     # link for monthly page
     month_link = "https://www.basketball-reference.com/leagues/NBA_" + str(season) + "_games-" + month + ".html"
@@ -237,21 +241,22 @@ def month_looper(season, month, update):
         print("failed for month link: {}".format(month_link))
         return None
 
-    # loop every game for this month
+    # loop every game for this month; completed = True when data reached without box scores
     completed = False
     for game in month_page.find_all('th', csk=True):
+        g_id = game['csk']
         if not completed:
-            if len(game_df) > 0 and int(game['csk'][:8]) <= int(game_df.game_id.iloc[-1][:8]):
+            if len(game_df) > 0 and int(g_id[:8]) < int(game_df.game_id.iloc[-1][:8]):
                 continue
             else:
-                player_df, game_df, completed = game_looper(game, player_df, game_df, season)
+                player_df, game_df, completed = get_game_stats(g_id, player_df, game_df, season)
 
     # save monthly results as CSVs
     mon = month[:3].capitalize()
     szn = season - 1 if mon in ['Oct', 'Nov', 'Dec'] else season
 
-    player_df.to_csv("./../Data/bask_ref_csvs/player_" + mon + str(szn) + ".csv", index_label="Index")
-    game_df.to_csv("./../Data/bask_ref_csvs/game_" + mon + str(szn) + ".csv", index_label="Index")
+    player_df.to_csv(DATA_LOC + "player_" + mon + str(szn) + ".csv", index_label="Index")
+    game_df.to_csv(DATA_LOC + "game_" + mon + str(szn) + ".csv", index_label="Index")
     print('Completed: {m} of {y}'.format(m=month.capitalize(), y=szn))
 
 
@@ -265,19 +270,18 @@ def main(season):
               "february", "march", "april", "may", 'june']
 
     for month in months:
-        month_looper(season, month)
+        get_month_stats(season, month, False)
 
 
 if __name__ == '__main__':
-    if 'README.md' in os.listdir('.'):
-        os.chdir('Scripts/')
+    os.chdir('Scripts/scraping/')
 
     args = sys.argv
 
     if len(args) == 1:
         print("Must supply argument")
         print("Argument must be either:")
-        print('      1) "full"; downloads all data from 2001 to present')
+        print('      1) "full"; downloads all data from 2001 season to present')
         print('      2) "update"; downloads data that is not yet archived')
 
     elif args[1] not in ['full', 'update']:
@@ -287,31 +291,24 @@ if __name__ == '__main__':
         now = dt.datetime.now()
         nba_szn = now.year + 1 if now.month >= 10 else now.year
 
-        half_1 = np.arange(2001, 2012)
-        half_2 = np.arange(2012, nba_szn + 1)
-        for half in [half_1, half_2]:
+        for half in [np.arange(2001, 2012), np.arange(2012, nba_szn + 1)]:
             pool = Pool(processes=len(half))
             pool.map(main, half)
 
     elif args[1] == 'update':
-        last_date = get_last()    # in format YYYYMM
+        last_date = get_last_date(DATA_LOC)  # in format YYYYMM
 
         now = dt.datetime.now()
-        cur_year = str(now.year)
         cur_month = '0' + str(now.month) if now.month < 10 else str(now.month)
-        current = int(cur_year + cur_month)
+        current = int(str(now.year) + cur_month)  # in format YYYYMM
 
-        first = True    # so that month_looper knows not to re-scrape games from last scraped month
+        first = True  # so that get_month_stats knows not to re-scrape games from last scraped month
         while last_date <= current:
             last_month = calendar.month_name[int(str(last_date)[4:])].lower()
             last_season = int(str(last_date)[:4]) + 1 if last_month in ['october',
                                                                         'november',
                                                                         'december'] else int(str(last_date)[:4])
-            month_looper(last_season, last_month, first)
+            get_month_stats(last_season, last_month, first)
 
-            last_date = last_date + 1 if last_month != 'december' else int(str(int(str(last_date)[:4]) + 1) + '01')
             first = False
-
-
-
-
+            last_date = last_date + 1 if last_month != 'december' else int(str(int(str(last_date)[:4]) + 1) + '01')

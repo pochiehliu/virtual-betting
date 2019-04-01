@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,pace,attendance,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,attendance,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201901010DEN,"9:00 PM, January 1, 2019",2019,"Pepsi Center, Denver, Colorado",New York Knicks,Denver Nuggets,"19,520",92.4,Tyler Ford,Tre Maddox,Ed Malloy,32,24,28,24,0,108,116.9,124.4,28,27,27,33,0,115,124.4,116.9
 1,201901010LAC,"10:30 PM, January 1, 2019",2019,"STAPLES Center, Los Angeles, California",Philadelphia 76ers,Los Angeles Clippers,"17,868",103.7,Jacyn Goble,J.T. Orr,Josh Tiven,41,35,25,18,0,119,114.7,109.0,28,30,30,25,0,113,109.0,114.7
 2,201901010MIL,"8:00 PM, January 1, 2019",2019,"Fiserv Forum, Milwaukee, Wisconsin",Detroit Pistons,Milwaukee Bucks,"17,534",97.7,Karl Lane,Eric Lewis,Evan Scott,27,25,21,25,0,98,100.3,123.9,35,33,24,29,0,121,123.9,100.3
