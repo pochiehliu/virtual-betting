@@ -5,6 +5,7 @@ be directly imported into the postgresql database.
 """
 
 import pandas as pd
+import numpy as np
 import os
 from scraping.merger import merge
 
@@ -116,31 +117,98 @@ def player_game_stats():
     player_df.to_csv(DATA_DIR + 'db_inserts/player_game_stats.csv', index=False)
 
 
-"""
-CREATE TABLE make_odds (
-    o_id int PRIMARY KEY,
-    g_id VARCHAR (12) REFERENCES game (g_id) ON DELETE NO ACTION,
-    sb_id int REFERENCES sportsbook (sb_id) ON DELETE NO ACTION,
-    bt_id int REFERENCES bet_type (bt_id) ON DELETE NO ACTION,
-    odds_time timestamp NOT NULL, -- sportsbook will update odds intermittently
-    odds_side char NOT NULL,
-    CHECK (
-        odds_side = 'H' OR
-        odds_side = 'V' OR
-        odds_side = 'O' OR
-        odds_side = 'U'
-    ),
-    UNIQUE (g_id, sb_id, bt_id, odds_time, odds_side),
-    odds_payout float NOT NULL,
-    CHECK (odds_payout >= 1), -- will use decimal odds
-    odds_line float NOT NULL
-);
-"""
-
-
 def make_odds():
-    # TODO
-    pass
+    sbr_bets = merge(DATA_DIR + 'sbr_csvs/', '')
+    sbr_names = merge(DATA_DIR, 'sbr_team').drop(['time'], axis=1)
+    sbr = pd.merge(left=sbr_bets, right=sbr_names, how='inner', on=['date', 'game_num'], validate='m:1')
+    bask_ref = pd.read_csv(DATA_DIR + 'db_inserts/game.csv')[['g_id', 'game_time']]
+    teams = pd.read_csv(DATA_DIR + 'db_inserts/team.csv')
+    teams = dict(zip(teams.sbr_name, teams.short))
+
+    # functions that decode the betting lines, returns as string tuple (payout, odds_line)
+    def get_total(line, pay):
+        if line == '-':
+            return np.nan
+        sign = '-' if '-' in line else ('+' if '-' in line else np.nan)
+        if pd.isnull(sign):
+            return np.nan
+        return sign + line.split(sign)[1] if pay else line.split(sign)[0].replace('½', '.5')
+
+    def get_spread(line, pay):
+        if line == '-':
+            return np.nan
+        sign = '-' if '-' in line[1:] else ('+' if '-' in line[1:] else np.nan)
+        if pd.isnull(sign):
+            return np.nan
+        return sign + line[1:].split(sign)[1] if pay else line[0] + line[1:].split(sign)[0].replace('½', '.5')
+
+    def get_ml(line, pay):
+        if line == '-':
+            return np.nan
+        else:
+            return line if pay else 0
+
+    def odds_convert(line):
+        if pd.isnull(line):
+            return line
+        else:
+            line = int(line)
+            return round(100 / (line * -1) + 1, 3) if line < 0 else round((line / 100) + 1, 3)
+
+    def get_lines(l, pay):
+        stat = l.odds_payout if pay else l.odds_line
+        return get_ml(stat, pay) if l.bt_id == 1 else (get_total(stat, pay) if l.bt_id == 2 else get_spread(stat, pay))
+
+    def get_bt_id(b):
+        return 3 if b == 'p' else (2 if b == 't' else 1)
+
+    def get_short(n):
+        if n.home not in ['Charlotte', 'Brooklyn', 'New Orleans']:
+            return teams[n.home]
+        else:
+            if n.home == 'Charlotte':
+                return 'CHA' if n.date < 20140701 else 'CHO'
+            elif n.home == 'Brooklyn':
+                return 'NJN' if n.date < 20120701 else 'BRK'
+            else:
+                return 'NOP' if n.date > 20130701 else ('NOK' if n.date < 20070701 else 'NOH')
+
+    sbr['short'] = sbr.apply(lambda x: get_short(x), axis=1)
+    sbr['g_id'] = sbr.date.astype(str) + '0' + sbr.short
+    sbr = pd.merge(left=sbr, right=bask_ref, how='inner', on=['g_id'], validate='m:1')
+
+    # stacking arrays from scratch
+    sb_id = pd.Series(np.repeat(1, 147663 * 2))
+    for i in range(2, 11):
+        sb_id = sb_id.append(pd.Series(np.repeat(i, 147663 * 2)))
+
+    bets = sbr.bet.append(sbr.bet)
+    times = sbr.game_time.append(sbr.game_time)
+    for i in range(2, 20):
+        bets = bets.append(sbr.bet)
+        times = times.append(sbr.game_time)
+
+    lines = sbr.ab1.append(sbr.hb1)
+    side = pd.Series(np.repeat('V', 147663)).append(pd.Series(np.repeat('H', 147663)))
+    for i in range(2, 11):
+        for s in ['ab', 'hb']:
+            lines = lines.append(sbr[s + str(i)])
+            side = side.append(pd.Series(np.repeat('V' if s == 'ab' else 'H', 147663)))
+
+    odds_df = pd.DataFrame(data={'sb_id': sb_id.values,
+                                 'bt_id': bets.values,
+                                 'odds_time': times.values,
+                                 'odds_side': side.values,
+                                 'odds_payout': lines.values,
+                                 'odds_line': lines.values})
+
+    odds_df.bt_id = odds_df[['bt_id']].applymap(get_bt_id).bt_id
+    odds_df.odds_payout = odds_df.apply(lambda x: get_lines(x, True), axis=1)
+    odds_df.odds_line = odds_df.apply(lambda x: get_lines(x, False), axis=1)
+    odds_df.dropna(how='any', inplace=True)
+    odds_df.odds_payout = odds_df.odds_payout.map(odds_convert)
+    odds_df.reset_index(drop=True, inplace=True)
+    odds_df.to_csv(DATA_DIR + 'db_inserts/make_odds.csv', index_label='o_id')
 
 
 def place_bet():
@@ -148,7 +216,11 @@ def place_bet():
 
 
 def main():
-    pass
+    team()
+    player()
+    game()
+    player_game_stats()
+    make_odds()
 
 
 if __name__ == '__main__':

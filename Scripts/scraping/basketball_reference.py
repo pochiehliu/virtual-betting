@@ -246,7 +246,7 @@ def get_month_stats(season, month, update):
     for game in month_page.find_all('th', csk=True):
         g_id = game['csk']
         if not completed:
-            if len(game_df) > 0 and int(g_id[:8]) < int(game_df.game_id.iloc[-1][:8]):
+            if g_id in game_df.game_id.values:
                 continue
             else:
                 player_df, game_df, completed = get_game_stats(g_id, player_df, game_df, season)
