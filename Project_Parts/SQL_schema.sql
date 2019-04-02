@@ -11,7 +11,7 @@ CREATE TABLE team (
 	t_id int PRIMARY KEY,
 	name text NOT NULL,
 	short VARCHAR (3) NOT NULL,
-	sbr_name text NOT NULL
+	sbr_name text
 );
 
 CREATE TABLE users (
