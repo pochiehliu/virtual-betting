@@ -29,7 +29,7 @@ PLAYER_COLS = ['game_id', 'date', 'season', 'team', 'opp', 'starting_five', 'nam
                'tsp', 'efgp', 'tpar', 'ftr', 'orbp', 'drbp', 'trbp',
                'astp', 'stlp', 'blkp', 'tovp', 'usgp', 'ortg', 'drtg'
                ]
-GAME_COLS = ['game_id', 'date', 'season', 'arena', 'away_name', 'home_name', 'attendance',
+GAME_COLS = ['game_id', 'date', 'season', 'arena', 'away_name', 'home_name', 'att',
              'pace', 'ref1', 'ref2', 'ref3',
              'away_q1', 'away_q2', 'away_q3', 'away_q4', 'away_ot', 'away_final',
              'away_ortg', 'away_drtg',
@@ -246,7 +246,7 @@ def get_month_stats(season, month, update):
     for game in month_page.find_all('th', csk=True):
         g_id = game['csk']
         if not completed:
-            if len(game_df) > 0 and int(g_id[:8]) < int(game_df.game_id.iloc[-1][:8]):
+            if g_id in game_df.game_id.values:
                 continue
             else:
                 player_df, game_df, completed = get_game_stats(g_id, player_df, game_df, season)

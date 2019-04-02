@@ -16171,261 +16171,262 @@ Index,date,time,game_num,away,home
 16169,20190223,08:00 PM,8,Sacramento,Oklahoma City
 16170,20190223,08:30 PM,9,Houston,Golden State
 16171,20190223,08:30 PM,10,Minnesota,Milwaukee
-16172,20190224,03:30 PM,0,Orlando,Toronto
-16173,20190224,05:00 PM,1,L.A. Clippers,Denver
-16174,20190224,07:30 PM,2,San Antonio,New York
-16175,20190225,07:00 PM,0,Portland,Cleveland
-16176,20190225,07:00 PM,1,Indiana,Detroit
-16177,20190225,07:00 PM,2,Golden State,Charlotte
-16178,20190225,07:30 PM,3,Phoenix,Miami
-16179,20190225,07:30 PM,4,San Antonio,Brooklyn
-16180,20190225,08:00 PM,5,Milwaukee,Chicago
-16181,20190225,08:00 PM,6,Atlanta,Houston
-16182,20190225,08:00 PM,7,Philadelphia,New Orleans
-16183,20190225,08:00 PM,8,Sacramento,Minnesota
-16184,20190225,08:00 PM,9,L.A. Lakers,Memphis
-16185,20190225,10:30 PM,10,Dallas,L.A. Clippers
-16186,20190226,07:30 PM,0,Orlando,New York
-16187,20190226,08:00 PM,1,Boston,Toronto
-16188,20190226,10:30 PM,2,Oklahoma City,Denver
-16189,20190227,07:00 PM,0,Houston,Charlotte
-16190,20190227,07:30 PM,1,Minnesota,Atlanta
-16191,20190227,07:30 PM,2,Washington,Brooklyn
-16192,20190227,07:30 PM,3,Golden State,Miami
-16193,20190227,08:00 PM,4,Portland,Boston
-16194,20190227,08:00 PM,5,Chicago,Memphis
-16195,20190227,08:30 PM,6,Detroit,San Antonio
-16196,20190227,08:30 PM,7,Indiana,Dallas
-16197,20190227,09:00 PM,8,L.A. Clippers,Utah
-16198,20190227,10:00 PM,9,Milwaukee,Sacramento
-16199,20190227,10:30 PM,10,New Orleans,L.A. Lakers
-16200,20190228,07:00 PM,0,Minnesota,Indiana
-16201,20190228,07:00 PM,1,Golden State,Orlando
-16202,20190228,07:30 PM,2,Cleveland,New York
-16203,20190228,08:00 PM,3,Miami,Houston
-16204,20190228,08:00 PM,4,Philadelphia,Oklahoma City
-16205,20190228,10:30 PM,5,Utah,Denver
-16206,20190301,07:30 PM,0,Chicago,Atlanta
-16207,20190301,07:30 PM,1,Charlotte,Brooklyn
-16208,20190301,08:00 PM,2,Portland,Toronto
-16209,20190301,08:00 PM,3,Washington,Boston
-16210,20190301,09:00 PM,4,New Orleans,Phoenix
-16211,20190301,10:00 PM,5,L.A. Clippers,Sacramento
-16212,20190301,10:30 PM,6,Milwaukee,L.A. Lakers
-16213,20190302,05:00 PM,0,Detroit,Cleveland
-16214,20190302,07:00 PM,1,Orlando,Indiana
-16215,20190302,07:30 PM,2,Brooklyn,Miami
-16216,20190302,08:30 PM,3,Memphis,Dallas
-16217,20190302,08:30 PM,4,Golden State,Philadelphia
-16218,20190302,08:30 PM,5,Oklahoma City,San Antonio
-16219,20190302,09:00 PM,6,L.A. Lakers,Phoenix
-16220,20190302,09:00 PM,7,Milwaukee,Utah
-16221,20190302,09:00 PM,8,New Orleans,Denver
-16222,20190303,01:00 PM,0,Portland,Charlotte
-16223,20190303,03:30 PM,1,Houston,Boston
-16224,20190303,03:30 PM,2,Atlanta,Chicago
-16225,20190303,03:30 PM,3,New York,L.A. Clippers
-16226,20190303,06:00 PM,4,Orlando,Cleveland
-16227,20190303,06:00 PM,5,Toronto,Detroit
-16228,20190303,06:00 PM,6,Minnesota,Washington
-16229,20190303,07:00 PM,7,Memphis,Oklahoma City
-16230,20190304,07:30 PM,0,Dallas,Brooklyn
-16231,20190304,07:30 PM,1,Atlanta,Miami
-16232,20190304,08:30 PM,2,Denver,San Antonio
-16233,20190304,09:00 PM,3,Milwaukee,Phoenix
-16234,20190304,09:00 PM,4,New Orleans,Utah
-16235,20190304,10:00 PM,5,New York,Sacramento
-16236,20190304,10:30 PM,6,L.A. Clippers,L.A. Lakers
-16237,20190305,07:00 PM,0,Orlando,Philadelphia
-16238,20190305,07:00 PM,1,Chicago,Indiana
-16239,20190305,08:00 PM,2,Houston,Toronto
-16240,20190305,08:00 PM,3,Portland,Memphis
-16241,20190305,08:00 PM,4,Oklahoma City,Minnesota
-16242,20190305,10:30 PM,5,Boston,Golden State
-16243,20190306,07:00 PM,0,Miami,Charlotte
-16244,20190306,07:00 PM,1,Dallas,Washington
-16245,20190306,07:00 PM,2,Minnesota,Detroit
-16246,20190306,07:30 PM,3,San Antonio,Atlanta
-16247,20190306,07:30 PM,4,Cleveland,Brooklyn
-16248,20190306,08:00 PM,5,Utah,New Orleans
-16249,20190306,08:00 PM,6,Philadelphia,Chicago
-16250,20190306,09:00 PM,7,New York,Phoenix
-16251,20190306,10:00 PM,8,Boston,Sacramento
-16252,20190306,10:30 PM,9,Denver,L.A. Lakers
-16253,20190307,08:00 PM,0,Indiana,Milwaukee
-16254,20190307,10:30 PM,1,Oklahoma City,Portland
-16255,20190308,07:00 PM,0,Washington,Charlotte
-16256,20190308,07:00 PM,1,Dallas,Orlando
-16257,20190308,08:00 PM,2,Utah,Memphis
-16258,20190308,08:00 PM,3,Cleveland,Miami
-16259,20190308,08:00 PM,4,Toronto,New Orleans
-16260,20190308,08:00 PM,5,Philadelphia,Houston
-16261,20190308,08:00 PM,6,Detroit,Chicago
-16262,20190308,10:30 PM,7,Denver,Golden State
-16263,20190308,10:30 PM,8,Oklahoma City,L.A. Clippers
-16264,20190309,12:00 PM,0,Sacramento,New York
-16265,20190309,07:00 PM,1,Brooklyn,Atlanta
-16266,20190309,08:00 PM,2,Washington,Minnesota
-16267,20190309,08:30 PM,3,Boston,L.A. Lakers
-16268,20190309,09:00 PM,4,Charlotte,Milwaukee
-16269,20190309,10:00 PM,5,Phoenix,Portland
-16270,20190310,12:00 PM,0,Chicago,Detroit
-16271,20190310,03:30 PM,1,Toronto,Miami
-16272,20190310,03:30 PM,2,Indiana,Philadelphia
-16273,20190310,06:00 PM,3,New Orleans,Atlanta
-16274,20190310,06:00 PM,4,Orlando,Memphis
-16275,20190310,07:00 PM,5,Houston,Dallas
-16276,20190310,08:00 PM,6,Milwaukee,San Antonio
-16277,20190310,08:00 PM,7,New York,Minnesota
-16278,20190310,08:30 PM,8,Phoenix,Golden State
-16279,20190311,07:00 PM,0,Toronto,Cleveland
-16280,20190311,07:00 PM,1,Sacramento,Washington
-16281,20190311,07:30 PM,2,Detroit,Brooklyn
-16282,20190311,08:00 PM,3,Charlotte,Houston
-16283,20190311,09:00 PM,4,Oklahoma City,Utah
-16284,20190311,10:30 PM,5,Boston,L.A. Clippers
-16285,20190312,07:00 PM,0,New York,Indiana
-16286,20190312,07:00 PM,1,Cleveland,Philadelphia
-16287,20190312,08:00 PM,2,Milwaukee,New Orleans
-16288,20190312,08:00 PM,3,L.A. Lakers,Chicago
-16289,20190312,08:00 PM,4,San Antonio,Dallas
-16290,20190312,10:30 PM,5,Minnesota,Denver
-16291,20190312,10:30 PM,6,Portland,L.A. Clippers
-16292,20190313,07:00 PM,0,Orlando,Washington
-16293,20190313,07:00 PM,1,Brooklyn,Oklahoma City
-16294,20190313,07:30 PM,2,Detroit,Miami
-16295,20190313,07:30 PM,3,Memphis,Atlanta
-16296,20190313,09:30 PM,4,Golden State,Houston
-16297,20190313,10:00 PM,5,Utah,Phoenix
-16298,20190314,07:00 PM,0,Cleveland,Orlando
-16299,20190314,07:00 PM,1,Oklahoma City,Indiana
-16300,20190314,07:30 PM,2,Sacramento,Boston
-16301,20190314,08:00 PM,3,L.A. Lakers,Toronto
-16302,20190314,09:00 PM,4,Minnesota,Utah
-16303,20190314,10:30 PM,5,Dallas,Denver
-16304,20190315,07:00 PM,0,L.A. Lakers,Detroit
-16305,20190315,07:00 PM,1,Sacramento,Philadelphia
-16306,20190315,07:00 PM,2,Charlotte,Washington
-16307,20190315,08:00 PM,3,Phoenix,Houston
-16308,20190315,08:00 PM,4,Portland,New Orleans
-16309,20190315,08:00 PM,5,Milwaukee,Miami
-16310,20190315,08:30 PM,6,New York,San Antonio
-16311,20190315,10:30 PM,7,Chicago,L.A. Clippers
-16312,20190316,12:30 PM,0,Atlanta,Boston
-16313,20190316,07:00 PM,1,Memphis,Washington
-16314,20190316,07:00 PM,2,Phoenix,New Orleans
-16315,20190316,08:30 PM,3,Golden State,Oklahoma City
-16316,20190316,08:30 PM,4,Portland,San Antonio
-16317,20190316,08:30 PM,5,Cleveland,Dallas
-16318,20190316,09:00 PM,6,Indiana,Denver
-16319,20190316,09:00 PM,7,Brooklyn,Utah
-16320,20190317,12:00 PM,0,L.A. Lakers,New York
-16321,20190317,01:00 PM,1,Charlotte,Miami
-16322,20190317,03:30 PM,2,Philadelphia,Milwaukee
-16323,20190317,04:00 PM,3,Toronto,Detroit
-16324,20190317,06:00 PM,4,Atlanta,Orlando
-16325,20190317,06:00 PM,5,Chicago,Sacramento
-16326,20190317,09:00 PM,6,Minnesota,Houston
-16327,20190317,09:00 PM,7,Brooklyn,L.A. Clippers
-16328,20190318,07:00 PM,0,Detroit,Cleveland
-16329,20190318,07:00 PM,1,Utah,Washington
-16330,20190318,07:30 PM,2,Denver,Boston
-16331,20190318,07:30 PM,3,New York,Toronto
-16332,20190318,08:00 PM,4,Miami,Oklahoma City
-16333,20190318,08:00 PM,5,Golden State,San Antonio
-16334,20190318,08:30 PM,6,New Orleans,Dallas
-16335,20190318,10:00 PM,7,Chicago,Phoenix
-16336,20190318,10:30 PM,8,Indiana,Portland
-16337,20190319,07:00 PM,0,Philadelphia,Charlotte
-16338,20190319,07:30 PM,1,Houston,Atlanta
-16339,20190319,08:00 PM,2,Golden State,Minnesota
-16340,20190319,08:00 PM,3,L.A. Lakers,Milwaukee
-16341,20190319,10:00 PM,4,Brooklyn,Sacramento
-16342,20190319,10:30 PM,5,Indiana,L.A. Clippers
-16343,20190320,07:00 PM,0,Milwaukee,Cleveland
-16344,20190320,07:00 PM,1,New Orleans,Orlando
-16345,20190320,07:00 PM,2,Boston,Philadelphia
-16346,20190320,07:30 PM,3,Utah,New York
-16347,20190320,08:00 PM,4,Washington,Chicago
-16348,20190320,08:00 PM,5,Houston,Memphis
-16349,20190320,08:30 PM,6,Miami,San Antonio
-16350,20190320,09:30 PM,7,Toronto,Oklahoma City
-16351,20190320,10:00 PM,8,Dallas,Portland
-16352,20190321,07:00 PM,0,Minnesota,Charlotte
-16353,20190321,07:00 PM,1,Denver,Washington
-16354,20190321,07:30 PM,2,Utah,Atlanta
-16355,20190321,10:00 PM,3,Dallas,Sacramento
-16356,20190321,10:00 PM,4,Detroit,Phoenix
-16357,20190321,10:30 PM,5,Indiana,Golden State
-16358,20190322,07:00 PM,0,Memphis,Orlando
-16359,20190322,07:30 PM,1,Denver,New York
-16360,20190322,07:30 PM,2,L.A. Clippers,Cleveland
-16361,20190322,07:30 PM,3,Oklahoma City,Toronto
-16362,20190322,08:00 PM,4,San Antonio,Houston
-16363,20190322,08:30 PM,5,Miami,Milwaukee
-16364,20190322,10:30 PM,6,Brooklyn,L.A. Lakers
-16365,20190323,06:00 PM,0,Boston,Charlotte
-16366,20190323,07:00 PM,1,Miami,Washington
-16367,20190323,07:30 PM,2,Philadelphia,Atlanta
-16368,20190323,08:00 PM,3,Minnesota,Memphis
-16369,20190323,08:00 PM,4,Utah,Chicago
-16370,20190323,08:30 PM,5,Dallas,Golden State
-16371,20190323,10:00 PM,6,Detroit,Portland
-16372,20190323,10:00 PM,7,Phoenix,Sacramento
-16373,20190324,12:00 PM,0,L.A. Clippers,New York
-16374,20190324,04:30 PM,1,Cleveland,Milwaukee
-16375,20190324,05:00 PM,2,Denver,Indiana
-16376,20190324,06:00 PM,3,Charlotte,Toronto
-16377,20190324,07:00 PM,4,Houston,New Orleans
-16378,20190324,07:30 PM,5,San Antonio,Boston
-16379,20190324,08:30 PM,6,Detroit,Golden State
-16380,20190324,09:30 PM,7,Sacramento,L.A. Lakers
-16381,20190325,07:00 PM,0,Philadelphia,Orlando
-16382,20190325,08:00 PM,1,Oklahoma City,Memphis
-16383,20190325,09:00 PM,2,Phoenix,Utah
-16384,20190325,10:00 PM,3,Brooklyn,Portland
-16385,20190326,07:00 PM,0,Boston,Cleveland
-16386,20190326,07:00 PM,1,San Antonio,Charlotte
-16387,20190326,07:30 PM,2,Orlando,Miami
-16388,20190326,07:30 PM,3,Chicago,Toronto
-16389,20190326,08:00 PM,4,L.A. Clippers,Minnesota
-16390,20190326,08:00 PM,5,Atlanta,New Orleans
-16391,20190326,08:00 PM,6,Houston,Milwaukee
-16392,20190326,08:30 PM,7,Sacramento,Dallas
-16393,20190326,09:00 PM,8,Detroit,Denver
-16394,20190326,10:30 PM,9,Washington,L.A. Lakers
-16395,20190327,08:00 PM,0,Indiana,Oklahoma City
-16396,20190327,08:00 PM,1,Golden State,Memphis
-16397,20190327,08:00 PM,2,Portland,Chicago
-16398,20190327,10:00 PM,3,Washington,Phoenix
-16399,20190327,10:30 PM,4,L.A. Lakers,Utah
-16400,20190328,07:00 PM,0,Brooklyn,Philadelphia
-16401,20190328,07:00 PM,1,Orlando,Detroit
-16402,20190328,07:30 PM,2,Toronto,New York
-16403,20190328,07:30 PM,3,Dallas,Miami
-16404,20190328,08:00 PM,4,Sacramento,New Orleans
-16405,20190328,08:00 PM,5,L.A. Clippers,Milwaukee
-16406,20190328,08:00 PM,6,Denver,Houston
-16407,20190328,08:30 PM,7,Cleveland,San Antonio
-16408,20190329,07:00 PM,0,Indiana,Boston
-16409,20190329,07:30 PM,1,Portland,Atlanta
-16410,20190329,08:00 PM,2,Denver,Oklahoma City
-16411,20190329,08:00 PM,3,Golden State,Minnesota
-16412,20190329,09:00 PM,4,Washington,Utah
-16413,20190329,10:30 PM,5,Charlotte,L.A. Lakers
-16414,20190330,03:30 PM,0,Cleveland,L.A. Clippers
-16415,20190330,06:00 PM,1,Boston,Brooklyn
-16416,20190330,06:00 PM,2,Sacramento,Houston
-16417,20190330,07:00 PM,3,Portland,Detroit
-16418,20190330,07:00 PM,4,Orlando,Indiana
-16419,20190330,07:30 PM,5,Miami,New York
-16420,20190330,08:00 PM,6,Philadelphia,Minnesota
-16421,20190330,08:00 PM,7,Toronto,Chicago
-16422,20190330,10:00 PM,8,Memphis,Phoenix
-16423,20190331,12:30 PM,0,Milwaukee,Atlanta
-16424,20190331,03:30 PM,1,Dallas,Oklahoma City
-16425,20190331,06:00 PM,2,L.A. Lakers,New Orleans
-16426,20190331,07:00 PM,3,Sacramento,San Antonio
-16427,20190331,08:00 PM,4,Washington,Denver
-16428,20190331,08:30 PM,5,Charlotte,Golden State
-16429,20190331,10:30 PM,6,Memphis,L.A. Clippers
+16172,20190223,10:00 PM,11,Dallas,Utah
+16173,20190224,03:30 PM,0,Orlando,Toronto
+16174,20190224,05:00 PM,1,L.A. Clippers,Denver
+16175,20190224,07:30 PM,2,San Antonio,New York
+16176,20190225,07:00 PM,0,Portland,Cleveland
+16177,20190225,07:00 PM,1,Indiana,Detroit
+16178,20190225,07:00 PM,2,Golden State,Charlotte
+16179,20190225,07:30 PM,3,Phoenix,Miami
+16180,20190225,07:30 PM,4,San Antonio,Brooklyn
+16181,20190225,08:00 PM,5,Milwaukee,Chicago
+16182,20190225,08:00 PM,6,Atlanta,Houston
+16183,20190225,08:00 PM,7,Philadelphia,New Orleans
+16184,20190225,08:00 PM,8,Sacramento,Minnesota
+16185,20190225,08:00 PM,9,L.A. Lakers,Memphis
+16186,20190225,10:30 PM,10,Dallas,L.A. Clippers
+16187,20190226,07:30 PM,0,Orlando,New York
+16188,20190226,08:00 PM,1,Boston,Toronto
+16189,20190226,10:30 PM,2,Oklahoma City,Denver
+16190,20190227,07:00 PM,0,Houston,Charlotte
+16191,20190227,07:30 PM,1,Minnesota,Atlanta
+16192,20190227,07:30 PM,2,Washington,Brooklyn
+16193,20190227,07:30 PM,3,Golden State,Miami
+16194,20190227,08:00 PM,4,Portland,Boston
+16195,20190227,08:00 PM,5,Chicago,Memphis
+16196,20190227,08:30 PM,6,Detroit,San Antonio
+16197,20190227,08:30 PM,7,Indiana,Dallas
+16198,20190227,09:00 PM,8,L.A. Clippers,Utah
+16199,20190227,10:00 PM,9,Milwaukee,Sacramento
+16200,20190227,10:30 PM,10,New Orleans,L.A. Lakers
+16201,20190228,07:00 PM,0,Minnesota,Indiana
+16202,20190228,07:00 PM,1,Golden State,Orlando
+16203,20190228,07:30 PM,2,Cleveland,New York
+16204,20190228,08:00 PM,3,Miami,Houston
+16205,20190228,08:00 PM,4,Philadelphia,Oklahoma City
+16206,20190228,10:30 PM,5,Utah,Denver
+16207,20190301,07:30 PM,0,Chicago,Atlanta
+16208,20190301,07:30 PM,1,Charlotte,Brooklyn
+16209,20190301,08:00 PM,2,Portland,Toronto
+16210,20190301,08:00 PM,3,Washington,Boston
+16211,20190301,09:00 PM,4,New Orleans,Phoenix
+16212,20190301,10:00 PM,5,L.A. Clippers,Sacramento
+16213,20190301,10:30 PM,6,Milwaukee,L.A. Lakers
+16214,20190302,05:00 PM,0,Detroit,Cleveland
+16215,20190302,07:00 PM,1,Orlando,Indiana
+16216,20190302,07:30 PM,2,Brooklyn,Miami
+16217,20190302,08:30 PM,3,Memphis,Dallas
+16218,20190302,08:30 PM,4,Golden State,Philadelphia
+16219,20190302,08:30 PM,5,Oklahoma City,San Antonio
+16220,20190302,09:00 PM,6,L.A. Lakers,Phoenix
+16221,20190302,09:00 PM,7,Milwaukee,Utah
+16222,20190302,09:00 PM,8,New Orleans,Denver
+16223,20190303,01:00 PM,0,Portland,Charlotte
+16224,20190303,03:30 PM,1,Houston,Boston
+16225,20190303,03:30 PM,2,Atlanta,Chicago
+16226,20190303,03:30 PM,3,New York,L.A. Clippers
+16227,20190303,06:00 PM,4,Orlando,Cleveland
+16228,20190303,06:00 PM,5,Toronto,Detroit
+16229,20190303,06:00 PM,6,Minnesota,Washington
+16230,20190303,07:00 PM,7,Memphis,Oklahoma City
+16231,20190304,07:30 PM,0,Dallas,Brooklyn
+16232,20190304,07:30 PM,1,Atlanta,Miami
+16233,20190304,08:30 PM,2,Denver,San Antonio
+16234,20190304,09:00 PM,3,Milwaukee,Phoenix
+16235,20190304,09:00 PM,4,New Orleans,Utah
+16236,20190304,10:00 PM,5,New York,Sacramento
+16237,20190304,10:30 PM,6,L.A. Clippers,L.A. Lakers
+16238,20190305,07:00 PM,0,Orlando,Philadelphia
+16239,20190305,07:00 PM,1,Chicago,Indiana
+16240,20190305,08:00 PM,2,Houston,Toronto
+16241,20190305,08:00 PM,3,Portland,Memphis
+16242,20190305,08:00 PM,4,Oklahoma City,Minnesota
+16243,20190305,10:30 PM,5,Boston,Golden State
+16244,20190306,07:00 PM,0,Miami,Charlotte
+16245,20190306,07:00 PM,1,Dallas,Washington
+16246,20190306,07:00 PM,2,Minnesota,Detroit
+16247,20190306,07:30 PM,3,San Antonio,Atlanta
+16248,20190306,07:30 PM,4,Cleveland,Brooklyn
+16249,20190306,08:00 PM,5,Utah,New Orleans
+16250,20190306,08:00 PM,6,Philadelphia,Chicago
+16251,20190306,09:00 PM,7,New York,Phoenix
+16252,20190306,10:00 PM,8,Boston,Sacramento
+16253,20190306,10:30 PM,9,Denver,L.A. Lakers
+16254,20190307,08:00 PM,0,Indiana,Milwaukee
+16255,20190307,10:30 PM,1,Oklahoma City,Portland
+16256,20190308,07:00 PM,0,Washington,Charlotte
+16257,20190308,07:00 PM,1,Dallas,Orlando
+16258,20190308,08:00 PM,2,Utah,Memphis
+16259,20190308,08:00 PM,3,Cleveland,Miami
+16260,20190308,08:00 PM,4,Toronto,New Orleans
+16261,20190308,08:00 PM,5,Philadelphia,Houston
+16262,20190308,08:00 PM,6,Detroit,Chicago
+16263,20190308,10:30 PM,7,Denver,Golden State
+16264,20190308,10:30 PM,8,Oklahoma City,L.A. Clippers
+16265,20190309,12:00 PM,0,Sacramento,New York
+16266,20190309,07:00 PM,1,Brooklyn,Atlanta
+16267,20190309,08:00 PM,2,Washington,Minnesota
+16268,20190309,08:30 PM,3,Boston,L.A. Lakers
+16269,20190309,09:00 PM,4,Charlotte,Milwaukee
+16270,20190309,10:00 PM,5,Phoenix,Portland
+16271,20190310,12:00 PM,0,Chicago,Detroit
+16272,20190310,03:30 PM,1,Toronto,Miami
+16273,20190310,03:30 PM,2,Indiana,Philadelphia
+16274,20190310,06:00 PM,3,New Orleans,Atlanta
+16275,20190310,06:00 PM,4,Orlando,Memphis
+16276,20190310,07:00 PM,5,Houston,Dallas
+16277,20190310,08:00 PM,6,Milwaukee,San Antonio
+16278,20190310,08:00 PM,7,New York,Minnesota
+16279,20190310,08:30 PM,8,Phoenix,Golden State
+16280,20190311,07:00 PM,0,Toronto,Cleveland
+16281,20190311,07:00 PM,1,Sacramento,Washington
+16282,20190311,07:30 PM,2,Detroit,Brooklyn
+16283,20190311,08:00 PM,3,Charlotte,Houston
+16284,20190311,09:00 PM,4,Oklahoma City,Utah
+16285,20190311,10:30 PM,5,Boston,L.A. Clippers
+16286,20190312,07:00 PM,0,New York,Indiana
+16287,20190312,07:00 PM,1,Cleveland,Philadelphia
+16288,20190312,08:00 PM,2,Milwaukee,New Orleans
+16289,20190312,08:00 PM,3,L.A. Lakers,Chicago
+16290,20190312,08:00 PM,4,San Antonio,Dallas
+16291,20190312,10:30 PM,5,Minnesota,Denver
+16292,20190312,10:30 PM,6,Portland,L.A. Clippers
+16293,20190313,07:00 PM,0,Orlando,Washington
+16294,20190313,07:00 PM,1,Brooklyn,Oklahoma City
+16295,20190313,07:30 PM,2,Detroit,Miami
+16296,20190313,07:30 PM,3,Memphis,Atlanta
+16297,20190313,09:30 PM,4,Golden State,Houston
+16298,20190313,10:00 PM,5,Utah,Phoenix
+16299,20190314,07:00 PM,0,Cleveland,Orlando
+16300,20190314,07:00 PM,1,Oklahoma City,Indiana
+16301,20190314,07:30 PM,2,Sacramento,Boston
+16302,20190314,08:00 PM,3,L.A. Lakers,Toronto
+16303,20190314,09:00 PM,4,Minnesota,Utah
+16304,20190314,10:30 PM,5,Dallas,Denver
+16305,20190315,07:00 PM,0,L.A. Lakers,Detroit
+16306,20190315,07:00 PM,1,Sacramento,Philadelphia
+16307,20190315,07:00 PM,2,Charlotte,Washington
+16308,20190315,08:00 PM,3,Phoenix,Houston
+16309,20190315,08:00 PM,4,Portland,New Orleans
+16310,20190315,08:00 PM,5,Milwaukee,Miami
+16311,20190315,08:30 PM,6,New York,San Antonio
+16312,20190315,10:30 PM,7,Chicago,L.A. Clippers
+16313,20190316,12:30 PM,0,Atlanta,Boston
+16314,20190316,07:00 PM,1,Memphis,Washington
+16315,20190316,07:00 PM,2,Phoenix,New Orleans
+16316,20190316,08:30 PM,3,Golden State,Oklahoma City
+16317,20190316,08:30 PM,4,Portland,San Antonio
+16318,20190316,08:30 PM,5,Cleveland,Dallas
+16319,20190316,09:00 PM,6,Indiana,Denver
+16320,20190316,09:00 PM,7,Brooklyn,Utah
+16321,20190317,12:00 PM,0,L.A. Lakers,New York
+16322,20190317,01:00 PM,1,Charlotte,Miami
+16323,20190317,03:30 PM,2,Philadelphia,Milwaukee
+16324,20190317,04:00 PM,3,Toronto,Detroit
+16325,20190317,06:00 PM,4,Atlanta,Orlando
+16326,20190317,06:00 PM,5,Chicago,Sacramento
+16327,20190317,09:00 PM,6,Minnesota,Houston
+16328,20190317,09:00 PM,7,Brooklyn,L.A. Clippers
+16329,20190318,07:00 PM,0,Detroit,Cleveland
+16330,20190318,07:00 PM,1,Utah,Washington
+16331,20190318,07:30 PM,2,Denver,Boston
+16332,20190318,07:30 PM,3,New York,Toronto
+16333,20190318,08:00 PM,4,Miami,Oklahoma City
+16334,20190318,08:00 PM,5,Golden State,San Antonio
+16335,20190318,08:30 PM,6,New Orleans,Dallas
+16336,20190318,10:00 PM,7,Chicago,Phoenix
+16337,20190318,10:30 PM,8,Indiana,Portland
+16338,20190319,07:00 PM,0,Philadelphia,Charlotte
+16339,20190319,07:30 PM,1,Houston,Atlanta
+16340,20190319,08:00 PM,2,Golden State,Minnesota
+16341,20190319,08:00 PM,3,L.A. Lakers,Milwaukee
+16342,20190319,10:00 PM,4,Brooklyn,Sacramento
+16343,20190319,10:30 PM,5,Indiana,L.A. Clippers
+16344,20190320,07:00 PM,0,Milwaukee,Cleveland
+16345,20190320,07:00 PM,1,New Orleans,Orlando
+16346,20190320,07:00 PM,2,Boston,Philadelphia
+16347,20190320,07:30 PM,3,Utah,New York
+16348,20190320,08:00 PM,4,Washington,Chicago
+16349,20190320,08:00 PM,5,Houston,Memphis
+16350,20190320,08:30 PM,6,Miami,San Antonio
+16351,20190320,09:30 PM,7,Toronto,Oklahoma City
+16352,20190320,10:00 PM,8,Dallas,Portland
+16353,20190321,07:00 PM,0,Minnesota,Charlotte
+16354,20190321,07:00 PM,1,Denver,Washington
+16355,20190321,07:30 PM,2,Utah,Atlanta
+16356,20190321,10:00 PM,3,Dallas,Sacramento
+16357,20190321,10:00 PM,4,Detroit,Phoenix
+16358,20190321,10:30 PM,5,Indiana,Golden State
+16359,20190322,07:00 PM,0,Memphis,Orlando
+16360,20190322,07:30 PM,1,Denver,New York
+16361,20190322,07:30 PM,2,L.A. Clippers,Cleveland
+16362,20190322,07:30 PM,3,Oklahoma City,Toronto
+16363,20190322,08:00 PM,4,San Antonio,Houston
+16364,20190322,08:30 PM,5,Miami,Milwaukee
+16365,20190322,10:30 PM,6,Brooklyn,L.A. Lakers
+16366,20190323,06:00 PM,0,Boston,Charlotte
+16367,20190323,07:00 PM,1,Miami,Washington
+16368,20190323,07:30 PM,2,Philadelphia,Atlanta
+16369,20190323,08:00 PM,3,Minnesota,Memphis
+16370,20190323,08:00 PM,4,Utah,Chicago
+16371,20190323,08:30 PM,5,Dallas,Golden State
+16372,20190323,10:00 PM,6,Detroit,Portland
+16373,20190323,10:00 PM,7,Phoenix,Sacramento
+16374,20190324,12:00 PM,0,L.A. Clippers,New York
+16375,20190324,04:30 PM,1,Cleveland,Milwaukee
+16376,20190324,05:00 PM,2,Denver,Indiana
+16377,20190324,06:00 PM,3,Charlotte,Toronto
+16378,20190324,07:00 PM,4,Houston,New Orleans
+16379,20190324,07:30 PM,5,San Antonio,Boston
+16380,20190324,08:30 PM,6,Detroit,Golden State
+16381,20190324,09:30 PM,7,Sacramento,L.A. Lakers
+16382,20190325,07:00 PM,0,Philadelphia,Orlando
+16383,20190325,08:00 PM,1,Oklahoma City,Memphis
+16384,20190325,09:00 PM,2,Phoenix,Utah
+16385,20190325,10:00 PM,3,Brooklyn,Portland
+16386,20190326,07:00 PM,0,Boston,Cleveland
+16387,20190326,07:00 PM,1,San Antonio,Charlotte
+16388,20190326,07:30 PM,2,Orlando,Miami
+16389,20190326,07:30 PM,3,Chicago,Toronto
+16390,20190326,08:00 PM,4,L.A. Clippers,Minnesota
+16391,20190326,08:00 PM,5,Atlanta,New Orleans
+16392,20190326,08:00 PM,6,Houston,Milwaukee
+16393,20190326,08:30 PM,7,Sacramento,Dallas
+16394,20190326,09:00 PM,8,Detroit,Denver
+16395,20190326,10:30 PM,9,Washington,L.A. Lakers
+16396,20190327,08:00 PM,0,Indiana,Oklahoma City
+16397,20190327,08:00 PM,1,Golden State,Memphis
+16398,20190327,08:00 PM,2,Portland,Chicago
+16399,20190327,10:00 PM,3,Washington,Phoenix
+16400,20190327,10:30 PM,4,L.A. Lakers,Utah
+16401,20190328,07:00 PM,0,Brooklyn,Philadelphia
+16402,20190328,07:00 PM,1,Orlando,Detroit
+16403,20190328,07:30 PM,2,Toronto,New York
+16404,20190328,07:30 PM,3,Dallas,Miami
+16405,20190328,08:00 PM,4,Sacramento,New Orleans
+16406,20190328,08:00 PM,5,L.A. Clippers,Milwaukee
+16407,20190328,08:00 PM,6,Denver,Houston
+16408,20190328,08:30 PM,7,Cleveland,San Antonio
+16409,20190329,07:00 PM,0,Indiana,Boston
+16410,20190329,07:30 PM,1,Portland,Atlanta
+16411,20190329,08:00 PM,2,Denver,Oklahoma City
+16412,20190329,08:00 PM,3,Golden State,Minnesota
+16413,20190329,09:00 PM,4,Washington,Utah
+16414,20190329,10:30 PM,5,Charlotte,L.A. Lakers
+16415,20190330,03:30 PM,0,Cleveland,L.A. Clippers
+16416,20190330,06:00 PM,1,Boston,Brooklyn
+16417,20190330,06:00 PM,2,Sacramento,Houston
+16418,20190330,07:00 PM,3,Portland,Detroit
+16419,20190330,07:00 PM,4,Orlando,Indiana
+16420,20190330,07:30 PM,5,Miami,New York
+16421,20190330,08:00 PM,6,Philadelphia,Minnesota
+16422,20190330,08:00 PM,7,Toronto,Chicago
+16423,20190330,10:00 PM,8,Memphis,Phoenix
+16424,20190331,12:30 PM,0,Milwaukee,Atlanta
+16425,20190331,03:30 PM,1,Dallas,Oklahoma City
+16426,20190331,06:00 PM,2,L.A. Lakers,New Orleans
+16427,20190331,07:00 PM,3,Sacramento,San Antonio
+16428,20190331,08:00 PM,4,Washington,Denver
+16429,20190331,08:30 PM,5,Charlotte,Golden State
+16430,20190331,10:30 PM,6,Memphis,L.A. Clippers

@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,attendance,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201902010CHO,"7:00 PM, February 1, 2019",2019,"Spectrum Center, Charlotte, North Carolina",Memphis Grizzlies,Charlotte Hornets,"15,387",88.4,Tony Brothers,Brian Forte,Phenizee Ransom,29,16,28,19,0,92,104.1,113.1,17,28,25,30,0,100,113.1,104.1
 1,201902010DEN,"10:00 PM, February 1, 2019",2019,"Pepsi Center, Denver, Colorado",Houston Rockets,Denver Nuggets,"20,106",89.2,Kevin Cutler,Jason Phillips,Scott Twardoski,43,28,24,27,0,122,136.7,152.4,35,48,30,23,0,136,152.4,136.7
 2,201902010MIA,"8:00 PM, February 1, 2019",2019,"AmericanAirlines Arena, Miami, Florida",Oklahoma City Thunder,Miami Heat,"19,600",101.2,Ken Mauer,Ashley Moyer-Gleich,Gediminas Petraitis,31,41,22,24,0,118,116.6,100.8,24,29,21,28,0,102,100.8,116.6

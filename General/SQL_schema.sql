@@ -5,9 +5,13 @@ CREATE TABLE player (
 	last_name text NOT NULL
 );
 
+
+-- added some columns for convenience
 CREATE TABLE team (
 	t_id int PRIMARY KEY,
-	name text NOT NULL
+	name text NOT NULL,
+	short VARCHAR (3) NOT NULL,
+	sbr_name text NOT NULL
 );
 
 CREATE TABLE users (

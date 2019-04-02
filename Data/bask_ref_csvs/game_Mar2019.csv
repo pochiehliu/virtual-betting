@@ -1,4 +1,4 @@
-Index,game_id,date,season,arena,away_name,home_name,attendance,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
+Index,game_id,date,season,arena,away_name,home_name,att,pace,ref1,ref2,ref3,away_q1,away_q2,away_q3,away_q4,away_ot,away_final,away_ortg,away_drtg,home_q1,home_q2,home_q3,home_q4,home_ot,home_final,home_ortg,home_drtg
 0,201903010ATL,"7:30 PM, March 1, 2019",2019,"State Farm Arena, Atlanta, Georgia",Chicago Bulls,Atlanta Hawks,"15,267",100.6,Jacyn Goble,Gediminas Petraitis,Zach Zarba,26,31,38,29,44,168,117.9,112.9,33,27,24,40,37,161,112.9,117.9
 1,201903010BOS,"8:00 PM, March 1, 2019",2019,"TD Garden, Boston, Massachusetts",Washington Wizards,Boston Celtics,"18,624",101.1,Ray Acosta,Mark Ayotte,Josh Tiven,20,25,36,15,0,96,94.9,105.8,30,19,33,25,0,107,105.8,94.9
 2,201903010BRK,"7:30 PM, March 1, 2019",2019,"Barclays Center, Brooklyn, New York",Charlotte Hornets,Brooklyn Nets,"15,578",100.9,Courtney Kirkland,Rodney Mott,Justin Van Duyne,31,37,30,25,0,123,121.9,111.0,32,18,36,26,0,112,111.0,121.9
