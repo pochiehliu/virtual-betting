@@ -1,4 +1,3 @@
--- stand alone tables
 CREATE TABLE player (
 	p_id int PRIMARY KEY,
 	first_name text NOT NULL,
@@ -14,12 +13,14 @@ CREATE TABLE team (
 	sbr_name text
 );
 
+-- added a player balance
 CREATE TABLE users (
 	u_id int PRIMARY KEY,
 	username text UNIQUE NOT NULL,
 	first_name text NOT NULL,
 	last_name text NOT NULL,
-	password text NOT NULL
+	password text NOT NULL,
+	balance float NOT NULL
 );
 
 CREATE TABLE sportsbook (
@@ -27,7 +28,6 @@ CREATE TABLE sportsbook (
 	name text NOT NULL
 );
 
--- sportsbook table
 CREATE TABLE bet_type (
 	bt_id int PRIMARY KEY,
 	name text NOT NULL
@@ -142,9 +142,10 @@ CREATE TABLE player_game_stats (
 );
 
 -- odds lines table
+-- removed reference to "game" table for g_id
 CREATE TABLE make_odds (
 	o_id int PRIMARY KEY,
-	g_id VARCHAR (12) REFERENCES game (g_id) ON DELETE NO ACTION,
+	g_id VARCHAR (12),
 	sb_id int REFERENCES sportsbook (sb_id) ON DELETE NO ACTION,
 	bt_id int REFERENCES bet_type (bt_id) ON DELETE NO ACTION,
 	odds_time timestamp NOT NULL, -- sportsbook will update odds intermittently
@@ -162,7 +163,6 @@ CREATE TABLE make_odds (
 );
 
 
--- user bet table
 CREATE TABLE place_bet(
 	o_id int REFERENCES make_odds (o_id),
 	bet_time timestamp NOT NULL,

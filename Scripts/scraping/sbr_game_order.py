@@ -64,7 +64,8 @@ def main(status):
 
 
 if __name__ == '__main__':
-    os.chdir('Scripts/scraping/')
+    if 'README.md' in os.listdir():
+        os.chdir('Scripts/scraping/')
 
     args = sys.argv
 

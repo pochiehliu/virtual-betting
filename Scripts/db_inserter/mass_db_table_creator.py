@@ -2,6 +2,12 @@
 This file takes all the existing data from each individual
 CSV file, and merges them to create the CSV files that can
 be directly imported into the postgresql database.
+
+Very ad-hoc process to manipulate flat-data to format in
+our SQL schema.
+
+Takes about 30 seconds to run. Puts all CSVs in
+'./../../Data/db_inserts/'
 """
 
 import pandas as pd
@@ -173,29 +179,39 @@ def make_odds():
             else:
                 return 'NOP' if n.date > 20130701 else ('NOK' if n.date < 20070701 else 'NOH')
 
+    def fix_side(x):
+        if x.bt_id != 2:
+            return x.odds_side
+        else:
+            return 'O' if x.odds_side == 'V' else 'U'
+
     sbr['short'] = sbr.apply(lambda x: get_short(x), axis=1)
     sbr['g_id'] = sbr.date.astype(str) + '0' + sbr.short
     sbr = pd.merge(left=sbr, right=bask_ref, how='inner', on=['g_id'], validate='m:1')
+    sbr = sbr.loc[sbr.length == 'full']
 
     # stacking arrays from scratch
-    sb_id = pd.Series(np.repeat(1, 147663 * 2))
+    sb_id = pd.Series(np.repeat(1, len(sbr) * 2))
     for i in range(2, 11):
-        sb_id = sb_id.append(pd.Series(np.repeat(i, 147663 * 2)))
+        sb_id = sb_id.append(pd.Series(np.repeat(i, len(sbr) * 2)))
 
+    g_id = sbr.g_id.append(sbr.g_id)
     bets = sbr.bet.append(sbr.bet)
     times = sbr.game_time.append(sbr.game_time)
     for i in range(2, 20):
         bets = bets.append(sbr.bet)
         times = times.append(sbr.game_time)
+        g_id = g_id.append(sbr.g_id)
 
     lines = sbr.ab1.append(sbr.hb1)
-    side = pd.Series(np.repeat('V', 147663)).append(pd.Series(np.repeat('H', 147663)))
+    side = pd.Series(np.repeat('V', len(sbr))).append(pd.Series(np.repeat('H', len(sbr))))
     for i in range(2, 11):
         for s in ['ab', 'hb']:
             lines = lines.append(sbr[s + str(i)])
-            side = side.append(pd.Series(np.repeat('V' if s == 'ab' else 'H', 147663)))
+            side = side.append(pd.Series(np.repeat('V' if s == 'ab' else 'H', len(sbr))))
 
-    odds_df = pd.DataFrame(data={'sb_id': sb_id.values,
+    odds_df = pd.DataFrame(data={'g_id': g_id.values,
+                                 'sb_id': sb_id.values,
                                  'bt_id': bets.values,
                                  'odds_time': times.values,
                                  'odds_side': side.values,
@@ -208,6 +224,7 @@ def make_odds():
     odds_df.dropna(how='any', inplace=True)
     odds_df.odds_payout = odds_df.odds_payout.map(odds_convert)
     odds_df.reset_index(drop=True, inplace=True)
+    odds_df.odds_side = odds_df.apply(lambda x: fix_side(x), axis=1)
     odds_df.to_csv(DATA_DIR + 'db_inserts/make_odds.csv', index_label='o_id')
 
 

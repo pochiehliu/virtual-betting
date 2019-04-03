@@ -145,7 +145,7 @@ def day_caller(month, first=False):
         df = pd.read_csv(SBR_PATH + m + y + '.csv', header=0, index_col='Index')
 
     # get driver
-    driver = get_driver('Tools/chromedriver', headless=True)
+    driver = get_driver('Misc/chromedriver', headless=True)
 
     days_in_month = [x for x in DATE_LIST if x[:6] == month]
 
@@ -194,7 +194,8 @@ def main(arg):
 
 
 if __name__ == '__main__':
-    os.chdir('Scripts/scraping/')
+    if 'README.md' in os.listdir():
+        os.chdir('Scripts/scraping/')
 
     # Lists of games
     ALL_GAME_DATES = merge(SBR_PATH + '../bask_ref_csvs/', 'game').game_id.apply(lambda row: row[:8])
