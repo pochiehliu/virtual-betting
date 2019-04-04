@@ -44,6 +44,7 @@ TABLES TO UPDATE:
 
 statement = """SELECT * FROM game ORDER BY game_time;"""
 r = engine.execute(statement)
+
 results = []
 for i in r:
     results.append(i)
