@@ -14,8 +14,8 @@ When running from command line, run from Betting/ directory.
 import pandas as pd
 import numpy as np
 import sys
-from merger import merge
-from general_tools import *
+from scraping.merger import merge
+from scraping.general_tools import *
 
 # URL to base website of scraping
 BASE_URL = 'https://www.sportsbookreview.com/betting-odds/nba-basketball/pointspread/'
@@ -64,7 +64,7 @@ def main(status):
 
 
 if __name__ == '__main__':
-    if 'README.md' in os.listdir():
+    if 'README.md' in os.listdir('.'):
         os.chdir('Scripts/scraping/')
 
     args = sys.argv

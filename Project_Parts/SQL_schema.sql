@@ -4,8 +4,6 @@ CREATE TABLE player (
 	last_name text NOT NULL
 );
 
-
--- added some columns for convenience
 CREATE TABLE team (
 	t_id int PRIMARY KEY,
 	name text NOT NULL,
@@ -13,7 +11,6 @@ CREATE TABLE team (
 	sbr_name text
 );
 
--- added a player balance
 CREATE TABLE users (
 	u_id int PRIMARY KEY,
 	username text UNIQUE NOT NULL,
@@ -33,12 +30,17 @@ CREATE TABLE bet_type (
 	name text NOT NULL
 );
 
-CREATE TABLE game(
+CREATE TABLE game (
 	g_id VARCHAR (12) PRIMARY KEY,
 	game_time timestamp NOT NULL,
 	t_id_home int REFERENCES team (t_id),
 	t_id_away int REFERENCES team (t_id),
-	CHECK (t_id_home != t_id_away),
+	CHECK (t_id_home != t_id_away)
+);
+
+CREATE TABLE game_stats(
+	g_id VARCHAR (12) REFERENCES game (g_id),
+	PRIMARY KEY (g_id),
 	home_q1_score int NOT NULL,
 	home_q2_score int NOT NULL,
 	home_q3_score int NOT NULL,
@@ -141,14 +143,12 @@ CREATE TABLE player_game_stats (
 	)
 );
 
--- odds lines table
--- removed reference to "game" table for g_id
 CREATE TABLE make_odds (
 	o_id int PRIMARY KEY,
-	g_id VARCHAR (12),
+	g_id VARCHAR (12) REFERENCES game (g_id),
 	sb_id int REFERENCES sportsbook (sb_id) ON DELETE NO ACTION,
 	bt_id int REFERENCES bet_type (bt_id) ON DELETE NO ACTION,
-	odds_time timestamp NOT NULL, -- sportsbook will update odds intermittently
+	odds_time timestamp NOT NULL,
 	odds_side char NOT NULL,
 	CHECK (
 		odds_side = 'H' OR
@@ -158,10 +158,9 @@ CREATE TABLE make_odds (
 	),
 	UNIQUE (g_id, sb_id, bt_id, odds_time, odds_side),
 	odds_payout float NOT NULL,
-	CHECK (odds_payout >= 1), -- will use decimal odds
+	CHECK (odds_payout >= 1),
 	odds_line float NOT NULL
 );
-
 
 CREATE TABLE place_bet(
 	o_id int REFERENCES make_odds (o_id),

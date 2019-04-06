@@ -1,6 +1,9 @@
 """
-This program will scrape all NBA betting data from
+This program will scrape all HISTORIC NBA betting data from
 www.sportsbookreview.com using Selenium.
+
+This is not the scraper that will be used for daily line
+updates.
 
 The files are saved as CSV in a folder for each individual
 month.
@@ -10,8 +13,8 @@ import numpy as np
 from multiprocessing import Pool
 import sys
 import calendar
-from merger import merge
-from general_tools import *
+from scraping.merger import merge
+from scraping.general_tools import *
 
 # CONSTANTS
 BASE_URL = 'https://www.sportsbookreview.com/betting-odds/nba-basketball/'
@@ -128,7 +131,7 @@ def scrape(driver, date, sleep, run):
 def day_caller(month, first=False):
     """
     Will initialize a data frame to store data, initialize a
-    webdriver to scrape data, call day for given month linearly.
+    web driver to scrape data, call day for given month linearly.
     :param month: as string in format YYYYMM
     :param first: boolean, indicates whether month being scraped
                   has been scraped previously (and therefore
@@ -194,14 +197,14 @@ def main(arg):
 
 
 if __name__ == '__main__':
-    if 'README.md' in os.listdir():
+    if 'README.md' in os.listdir('.'):
         os.chdir('Scripts/scraping/')
 
     # Lists of games
     ALL_GAME_DATES = merge(SBR_PATH + '../bask_ref_csvs/', 'game').game_id.apply(lambda row: row[:8])
-    DATE_LIST = ALL_GAME_DATES.unique()  # dates that there are NBA stats for
-    GAME_COUNTS = ALL_GAME_DATES.groupby(ALL_GAME_DATES).count()  # so we know how many games to expect to find on SBR
-    COMPLETED = date_list = merge(SBR_PATH, '').date.unique()  # already completed
+    DATE_LIST = ALL_GAME_DATES.unique()                           # dates that there are NBA stats for
+    GAME_COUNTS = ALL_GAME_DATES.groupby(ALL_GAME_DATES).count()  # Used to find how many games to expect on SBR
+    COMPLETED = date_list = merge(SBR_PATH, '').date.unique()     # dates we shouldn't re-scrape
 
     args = sys.argv
 

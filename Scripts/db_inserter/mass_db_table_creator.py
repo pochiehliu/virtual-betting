@@ -3,10 +3,18 @@ This file takes all the existing data from each individual
 CSV file, and merges them to create the CSV files that can
 be directly imported into the postgresql database.
 
-Very ad-hoc process to manipulate flat-data to format in
-our SQL schema.
+This saves the trouble of having to make INSERT statements
+for every previously scraped entry.
 
-Takes about 30 seconds to run. Puts all CSVs in
+Creates the following tables:
+    1. team
+    2. player
+    3. game
+    4. game_stats
+    5. player_game_stats
+    6. make_odds
+
+Takes about 30 seconds to run for ALL CSVs. Puts all CSVs in
 './../../Data/db_inserts/'
 """
 
@@ -39,72 +47,69 @@ def team():
     team_df.to_csv(DATA_DIR + 'db_inserts/team.csv', index_label='t_id')
 
 
-def player():
-    bask_ref = merge(DATA_DIR + 'bask_ref_csvs/', 'player')
-    names = bask_ref.name.unique()
+def player(update_db=False, names=None):
+    if not update_db:
+        names = merge(DATA_DIR + 'bask_ref_csvs/', 'player').name.unique()
     first = pd.Series(names).apply(lambda n: n.split()[0])
     last = pd.Series(names).apply(lambda n: ' '.join(n.split()[1:]))
     player_df = pd.DataFrame(data={'first_name': first, 'last_name': last})
-    player_df.to_csv(DATA_DIR + 'db_inserts/player.csv', index_label='p_id')
+    if not update_db:
+        player_df.to_csv(DATA_DIR + 'db_inserts/player.csv', index_label='p_id')
+    else:
+        return player_df
 
 
-def users():
-    pass
-
-
-def sportsbook():
-    pass
-
-
-def bet_type():
-    pass
-
-
-def game():
+def game(update_db=False, games=None):
+    if not update_db:
+        games = merge(DATA_DIR + 'bask_ref_csvs/', 'game')
     teams = pd.read_csv(DATA_DIR + 'db_inserts/team.csv')
     teams = dict(zip(teams.name, teams.t_id))
-    bask_ref = merge(DATA_DIR + 'bask_ref_csvs/', 'game')
 
-    def get_t_id(name):
-        return teams[name]
+    gdf = pd.DataFrame(data={'g_id': games.game_id,
+                             'game_time': games.date.apply(lambda d: d.replace(',', ''))})
+    gdf[['t_id_home', 't_id_away']] = games[['home_name', 'away_name']].applymap(lambda x: teams[x])
 
-    game_df = pd.DataFrame(data={'g_id': bask_ref.game_id,
-                                 'game_time': bask_ref.date.apply(lambda d: d.replace(',', ''))})
-    game_df[['t_id_home', 't_id_away']] = bask_ref[['home_name', 'away_name']].applymap(get_t_id)
-
-    scores = ["home_q1_score", "home_q2_score", "home_q3_score", "home_q4_score",
-              "away_q1_score", "away_q2_score", "away_q3_score", "away_q4_score",
-              "home_ot_score", "away_ot_score"]
-
-    game_df[scores] = bask_ref[['home_q1', 'home_q2', 'home_q3', 'home_q4',
-                                'away_q1', 'away_q2', 'away_q3', 'away_q4',
-                                'home_ot', 'away_ot']]
-    game_df.home_ot_score[game_df.home_ot_score == 0] = 'NULL'
-    game_df.away_ot_score[game_df.away_ot_score == 0] = 'NULL'
-
-    game_df.to_csv(DATA_DIR + 'db_inserts/game.csv', index=False)
+    if not update_db:
+        gdf.to_csv(DATA_DIR + 'db_inserts/game.csv', index=False)
+    else:
+        return gdf
 
 
-def player_game_stats():
+def game_stats(update_db=False, games=None):
+    if not update_db:
+        games = merge(DATA_DIR + 'bask_ref_csvs/', 'game')
+
+    gdf = pd.DataFrame(data={'g_id': games.game_id,
+                             'home_q1_score': games.home_q1,
+                             'home_q2_score': games.home_q2,
+                             'home_q3_score': games.home_q3,
+                             'home_q4_score': games.home_q4,
+                             'away_q1_score': games.away_q1,
+                             'away_q2_score': games.away_q2,
+                             'away_q3_score': games.away_q3,
+                             'away_q4_score': games.away_q4,
+                             'home_ot_score': games.home_ot,
+                             'away_ot_score': games.away_ot})
+
+    gdf.loc[(gdf.home_ot_score == 0) & (gdf.away_ot_score == 0), ['home_ot_score', 'away_ot_score']] = 'NULL'
+    if not update_db:
+        gdf.to_csv(DATA_DIR + 'db_inserts/game_stats.csv', index=False)
+    else:
+        return gdf
+
+
+def player_game_stats(update_db=False, player_stats=None):
+    if not update_db:
+        player_stats = merge(DATA_DIR + 'bask_ref_csvs/', 'player')
     players = pd.read_csv(DATA_DIR + 'db_inserts/player.csv')
     players = dict(zip(players.first_name + ' ' + players.last_name, players.p_id))
     teams = pd.read_csv(DATA_DIR + 'db_inserts/team.csv')
     teams = dict(zip(teams.name, teams.t_id))
-    bask_ref = merge(DATA_DIR + 'bask_ref_csvs/', 'player')
 
-    def get_p_id(name):
-        return players[name]
-
-    def get_t_id(name):
-        return teams[name]
-
-    def get_mp(m):
-        return int(m.split(':')[0]) + int(m.split(':')[1])/60
-
-    player_df = pd.DataFrame(data={'g_id': bask_ref.game_id})
-    player_df[['p_id']] = bask_ref[['name']].applymap(get_p_id)
-    player_df[['t_id']] = bask_ref[['team']].applymap(get_t_id)
-    player_df[['minutes_played']] = bask_ref[['mp']].applymap(get_mp)
+    pdf = pd.DataFrame(data={'g_id': player_stats.game_id})
+    pdf['p_id'] = player_stats.name.map(lambda p_name: players[p_name])
+    pdf['t_id'] = player_stats.team.map(lambda t_name: teams[t_name])
+    pdf['minutes_played'] = player_stats.mp.map(lambda x: int(x.split(':')[0]) + int(x.split(':')[1])/60)
 
     stat = ["field_goals_made", "field_goal_attempts", "three_pointers_made",
             "three_point_attempts", "free_throws_made", "free_throw_attempts",
@@ -114,18 +119,24 @@ def player_game_stats():
             "total_rebound_percentage", "assist_percentage", "steal_percentage",
             "block_percentage", "turnover_percentage", "usage_percentage",
             "offensive_rating", "defensive_rating"]
-    player_df[stat] = bask_ref[['fg', 'fga', 'tp', 'tpa', 'ft', 'fta',
+
+    pdf[stat] = player_stats[['fg', 'fga', 'tp', 'tpa', 'ft', 'fta',
                                 'orb', 'drb', 'ast', 'stl', 'blk', 'tov',
                                 'pf', 'pts', 'pm', 'orbp', 'drbp', 'trbp',
                                 'astp', 'stlp', 'blkp', 'tovp', 'usgp',
                                 'ortg', 'drtg']]
-    player_df.fillna(0, inplace=True)
-    player_df.to_csv(DATA_DIR + 'db_inserts/player_game_stats.csv', index=False)
+    pdf.fillna(0, inplace=True)
+
+    if not update_db:
+        pdf.to_csv(DATA_DIR + 'db_inserts/player_game_stats.csv', index=False)
+    else:
+        return pdf
 
 
-def make_odds():
-    sbr_bets = merge(DATA_DIR + 'sbr_csvs/', '')
-    sbr_names = merge(DATA_DIR, 'sbr_team').drop(['time'], axis=1)
+def make_odds(update_db=False, sbr_bets=None, sbr_names=None):
+    if not update_db:
+        sbr_bets = merge(DATA_DIR + 'sbr_csvs/', '')
+        sbr_names = merge(DATA_DIR, 'sbr_team').drop(['time'], axis=1)
     sbr = pd.merge(left=sbr_bets, right=sbr_names, how='inner', on=['date', 'game_num'], validate='m:1')
     bask_ref = pd.read_csv(DATA_DIR + 'db_inserts/game.csv')[['g_id', 'game_time']]
     teams = pd.read_csv(DATA_DIR + 'db_inserts/team.csv')
@@ -165,9 +176,6 @@ def make_odds():
         stat = l.odds_payout if pay else l.odds_line
         return get_ml(stat, pay) if l.bt_id == 1 else (get_total(stat, pay) if l.bt_id == 2 else get_spread(stat, pay))
 
-    def get_bt_id(b):
-        return 3 if b == 'p' else (2 if b == 't' else 1)
-
     def get_short(n):
         if n.home not in ['Charlotte', 'Brooklyn', 'New Orleans']:
             return teams[n.home]
@@ -192,23 +200,19 @@ def make_odds():
 
     # stacking arrays from scratch
     sb_id = pd.Series(np.repeat(1, len(sbr) * 2))
-    for i in range(2, 11):
-        sb_id = sb_id.append(pd.Series(np.repeat(i, len(sbr) * 2)))
-
+    lines = sbr.ab1.append(sbr.hb1)
+    side = pd.Series(np.repeat('V', len(sbr))).append(pd.Series(np.repeat('H', len(sbr))))
     g_id = sbr.g_id.append(sbr.g_id)
     bets = sbr.bet.append(sbr.bet)
     times = sbr.game_time.append(sbr.game_time)
-    for i in range(2, 20):
-        bets = bets.append(sbr.bet)
-        times = times.append(sbr.game_time)
-        g_id = g_id.append(sbr.g_id)
-
-    lines = sbr.ab1.append(sbr.hb1)
-    side = pd.Series(np.repeat('V', len(sbr))).append(pd.Series(np.repeat('H', len(sbr))))
     for i in range(2, 11):
+        sb_id = sb_id.append(pd.Series(np.repeat(i, len(sbr) * 2)))
         for s in ['ab', 'hb']:
             lines = lines.append(sbr[s + str(i)])
             side = side.append(pd.Series(np.repeat('V' if s == 'ab' else 'H', len(sbr))))
+            bets = bets.append(sbr.bet)
+            times = times.append(sbr.game_time)
+            g_id = g_id.append(sbr.g_id)
 
     odds_df = pd.DataFrame(data={'g_id': g_id.values,
                                  'sb_id': sb_id.values,
@@ -218,30 +222,32 @@ def make_odds():
                                  'odds_payout': lines.values,
                                  'odds_line': lines.values})
 
-    odds_df.bt_id = odds_df[['bt_id']].applymap(get_bt_id).bt_id
+    odds_df.bt_id = odds_df.bt_id.map(lambda b: 3 if b == 'p' else (2 if b == 't' else 1))
     odds_df.odds_payout = odds_df.apply(lambda x: get_lines(x, True), axis=1)
     odds_df.odds_line = odds_df.apply(lambda x: get_lines(x, False), axis=1)
     odds_df.dropna(how='any', inplace=True)
     odds_df.odds_payout = odds_df.odds_payout.map(odds_convert)
     odds_df.reset_index(drop=True, inplace=True)
     odds_df.odds_side = odds_df.apply(lambda x: fix_side(x), axis=1)
-    odds_df.to_csv(DATA_DIR + 'db_inserts/make_odds.csv', index_label='o_id')
 
-
-def place_bet():
-    pass
+    if not update_db:
+        odds_df.to_csv(DATA_DIR + 'db_inserts/make_odds.csv', index_label='o_id')
+    else:
+        return odds_df
 
 
 def main():
-    team()
+    # team()
     player()
     game()
-    player_game_stats()
-    make_odds()
+    game_stats()
+    # player_game_stats()
+    # make_odds()
 
 
 if __name__ == '__main__':
-    os.chdir('Scripts/db_inserter/')
+    if 'README.md' in os.listdir('.'):
+        os.chdir('Scripts/db_inserter/')
     main()
 
 
