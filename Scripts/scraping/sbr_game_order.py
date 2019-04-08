@@ -23,9 +23,11 @@ BASE_URL = 'https://www.sportsbookreview.com/betting-odds/nba-basketball/pointsp
 SBR_PATH = './../../Data/sbr_csvs/'
 # Location of where to store file
 STORE_PATH = './../../Data/'
+# data frame column names
+SBR_GAME_ORDER_COLS = ['date', 'time', 'game_num', 'away', 'home']
 
 
-def get_basics(date):
+def get_sbr_games(date):
     """
     Gets the team names and game times for given date.
     :param date:
@@ -46,7 +48,7 @@ def main(status):
         sbr_basic = pd.read_csv(STORE_PATH + 'sbr_team_list.csv', header=0, index_col='Index')
         completed = sbr_basic.date.unique()
     else:
-        sbr_basic = pd.DataFrame(columns=['date', 'time', 'game_num', 'away', 'home'])
+        sbr_basic = pd.DataFrame(columns=SBR_GAME_ORDER_COLS)
         completed = np.array([])
 
     # gets the dates that have had betting data scraped
@@ -55,9 +57,9 @@ def main(status):
 
     # loops every date that we need that is not already completed
     for date in set(date_list) - set(completed):
-        teams, game_times = get_basics(date)
-        for game in range(len(game_times)):
-            entry = [date, game_times[game], game, teams[game * 2], teams[game * 2 + 1]]
+        teams, game_times = get_sbr_games(date)
+        for idx, game in enumerate(game_times):
+            entry = [date, game, idx, teams[idx * 2], teams[idx * 2 + 1]]
             sbr_basic.loc[len(sbr_basic)] = entry
 
     sbr_basic.to_csv(STORE_PATH + 'sbr_team_list.csv', index_label='Index')

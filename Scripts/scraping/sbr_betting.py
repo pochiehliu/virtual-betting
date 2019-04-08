@@ -18,10 +18,10 @@ from scraping.general_tools import *
 
 # CONSTANTS
 BASE_URL = 'https://www.sportsbookreview.com/betting-odds/nba-basketball/'
-COLUMN_NAMES = ['date', 'bet', 'length', 'game_num', 'aw', 'hw', 'ao', 'ho',
-                'ab1', 'hb1', 'ab2', 'hb2', 'ab3', 'hb3', 'ab4', 'hb4',
-                'ab5', 'hb5', 'ab6', 'hb6', 'ab7', 'hb7', 'ab8', 'hb8',
-                'ab9', 'hb9', 'ab10', 'hb10']
+BET_COLUMN_NAMES = ['date', 'bet', 'length', 'game_num', 'aw', 'hw', 'ao', 'ho',
+                    'ab1', 'hb1', 'ab2', 'hb2', 'ab3', 'hb3', 'ab4', 'hb4',
+                    'ab5', 'hb5', 'ab6', 'hb6', 'ab7', 'hb7', 'ab8', 'hb8',
+                    'ab9', 'hb9', 'ab10', 'hb10']
 
 # Location of scraped SBR files, needed to determine where to start scrape update from
 SBR_PATH = './../../Data/sbr_csvs/'
@@ -40,19 +40,25 @@ def get_faulty_dates():
     return dates.astype(int)
 
 
-def update(df, date, lists):
+def update_bet_df(df, date, lists,
+                  lengths=('', 'first', 'sec')):
     """
     Updates the data frame storing all the data after each day.
     :param df:
     :param date:
     :param lists: list of lists attained by day_loop()
+    :param lengths: tuple with all length types enclosed in lists
     :return: updated data frame
     """
-    for bet_type in ['p', 'm', 't']:
-        for length_type in ['full', 'first', 'sec']:
+    bet_types = ['p', 'm', 't']
+    for bet_type in bet_types:
+        for length_type in lengths:
             lst = lists.pop(0)
             for game in range(int(len(lst) / 24)):
-                df.loc[len(df)] = [date, bet_type, length_type, game] + lst[(game * 24):((game + 1) * 24)]
+                df.loc[len(df)] = [date,
+                                   bet_type,
+                                   'full' if length_type == '' else length_type,
+                                   game] + lst[(game * 24):((game + 1) * 24)]
     return df
 
 
@@ -68,14 +74,15 @@ def check_data(full_list, date):
     else:
         if 0 in set(entry_counts):
             status = 'no data'
-        elif int(len(full_list[0]) / 24) != GAME_COUNTS[date]:
+        elif __name__ == '__main__' and int(len(full_list[0]) / 24) != GAME_COUNTS[date]:
             status = 'unexpected game count'
         else:
             status = 'pass'
     return status
 
 
-def scrape(driver, date, sleep, run):
+def scrape(driver, date, sleep=0.35, run=1,
+           lengths=('', '1st-half/', '2nd-half/')):
     """
     For a give day, will return a list of lists, where each individual list
     contains data for a bet type + length type combination on given date.
@@ -84,12 +91,14 @@ def scrape(driver, date, sleep, run):
     :param sleep: to ensure page loads, needs a sleep ~ 0.2-0.5, varies
                   based on internet connection and number of games
     :param run: run number
+    :param lengths: tuple with the game lengths to scrape, default is all available
     :return: list of lists
     """
     full_list = []
-    for bet_type in ['pointspread/', 'money-line/', 'totals/']:
-        for length_type in ['', '1st-half/', '2nd-half/']:      # blank length is for full game
-            driver.get(BASE_URL + bet_type + length_type + '?date=' + date)
+    bet_types = ['pointspread/', 'money-line/', 'totals/']
+    for bet_type in bet_types:
+        for length in lengths:      # blank length is for full game
+            driver.get(BASE_URL + bet_type + length + '?date=' + date)
 
             time.sleep(sleep)
 
@@ -124,7 +133,7 @@ def scrape(driver, date, sleep, run):
         if status == 'unexpected game count' and GAME_COUNTS[date] - int(len(full_list[0]) / 24) == 1:
             pass
         else:
-            full_list = scrape(driver, date, 1, 2)
+            full_list = scrape(driver, date, sleep=1, run=2, lengths=lengths)
     return full_list
 
 
@@ -143,7 +152,7 @@ def day_caller(month, first=False):
     m = calendar.month_abbr[int(month[4:])]
 
     if not first:
-        df = pd.DataFrame(columns=COLUMN_NAMES)
+        df = pd.DataFrame(columns=BET_COLUMN_NAMES)
     else:
         df = pd.read_csv(SBR_PATH + m + y + '.csv', header=0, index_col='Index')
 
@@ -162,7 +171,7 @@ def day_caller(month, first=False):
 
         # paste data to data frame
         if list_of_lists is not None:
-            df = update(df, date, list_of_lists)
+            df = update_bet_df(df, date, list_of_lists)
         else:
             text_file = open('Misc/Output.txt', "a")
             print('Skipped {d} because None was returned.'.format(d=date), file=text_file)

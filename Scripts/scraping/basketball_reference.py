@@ -54,6 +54,27 @@ def merge_ot(score_list):
         return new_list + [str(ot_sum), score_list[-1]]
 
 
+def _get_id_away_home(month_page):
+    g_id = away = home = np.array([])
+    for game in month_page.find_all('td', {'data-stat': "visitor_team_name"}):
+        info = game['csk'].split('.')
+        g_id = np.append(g_id, info[1])
+        away = np.append(away, info[0])
+        home = np.append(home, info[1][-3:])
+    return g_id, away, home
+
+
+def _get_game_time(month_page):
+    game_time = np.array([])
+    for game in month_page.find_all('tbody')[0].find_all('tr'):
+        cut = game.get_text('csk').split('csk')
+        day_time = cut[1][:-1] + ' PM '
+        day = cut[0].split(', ')
+        day = calendar.month_name[list(calendar.month_abbr).index(day[1][:3])] + ' ' + day[1][4:] + ' ' + day[2]
+        game_time = np.append(game_time, day_time + day)
+    return game_time
+
+
 def get_available_games(season, month):
     # link for monthly page
     month_link = "https://www.basketball-reference.com/leagues/NBA_" + str(season) + "_games-" + month + ".html"
@@ -61,22 +82,11 @@ def get_available_games(season, month):
 
     # ensures link is valid
     if month_page is None:
-        print("Failed for month link: {}".format(month_link))
-        return None
+        print("No games at link: {}".format(month_link))
+        return pd.DataFrame()
 
-    g_id = away = home = game_time = np.array([])
-    for game in month_page.find_all('td', {'data-stat': "visitor_team_name"}):
-        info = game['csk'].split('.')
-        g_id = np.append(g_id, info[1])
-        away = np.append(away, info[0])
-        home = np.append(home, info[1][-3:])
-
-    for game in month_page.find_all('tbody')[0].find_all('tr'):
-        cut = game.get_text('csk').split('csk')
-        t = cut[1][:-1] + ' PM '
-        day = cut[0].split(', ')
-        day = calendar.month_name[list(calendar.month_abbr).index(day[1][:3])] + ' ' + day[1][4:] + ' ' + day[2]
-        game_time = np.append(game_time, t + day)
+    g_id, away, home = _get_id_away_home(month_page)
+    game_time = _get_game_time(month_page)
 
     return pd.DataFrame(data={'g_id': g_id,
                               'game_time': game_time,
@@ -177,15 +187,16 @@ def get_player_stats(bas, adv, num, g_id, basics, season, team):
     return player_line
 
 
-def get_game_stats(g_id, player_df, game_df, season):
+def get_game_stats(g_id, player_df, game_df):
     """
     Updates the player and game data frames with stats from a single game
     :param g_id: game id in format <YYYYMMDD>0<HOME TEAM ABBREVIATION>
     :param player_df: player data frame
     :param game_df: game data frame
-    :param season: int, season (year that championship is played in)
     :return: player_df, game_df, boolean of whether month is completed
     """
+    season = int(g_id[:4]) if int(g_id[4:6]) > 8 else int(g_id[:4]) + 1
+
     box_link = 'https://www.basketball-reference.com/boxscores/' + g_id + '.html'
     box_page = get_page(box_link)
 
@@ -203,7 +214,7 @@ def get_game_stats(g_id, player_df, game_df, season):
     away_line, home_line = score_line[0], score_line[1]
     pace = list(deep[19].children)[5].split('pace" >')[2].split('<')[0]
 
-    # beginning of full game line (row to be inserted to data base)
+    # beginning of full game line (row to be inserted to data frame)
     full_game_line = [g_id, basics['date'], season, basics['arena'], basics['away_name'],
                       basics['home_name'], basics['att'], pace] + refs + away_line
 
@@ -273,7 +284,7 @@ def get_month_stats(season, month):
             if g_id in completed:
                 continue
             else:
-                player_df, game_df, finished = get_game_stats(g_id, player_df, game_df, season)
+                player_df, game_df, finished = get_game_stats(g_id, player_df, game_df)
 
     # save monthly results as CSVs
     player_df.to_csv(DATA_LOC + "player_" + mon + str(szn) + ".csv", mode='a', index_label="Index")
