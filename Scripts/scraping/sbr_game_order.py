@@ -1,15 +1,9 @@
 """
-This script will get team names, game times, and game number
+This class can get team names, game times, and game number
 (as listed on www.sportsbookreview.com) for all NBA matches.
 This data is dumped to a CSV called: 'sbr_team_list.csv'
 
-It must be run from command line and given argument of either 'full'
-or 'update', where the former will do a complete scraping for all
-dates that have had betting data scraped from SBR, while 'update'
-will only get data from days that have had betting data scraped
-but have not had games added to sbr_team_list.csv.
-
-When running from command line, run from Betting/ directory.
+When running from command line, run from top directory.
 """
 import pandas as pd
 import numpy as np
@@ -17,71 +11,77 @@ import sys
 from scraping.merger import merge
 from scraping.general_tools import *
 
-# URL to base website of scraping
-BASE_URL = 'https://www.sportsbookreview.com/betting-odds/nba-basketball/pointspread/'
-# Location of scraped SBR files, needed to determine where to start scrape update from
-SBR_PATH = './../../Data/sbr_csvs/'
-# Location of where to store file
-STORE_PATH = './../../Data/'
-# data frame column names
+SBR_PATH = './Data/sbr_csvs/'
+DATA_PATH = './Data/'
 SBR_GAME_ORDER_COLS = ['date', 'time', 'game_num', 'away', 'home']
 
 
-def get_sbr_games(date):
-    """
-    Gets the team names and game times for given date.
-    :param date:
-    :return: dictionary with team names and game times
-    """
-    page = get_page(BASE_URL + '?date=' + str(date))
+class GameOrderScraper:
+    BASE_URL = 'https://www.sportsbookreview.com/betting-odds/nba-basketball/pointspread/?date='
 
-    teams = list(page.find_all(class_='_3O1Gx'))
-    teams = [teams[i].get_text() for i in range(len(teams))]
-    game_times = list(page.find_all(class_='_1t1eJ'))
-    game_times = [game_times[i].get_text().split('H2H')[0] for i in range(len(game_times))]
+    def __init__(self):
+        self.betting_dates = merge(SBR_PATH, '').date.unique()
+        self.completed_dates = np.array([])
 
-    return teams, game_times
+    def full_scrape(self):
+        self._call_day_scraper()
+
+    def update_scrape(self):
+        self.completed_dates = self._get_completed_dates()
+        self._call_day_scraper()
+
+    def _call_day_scraper(self):
+        dates = set(self.betting_dates) - set(self.completed_dates)
+        new_data = self.day_scraper(dates)
+        self._dump_to_csv(new_data)
+
+    def day_scraper(self, dates):
+        df = pd.DataFrame(columns=SBR_GAME_ORDER_COLS)
+        for date in dates:
+            teams, game_times = self._scrape(date)
+            for idx, game in enumerate(game_times):
+                entry = [date, game, idx, teams[idx * 2], teams[idx * 2 + 1]]
+                df.loc[len(df)] = entry
+        return df
+
+    def _scrape(self, date):
+        page = get_page(self.BASE_URL + str(date))
+
+        teams = list(page.find_all(class_='_3O1Gx'))
+        teams = [team.get_text() for idx, team in enumerate(teams)]
+        game_times = list(page.find_all(class_='_1t1eJ'))
+        game_times = [game_time.get_text().split('H2H')[0] for idx, game_time in enumerate(game_times)]
+
+        return teams, game_times
+
+    @staticmethod
+    def _dump_to_csv(df):
+        df.to_csv(DATA_PATH + 'sbr_team_list.csv', mode='a+', index_label='Index')
+
+    @staticmethod
+    def _get_completed_dates():
+        if 'sbr_team_list.csv' in os.listdir(DATA_PATH):
+            return pd.read_csv(DATA_PATH + 'sbr_team_list.csv', header=0, index_col='Index').date.unique()
+        else:
+            return np.array([])
 
 
-def main(status):
-    if status == 'update':
-        sbr_basic = pd.read_csv(STORE_PATH + 'sbr_team_list.csv', header=0, index_col='Index')
-        completed = sbr_basic.date.unique()
+def main(arg):
+    scraper = GameOrderScraper()
+    scraper.full_scrape() if arg == 'full' else scraper.update_scrape()
+
+
+def _arg_parse(args):
+    if len(args) == 1:
+        print("Must supply argument of either:")
+        print('      1) "full"; downloads all data from 2006 season to present')
+        print('      2) "update"; downloads data that is not yet archived')
+    elif args[1] not in ['full', 'update']:
+        print('Argument must be either "full" or "update"')
     else:
-        sbr_basic = pd.DataFrame(columns=SBR_GAME_ORDER_COLS)
-        completed = np.array([])
-
-    # gets the dates that have had betting data scraped
-    date_list = merge(SBR_PATH, '').date.unique()
-    date_list.sort()
-
-    # loops every date that we need that is not already completed
-    for date in set(date_list) - set(completed):
-        teams, game_times = get_sbr_games(date)
-        for idx, game in enumerate(game_times):
-            entry = [date, game, idx, teams[idx * 2], teams[idx * 2 + 1]]
-            sbr_basic.loc[len(sbr_basic)] = entry
-
-    sbr_basic.to_csv(STORE_PATH + 'sbr_team_list.csv', index_label='Index')
+        main(args[1])
 
 
 if __name__ == '__main__':
-    if 'README.md' in os.listdir('.'):
-        os.chdir('Scripts/scraping/')
+    _arg_parse(sys.argv)
 
-    args = sys.argv
-
-    if len(args) == 1:
-        print("Must supply argument")
-        print("Argument must be either:")
-        print('      1) "full"; downloads all data from 2006 season to present')
-        print('      2) "update"; downloads data that is not yet archived')
-
-    elif args[1] not in ['full', 'update']:
-        print('Argument must be either "full" or "update"')
-
-    elif args[1] in ['full', 'update']:
-        main(args[1])
-
-    else:
-        print('Unexpected error')

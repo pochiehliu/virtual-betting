@@ -20,11 +20,10 @@ Takes about 1 minute to run for ALL CSVs. Puts CSVs in
 
 import pandas as pd
 import numpy as np
-import os
 from scraping.merger import merge
 
 
-DATA_DIR = './../../../Data/'
+DATA_PATH = './Data/'
 
 
 def transform_team(games, sbr):
@@ -104,6 +103,10 @@ def transform_player_game_stats(player_stats, players, teams):
 
 
 def transform_make_odds(sbr_bets, sbr_teams, games, teams):
+    if len(sbr_bets) == 0:
+        return pd.DataFrame(columns=['g_id', 'sb_id', 'bt_id', 'odds_time',
+                                     'odds_side', 'odds_payout', 'odds_line'])
+
     sbr_teams = sbr_teams.drop(['time'], axis=1)
     games = games[['g_id', 'game_time']]
     teams = dict(zip(teams.sbr_name, teams.short))
@@ -192,33 +195,31 @@ def transform_make_odds(sbr_bets, sbr_teams, games, teams):
 
 
 def main():
-    games = merge(DATA_DIR + 'bask_ref_csvs/', 'game')
-    player_stats = merge(DATA_DIR + 'bask_ref_csvs/', 'player')
-    sbr_teams = merge(DATA_DIR, 'sbr_team')
-    betting = merge(DATA_DIR + 'sbr_csvs/', '')
+    games = merge(DATA_PATH + 'bask_ref_csvs/', 'game')
+    player_stats = merge(DATA_PATH + 'bask_ref_csvs/', 'player')
+    sbr_teams = merge(DATA_PATH, 'sbr_team')
+    betting = merge(DATA_PATH + 'sbr_csvs/', '')
 
     team_df = transform_team(games, sbr_teams)
-    team_df.to_csv(DATA_DIR + 'db_inserts/team.csv', index=False)
+    team_df.to_csv(DATA_PATH + 'db_inserts/team.csv', index=False)
 
     player_df = transform_player(player_stats)
-    player_df.to_csv(DATA_DIR + 'db_inserts/player.csv', index=False)
+    player_df.to_csv(DATA_PATH + 'db_inserts/player.csv', index=False)
 
     game_df = transform_game(games, team_df)
-    game_df.to_csv(DATA_DIR + 'db_inserts/game.csv', index=False)
+    game_df.to_csv(DATA_PATH + 'db_inserts/game.csv', index=False)
 
     game_stats_df = transform_game_stats(games)
-    game_stats_df.to_csv(DATA_DIR + 'db_inserts/game_stats.csv', index=False)
+    game_stats_df.to_csv(DATA_PATH + 'db_inserts/game_stats.csv', index=False)
 
     player_game_stats_df = transform_player_game_stats(player_stats, player_df, team_df)
-    player_game_stats_df.to_csv(DATA_DIR + 'db_inserts/player_game_stats.csv', index=False)
+    player_game_stats_df.to_csv(DATA_PATH + 'db_inserts/player_game_stats.csv', index=False)
 
     make_odds_df = transform_make_odds(betting, sbr_teams, game_df, team_df)
-    make_odds_df.to_csv(DATA_DIR + 'db_inserts/make_odds.csv', index_label=False)
+    make_odds_df.to_csv(DATA_PATH + 'db_inserts/make_odds.csv', index_label=False)
 
 
 if __name__ == '__main__':
-    if 'README.md' in os.listdir('.'):
-        os.chdir('Scripts/db_inserter/db_inserter/')
     main()
 
 

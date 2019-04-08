@@ -287,8 +287,8 @@ def get_month_stats(season, month):
                 player_df, game_df, finished = get_game_stats(g_id, player_df, game_df)
 
     # save monthly results as CSVs
-    player_df.to_csv(DATA_LOC + "player_" + mon + str(szn) + ".csv", mode='a', index_label="Index")
-    game_df.to_csv(DATA_LOC + "game_" + mon + str(szn) + ".csv", mode='a', index_label="Index")
+    player_df.to_csv(DATA_LOC + "player_" + mon + str(szn) + ".csv", mode='a+', index_label="Index")
+    game_df.to_csv(DATA_LOC + "game_" + mon + str(szn) + ".csv", mode='a+', index_label="Index")
     print('Completed: {m} of {y}'.format(m=month.capitalize(), y=szn))
 
 
@@ -313,7 +313,6 @@ if __name__ == '__main__':
 
     if len(args) == 1:
         print("Must supply argument")
-        print("Argument must be either:")
         print('      1) "full"; downloads all data from 2001 season to present')
         print('      2) "update"; downloads data that is not yet archived')
 

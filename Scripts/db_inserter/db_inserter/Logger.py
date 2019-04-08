@@ -4,9 +4,7 @@ import datetime as dt
 
 class Logger:
     def __init__(self, name, loc='', overwrite=False):
-        if not overwrite and self._overwrite_test(name, loc):
-            raise Exception('File already exists; pass overwrite parameter as True to overwrite')
-        if overwrite and self._overwrite_test(name, loc):
+        if overwrite:
             self.name = loc + name
             self._load(kind='w+')
         else:
@@ -24,10 +22,6 @@ class Logger:
 
     def _close(self):
         self.file.close()
-
-    @staticmethod
-    def _overwrite_test(name, loc):
-        return name + '.txt' in os.listdir('./' + loc)
 
     @staticmethod
     def _get_date():

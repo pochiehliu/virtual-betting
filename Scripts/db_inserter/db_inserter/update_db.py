@@ -7,9 +7,7 @@ from sqlalchemy import exc
 from scraping.basketball_reference import *
 from scraping.sbr_betting import *
 from scraping.sbr_game_order import *
-from scraping.general_tools import *
 from db_inserter.table_transformer import *
-from sqlalchemy.pool import NullPool
 from dateutil.relativedelta import *
 
 
@@ -81,6 +79,10 @@ def update_game_table():
 
 """
 UPDATES GAME_STATS TABLE
+UPDATES PLAYER TABLE
+UPDATES PLAYER_GAME_STATS TABLE
+
+SHOULD BE RUN ONCE A DAY (OVERNIGHT OPTIMAL)
 """
 
 
@@ -130,37 +132,28 @@ def update_stats_tables():
 
 
 """
-ODDS
+UPDATES MAKE_ODDS TABLE
+
+SHOULD BE CALLED INTERMITTENTLY (FEW TIMES/DAY)
+
+TAKES A GOOD 30 SEC
 """
 
 
 def _get_odds(date):
-    make_odds_df = pd.DataFrame(columns=BET_COLUMN_NAMES)
-
-    driver = get_driver('Scripts/scraping/Misc/chromedriver', headless=True)
-    live_odds = scrape(driver, date, lengths=[''])
-    driver.quit()
-
-    return update_bet_df(make_odds_df, date, live_odds, lengths=[''])
+    scraper = ScrapeSession()
+    scraper.lengths = ['']  # because we only want full game betting odds
+    return scraper.day_scraper(date)
 
 
 def _get_team_order(date):
-    sbr_team_order = pd.DataFrame(columns=SBR_GAME_ORDER_COLS)
-    teams, game_times = get_sbr_games(date)
-
-    for idx, game in enumerate(game_times):
-        entry = [date, game, idx, teams[idx * 2], teams[idx * 2 + 1]]
-        sbr_team_order.loc[len(sbr_team_order)] = entry
-
-    return sbr_team_order
+    scraper = GameOrderScraper()
+    return scraper.day_scraper(date)
 
 
 def update_make_odds():
     date = _get_date(day=True)
     odds = _get_odds(date)
-
-    # TODO: make a log if get_odds returns 'None' and quit method or try again
-
     game_order = _get_team_order(date)
 
     games = select_all('game')
@@ -169,7 +162,6 @@ def update_make_odds():
     make_odds = transform_make_odds(odds, game_order, games, teams)
     make_odds.loc[:, 'odds_time'] = str(dt.datetime.now())
     for idx, line in make_odds.iterrows():
-        #insert_to_db(table='make_odds', row=line[1:], columns=make_odds.columns[1:])
-        print(line)
+        insert_to_db(table='make_odds', row=line[1:], columns=make_odds.columns[1:])
 
 
