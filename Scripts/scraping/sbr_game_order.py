@@ -21,9 +21,10 @@ class GameOrderScraper:
 
     def __init__(self):
         self.betting_dates = merge(SBR_PATH, '').date.unique()
-        self.completed_dates = np.array([])
+        self.completed_dates = None
 
     def full_scrape(self):
+        self.completed_dates = np.array([])
         self._call_day_scraper()
 
     def update_scrape(self):
@@ -49,6 +50,7 @@ class GameOrderScraper:
 
         teams = list(page.find_all(class_='_3O1Gx'))
         teams = [team.get_text() for idx, team in enumerate(teams)]
+
         game_times = list(page.find_all(class_='_1t1eJ'))
         game_times = [game_time.get_text().split('H2H')[0] for idx, game_time in enumerate(game_times)]
 
@@ -68,20 +70,12 @@ class GameOrderScraper:
 
 def main(arg):
     scraper = GameOrderScraper()
-    scraper.full_scrape() if arg == 'full' else scraper.update_scrape()
-
-
-def _arg_parse(args):
-    if len(args) == 1:
-        print("Must supply argument of either:")
-        print('      1) "full"; downloads all data from 2006 season to present')
-        print('      2) "update"; downloads data that is not yet archived')
-    elif args[1] not in ['full', 'update']:
-        print('Argument must be either "full" or "update"')
-    else:
-        main(args[1])
+    if arg == 'full':
+        scraper.full_scrape()
+    elif arg == 'update':
+        scraper.update_scrape()
 
 
 if __name__ == '__main__':
-    _arg_parse(sys.argv)
+    main(arg_parse(sys.argv))
 

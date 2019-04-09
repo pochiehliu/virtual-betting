@@ -2,6 +2,7 @@
 This script will connect to the data base, find the most
 up-to-date data, and update with new data.
 """
+import datetime as dt
 from sqlalchemy import *
 from sqlalchemy import exc
 from scraping.basketball_reference import *
@@ -14,29 +15,40 @@ from dateutil.relativedelta import *
 DB_USER = "pdg2116"
 DB_PASSWORD = "f5ih31DBMB"
 DB_SERVER = "w4111.cisxo09blonu.us-east-1.rds.amazonaws.com"
-DATABASEURI = "postgresql://" + DB_USER + ":" + DB_PASSWORD + "@" + DB_SERVER + "/w4111"
+DB_URL = "postgresql://" + DB_USER + ":" + DB_PASSWORD + "@" + DB_SERVER + "/w4111"
 
-engine = create_engine(DATABASEURI)
+engine = create_engine(DB_URL)
 
 """
 GENERAL PURPOSE METHODS
 """
 
 
-def select_all(table):
-    return pd.read_sql("""SELECT * FROM """ + table + ";", engine)
+def select_all(table_name):
+    return pd.read_sql("""SELECT * FROM """ + table_name + ";", engine)
 
 
-def insert_to_db(table, row, columns=''):
+def insert_to_db(table_name, row, columns=''):
     """
-    :param table: name of table in database
+    :param table_name: name of table in database
     :param row: data frame row to be inserted
     :param columns: list of column names to insert into
     :return:
     """
     values = str(tuple(row))
     columns = str(tuple(columns)).replace("'", '')
-    return """INSERT INTO """ + columns + table + """ VALUES """ + values
+    return """INSERT INTO """ + columns + table_name + """ VALUES """ + values
+
+
+def get_date(day=False):
+    current = dt.datetime.now() + dt.timedelta(days=0 if day else 1)
+    return current.strftime('%Y%m%d') if day else current.strftime('%Y%m')
+
+
+def increment_date(date, day=False):
+    date = dt.datetime.strptime(date, '%Y%m%d') if day else dt.datetime.strptime(date, '%Y%m')
+    delta = dt.timedelta(days=1) if day else relativedelta(months=1)
+    return (date + delta).strftime('%Y%m%d') if day else (date + delta).strftime('%Y%m')
 
 
 """
@@ -51,30 +63,30 @@ def _get_team_dict():
     return dict(zip(team_id_map.short, team_id_map.t_id))
 
 
-def _get_date(day=False):
-    current = dt.datetime.now() + dt.timedelta(days=0 if day else 1)
-    return current.strftime('%Y%m%d') if day else current.strftime('%Y%m')
+def _get_new_games(last_month):
+    scraper = BaskRefScraper()
+    scraper.set_season_month(last_month[:4], last_month[4:], fix_season=False)
+    scraper.set_month_page()
+    return scraper.get_available_games()
 
 
-def _increment_date(date, day=False):
-    date = dt.datetime.strptime(date, '%Y%m%d') if day else dt.datetime.strptime(date, '%Y%m')
-    delta = dt.timedelta(days=1) if day else relativedelta(months=1)
-    return (date + delta).strftime('%Y%m%d') if day else (date + delta).strftime('%Y%m')
+def _insert_new_games(new_games, done_games):
+    for idx, game in new_games.iterrows():
+        if game.g_id not in done_games:
+            engine.execute(insert_to_db(table_name='game', row=game))
 
 
 def update_game_table():
     team_id_map = _get_team_dict()
-    done_games = pd.read_sql("""SELECT * FROM game ORDER BY g_id;""", engine).g_id.values
+    done_games = select_all('game ORDER BY g_id').g_id.values
     last_month = done_games[-1][:6]
-    current_month = _get_date(day=False)
+    current_month = get_date(day=False)
 
     while last_month <= current_month:
-        new_games = get_available_games(int(last_month[:4]), calendar.month_name[int(last_month[4:6])].lower())
+        new_games = _get_new_games(last_month)
         new_games.loc[:, ['t_id_home', 't_id_away']] = new_games.iloc[:, -2:].applymap(lambda x: team_id_map[x])
-        for idx, game in new_games.iterrows():
-            if game.g_id not in done_games:
-                engine.execute(insert_to_db(table='game', row=game))
-        last_month = _increment_date(last_month, day=False)
+        _insert_new_games(new_games, done_games)
+        last_month = increment_date(last_month, day=False)
 
 
 """
@@ -87,18 +99,14 @@ SHOULD BE RUN ONCE A DAY (OVERNIGHT OPTIMAL)
 
 
 def _get_pdf_gdf(missing_games):
-    player_df = pd.DataFrame(columns=PLAYER_COLS)
-    game_df = pd.DataFrame(columns=GAME_COLS)
-
-    for game_id in missing_games:
-        player_df, game_df, finished = get_game_stats(game_id, player_df, game_df)
-
-    return player_df, game_df
+    scraper = BaskRefScraper()
+    scraper.get_month_stats(missing_games)
+    return scraper.player_df, scraper.game_df
 
 
 def _update_game_stats_table(game_df):
     for idx, game in transform_game_stats(game_df).iterrows():
-        engine.execute(insert_to_db(table='game_stats', row=game))
+        engine.execute(insert_to_db(table_name='game_stats', row=game))
 
 
 def _update_player_table(player_df):
@@ -107,16 +115,15 @@ def _update_player_table(player_df):
 
     for idx, player in transform_player(player_df).iterrows():
         if player not in done_players:
-            engine.execute(insert_to_db(table='player', row=player))
+            engine.execute(insert_to_db(table_name='player', row=player))
 
 
 def _update_player_game_stats(player_df):
-    # transformer needs player_stats, players, teams
     players = select_all('player')
     teams = select_all('team')
 
     for idx, player in transform_player_game_stats(player_df, players, teams).iterrows():
-        engine.execute(insert_to_db(table='player_game_stats', row=player))
+        engine.execute(insert_to_db(table_name='player_game_stats', row=player))
 
 
 def update_stats_tables():
@@ -152,7 +159,7 @@ def _get_team_order(date):
 
 
 def update_make_odds():
-    date = _get_date(day=True)
+    date = get_date(day=True)
     odds = _get_odds(date)
     game_order = _get_team_order(date)
 
@@ -162,6 +169,6 @@ def update_make_odds():
     make_odds = transform_make_odds(odds, game_order, games, teams)
     make_odds.loc[:, 'odds_time'] = str(dt.datetime.now())
     for idx, line in make_odds.iterrows():
-        insert_to_db(table='make_odds', row=line[1:], columns=make_odds.columns[1:])
+        insert_to_db(table_name='make_odds', row=line[1:], columns=make_odds.columns[1:])
 
 

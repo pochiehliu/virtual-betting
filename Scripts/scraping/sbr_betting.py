@@ -39,10 +39,17 @@ class ScrapeSession:
         self.bet_types = ['pointspread/', 'money-line/', 'totals/']
 
     def full_scrape(self, years=np.arange(2006, 2020)):
+        # TODO fix this so it can pool
+        """
         for year in years:
             months = pd.Series([date[:6] for date in self.UNIQUE_DATES if int(date[:4]) == year]).unique()
             pool = Pool(processes=len(months))
             pool.map(self.month_scraper, months)
+        """
+        for year in years:
+            months = pd.Series([date[:6] for date in self.UNIQUE_DATES if int(date[:4]) == year]).unique()
+            for month in months:
+                self.month_scraper(month)
 
     def update_scrape(self):
         last = get_last_date(BASK_REF_PATH)
@@ -66,7 +73,7 @@ class ScrapeSession:
         for date in days_in_month:
             scraped_data = self.scrape(driver, date)
             if scraped_data is not None:
-                df = self.update_bet_df(df, date, scraped_data)
+                df = self._update_bet_df(df, date, scraped_data)
         driver.quit()
         return df
 
@@ -89,7 +96,7 @@ class ScrapeSession:
                 page_data = [el.text for el in driver.find_elements_by_class_name('_1QEDd')]
                 all_data.append(page_data)
 
-        status = self.check_data(all_data, date, run)
+        status = self._check_data(all_data, date, run)
 
         if status == 'pass':
             return all_data
@@ -98,7 +105,7 @@ class ScrapeSession:
         else:
             return None
 
-    def check_data(self, full_list, date, run):
+    def _check_data(self, full_list, date, run):
         unique_entry_counts = len(set([len(x) for x in full_list]))  # = 1 if all pages give same number of data entries
         if unique_entry_counts == 1:
             return 'pass'
@@ -111,7 +118,7 @@ class ScrapeSession:
                 return 're-run'
         return None
 
-    def update_bet_df(self, df, date, lists):
+    def _update_bet_df(self, df, date, lists):
         """
         Updates the data frame storing all the data after each day.
         :param df:
@@ -142,27 +149,14 @@ class ScrapeSession:
 
 
 def main(arg):
-    """
-    - Gets all dates to scrape on SBR (format: YYYYMMDD)
-    - Moves through years sequentially
-    - For given year, will scrape each month in parallel
-    :return:
-    """
     scraper = ScrapeSession()
-    scraper.full_scrape() if arg == 'full' else scraper.update_scrape()
-
-
-def _arg_parse(args):
-    if len(args) == 1:
-        print("Must supply argument of either:")
-        print('      1) "full"; downloads all data from 2006 season to present')
-        print('      2) "update"; downloads data that is not yet archived')
-    elif args[1] not in ['full', 'update']:
-        print('Argument must be either "full" or "update"')
-    else:
-        main(args[1])
+    if arg == 'full':
+        scraper.full_scrape()
+    elif arg == 'update':
+        scraper.update_scrape()
 
 
 if __name__ == '__main__':
-    _arg_parse(sys.argv)
+    main(arg_parse(sys.argv))
+
 

@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -66,7 +66,16 @@ def get_last_date(loc):
             if combo > max_date:
                 max_date = combo
 
-    return max_date
+    return str(max_date)
 
 
+def arg_parse(args):
+    if len(args) == 1:
+        print("Must supply argument of either:")
+        print('      1) "full"; downloads all data from 2006 season to present')
+        print('      2) "update"; downloads data that is not yet archived')
+    elif args[1] not in ['full', 'update']:
+        print('Argument must be either "full" or "update"')
+    else:
+        return args[1]
 
