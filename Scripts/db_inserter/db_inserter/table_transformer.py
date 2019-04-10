@@ -20,7 +20,7 @@ Takes about 1 minute to run for ALL CSVs. Puts CSVs in
 
 import pandas as pd
 import numpy as np
-from scraping.merger import merge
+from scraping.general_tools import merge
 
 
 DATA_PATH = './Data/'

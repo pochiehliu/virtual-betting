@@ -1,4 +1,7 @@
-import os
+"""
+Basic logger file that logs events of interest during
+various processes in this project.
+"""
 import datetime as dt
 
 
