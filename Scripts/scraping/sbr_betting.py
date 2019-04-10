@@ -11,7 +11,6 @@ import numpy as np
 from multiprocessing import Pool
 import sys
 import calendar
-from scraping.merger import merge
 from scraping.general_tools import *
 from db_inserter.Logger import Logger
 

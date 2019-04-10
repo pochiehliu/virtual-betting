@@ -8,7 +8,6 @@ When running from command line, run from top directory.
 import pandas as pd
 import numpy as np
 import sys
-from scraping.merger import merge
 from scraping.general_tools import *
 
 SBR_PATH = './Data/sbr_csvs/'
