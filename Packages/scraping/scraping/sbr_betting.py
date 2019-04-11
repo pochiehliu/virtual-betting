@@ -23,7 +23,7 @@ BET_COLUMN_NAMES = ['date', 'bet', 'length', 'game_num', 'aw', 'hw', 'ao', 'ho',
 # Location of scraped SBR files, needed to determine where to start scrape update from
 SBR_PATH = './Data/sbr_csvs/'
 BASK_REF_PATH = './Data/bask_ref_csvs/'
-SCRAPING_PATH = './Scripts/scraping/'
+SCRAPING_PATH = './Packages/scraping/scraping/'
 
 
 class ScrapeSession:

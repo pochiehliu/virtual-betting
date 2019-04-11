@@ -23,7 +23,7 @@ from db_inserter.update_db import get_date, increment_date
 
 # CONSTANTS
 BASK_REF_PATH = './Data/bask_ref_csvs/'
-SCRAPING_PATH = './Scripts/scraping/'
+SCRAPING_PATH = './Packages/scraping/scraping/'
 
 PLAYER_COLS = ['game_id', 'date', 'season', 'team', 'opp', 'starting_five', 'name', 'mp',
                'fg', 'fga', 'fgp', 'tp', 'tpa', 'tpp', 'ft', 'fta', 'ftp',
@@ -82,23 +82,23 @@ class BaskRefScraper:
             self.last_date = increment_date(self.last_date)
 
     def _scrape_month(self):
-        self.month_page = self.set_month_page()
+        self.set_month_page()
         self.get_month_stats()
         self._dump_to_csv()
         print('Completed: {m} of {y}'.format(m=self.month, y=self.season))
 
     def set_month_page(self):
         link = self.month_link + self.season + "_games-" + self.month + ".html"
-        return get_page(link)
+        self.month_page = get_page(link)
 
-    def _get_box_page(self, game_id):
+    def _set_box_page(self, game_id):
         link = self.box_link + game_id + '.html'
-        return get_page(link)
+        self.box_page = get_page(link)
 
     def _get_team_ids(self):
         games = self.month_page.find_all('td', {'data-stat': "visitor_team_name"})
-        g_id = [game['csk'][:3] for game in games]
-        away = [game['csk'][4:-3] for game in games]
+        g_id = [game['csk'][4:] for game in games]
+        away = [game['csk'][:3] for game in games]
         home = [game['csk'][-3:] for game in games]
         return g_id, away, home
 
@@ -123,7 +123,8 @@ class BaskRefScraper:
         """
         :return: tuple of two lists (away_list, home_list)
         """
-        com_soup = BeautifulSoup(self.box_page.find_all(text=lambda text: isinstance(text, Comment))[15], 'html')
+        com_soup = BeautifulSoup(self.box_page.find_all(text=lambda text: isinstance(text, Comment))[15],
+                                 features="html.parser")
         scores = [score.text for score in com_soup.find_all('td', class_=True)]
         return self._merge_ot(scores[:len(scores)//2]), self._merge_ot(scores[len(scores)//2:])
 
@@ -140,7 +141,7 @@ class BaskRefScraper:
         away_line, home_line = self._get_quarter_scores()
         pace = self._get_pace()
         return {'date': date, 'arena': arena, 'away_name': away_name, 'home_name': home_name, 'att': att,
-                'ref': refs, 'away_line': away_line, 'home_line': home_line, 'pace': pace}
+                'refs': refs, 'away_line': away_line, 'home_line': home_line, 'pace': pace}
 
     def _get_refs(self):
         """
@@ -148,18 +149,25 @@ class BaskRefScraper:
         less than three referees found.
         """
         refs = list(self.box_page.children)[3].get_text().split('Officials:')[1].split('\n')[0].strip('\xa0')
-        return refs.split(', ') + np.repeat('MISSING', 3 - len(refs.split(', '))).tolist()
+        refs = refs.split(', ') + np.repeat('MISSING', 3 - len(refs.split(', '))).tolist()
+        return refs
 
     def _get_pace(self):
-        com_soup = BeautifulSoup(self.box_page.find_all(text=lambda text: isinstance(text, Comment))[16], 'html')
+        com_soup = BeautifulSoup(self.box_page.find_all(text=lambda text: isinstance(text, Comment))[16],
+                                 features="html.parser")
         return com_soup.find('td', class_=True).get_text()
 
-    def _loop_players(self, basic_table, advanced_table):
+    def _loop_players(self, basic_table, advanced_table, basics, side):
         basic = [self._get_player_stats(player, 'basic') for player in self._valid_player(basic_table)]
         advanced = [self._get_player_stats(player, 'advanced') for player in self._valid_player(advanced_table)]
 
-        for player in zip(basic, advanced):
-            self.player_df.loc[len(self.player_df)] = list(player)
+        for idx, player in enumerate(zip(filter(None, basic), filter(None, advanced))):
+            base = [self.game_id, basics['date'], self.season,
+                    basics['away_name'] if side == 'away' else basics['home_name'],
+                    basics['away_name'] if side == 'home' else basics['home_name'],
+                    1 if idx < 5 else 0]
+            player_line = player[0] + player[1]
+            self.player_df.loc[len(self.player_df)] = base + player_line
 
     def _get_player_stats(self, player, kind):
         if self._valid_stat_line_check(player, kind):
@@ -167,13 +175,13 @@ class BaskRefScraper:
                 if len(list(player)) == 21:
                     player_stats = [list(player)[x].get_text() for x in range(21)]
                 else:
-                    player_stats = [list(player)[0].get_text()] + list(np.zeros(20))
+                    player_stats = [list(player)[0].get_text(), '0:0'] + list(np.zeros(19))
             else:
                 if len(list(player)) == 16:
                     player_stats = [list(player)[x].get_text() for x in range(2, 16)]
                 else:
                     player_stats = list(np.zeros(14))
-        return player_stats
+            return player_stats
 
     def _get_game_stats(self):
         """
@@ -184,22 +192,16 @@ class BaskRefScraper:
 
         self.game_tables = self.box_page.find_all('table')
 
-        self._loop_players(self.game_tables[0], self.game_tables[1])  # away players
-        self._loop_players(self.game_tables[2], self.game_tables[3])  # home players
+        self._loop_players(self.game_tables[0], self.game_tables[1], basics, 'away')
+        self._loop_players(self.game_tables[2], self.game_tables[3], basics, 'home')
 
         team_stats = [self._get_team_stats(table) for table in (self.game_tables[1], self.game_tables[3])]
 
-        full_game_line = [self.game_id,
-                          basics['date'],
-                          self.season,
-                          basics['arena'],
-                          basics['away_name'],
-                          basics['home_name'],
-                          basics['att'],
-                          basics['pace'],
-                          basics['refs'],
-                          basics['away_line']
-                          ] + team_stats[0] + [basics['home_line']] + team_stats[1]
+        full_game_line = list([self.game_id, basics['date'], self.season,
+                               basics['arena'], basics['away_name'],
+                               basics['home_name'], basics['att'],
+                               basics['pace']] + basics['refs'] + basics['away_line'] +
+                              team_stats[0] + basics['home_line'] + team_stats[1])
 
         self.game_df.loc[len(self.game_df)] = full_game_line
 
@@ -207,13 +209,17 @@ class BaskRefScraper:
         """
         Updates full player and game data frames for entire month by looping
         games in the month and calling get_game_stats() for each game.
+
+        If list of game_ids is provided in games parameter, will do only
+        these games.
         """
-        if not games:
+        if games is None:
             games = [g['csk'] for g in self.month_page.find_all('th', csk=True) if g['csk'] not in self.completed]
 
         for game in games:
             self.game_id = game
-            self.box_page = self._get_box_page(game)
+            self.set_season_month(game[:4], game[4:6], fix_season=False)
+            self._set_box_page(game)
             self._get_game_stats()
 
     def _dump_to_csv(self):
@@ -227,9 +233,9 @@ class BaskRefScraper:
             self.month = calendar.month_name[int(month)].lower()
 
         if fix_season:
-            self.season = int(year)
+            self.season = str(year)
         else:
-            self.season = int(year) if month not in ["october", "november", "december"] else int(year) - 1
+            self.season = str(year) if self.month not in ["october", "november", "december"] else str(int(year) - 1)
 
         self.tag = self.month[:3].title() + self.season
 
@@ -269,7 +275,7 @@ class BaskRefScraper:
     @staticmethod
     def _valid_player(table):
         rows = table.find_all('tr')
-        for idx, row in rows:
+        for idx, row in enumerate(rows):
             if idx > 2 and idx != 7 and idx != len(rows) - 1:
                 yield row
 
