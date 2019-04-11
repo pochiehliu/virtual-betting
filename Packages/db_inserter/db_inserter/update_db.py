@@ -34,7 +34,7 @@ def insert_to_db(table_name, row, columns=''):
     :return:
     """
     values = str(tuple(row))
-    columns = str(tuple(columns)).replace("'", '')
+    columns = str(tuple(columns)).replace("'", '') if columns != '' else columns
     return """INSERT INTO """ + columns + table_name + """ VALUES """ + values
 
 
@@ -112,8 +112,9 @@ def _update_player_table(player_df):
     done_players = set(done_players.first_name + ' ' + done_players.last_name)
 
     for idx, player in transform_player(player_df).iterrows():
-        if player not in done_players:
-            engine.execute(insert_to_db(table_name='player', row=player))
+        name = player.first_name + ' ' + player.last_name
+        if name not in done_players:
+            engine.execute(insert_to_db(table_name='player', row=player[1:]))
 
 
 def _update_player_game_stats(player_df):
@@ -121,7 +122,8 @@ def _update_player_game_stats(player_df):
     teams = select_all('team')
 
     for idx, player in transform_player_game_stats(player_df, players, teams).iterrows():
-        engine.execute(insert_to_db(table_name='player_game_stats', row=player))
+        if idx % 50 == 0:
+            engine.execute(insert_to_db(table_name='player_game_stats', row=player))
 
 
 def update_stats_tables():

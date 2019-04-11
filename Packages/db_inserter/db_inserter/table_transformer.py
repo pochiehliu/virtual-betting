@@ -82,6 +82,7 @@ def transform_player_game_stats(player_stats, players, teams):
     pdf = pd.DataFrame(data={'g_id': player_stats.game_id})
     pdf['p_id'] = player_stats.name.map(lambda p_name: players[p_name])
     pdf['t_id'] = player_stats.team.map(lambda t_name: teams[t_name])
+    player_stats['mp'] = player_stats.mp.map(lambda x: '0:0' if x in [0, '0'] else x)
     pdf['minutes_played'] = player_stats.mp.map(lambda x: int(x.split(':')[0]) + int(x.split(':')[1])/60)
 
     stat = ["field_goals_made", "field_goal_attempts", "three_pointers_made",
@@ -96,7 +97,7 @@ def transform_player_game_stats(player_stats, players, teams):
     pdf[stat] = player_stats[['fg', 'fga', 'tp', 'tpa', 'ft', 'fta', 'orb', 'drb',
                               'ast', 'stl', 'blk', 'tov', 'pf', 'pts', 'pm', 'orbp',
                               'drbp', 'trbp', 'astp', 'stlp', 'blkp', 'tovp', 'usgp',
-                              'ortg', 'drtg']]
+                              'ortg', 'drtg']].apply(pd.to_numeric)
     pdf.loc[pdf.defensive_rating < 0, 'defensive_rating'] = 0
     pdf.fillna(0, inplace=True)
     return pdf
