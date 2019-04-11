@@ -12,10 +12,8 @@ from db_inserter.table_transformer import *
 from dateutil.relativedelta import *
 
 
-DB_USER = "pdg2116"
-DB_PASSWORD = "f5ih31DBMB"
-DB_SERVER = "w4111.cisxo09blonu.us-east-1.rds.amazonaws.com"
-DB_URL = "postgresql://" + DB_USER + ":" + DB_PASSWORD + "@" + DB_SERVER + "/w4111"
+with open('./Packages/db_inserter/db_inserter/.DBurl.txt') as file:
+    DB_URL = file.readline()
 
 engine = create_engine(DB_URL)
 

@@ -23,7 +23,7 @@ from db_inserter.update_db import get_date, increment_date
 
 # CONSTANTS
 BASK_REF_PATH = './Data/bask_ref_csvs/'
-SCRAPING_PATH = './Scripts/scraping/'
+SCRAPING_PATH = './Packages/scraping/scraping/'
 
 PLAYER_COLS = ['game_id', 'date', 'season', 'team', 'opp', 'starting_five', 'name', 'mp',
                'fg', 'fga', 'fgp', 'tp', 'tpa', 'tpp', 'ft', 'fta', 'ftp',
