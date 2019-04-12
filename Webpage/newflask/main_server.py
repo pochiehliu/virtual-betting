@@ -15,8 +15,11 @@ import traceback
 import click
 import pandas as pd
 import datetime as dt
+import time
+
 
 tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
+print(tmpl_dir)
 app = Flask(__name__, template_folder=tmpl_dir)
 
 DATABASEURI = "postgresql://pdg2116:f5ih31DBMB@w4111.cisxo09blonu.us-east-1.rds.amazonaws.com/w4111"
@@ -58,8 +61,7 @@ def homepage():
 
     betting_data = get_betting_data()
 
-
-    return render_template("homepage.html", **context)
+    return render_template("homepage.html", **betting_data)
 
 
 @app.route('/user_place_bet', methods=['POST'])
@@ -83,63 +85,64 @@ def user_place_bet():
         return redirect('/', result=error)
 
 
-@app.route('/login', methods=('GET', 'POST'))
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        db = get_db()
-        error = None
-        statement = 'SELECT * FROM user WHERE username = ' + username + ';'
-        user = db_select(statement).iloc[0]
-
-        if len(user) == 0:
+        user = engine.execute(
+            'SELECT * FROM user WHERE username = ?',
+            (username,)).fetchone()
+        if user is None:
             error = 'Incorrect username.'
-        elif password != user.password"
+        elif password != user['password']:
             error = 'Incorrect password.'
         else:
             session.clear()
             session['user_id'] = user['id']
-            return render_template('login.html')
-        flash(error)
-    return render_template('login.html')
+            return render_template('homepage.html')
+    return render_template('login.html', error=error)
 
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
         username = request.form['username']
+        first_name = request.form['first']
+        last_name = request.form['last']
         password = request.form['password']
-        db = get_db()
-        error = None
+        form_list = [username, first_name, last_name, password]
 
-        if not username:
-            error = 'Username is required.'
-        elif not password:
-            error = 'Password is required.'
-        elif db.execute(
-            'SELECT id FROM user WHERE username = ?', (username,)
-        ).fetchone() is not None:
-            error = 'User {} is already registered.'.format(username)
-		### need to modify it to prevent sql injection ###########
+        if None in form_list:
+            error = 'Please fill in all fields.'
+        else:
+            users = engine.execute('SELECT id FROM user WHERE username = ?',
+                                   (username,)).fetchone()
 
-        if error is None:
-            db.execute(
-                'INSERT INTO user (username, password) VALUES (?, ?)',
-                (username, generate_password_hash(password))
-            )
-            ### need to modify it to prevent sql injection ###########
-            db.commit()
-            return redirect(url_for('auth.login'))
+            if users is not None:
+                error = 'User {} is already registered.'.format(username)
+            else:
+                register_user(form_list)
+                user = engine.execute('SELECT id FROM user WHERE username = ?',
+                                      (username,)).fetchone()
+                session.clear()
+                session['user_id'] = user['id']
+                return render_template('homepage.html')
+        return render_template('register.html', error=error)
 
-        flash(error)
 
-    return render_template('auth/register.html')
 """
 General Functions
 """
 
+def register_user(form_list):
+    g.conn.execute(
+        """INSERT INTO users (username, first_name, last_name, password)
+        VALUES (?, ?, ?, ?)""", tuple(form_list)
+    )
+
 def valid_amount(amount, bet):
+    # TODO: fill this function
     pass
 
 
@@ -149,8 +152,8 @@ def db_select(statement):
 
 def get_betting_data():
     lower = (dt.datetime.now() - dt.timedelta(days=1)).strftime('%Y-%m-%d')
-    upper = dt.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
-    bounds = """game_time > '""" + lower + "' AND game_time < '" + upper + "';"
+    upper = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    bounds = """game_time > '""" + lower + "' AND game_time < '" + upper + "');"
     statement = """
     SELECT *
     FROM make_odds
