@@ -1,13 +1,13 @@
 <!doctype html>
 <title>{% block title %}{% endblock %} - Virtual NBA Betting</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <nav>
   <h1>Welcome to Virtual NBA Betting Central!</h1>
   <ul>
     {% if g.user %}
       <li><span>{{ g.user['username'] }}</span>
       <!--    <li><span>{{ g.user['balance'] }}</span>    -->
-      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+      <li><a href="{{ url_for('login') }}">Log Out</a>
 
     {% else %}
 

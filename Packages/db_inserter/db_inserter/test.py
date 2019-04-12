@@ -20,12 +20,19 @@ def db_select(statement):
 
 
 def get_betting_data():
-    lower = (dt.datetime.now() - dt.timedelta(days=4)).strftime('%Y-%m-%d')
+    lower = (dt.datetime.now() - dt.timedelta(days=3)).strftime('%Y-%m-%d')
     upper = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    base = "SELECT g_id FROM game WHERE "
-    bounds = """game_time > '""" + lower + "' AND game_time < '" + upper + "';"
-    games = db_select(base + bounds)
-    return games
+    bounds = """game_time > '""" + lower + "' AND game_time < '" + upper
+    games_statement = """SELECT game.g_id FROM game WHERE """ + bounds + "';"
+    bet_statement = """
+    SELECT *
+    FROM make_odds
+    WHERE make_odds.g_id in (
+        SELECT game.g_id
+        FROM game
+        WHERE """ + bounds + "');"
+    return db_select(games_statement), db_select(bet_statement)
+
 
 
 """

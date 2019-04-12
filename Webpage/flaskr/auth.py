@@ -1,17 +1,14 @@
-###### it's a blue print demo ################
-
-
 
 import functools
 
 from flask import (
-    Blueprint, 
-    flash, 
-    g, 
-    redirect, 
-    render_template, 
+    Blueprint,
+    flash,
+    g,
+    redirect,
+    render_template,
     request,  # there are four methods including GET, POST, UPDATE and ...
-    session, 
+    session,
     url_for
 )
 
@@ -29,7 +26,7 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 ######## sub page? #############################################
 
 ## sub1, register
-@bp.route('/register', methods=('GET', 'POST'))  
+@bp.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
         username = request.form['username']
@@ -70,7 +67,6 @@ def login():
         error = None
         user = db.execute(
             'SELECT * FROM user WHERE username = ?', (username,)
-            ### need to modify it to prevent sql injection ###########
         ).fetchone()
 
         if user is None:
@@ -108,7 +104,7 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
 
-## sub5, helper function, use to check when user post/delete/operate during log in 
+## sub5, helper function, use to check when user post/delete/operate during log in
 def login_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):

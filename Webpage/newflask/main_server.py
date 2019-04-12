@@ -153,15 +153,32 @@ def db_select(statement):
 def get_betting_data():
     lower = (dt.datetime.now() - dt.timedelta(days=1)).strftime('%Y-%m-%d')
     upper = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    bounds = """game_time > '""" + lower + "' AND game_time < '" + upper + "');"
-    statement = """
+    bounds = """game_time > '""" + lower + "' AND game_time < '" + upper
+    games_statement = """SELECT game.g_id FROM game WHERE """ + bounds + "';"
+    bet_statement = """
     SELECT *
     FROM make_odds
-    WHERE make_odds.g_id = (
+    WHERE make_odds.g_id in (
         SELECT game.g_id
         FROM game
-        WHERE """ + bounds
-    return db_select(statement)
+        WHERE """ + bounds + "');"
+    return clean_display_data(db_select(games_statement), db_select(bet_statement))
+
+
+def clean_display_data(game_df, bet_df):
+    team_df = db_select("""SELECT * FROM team;""")
+    game_times = game_df.game_times.values
+    away_team = game_df.t_id_away
+    # Col of game time
+    # Col of away team
+    # Col of home team
+    # Col of ML
+    # Col of spread
+    # Col of OU
+    # Link to deeper page
+
+    pass
+
 
 
 if __name__ == "__main__":
