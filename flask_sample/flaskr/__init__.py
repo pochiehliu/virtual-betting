@@ -39,9 +39,7 @@ def create_app(test_config=None):
     @app.route('/sample')
     def sample():
         text = '''
-        Each page can be renderred by html template, or just a function (app) output like this.
-        The route name must be the same as fucntion name. 'sample' in this case.
-        By Po
+        This is test page. By Po
         '''
         return text
     ##############################################################################
@@ -61,8 +59,14 @@ def create_app(test_config=None):
 
 
     ############# blog, blueprint, we can modify it to main betting page ##########
-    from . import blog
-    app.register_blueprint(blog.bp)
+    #from . import blog
+    #app.register_blueprint(blog.bp)
+    #app.add_url_rule('/', endpoint='index')
+    ###############################################################################
+
+    ############# blog, blueprint, we can modify it to main betting page ##########
+    from . import bet
+    app.register_blueprint(bet.bp)
     app.add_url_rule('/', endpoint='index')
     ###############################################################################
 
