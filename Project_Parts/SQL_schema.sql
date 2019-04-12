@@ -164,7 +164,7 @@ CREATE TABLE make_odds (
 
 CREATE TABLE place_bet(
 	o_id int REFERENCES make_odds (o_id),
-	bet_time timestamp NOT NULL,
+	bet_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	u_id int REFERENCES users (u_id) ON DELETE NO ACTION,
 	bet_size decimal(12, 2) NOT NULL,
 	CHECK (bet_size > 0),
