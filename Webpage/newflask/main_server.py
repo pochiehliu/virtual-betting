@@ -60,8 +60,9 @@ def homepage():
         balance = db_select(statement).iloc[0, 0]
 
     betting_data = get_betting_data()
-
-    return render_template("homepage.html", **betting_data)
+    
+    placeholder = {'1':1, '2':2}
+    return render_template("homepage.html", **placeholder)
 
 
 @app.route('/user_place_bet', methods=['POST'])
@@ -154,7 +155,7 @@ def get_betting_data():
     lower = (dt.datetime.now() - dt.timedelta(days=1)).strftime('%Y-%m-%d')
     upper = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     bounds = """game_time > '""" + lower + "' AND game_time < '" + upper
-    games_statement = """SELECT game.g_id FROM game WHERE """ + bounds + "';"
+    games_statement = """SELECT * FROM game WHERE """ + bounds + "';"
     bet_statement = """
     SELECT *
     FROM make_odds
@@ -166,9 +167,36 @@ def get_betting_data():
 
 
 def clean_display_data(game_df, bet_df):
-    team_df = db_select("""SELECT * FROM team;""")
-    game_times = game_df.game_times.values
-    away_team = game_df.t_id_away
+    teams = db_select("""SELECT * FROM team;""")
+    teams = dict(zip(teams.t_id, teams.name))
+    game_df[['t_id_home', 't_id_away']] = game_df.iloc[:, -2:].applymap(lambda x: teams[x])
+    return [1,2,3]
+    #game_times = game_df.game_times.values
+    #away_team = game_df.t_id_away
+    #home_team = game_df.t_id_home
+
+    #ml_bets = [get_best_bet(x.g_id,)]
+"""
+CREATE TABLE make_odds (
+	o_id int SERIAL PRIMARY KEY,
+	g_id VARCHAR (12) REFERENCES game (g_id),
+	sb_id int REFERENCES sportsbook (sb_id) ON DELETE NO ACTION,
+	bt_id int REFERENCES bet_type (bt_id) ON DELETE NO ACTION,
+	odds_time timestamp NOT NULL,
+	odds_side char NOT NULL,
+	CHECK (
+		odds_side = 'H' OR
+		odds_side = 'V' OR
+		odds_side = 'O' OR
+		odds_side = 'U'
+	),
+	UNIQUE (g_id, sb_id, bt_id, odds_time, odds_side),
+	odds_payout float NOT NULL,
+	CHECK (odds_payout >= 1),
+	odds_line float NOT NULL
+);
+"""
+
     # Col of game time
     # Col of away team
     # Col of home team
@@ -177,9 +205,9 @@ def clean_display_data(game_df, bet_df):
     # Col of OU
     # Link to deeper page
 
+
+def get_best_bet():
     pass
-
-
 
 if __name__ == "__main__":
   @click.command()

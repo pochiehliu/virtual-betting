@@ -7,7 +7,7 @@
     {% if g.user %}
       <li><span>{{ g.user['username'] }}</span>
       <!--    <li><span>{{ g.user['balance'] }}</span>    -->
-      <li><a href="{{ url_for('login') }}">Log Out</a>
+      <li><a href="{{ url_for('logout') }}">Log Out</a>
 
     {% else %}
 
