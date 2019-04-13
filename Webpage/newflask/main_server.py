@@ -60,7 +60,7 @@ def homepage():
         balance = db_select(statement).iloc[0, 0]
 
     betting_data = get_betting_data()
-    
+
     placeholder = {'1':1, '2':2}
     return render_template("homepage.html", **placeholder)
 
@@ -170,12 +170,18 @@ def clean_display_data(game_df, bet_df):
     teams = db_select("""SELECT * FROM team;""")
     teams = dict(zip(teams.t_id, teams.name))
     game_df[['t_id_home', 't_id_away']] = game_df.iloc[:, -2:].applymap(lambda x: teams[x])
-    return [1,2,3]
-    #game_times = game_df.game_times.values
-    #away_team = game_df.t_id_away
-    #home_team = game_df.t_id_home
 
-    #ml_bets = [get_best_bet(x.g_id,)]
+    game_times = game_df.game_times.values
+    away_team = game_df.t_id_away
+    home_team = game_df.t_id_home
+
+    away_ml = [get_best_bet(x.g_id, 'ml', 'V') for x in game_df.g_id.values]
+    home_ml = [get_best_bet(x.g_id, 'ml', 'H') for x in game_df.g_id.values]
+    away_ps = [get_best_bet(x.g_id, 'ps', 'V') for x in game_df.g_id.values]
+    home_ps = [get_best_bet(x.g_id, 'ps', 'H') for x in game_df.g_id.values]
+    over = [get_best_bet(x.g_id, 'ou', 'O') for x in game_df.g_id.values]
+    under = [get_best_bet(x.g_id, 'ou', 'U') for x in game_df.g_id.values]
+    # Link to deeper page
 """
 CREATE TABLE make_odds (
 	o_id int SERIAL PRIMARY KEY,
@@ -197,16 +203,23 @@ CREATE TABLE make_odds (
 );
 """
 
-    # Col of game time
-    # Col of away team
-    # Col of home team
-    # Col of ML
-    # Col of spread
-    # Col of OU
-    # Link to deeper page
+# for moneyline, just want max payout
+# for spread, want max odds odds_line for side
+# for over under, want min oddsline if over, max if under
 
+def get_best_bet(game_id, kind, side):
+    bet_id = 1 if kind == 'ml' else (2 if kind == 'ou' else 3)
+    dir = 'ASC' if kind == 'ou' and side == 'O' else 'DESC'
+    """
+    SELECT *
+    FROM make_odds as m
+    WHERE m.g_id = {g_id}
+    AND m.bt_id = {bt_id}
+    AND m.side = {side}
+    ORDER BY m.odds_line {dir}, m.odds_payout DESC
+    """.format(g_id=game_id, bt_id=bet_id, side=side, dir=dir)
 
-def get_best_bet():
+    # REMEMBER TO ONLY FETCHONE
     pass
 
 if __name__ == "__main__":

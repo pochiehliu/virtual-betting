@@ -112,7 +112,7 @@ class BaskRefScraper:
             return pd.DataFrame()
         else:
             g_id, away, home = self._get_team_ids()
-            game_time = self._get_game_times()
+            game_time = list(filter(None, self._get_game_times()))
 
         return pd.DataFrame(data={'g_id': g_id,
                                   'game_time': game_time,
@@ -220,7 +220,9 @@ class BaskRefScraper:
             self.game_id = game
             self.set_season_month(game[:4], game[4:6], fix_season=False)
             self._set_box_page(game)
-            self._get_game_stats()
+
+            if self.box_page is not None:
+                self._get_game_stats()
 
     def _dump_to_csv(self):
         self.player_df.to_csv(BASK_REF_PATH + "player_" + self.tag + ".csv", mode='a+', index_label="Index")
@@ -246,7 +248,10 @@ class BaskRefScraper:
     @staticmethod
     def _read_time(game):
         cut = game.get_text('csk').split('csk')
-        day_time = cut[1][:-1]
+        try:
+            day_time = cut[1][:-1]
+        except IndexError:
+            return None
         day = cut[0].split(', ')
         day = calendar.month_name[list(calendar.month_abbr).index(day[1][:3])] + ' ' + day[1][4:] + ' ' + day[2]
         return day_time + ' PM ' + day

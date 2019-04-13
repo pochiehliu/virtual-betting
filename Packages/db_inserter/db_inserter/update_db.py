@@ -34,8 +34,8 @@ def insert_to_db(table_name, row, columns=''):
     :return:
     """
     values = str(tuple(row))
-    columns = str(tuple(columns)).replace("'", '') if columns != '' else columns
-    return """INSERT INTO """ + columns + table_name + """ VALUES """ + values
+    columns = str(tuple(columns)).replace("'", '') if isinstance(columns, list) else columns
+    return """INSERT INTO """ + table_name + columns + """ VALUES """ + values
 
 
 def get_date(day=False):
@@ -68,16 +68,24 @@ def _get_new_games(last_month):
     return scraper.get_available_games()
 
 
+def _update_game(game):
+    return "UPDATE game SET game_time = '{gt}' WHERE g_id = '{g_id}';".format(gt=game.game_time,
+                                                                              g_id=game.g_id)
+
+
 def _insert_new_games(new_games, done_games):
     for idx, game in new_games.iterrows():
-        if game.g_id not in done_games:
+        match = done_games.loc[done_games.g_id == game.g_id]
+        if len(match) == 0:
             engine.execute(insert_to_db(table_name='game', row=game))
+        elif pd.to_datetime(game.game_time) != match.iloc[0].game_time:
+            engine.execute(_update_game(game))
 
 
 def update_game_table():
     team_id_map = _get_team_dict()
-    done_games = select_all('game ORDER BY g_id').g_id.values
-    last_month = done_games[-1][:6]
+    done_games = select_all('game ORDER BY g_id')
+    last_month = done_games.g_id.values[-1][:6]
     current_month = get_date(day=False)
 
     while last_month <= current_month:
@@ -150,12 +158,12 @@ TAKES A GOOD 30 SEC
 def _get_odds(date):
     scraper = ScrapeSession()
     scraper.lengths = ['']  # because we only want full game betting odds
-    return scraper.day_scraper(date)
+    return scraper.day_scraper([date])
 
 
 def _get_team_order(date):
     scraper = GameOrderScraper()
-    return scraper.day_scraper(date)
+    return scraper.day_scraper([date])
 
 
 def update_make_odds():
@@ -168,7 +176,7 @@ def update_make_odds():
 
     make_odds = transform_make_odds(odds, game_order, games, teams)
     make_odds.loc[:, 'odds_time'] = str(dt.datetime.now())
-    for idx, line in make_odds.iterrows():
-        insert_to_db(table_name='make_odds', row=line[1:], columns=make_odds.columns[1:])
 
+    for idx, line in make_odds.iterrows():
+        engine.execute(insert_to_db(table_name='make_odds', row=line[1:], columns=make_odds.columns[1:].tolist()))
 

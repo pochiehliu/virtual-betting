@@ -1,5 +1,5 @@
 CREATE TABLE player (
-	p_id int SERIAL PRIMARY KEY,
+	p_id SERIAL PRIMARY KEY,
 	first_name text NOT NULL,
 	last_name text NOT NULL
 );
@@ -12,7 +12,7 @@ CREATE TABLE team (
 );
 
 CREATE TABLE users (
-	u_id SERIAL int PRIMARY KEY ,
+	u_id SERIAL PRIMARY KEY ,
 	username text UNIQUE NOT NULL,
 	first_name text NOT NULL,
 	last_name text NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE player_game_stats (
 );
 
 CREATE TABLE make_odds (
-	o_id int SERIAL PRIMARY KEY,
+	o_id SERIAL PRIMARY KEY,
 	g_id VARCHAR (12) REFERENCES game (g_id),
 	sb_id int REFERENCES sportsbook (sb_id) ON DELETE NO ACTION,
 	bt_id int REFERENCES bet_type (bt_id) ON DELETE NO ACTION,
