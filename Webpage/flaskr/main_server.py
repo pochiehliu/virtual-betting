@@ -61,7 +61,9 @@ def homepage():
         context['balance'] = '{:20,.2f}'.format(balance)
 
     # store_betting_data()
-    context['betting_data'] = get_betting_data()
+    betting_data = get_betting_data()
+    context['betting_data'] = betting_data
+    context['games_indicator'] = True if len(betting_data) != 0 else False
 
     if request.method == 'POST':
         amount = request.form['amount']
@@ -110,6 +112,10 @@ def login():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    if session.get('user_id') is not None:
+        flash('Already signed in')
+        return redirect('/')
+
     if request.method == 'POST':
         username = request.form['username']
         first_name = request.form['first']
@@ -126,6 +132,14 @@ def register():
             session['user_id'] = user['id']
             return render_template('homepage.html')
     return render_template('register.html')
+
+
+@app.route('/profile', methods=['GET'])
+def profile():
+    if session.get('user_id') is None:
+        flash("Must log in to access profile.")
+        return redirect('/login')
+    return render_template('profile.html')
 
 
 @app.route('/logout', methods=['GET'])
@@ -173,17 +187,19 @@ def get_betting_data():
     return df
 
 def store_betting_data():
-    lower = dt.datetime.now().strftime('%Y-%m-%d')
+    lower = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     upper = (dt.datetime.now() + dt.timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
     bounds = """game_time > '""" + lower + "' AND game_time < '" + upper
     games_statement = """SELECT * FROM game WHERE {b}';""".format(b=bounds)
     bet_statement = """
     SELECT *
-    FROM make_odds
-    WHERE make_odds.g_id in (
+    FROM make_odds AS mo
+    WHERE mo.g_id in (
         SELECT game.g_id
         FROM game
-        WHERE {b}');""".format(b=bounds)
+        WHERE {b}')
+    AND mo.odds_time = (SELECT MAX(odds_time)
+                        FROM make_odds);""".format(b=bounds)
     df = clean_display_data(db_select(games_statement), db_select(bet_statement))
     df.to_csv('betting_data.csv')
 
