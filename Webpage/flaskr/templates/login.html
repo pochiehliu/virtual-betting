@@ -1,7 +1,15 @@
 {% extends 'homepage.html' %}
 
 {% block header %}
-  <h1>{% block title %}Log In{% endblock %}</h1>
+  <h1>Log In</h1>
+{% endblock %}
+
+{% block links %}
+  <ul>
+    <li><a href="{{ url_for('homepage') }}">Home Page</a>
+    <li><a href="{{ url_for('register') }}">Register</a>
+    <li><a href="{{ url_for('login') }}">Log In</a>
+  </ul>
 {% endblock %}
 
 {% block content %}

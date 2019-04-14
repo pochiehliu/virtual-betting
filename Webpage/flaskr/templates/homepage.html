@@ -1,89 +1,113 @@
 <!doctype html>
-<title>{% block title %}{% endblock %} - Virtual NBA Betting</title>
+<title>{% block title %}VNBC{% endblock %}</title>
+
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <nav>
-  <h1>Virtual NBA Betting Central!</h1>
-  <ul>
-    {% if session['logged_in'] %}
-      <li><a href="{{ url_for('homepage') }}">Home Page</a>
-      <li><span>Welcome, {{ first_name }}!</span>
-      <li><span>Your balance is: ${{balance}}</span>
-      <li><a href="{{ url_for('logout') }}">Log Out</a>
 
-    {% else %}
-      <li><a href="{{ url_for('homepage') }}">Home Page</a>
-      <li><a href="{{ url_for('register') }}">Register</a>
-      <li><a href="{{ url_for('login') }}">Log In</a>
+  {% block header %}
+    <h1>Virtual NBA Betting Central!</h1>
+  {% endblock %}
 
-    {% endif %}
-  </ul>
+  {% block links %}
+    <ul>
+      {% if session['logged_in'] %}
+        <li><span>Welcome, {{ first_name }}!</span>
+        <li><span>Your balance is: ${{balance}}</span>
+        <li><a href="{{ url_for('homepage') }}">Home Page</a>
+        <li><a href="{{ url_for('profile') }}">Profile</a>
+        <li><a href="{{ url_for('logout') }}">Log Out</a>
+      {% else %}
+        <li><a href="{{ url_for('homepage') }}">Home Page</a>
+        <li><a href="{{ url_for('register') }}">Register</a>
+        <li><a href="{{ url_for('login') }}">Log In</a>
+      {% endif %}
+    </ul>
+  {% endblock %}
 </nav>
+
+
+<p></p>
+
 
 {% block content %}
 <section class="content">
   {% for message in get_flashed_messages() %}
     <div class="flash">{{ message }}</div>
   {% endfor %}
-  <header font-size="20px">
-    {% block games %}Today's Games{% endblock %}
-  </header>
 
-  <table border="2" frame=void cellpadding="2" style="width:100%">
-    <tr>
-      <th width="(100/10)%">Game Number</th>
-      <th width="(100/10)%">Game Time</th>
-      <th width="(100/10)%">Away Team</th>
-      <th width="(100/10)%">Home Team</th>
-      <th width="(100/10)%">Away Moneyline</th>
-      <th width="(100/10)%">Home Moneyline</th>
-      <th width="(100/10)%">Away Spread</th>
-      <th width="(100/10)%">Home Spread</th>
-      <th width="(100/10)%">Over</th>
-      <th width="(100/10)%">Under</th>
-    </tr>
+  {% if games_indicator %}
+    <header> <font size="6px">
+      {% block games %}Today's Games{% endblock %}
+    </font></header>
 
-    {% for key,val in betting_data.iterrows() %}
+    <hr>
+
+    <table border="2" frame=void cellpadding="2" style="width:100%">
       <tr>
-        <td align="center">{{key}}</td>
-        <td align="center">{{val['game_times']}}</td>
-        <td align="center">{{val['away_team']}}</td>
-        <td align="center">{{val['home_team']}}</td>
-        <td align="center">{{val['away_ml_pay']}}</td>
-        <td align="center">{{val['home_ml_pay']}}</td>
-        <td align="center">{{val['away_ps_line']}} <br> {{val['away_ps_pay']}}</td>
-        <td align="center">{{val['home_ps_line']}} <br> {{val['home_ps_pay']}}</td>
-        <td align="center">{{val['over_line']}} <br> {{val['over_pay']}}</td>
-        <td align="center">{{val['under_line']}} <br> {{val['under_pay']}}</td>
+        <th width="(100/10)%">Game Number</th>
+        <th width="(100/10)%">Game Time</th>
+        <th width="(100/10)%">Away Team</th>
+        <th width="(100/10)%">Home Team</th>
+        <th width="(100/10)%">Away Moneyline</th>
+        <th width="(100/10)%">Home Moneyline</th>
+        <th width="(100/10)%">Away Spread</th>
+        <th width="(100/10)%">Home Spread</th>
+        <th width="(100/10)%">Over</th>
+        <th width="(100/10)%">Under</th>
       </tr>
-    {% endfor %}
-  </table>
 
-{% if session['logged_in'] %}
-  <div><form method="POST"><ul>
-
-    <select name="game" padding='50px' font-size='15px'>
-      <option value="undefined">Select Game</option>
       {% for key,val in betting_data.iterrows() %}
-        <option value={{key}}>Match {{key}}</option>
+        <tr>
+          <td align="center">{{key}}</td>
+          <td align="center">{{val['game_times']}}</td>
+          <td align="center">{{val['away_team']}}</td>
+          <td align="center">{{val['home_team']}}</td>
+          <td align="center"><font color='green'>{{val['away_ml_pay']}}</font></td>
+          <td align="center"><font color='green'>{{val['home_ml_pay']}}</font></td>
+          <td align="center"><font color='darkblue'>{{val['away_ps_line']}}</font><br><font color='green'>{{val['away_ps_pay']}}</font></td>
+          <td align="center"><font color='darkblue'>{{val['home_ps_line']}}</font><br><font color='green'>{{val['home_ps_pay']}}</font></td>
+          <td align="center"><font color='darkblue'>{{val['over_line']}}</font><br><font color='green'>{{val['over_pay']}}</font></td>
+          <td align="center"><font color='darkblue'>{{val['under_line']}}</font><br><font color='green'>{{val['under_pay']}}</font></td>
+        </tr>
       {% endfor %}
-    </select>
+    </table>
 
-    <select name="bet" padding='50px' font-size='15px'>
-      <option value="undefined">Select Bet Type</option>
-      <option value="away_ml"=>Away Moneyline</option>
-      <option value="home_ml">Home Moneyline</option>
-      <option value="away_ps">Away Spread</option>
-      <option value="home_ps">Home Spread</option>
-      <option value="over">Over</option>
-      <option value="under">Under</option>
-    </select>
-    <label for="amount">Bet Amount:</label>
-    <input name="amount" id="amount" required>
-    <input padding='50px' type="submit" value="Place Bet!" font-size='15px'>
 
-  </ul></form></div>
+  {% if session['logged_in'] %}
+    <div><form method="POST"><ul>
+
+      <select name="game" padding='5px'>
+        <option value="undefined">Select Game</option>
+        {% for key,val in betting_data.iterrows() %}
+          <option value={{key}}>Match {{key}}</option>
+        {% endfor %}
+      </select>
+
+      <select name="bet" padding='5px'>
+        <option value="undefined">Select Bet Type</option>
+        <option value="away_ml"=>Away Moneyline</option>
+        <option value="home_ml">Home Moneyline</option>
+        <option value="away_ps">Away Spread</option>
+        <option value="home_ps">Home Spread</option>
+        <option value="over">Over</option>
+        <option value="under">Under</option>
+      </select>
+      <label for="amount">Bet Amount:</label>
+      <input name="amount" id="amount" required>
+      <input padding='50px' type="submit" value="Place Bet!" font-size='15px'>
+
+    </ul></form></div>
+    {% endif %}
+
+  {% else %}
+    <div><ul>
+    <header font size="20px">
+      Sorry! There are no games remaining today. Please check back again tomorrow.
+    </header>
+    </ul></div>
   {% endif %}
 
- {% endblock %}
+  {% endblock %}
 
 </section>

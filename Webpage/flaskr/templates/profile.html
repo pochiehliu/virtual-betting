@@ -1,0 +1,37 @@
+{% extends 'homepage.html' %}
+
+{% block header %}
+  <h1>{% block title %}Profile{% endblock %}</h1>
+{% endblock %}
+
+
+
+{% block links %}
+  <ul>
+    <li><a href="{{ url_for('homepage') }}">Home Page</a>
+    <li><a href="{{ url_for('profile') }}">Profile</a>
+    <li><a href="{{ url_for('logout') }}">Log Out</a>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <section class="content">
+    <div>
+      <header> <font size="6px">User Information:</font></header>
+      <hr>
+      <p>Username: <b>{{username}}</b></p>
+
+      <p>Name: <b>{{first_name}} {{last_name}}</b></p>
+
+      <p>Balance: <b>${{balance}}</b></p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div>
+      <header> <font size="6px">Betting History</font></header>
+    </div>
+    <hr>
+  </section>
+
+{% endblock %}
