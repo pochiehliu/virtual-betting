@@ -1,0 +1,5 @@
+,game_times,away_team,home_team,away_ml_oid,away_ml_pay,home_ml_oid,home_ml_pay,away_ps_oid,away_ps_line,away_ps_pay,home_ps_oid,home_ps_line,home_ps_pay,over_oid,over_line,over_pay,under_oid,under_line,under_pay
+0,Sun Apr 14 13:00:00 2019,Indiana Pacers,Boston Celtics,2621,3.68,2656,1.339,2643,7.0,1.971,2751,-7.0,1.952,2645,209.5,1.98,2729,210.0,1.909
+1,Sun Apr 14 21:30:00 2019,Utah Jazz,Houston Rockets,2725,3.4,2641,1.408,2748,6.5,1.952,2640,-6.5,1.99,2654,214.0,1.98,2738,214.5,1.909
+2,Sun Apr 14 19:00:00 2019,Detroit Pistons,Milwaukee Bucks,2722,13.75,2638,1.1,2626,13.0,1.952,2637,-13.0,1.952,2747,218.0,1.952,2663,218.5,1.952
+3,Sun Apr 14 15:30:00 2019,Oklahoma City Thunder,Portland Trail Blazers,2647,2.43,2731,2.45,2742,3.5,1.952,2730,-3.0,1.87,2744,225.0,1.952,2660,225.0,1.98

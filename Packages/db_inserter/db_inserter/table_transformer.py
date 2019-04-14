@@ -187,6 +187,7 @@ def transform_make_odds(sbr_bets, sbr_teams, games, teams):
     odds_df.bt_id = odds_df.bt_id.map(lambda b: 3 if b == 'p' else (2 if b == 't' else 1))
     odds_df.odds_payout = odds_df.apply(lambda x: get_lines(x, True), axis=1)
     odds_df.odds_line = odds_df.apply(lambda x: get_lines(x, False), axis=1)
+    odds_df.odds_line = odds_df.odds_line.astype(str).apply(lambda val: 0 if val.upper() == 'PK' else val).astype(float)
     odds_df.dropna(how='any', inplace=True)
     odds_df.odds_payout = odds_df.odds_payout.astype(int).map(odds_convert)
     odds_df.reset_index(drop=True, inplace=True)
