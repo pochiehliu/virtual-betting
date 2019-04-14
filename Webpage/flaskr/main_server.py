@@ -148,7 +148,7 @@ def profile():
         context['first_name'] = first
         context['last_name'] = last
         context['balance'] = '{:20,.2f}'.format(balance)
-        context['bet_history'] = get_bet_history()
+        # context['bet_history'] = get_bet_history(user_id)
     return render_template('profile.html', **context)
 
 
@@ -270,7 +270,7 @@ def get_bet_history(user_id):
     SELECT M.g_id
     FROM place_bet AS P, make_odds AS M
     WHERE P.u_id = {}
-    AND M.o_id = P.o_id 
+    AND M.o_id = P.o_id
     AND M.g_id IN (SELECT g_id FROM game_stats);""".format(user_id)
 
     pending_statement = """
