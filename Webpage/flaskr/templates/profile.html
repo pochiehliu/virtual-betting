@@ -14,12 +14,24 @@
   </ul>
 {% endblock %}
 
-
-
-
 {% block content %}
   <section class="content">
+    <div>
+      <header> <font size="6px">User Information:</font></header>
+      <hr>
+      <p>Username: <b>{{username}}</b></p>
 
+      <p>Name: <b>{{first_name}} {{last_name}}</b></p>
+
+      <p>Balance: <b>${{balance}}</b></p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div>
+      <header> <font size="6px">Betting History</font></header>
+    </div>
+    <hr>
   </section>
 
 {% endblock %}

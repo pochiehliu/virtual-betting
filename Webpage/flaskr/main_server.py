@@ -139,7 +139,17 @@ def profile():
     if session.get('user_id') is None:
         flash("Must log in to access profile.")
         return redirect('/login')
-    return render_template('profile.html')
+    else:
+        context = {}
+        user_id = session['user_id']
+        statement = "SELECT username, first_name, last_name, balance FROM users WHERE u_id = {id};".format(id=user_id)
+        username, first, last, balance = engine.execute(statement).fetchone()
+        context['username'] = username
+        context['first_name'] = first
+        context['last_name'] = last
+        context['balance'] = '{:20,.2f}'.format(balance)
+        context['bet_history'] = get_bet_history()
+    return render_template('profile.html', **context)
 
 
 @app.route('/logout', methods=['GET'])
@@ -186,6 +196,7 @@ def get_betting_data():
     df.loc[:, numeric_cols] = df[numeric_cols].round(decimals=3)
     return df
 
+
 def store_betting_data():
     lower = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     upper = (dt.datetime.now() + dt.timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
@@ -202,6 +213,7 @@ def store_betting_data():
                         FROM make_odds);""".format(b=bounds)
     df = clean_display_data(db_select(games_statement), db_select(bet_statement))
     df.to_csv('betting_data.csv')
+
 
 def clean_display_data(game_df, bet_df):
     teams = db_select("""SELECT * FROM team;""")
@@ -251,6 +263,26 @@ def get_best_bet(game_id, bt_id, side):
     ORDER BY m.odds_line {dir}, m.odds_payout DESC;
     """.format(g_id=game_id, bt_id=bt_id, side=side, dir=dir)
     return engine.execute(statement).fetchone()
+
+
+def get_bet_history(user_id):
+    complete_statement = """
+    SELECT M.g_id
+    FROM place_bet AS P, make_odds AS M
+    WHERE P.u_id = {}
+    AND M.o_id = P.o_id 
+    AND M.g_id IN (SELECT g_id FROM game_stats);""".format(user_id)
+
+    pending_statement = """
+    SELECT M.g_id
+    FROM place_bet AS P, make_odds AS M
+    WHERE P.u_id = {}
+    AND M.o_id = P.o_id
+    AND M.g_id NOT IN (SELECT g_id FROM game_stats);""".format(user_id)
+    df = pd.read_sql(statement, g.conn)
+
+    #return df
+    pass
 
 
 if __name__ == "__main__":

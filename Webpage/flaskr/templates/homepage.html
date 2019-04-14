@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 <nav>
+
   {% block header %}
     <h1>Virtual NBA Betting Central!</h1>
   {% endblock %}
@@ -25,6 +26,10 @@
   {% endblock %}
 </nav>
 
+
+<p></p>
+
+
 {% block content %}
 <section class="content">
   {% for message in get_flashed_messages() %}
@@ -32,9 +37,11 @@
   {% endfor %}
 
   {% if games_indicator %}
-    <header font size="20px">
+    <header> <font size="6px">
       {% block games %}Today's Games{% endblock %}
-    </header>
+    </font></header>
+
+    <hr>
 
     <table border="2" frame=void cellpadding="2" style="width:100%">
       <tr>
