@@ -4,9 +4,9 @@
 <nav>
   <h1>Welcome to Virtual NBA Betting Central!</h1>
   <ul>
-    {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <!--    <li><span>{{ g.user['balance'] }}</span>    -->
+    {% if session['logged_in'] %}
+      <li><span>Welcome, {{ first_name }}!</span>
+      <li><span>Your balance is, ${{ balance }}</span>
       <li><a href="{{ url_for('logout') }}">Log Out</a>
 
     {% else %}
