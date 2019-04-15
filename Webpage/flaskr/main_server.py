@@ -148,7 +148,11 @@ def profile():
         context['first_name'] = first
         context['last_name'] = last
         context['balance'] = '{:20,.2f}'.format(balance)
-        # context['bet_history'] = get_bet_history(user_id)
+
+        bet_history = get_bet_history(user_id, 20)
+        context['bet_indicator'] = True if len(bet_history) > 0 else False
+        context['bet_history'] = bet_history
+
     return render_template('profile.html', **context)
 
 
@@ -265,24 +269,19 @@ def get_best_bet(game_id, bt_id, side):
     return engine.execute(statement).fetchone()
 
 
-def get_bet_history(user_id):
-    complete_statement = """
-    SELECT M.g_id
-    FROM place_bet AS P, make_odds AS M
-    WHERE P.u_id = {}
-    AND M.o_id = P.o_id
-    AND M.g_id IN (SELECT g_id FROM game_stats);""".format(user_id)
+def get_bet_history(user_id, count=None):
+    limit = "LIMIT {}".format(count) if count is not None else ""
+    with open('major_queries/user_history.sql', 'r') as file:
+        statement = file.read().replace('\n', ' ').replace('\t', ' ')
+    df = pd.read_sql(statement.format(user=user_id, lim=limit), g.conn)
 
-    pending_statement = """
-    SELECT M.g_id
-    FROM place_bet AS P, make_odds AS M
-    WHERE P.u_id = {}
-    AND M.o_id = P.o_id
-    AND M.g_id NOT IN (SELECT g_id FROM game_stats);""".format(user_id)
-    df = pd.read_sql(statement, g.conn)
-
-    #return df
-    pass
+    # format df
+    df['bet_time'] = df.bet_time.map(lambda x: dt.datetime.strftime(x, '%c')).values
+    df['odds_side'] = df.odds_side.map(lambda x: 'HOME' if x == 'H' else ('VISITOR' if x == 'V'
+                                                                    else ('OVER' if x == 'O'
+                                                                    else 'UNDER')))
+    df['odds_line'] = df.odds_line.map(lambda x: 'Outright win' if x == 0 else x)
+    return df
 
 
 if __name__ == "__main__":

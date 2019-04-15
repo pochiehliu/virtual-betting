@@ -41,7 +41,7 @@
       {% block games %}Today's Games{% endblock %}
     </font></header>
 
-    <hr>
+    <p></p>
 
     <table border="2" frame=void cellpadding="2" style="width:100%">
       <tr>
@@ -102,12 +102,12 @@
 
   {% else %}
     <div><ul>
-    <header font size="20px">
+    <header><font size="20px">
       Sorry! There are no games remaining today. Please check back again tomorrow.
-    </header>
+    </font></header>
     </ul></div>
   {% endif %}
 
-  {% endblock %}
+{% endblock %}
 
 </section>
