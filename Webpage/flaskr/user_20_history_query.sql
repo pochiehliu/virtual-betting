@@ -24,7 +24,7 @@ game_info AS(
     SELECT GS.g_id, 
     home_q1_score+home_q2_score+home_q3_score+home_q4_score+coalesce(home_ot_score,0) AS H,
     away_q1_score+away_q2_score+away_q3_score+away_q4_score+coalesce(away_ot_score,0) AS V,
-    home_q1_score+home_q2_score+home_q3_score+home_q4_score+coalesce(home_ot_score,0)+
+    home_q1_score+home_q2_score+home_q3_score+home_q4_score+coalesce(home_ot_score,0) +
     away_q1_score+away_q2_score+away_q3_score+away_q4_score+coalesce(away_ot_score,0) AS OU
     FROM game_stats AS GS
     WHERE GS.g_id IN (SELECT g_id FROM bet_info)),
@@ -32,7 +32,7 @@ OU AS (
     SELECT B.bet_time, T.HOME, T.AWAY, G.H AS H_score, G.V AS V_score, B.bet_size, B.odds_side, 
            B.BET_TYPE, B.odds_line, B.odds_payout,
            CASE WHEN ((G.OU > B.odds_line AND B.odds_side = 'O') OR
-                      (G.OU < B.odds_line AND B.odds_side = 'V')) = TRUE THEN 'WIN'
+                      (G.OU < B.odds_line AND B.odds_side = 'U')) = TRUE THEN 'WIN'
                 WHEN (G.OU = B.odds_line) THEN 'TIE'
                 ELSE 'LOST' END AS WIN_LOST
     FROM bet_info AS B, game_info AS G, team_info AS T
@@ -43,8 +43,8 @@ HV AS(
            B.BET_TYPE, B.odds_line, B.odds_payout,
            CASE WHEN (((G.H-G.V + B.odds_line)>0 AND B.odds_side = 'H') OR
                       ((G.H-G.V - B.odds_line)<0 AND B.odds_side = 'V')) = TRUE THEN 'WIN'
-                WHEN (((G.H-G.V + B.odds_line)=0 AND B.odds_side = 'H' AND B.BET_TYPE = 'spread') OR
-                      ((G.H-G.V - B.odds_line)=0 AND B.odds_side = 'V' AND B.BET_TYPE = 'spread')) = TRUE THEN 'TIE'
+                WHEN (((G.H-G.V + B.odds_line)=0 AND B.odds_side = 'H') OR
+                      ((G.H-G.V - B.odds_line)=0 AND B.odds_side = 'V')) = TRUE THEN 'TIE'
                 ELSE 'LOST' END AS WIN_LOST
     FROM bet_info AS B, game_info AS G, team_info AS T
     WHERE B.g_id = G.g_id AND (B.odds_side = 'H' OR B.odds_side = 'V') AND B.o_id = T.o_id
