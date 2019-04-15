@@ -3,8 +3,8 @@ WITH bet_info AS(
            P.bet_size, BT.name AS BET_TYPE
     FROM place_bet AS P, make_odds AS M, bet_type AS BT
     WHERE P.o_id = M.o_id AND P.u_id = {user} AND BT.bt_id = M.bt_id
-    ORDER BY bet_time DESC {lim}),
-team_info AS(
+    ORDER BY bet_time DESC),
+team_info AS (
     SELECT B.o_id, T1.name AS Home, T2.name AS AWAY
     FROM bet_info AS B, game AS G, team AS T1, team AS T2
     WHERE G.g_id = B.g_id AND G.g_id IN (SELECT g_id FROM bet_info) AND

@@ -20,7 +20,7 @@ nav ul li span {display: block; padding: 8px; text-align: right; vertical-align:
 .content textarea { min-height: 12em; resize: vertical; }
 input.danger { color: #cc2f2e; }
 input[type=submit] { align-self: start; min-width: 10em; }
-td.WIN {color: green;}
+td.WON {color: green;}
 td.PENDING {color: darkblue;}
 td.TIE {color: darkblue;}
 td.LOST {color: red;}

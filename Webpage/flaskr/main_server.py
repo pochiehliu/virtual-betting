@@ -74,7 +74,7 @@ def homepage():
         context['first_name'] = first
         context['balance'] = '{:20,.2f}'.format(balance)
 
-    store_betting_data()
+    # store_betting_data()
     betting_data = get_betting_data()
     context['betting_data'] = betting_data
     context['games_indicator'] = True if len(betting_data) != 0 else False
@@ -163,9 +163,12 @@ def profile():
         context['last_name'] = last
         context['balance'] = '{:20,.2f}'.format(balance)
 
-        bet_history = get_bet_history(user_id, 20)
+        bet_history = get_bet_history(user_id)
+        context['win_count'] = (bet_history.win_lost == "WON").sum()
+        context['loss_count'] = (bet_history.win_lost == "LOST").sum()
+        context['tie_count'] = (bet_history.win_lost == "TIED").sum()
         context['bet_indicator'] = True if len(bet_history) > 0 else False
-        context['bet_history'] = bet_history
+        context['bet_history'] = bet_history.iloc[:20]
 
     return render_template('profile.html', **context)
 
@@ -180,8 +183,13 @@ def logout():
 @app.route('/gamepage', methods=['GET'])
 def gamepage():
     g_id = request.args['gid']
+    context = {}
 
-    context['game_info'] = get_game_info(g_id)
+    game_info = get_game_info(g_id)
+    context['away_team'] = game_info.t_id_away
+    context['home_team'] = game_info.t_id_home
+    context['game_time'] = game_info.game_time
+    context['head_to_head'] = get_head_to_head(g_id)
     context['last_five'] = get_last_five(g_id)
 
     return render_template('gamepage.html', **context)
@@ -296,11 +304,10 @@ def get_best_bet(game_id, bt_id, side):
     return engine.execute(statement).fetchone()
 
 
-def get_bet_history(user_id, count=None):
-    limit = "LIMIT {}".format(count) if count is not None else ""
+def get_bet_history(user_id):
     with open('major_queries/user_history.sql', 'r') as file:
         statement = file.read().replace('\n', ' ').replace('\t', ' ')
-    df = pd.read_sql(statement.format(user=user_id, lim=limit), g.conn)
+    df = pd.read_sql(statement.format(user=user_id), g.conn)
 
     # format df
     df['bet_time'] = df.bet_time.map(lambda x: dt.datetime.strftime(x, '%c')).values
@@ -311,16 +318,44 @@ def get_bet_history(user_id, count=None):
     return df
 
 
-def get_game_info(g_id):
+def get_head_to_head(g_id):
     away, home = engine.execute("SELECT t_id_away, t_id_home FROM game WHERE g_id = '{}';".format(g_id)).fetchone()
-    with open('major_queries/game_info.sql', 'r') as file:
+    with open('major_queries/head_to_head.sql', 'r') as file:
         statement = file.read().replace('\n', ' ').replace('\t', ' ')
 
-    away_stat = [engine.execute(i.format(tid=away)).fetchone() for i in statement.split(';')[:-1]]
-    home_stat = [engine.execute(i.format(tid=home)).fetchone() for i in statement.split(';')[:-1]]
+    categories = ['Win %', 'Field Goal %', 'Three Point %', 'Rebound per Game', 'Turnover Per Game']
+    away_stats = [engine.execute(i.format(tid=away)).fetchone()[0] for i in statement.split(';')[:-1]]
+    home_stats = [engine.execute(i.format(tid=home)).fetchone()[0] for i in statement.split(';')[:-1]]
 
-    for i in away_stat:
-        print(i)
+    df = pd.DataFrame(data={'category': categories, 'away_stat': away_stats,'home_stat': home_stats})
+
+    return df
+
+def get_last_five(g_id):
+    teams = db_select("""SELECT * FROM team;""")
+    teams = dict(zip(teams.t_id, teams.name))
+    away, home = g.conn.execute("SELECT t_id_away, t_id_home FROM game WHERE g_id = '{}';".format(g_id)).fetchone()
+    with open('major_queries/last_five.sql', 'r') as file:
+        statement = file.read().replace('\n', ' ').replace('\t', ' ')
+
+    df = pd.read_sql(statement.format(a=away, h=home), g.conn)
+    df[['home_team', 'away_team']] = df[['t_id_home', 't_id_away']].applymap(lambda x: teams[x])
+
+    away_cols = [x for x in df.columns if x.startswith('away_')]
+    home_cols = [x for x in df.columns if x.startswith('home_')]
+    df['date'] = df.game_time.map(lambda x: dt.datetime.strftime(x, '%c'))
+    df['away_total'] = df[away_cols].sum(axis=1)
+    df['home_total'] = df[home_cols].sum(axis=1)
+
+    return df
+
+
+def get_game_info(g_id):
+    teams = db_select("""SELECT * FROM team;""")
+    teams = dict(zip(teams.t_id, teams.name))
+    game_df = pd.read_sql("SELECT * FROM game WHERE g_id = '{}';".format(g_id), g.conn)
+    game_df[['t_id_home', 't_id_away']] = game_df.iloc[:, -2:].applymap(lambda x: teams[x])
+    return game_df.iloc[0]
 
 
 if __name__ == "__main__":

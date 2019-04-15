@@ -18,59 +18,68 @@
   <section class="content">
     <div>
       <header> <font size="6px">Game Information:</font></header>
-      <hr>
-      <p></p>
+
+        <hr>
+
+        <p style="font-size:160%;">{{away_team}} @ {{home_team}}</p>
+
+        <p>Game Time: <b>{{game_time}}</b></p>
+
+        <p>Game Type: <b>Post-Season</b></p>
+
     </div>
   </section>
 
   <section class="content">
-    {% if bet_indicator %}
       <header> <font size="6px">
-        {% block games %}Betting History{% endblock %}
+        {% block h2h %}Season Head to Head Stats{% endblock %}
       </font></header>
 
       <p></p>
 
-      <table border="2" frame=void cellpadding="2" style="width:100%">
+      <table border="2" frame=void cellpadding="2" style="width:40%">
         <tr>
-          <th width="(100/11)%">Bet Time</th>
-          <th width="(100/11)%">Away Team</th>
-          <th width="(100/11)%">Home Team</th>
-          <th width="(100/11)%">Away Score</th>
-          <th width="(100/11)%">Home Score</th>
-          <th width="(100/11)%">Bet Type</th>
-          <th width="(100/11)%">Odds Line</th>
-          <th width="(100/11)%">Odds Side</th>
-          <th width="(100/11)%">Betting Odds</th>
-          <th width="(100/11)%">Wager</th>
-          <th width="(100/11)%">Result</th>
+          <th width="(100/3)%">Category</th>
+          <th bgcolor="#CC9999" width="(100/3)%">{{away_team}}</th>
+          <th bgcolor="#377ba8" width="(100/3)%">{{home_team}}</th>
         </tr>
 
-        {% for key,val in bet_history.iterrows() %}
-          <tr class="{% if key % 2 == 0 %}even{% else %}odds{% endif %}">
-            <td align="center">{{val['bet_time']}}</td>
-            <td align="center">{{val['away']}}</td>
-            <td align="center">{{val['home']}}</td>
-            <td align="center">{{val['v_score']}}</td>
-            <td align="center">{{val['h_score']}}</td>
-            <td align="center">{{val['bet_type']}}</td>
-            <td align="center">{{val['odds_line']}}</td>
-            <td align="center">{{val['odds_side']}}</td>
-            <td align="center">{{val['odds_payout']}}</td>
-            <td align="center">{{val['bet_size']}}</td>
-            <td class="{{val['win_lost']}}" align="center">{{val['win_lost']}}</td>
+        {% for key,val in head_to_head.iterrows() %}
+          <tr>
+            <td align="center">{{val['category']}}</td>
+            <td bgcolor="#CC9999" align="center">{{val['away_stat']}}</td>
+            <td bgcolor="#377ba8" align="center">{{val['home_stat']}}</td>
           </tr>
         {% endfor %}
       </table>
+  </section>
 
-    {% else %}
-      <div><ul>
-      <header font size="20px">
-        You have not placed any bets yet!
-      </header>
-      </ul></div>
-    {% endif %}
+  <section class="content">
+      <header> <font size="6px">
+        {% block l5 %}Last 5 Matches{% endblock %}
+      </font></header>
 
+      <p></p>
+
+      <table border="2" frame=void cellpadding="2" style="width:40%">
+        <tr>
+          <th width="(100/5)%">Date</th>
+          <th width="(100/5)%">Away Team</th>
+          <th width="(100/5)%">Home Team</th>
+          <th width="(100/5)%">Away Final</th>
+          <th width="(100/5)%">Home Final</th>
+        </tr>
+
+        {% for key,val in last_five.iterrows() %}
+          <tr class="{% if key % 2 == 0 %}even{% else %}odds{% endif %}">
+            <td align="center">{{val['date']}}</td>
+            <td align="center">{{val['away_team']}}</td>
+            <td align="center">{{val['home_team']}}</td>
+            <td align="center">{{val['away_total']}}</td>
+            <td align="center">{{val['home_total']}}</td>
+          </tr>
+        {% endfor %}
+      </table>
   </section>
 
 {% endblock %}
