@@ -55,7 +55,7 @@ WITH bet_info AS(
     FROM place_bet AS P, make_odds AS M
     WHERE P.o_id = M.o_id AND P.u_id = 1),
 game_info AS(
-    SELECT g_id, 
+    SELECT g_id,
     home_q1_score+home_q2_score+home_q3_score+home_q4_score+coalesce(home_ot_score,0) AS H,
     away_q1_score+away_q2_score+away_q3_score+away_q4_score+coalesce(away_ot_score,0) AS V,
     home_q1_score+home_q2_score+home_q3_score+home_q4_score+coalesce(home_ot_score,0)+
@@ -87,12 +87,12 @@ FROM HV
 -- 2nd with: find corresponding bet
 WITH game_info AS (
       SELECT g_id
-      FROM game 
+      FROM game
       WHERE g_id NOT IN (SELECT g_id FROM game_stats)),
-bet_info AS ( 
+bet_info AS (
       SELECT M.o_id, P.bet_size
       FROM place_bet AS P, make_odds AS M
-      WHERE P.o_id = M.o_id AND M.g_id IN ( SELECT g_id FROM game_info) AND P.u_id = 1) 
+      WHERE P.o_id = M.o_id AND M.g_id IN ( SELECT g_id FROM game_info) AND P.u_id = 1)
 SELECT *
 FROM bet_info
 -----------------------------------------------------------------------------------------
@@ -106,7 +106,7 @@ FROM (SELECT t_id_home = 0 AND
              away_q1_score - away_q2_score - away_q3_score - away_q4_score +
              coalesce(home_ot_score,0) - coalesce(away_ot_score,0)) >0 AS WIN_FLAG
       FROM game, game_stats
-      WHERE (game.t_id_home = 0 OR game.t_id_away = 0) AND game.g_id = game_stats.g_id)as win
+      WHERE (game.t_id_home = 0 OR game.t_id_away = 0) AND game.g_id = game_stats.g_id) AS win
 
 -- 2) field goal percentage (sum FG / sum FGA)
 SELECT SUM(field_goals_made) AS FG, SUM(field_goal_attempts)  AS FGA,

@@ -29,6 +29,20 @@ DATABASEURI = "postgresql://pdg2116:f5ih31DBMB@w4111.cisxo09blonu.us-east-1.rds.
 engine = create_engine(DATABASEURI)
 
 
+@app.context_processor
+def override_url_for():
+    return dict(url_for=dated_url_for)
+
+def dated_url_for(endpoint, **values):
+    if endpoint == 'static':
+        filename = values.get('filename', None)
+        if filename:
+            file_path = os.path.join(app.root_path,
+                                     endpoint, filename)
+            values['q'] = int(os.stat(file_path).st_mtime)
+    return url_for(endpoint, **values)
+
+
 @app.before_request
 def before_request():
   try:
@@ -60,7 +74,7 @@ def homepage():
         context['first_name'] = first
         context['balance'] = '{:20,.2f}'.format(balance)
 
-    # store_betting_data()
+    store_betting_data()
     betting_data = get_betting_data()
     context['betting_data'] = betting_data
     context['games_indicator'] = True if len(betting_data) != 0 else False
@@ -163,6 +177,16 @@ def logout():
     return redirect('/login')
 
 
+@app.route('/gamepage', methods=['GET'])
+def gamepage():
+    g_id = request.args['gid']
+
+    context['game_info'] = get_game_info(g_id)
+    context['last_five'] = get_last_five(g_id)
+
+    return render_template('gamepage.html', **context)
+
+
 """
 General Functions
 """
@@ -172,6 +196,7 @@ def register_user(form_list):
         """INSERT INTO users (username, first_name, last_name, password)
         VALUES (?, ?, ?, ?);""", tuple(form_list)
     )
+
 
 def valid_amount(amount):
     # verify input
@@ -224,6 +249,7 @@ def clean_display_data(game_df, bet_df):
     teams = dict(zip(teams.t_id, teams.name))
     game_df[['t_id_home', 't_id_away']] = game_df.iloc[:, -2:].applymap(lambda x: teams[x])
 
+    g_id = game_df.g_id
     game_times = game_df.game_time.map(lambda x: dt.datetime.strftime(x, '%c')).values
     away_team = game_df.t_id_away
     home_team = game_df.t_id_home
@@ -234,6 +260,7 @@ def clean_display_data(game_df, bet_df):
     over = [get_best_bet(x, bt_id=2, side='O') for x in game_df.g_id.values]
     under = [get_best_bet(x, bt_id=2, side='U') for x in game_df.g_id.values]
     df = pd.DataFrame(data={'game_times': game_times,
+                            'g_id': g_id,
                             'away_team': away_team,
                             'home_team': home_team,
                             'away_ml_oid': [x[0] for x in away_ml],
@@ -282,6 +309,18 @@ def get_bet_history(user_id, count=None):
                                                                     else 'UNDER')))
     df['odds_line'] = df.odds_line.map(lambda x: 'Outright win' if x == 0 else x)
     return df
+
+
+def get_game_info(g_id):
+    away, home = engine.execute("SELECT t_id_away, t_id_home FROM game WHERE g_id = '{}';".format(g_id)).fetchone()
+    with open('major_queries/game_info.sql', 'r') as file:
+        statement = file.read().replace('\n', ' ').replace('\t', ' ')
+
+    away_stat = [engine.execute(i.format(tid=away)).fetchone() for i in statement.split(';')[:-1]]
+    home_stat = [engine.execute(i.format(tid=home)).fetchone() for i in statement.split(';')[:-1]]
+
+    for i in away_stat:
+        print(i)
 
 
 if __name__ == "__main__":

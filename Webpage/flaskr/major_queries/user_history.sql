@@ -22,8 +22,8 @@ OU AS (
     SELECT B.bet_time, T.HOME, T.AWAY, G.H AS H_score, G.V AS V_score, B.bet_size, B.odds_side,
            B.BET_TYPE, B.odds_line, B.odds_payout,
            CASE WHEN ((G.OU > B.odds_line AND B.odds_side = 'O') OR
-                      (G.OU < B.odds_line AND B.odds_side = 'U')) = TRUE THEN 'WIN'
-                WHEN (G.OU = B.odds_line) THEN 'TIE'
+                      (G.OU < B.odds_line AND B.odds_side = 'U')) = TRUE THEN 'WON'
+                WHEN (G.OU = B.odds_line) THEN 'TIED'
                 ELSE 'LOST' END AS WIN_LOST
     FROM bet_info AS B, game_info AS G, team_info AS T
     WHERE B.g_id = G.g_id AND (B.odds_side = 'O' OR B.odds_side = 'U') AND B.o_id = T.o_id
@@ -32,9 +32,9 @@ HV AS(
     SELECT B.bet_time, T.HOME, T.AWAY, G.H AS H_score, G.V AS V_score, B.bet_size, B.odds_side,
            B.BET_TYPE, B.odds_line, B.odds_payout,
            CASE WHEN (((G.H-G.V + B.odds_line)>0 AND B.odds_side = 'H') OR
-                      ((G.H-G.V - B.odds_line)<0 AND B.odds_side = 'V')) = TRUE THEN 'WIN'
+                      ((G.H-G.V - B.odds_line)<0 AND B.odds_side = 'V')) = TRUE THEN 'WON'
                 WHEN (((G.H-G.V + B.odds_line)=0 AND B.odds_side = 'H') OR
-                      ((G.H-G.V - B.odds_line)=0 AND B.odds_side = 'V')) = TRUE THEN 'TIE'
+                      ((G.H-G.V - B.odds_line)=0 AND B.odds_side = 'V')) = TRUE THEN 'TIED'
                 ELSE 'LOST' END AS WIN_LOST
     FROM bet_info AS B, game_info AS G, team_info AS T
     WHERE B.g_id = G.g_id AND (B.odds_side = 'H' OR B.odds_side = 'V') AND B.o_id = T.o_id

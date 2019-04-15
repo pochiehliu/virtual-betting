@@ -1,34 +1,41 @@
 <!doctype html>
 <title>{% block title %}VNBC{% endblock %}</title>
 
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
 
 <nav>
-
   {% block header %}
-    <h1>Virtual NBA Betting Central!</h1>
+    <h1 id=maintitle>  VIRTUAL NBA BETTING CENTRAL</h1>
   {% endblock %}
-
   {% block links %}
-    <ul>
-      {% if session['logged_in'] %}
-        <li><span>Welcome, {{ first_name }}!</span>
-        <li><span>Your balance is: ${{balance}}</span>
+    {% if session['logged_in'] %}
+      <ul>
+        <li><span id=personal>Welcome, {{first_name}}!</span>
+        <li><span id=personal>Your balance is: ${{balance}}</span>
+      </ul>
+      <ul>
         <li><a href="{{ url_for('homepage') }}">Home Page</a>
         <li><a href="{{ url_for('profile') }}">Profile</a>
         <li><a href="{{ url_for('logout') }}">Log Out</a>
-      {% else %}
+      </ul>
+    {% else %}
+      <ul>
         <li><a href="{{ url_for('homepage') }}">Home Page</a>
         <li><a href="{{ url_for('register') }}">Register</a>
         <li><a href="{{ url_for('login') }}">Log In</a>
-      {% endif %}
-    </ul>
+      </ul>
+    {% endif %}
+
   {% endblock %}
 </nav>
 
 
-<p></p>
 
+
+<p></p>
 
 {% block content %}
 <section class="content">
@@ -37,7 +44,7 @@
   {% endfor %}
 
   {% if games_indicator %}
-    <header> <font size="6px">
+    <header> <font size="5px">
       {% block games %}Today's Games{% endblock %}
     </font></header>
 
@@ -58,8 +65,8 @@
       </tr>
 
       {% for key,val in betting_data.iterrows() %}
-        <tr>
-          <td align="center">{{key}}</td>
+        <tr class="{% if key % 2 == 0 %}even{% else %}odds{% endif %}">
+          <td align="center" class=pagelink><font color="blue"><a href="{{url_for('gamepage')}}?gid={{val['g_id']}}"<b>{{key}}</b></a></font></td>
           <td align="center">{{val['game_times']}}</td>
           <td align="center">{{val['away_team']}}</td>
           <td align="center">{{val['home_team']}}</td>

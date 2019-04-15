@@ -1,22 +1,18 @@
 html { font-family: sans-serif; background: #eee; padding: 1rem; }
-body { max-width: 960px; margin: 0 auto; background: white; }
-h1 { font-family: serif; color: #377ba8; margin: 1rem 0}
-a { color: #377ba8; }
-hr { border: none; border-top: 1px solid lightgray; }
-nav { background: lightgray; display: flex; align-items: center: 0.5rem; }
-nav h1 { flex: auto; font-size: 30px}
-nav h1 a { text-decoration: none: 0.25rem 0.5rem; }
-nav ul  { display: flex; list-style: none; margin: 0; padding: 0; }
-nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
+body { max-width: 1200px; margin: 0 auto; background: white; }
+h1 { font-family: "serif"; color: #003366; text-align: left; margin-top:20px;
+     margin-left:10px;}
+li a { color: #377ba8; }
+hr { border: none; border-top: 5px solid lightgray; }
+nav { background: lightgray; display: flex; align-items: center; height: 100px;}
+nav h1 { flex: auto; font-size: 30px;}
+nav ul  { display: flex; list-style: none; margin: 0; padding: 0; text-align: right;}
+nav ul li a, header .action { display: block; padding: 8px; text-align: right;}
+nav ul li span {display: block; padding: 8px; text-align: right; vertical-align: top;}
 .content { padding: 0 1rem 1rem; }
 .content > header { border-bottom: 2px solid lightgray; display: flex; align-items: flex-end; }
 .content > header h1 { flex: auto; margin: 1rem 0 0.25rem 0; }
 .flash { margin: 1em 0; padding: 1em; background: #cae6f6; border: 2px solid #377ba8; }
-.post > header { display: flex; align-items: flex-end; font-size: 0.85em; }
-.post > header > div:first-of-type { flex: auto; }
-.post > header h1 { font-size: 1.5em; margin-bottom: 5; }
-.post .about { color: slategray; font-style: italic; }
-.post .body { white-space: pre-line; }
 .content:last-child { margin-bottom: 0; }
 .content form { margin: 1em 0; display: flex; flex-direction: column; }
 .content label { font-weight: bold; margin-bottom: 0.5em; }
@@ -27,4 +23,7 @@ input[type=submit] { align-self: start; min-width: 10em; }
 td.WIN {color: green;}
 td.PENDING {color: darkblue;}
 td.TIE {color: darkblue;}
-td.LOSS {color: red;}
+td.LOST {color: red;}
+tr.even {background-color: #CC9999;}
+tr.odd {background-color: #377ba8;}
+td.pagelink:hover {background-color: #6699CC;}
