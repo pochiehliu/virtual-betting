@@ -80,6 +80,9 @@ def homepage():
     context['games_indicator'] = True if len(betting_data) != 0 else False
 
     if request.method == 'POST':
+        if session.get('user_id') is None:
+            flash("Must log in to place bets.")
+            return redirect('/login')
         amount = request.form['amount']
         match = request.form['game']
         bet = request.form['bet']
@@ -94,10 +97,9 @@ def homepage():
                 u_id = int(session['user_id'])
                 statement = "INSERT INTO place_bet (o_id, u_id, bet_size) VALUES {};".format(str((o_id, u_id, amount)))
                 g.conn.execute(statement)
+                update_balance(u_id)
                 bet_result = 'Successfully placed bet!'
-
-                # TODO: implement balance update for user
-                # update_balance(u_id)
+                context['balance'] = g.conn.execute("SELECT balance FROM users WHERE u_id = {};".format(session.get('user_id'))).fetchone()[0]
             else:
                 bet_result = error
         flash(bet_result)
@@ -110,17 +112,18 @@ def login():
         username = request.form['username']
         password = request.form['password']
         user = engine.execute('SELECT * FROM users WHERE username = %s;',(username,)).fetchone()
+        print(user)
         if user is None:
-            error = 'Incorrect username.'
+            flash('Incorrect username.')
         elif password != user['password']:
-            error = 'Incorrect password.'
+            flash('Incorrect password.')
         else:
             session.clear()
             session['user_id'] = user['u_id']
             session['logged_in'] = True
+            update_balance(user['u_id'])
             flash('Successfully logged in!')
             return redirect('/')
-        flash(error)
     return render_template('login.html')
 
 
@@ -137,14 +140,15 @@ def register():
         password = request.form['password']
         form_list = [username, first_name, last_name, password]
 
-        user = engine.execute('SELECT id FROM user WHERE username = "%s"', (username,)).fetchone()
-        if users is not None:
+        user = engine.execute('SELECT u_id FROM users WHERE username = %s', (username,)).fetchone()
+        if user is not None:
             flash('User "{}" is already registered.'.format(username))
         else:
             register_user(form_list)
             session.clear()
-            session['user_id'] = user['id']
-            return render_template('homepage.html')
+            session['user_id'] = engine.execute('SELECT u_id FROM users WHERE username = %s', (username,)).fetchone()[0]
+            flash('Thank you for joining, first_name! We have loaded your account with $1000 to bet with! Enjoy!'.format(username))
+            return redirect('/')
     return render_template('register.html')
 
 
@@ -200,13 +204,17 @@ General Functions
 """
 
 def register_user(form_list):
-    g.conn.execute(
-        """INSERT INTO users (username, first_name, last_name, password)
-        VALUES (?, ?, ?, ?);""", tuple(form_list)
+    engine.execute(
+        """INSERT INTO users (username, first_name, last_name, password, balance)
+        VALUES (%s, %s, %s, %s, 1000);""", tuple(form_list)
     )
 
 
 def valid_amount(amount):
+    if session.get('user_id') is None:
+        flash('Please sign in to place bets.')
+        return redirect('/')
+
     # verify input
     money = re.compile('|'.join([r'^\$?(\d*\.\d{1,2})$', r'^\$?(\d+)$', r'^\$(\d+\.?)$']))
     try:
@@ -215,7 +223,8 @@ def valid_amount(amount):
         return "Improper bet amount input."
 
     # verify sufficient funds
-    if float(amount) > session.get('balance'):
+    balance = g.conn.execute("SELECT balance FROM users WHERE u_id = {};".format(session.get('user_id'))).fetchone()[0]
+    if float(amount) > balance:
         return "Insufficient funds."
 
 
@@ -310,6 +319,7 @@ def get_bet_history(user_id):
     df = pd.read_sql(statement.format(user=user_id), g.conn)
 
     # format df
+    df.loc[:, ['v_score', 'h_score']] = df[['v_score', 'h_score']].applymap(lambda x: 'N/A' if x == 0 else x)
     df['bet_time'] = df.bet_time.map(lambda x: dt.datetime.strftime(x, '%c')).values
     df['odds_side'] = df.odds_side.map(lambda x: 'HOME' if x == 'H' else ('VISITOR' if x == 'V'
                                                                     else ('OVER' if x == 'O'
@@ -357,6 +367,17 @@ def get_game_info(g_id):
     game_df = pd.read_sql("SELECT * FROM game WHERE g_id = '{}';".format(g_id), g.conn)
     game_df[['t_id_home', 't_id_away']] = game_df.iloc[:, -2:].applymap(lambda x: teams[x])
     return game_df.iloc[0]
+
+
+def update_balance(u_id):
+    def prof_loss_calc(row):
+            return row.bet_size * row.odds_payout if row.win_lost== 'WON' else -1 * row.bet_size
+    with open('major_queries/user_history.sql', 'r') as file:
+        statement = file.read().replace('\n', ' ').replace('\t', ' ')
+    df = pd.read_sql(statement.format(user=u_id), g.conn)
+    balance = 1000 + df.apply(lambda row: prof_loss_calc(row), axis=1).sum() if len(df) > 0 else 1000
+    g.conn.execute("""UPDATE users SET balance = {b} WHERE u_id = {u}""".format(u=u_id, b=round(balance, 2)))
+
 
 
 if __name__ == "__main__":

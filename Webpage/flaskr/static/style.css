@@ -7,7 +7,7 @@ hr { border: none; border-top: 5px solid lightgray; }
 nav { background: lightgray; display: flex; align-items: center; height: 100px;}
 nav h1 { flex: auto; font-size: 30px;}
 nav ul  { display: flex; list-style: none; margin: 0; padding: 0; text-align: right;}
-nav ul li a, header .action { display: block; padding: 8px; text-align: right;}
+nav ul li a, header .action { display: block; padding: 3px; text-align: right;}
 nav ul li span {display: block; padding: 8px; text-align: right; vertical-align: top;}
 .content { padding: 0 1rem 1rem; }
 .content > header { border-bottom: 2px solid lightgray; display: flex; align-items: flex-end; }

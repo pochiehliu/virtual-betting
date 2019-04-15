@@ -37,18 +37,18 @@
 
       <p></p>
 
-      <table border="2" frame=void cellpadding="2" style="width:40%">
+      <table border="2" frame=void cellpadding="2" style="width:50%">
         <tr>
-          <th width="(100/3)%">Category</th>
-          <th bgcolor="#CC9999" width="(100/3)%">{{away_team}}</th>
-          <th bgcolor="#377ba8" width="(100/3)%">{{home_team}}</th>
+          <th width="(100/2)%">Category</th>
+          <th bgcolor="#CC9999" width="(100/4)%">{{away_team}}</th>
+          <th bgcolor="#377ba8" width="(100/4)%">{{home_team}}</th>
         </tr>
 
         {% for key,val in head_to_head.iterrows() %}
           <tr>
             <td align="center">{{val['category']}}</td>
-            <td bgcolor="#CC9999" align="center">{{val['away_stat']}}</td>
-            <td bgcolor="#377ba8" align="center">{{val['home_stat']}}</td>
+            <td bgcolor="#CC9999" align="center">{{val['away_stat']}}{% if key in [0, 1, 2] %}%{% endif %}</td>
+            <td bgcolor="#377ba8" align="center">{{val['home_stat']}}{% if key in [0, 1, 2] %}%{% endif %}</td>
           </tr>
         {% endfor %}
       </table>
@@ -61,7 +61,7 @@
 
       <p></p>
 
-      <table border="2" frame=void cellpadding="2" style="width:40%">
+      <table border="2" frame=void cellpadding="2" style="width:60%">
         <tr>
           <th width="(100/5)%">Date</th>
           <th width="(100/5)%">Away Team</th>

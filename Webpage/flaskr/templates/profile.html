@@ -32,7 +32,7 @@
   <section class="content">
     {% if bet_indicator %}
       <header> <font size="6px">
-        {% block games %}Betting History{% endblock %}
+        {% block games %}Betting History - Last 20 Bets{% endblock %}
       </font></header>
 
       <p></p>
@@ -46,7 +46,7 @@
           <th width="(100/11)%">Home Score</th>
           <th width="(100/11)%">Bet Type</th>
           <th width="(100/11)%">Odds Line</th>
-          <th width="(100/11)%">Odds Side</th>
+          <th width="(100/11)%">Bet Side</th>
           <th width="(100/11)%">Betting Odds</th>
           <th width="(100/11)%">Wager</th>
           <th width="(100/11)%">Result</th>
@@ -70,11 +70,11 @@
       </table>
 
     {% else %}
-      <div><ul>
-      <header font size="20px">
-        You have not placed any bets yet!
-      </header>
-      </ul></div>
+      <div>
+        <header><font size="15px">
+          You have not placed any bets yet!
+        </font></header>
+      </div>
     {% endif %}
 
   </section>
