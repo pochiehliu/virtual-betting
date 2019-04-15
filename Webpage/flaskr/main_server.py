@@ -331,6 +331,7 @@ def get_head_to_head(g_id):
 
     return df
 
+
 def get_last_five(g_id):
     teams = db_select("""SELECT * FROM team;""")
     teams = dict(zip(teams.t_id, teams.name))
