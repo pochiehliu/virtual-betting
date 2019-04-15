@@ -7,8 +7,6 @@
 -- 6) bet type name (can get from bet_type table) should be either moneyline, over under or pointspread
 -- 7) results = {WIN, LOSS,  PENDING}
 
-%%sql
-%%sql
 WITH bet_info AS(
     SELECT P.bet_time, M.o_id, M.g_id, M.odds_side, M.odds_payout, M.odds_line, 
            P.bet_size, BT.name AS BET_TYPE
@@ -32,7 +30,7 @@ game_info AS(
     WHERE GS.g_id IN (SELECT g_id FROM bet_info)),
 OU AS (
     SELECT B.bet_time, T.HOME, T.AWAY, G.H AS H_score, G.V AS V_score, B.bet_size, 
-           B.BET_TYPE, B.odds_side,
+           B.BET_TYPE, B.odds_line, B.odds_side,
            CASE WHEN (G.OU > B.odds_line AND B.odds_side = 'O') = TRUE THEN 'WIN'
                 ELSE 'LOST' END AS WIN_LOST
     FROM bet_info AS B, game_info AS G, team_info AS T
@@ -40,7 +38,7 @@ OU AS (
 ),
 HV AS(
     SELECT B.bet_time, T.HOME, T.AWAY, G.H AS H_score, G.V AS V_score, B.bet_size, 
-           B.BET_TYPE, B.odds_side,
+           B.BET_TYPE, B.odds_line, B.odds_side,
            CASE WHEN (G.H-G.V > B.odds_line AND B.odds_side = 'H') = TRUE THEN 'WIN'
                 ELSE 'LOST' END AS WIN_LOST
     FROM bet_info AS B, game_info AS G, team_info AS T
@@ -48,7 +46,7 @@ HV AS(
 ),
 INCOMPLETE AS (
     SELECT B.bet_time, T.HOME, T.AWAY, 0 AS H_score, 0 AS V_score, B.bet_size, 
-           B.BET_TYPE, B.odds_side, 'PENDING' AS WIN_LOST
+           B.BET_TYPE, B.odds_line, B.odds_side, 'PENDING' AS WIN_LOST
     FROM bet_info AS B, team_info AS T
     WHERE B.g_id NOT IN (SELECT g_id FROM game_info) AND B.o_id = T.o_id
 )
