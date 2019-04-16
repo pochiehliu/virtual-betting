@@ -74,7 +74,6 @@ def homepage():
         context['first_name'] = first
         context['balance'] = '{:20,.2f}'.format(balance)
 
-    store_betting_data()
     betting_data = get_betting_data()
     context['betting_data'] = betting_data
     context['games_indicator'] = True if len(betting_data) != 0 else False
@@ -253,66 +252,6 @@ def get_betting_data():
                     'under_pay', 'under_line']
     df.loc[:, numeric_cols] = df[numeric_cols].round(decimals=3)
     return df
-
-
-def store_betting_data():
-    lower = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    upper = (dt.datetime.now() + dt.timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
-    bounds = """game_time > '""" + lower + "' AND game_time < '" + upper
-    games_statement = """SELECT * FROM game WHERE {b}';""".format(b=bounds)
-    df = clean_display_data(db_select(games_statement))
-    df.to_csv('betting_data.csv')
-
-
-def clean_display_data(game_df):
-    teams = db_select("""SELECT * FROM team;""")
-    teams = dict(zip(teams.t_id, teams.name))
-    game_df[['t_id_home', 't_id_away']] = game_df.iloc[:, -2:].applymap(lambda x: teams[x])
-    g_id = game_df.g_id
-    game_times = game_df.game_time.map(lambda x: dt.datetime.strftime(x, '%c')).values
-    away_team = game_df.t_id_away
-    home_team = game_df.t_id_home
-    away_ml = [get_best_bet(x, bt_id=1, side='V') for x in game_df.g_id.values]
-    home_ml = [get_best_bet(x, bt_id=1, side='H') for x in game_df.g_id.values]
-    away_ps = [get_best_bet(x, bt_id=3, side='V') for x in game_df.g_id.values]
-    home_ps = [get_best_bet(x, bt_id=3, side='H') for x in game_df.g_id.values]
-    over = [get_best_bet(x, bt_id=2, side='O') for x in game_df.g_id.values]
-    under = [get_best_bet(x, bt_id=2, side='U') for x in game_df.g_id.values]
-    df = pd.DataFrame(data={'game_times': game_times,
-                            'g_id': g_id,
-                            'away_team': away_team,
-                            'home_team': home_team,
-                            'away_ml_oid': [x[0] if x is not None else "-" for x in away_ml],
-                            'away_ml_pay': [x[2] if x is not None else "-" for x in away_ml],
-                            'home_ml_oid': [x[0] if x is not None else "-" for x in home_ml],
-                            'home_ml_pay': [x[2] if x is not None else "-" for x in home_ml],
-                            'away_ps_oid': [x[0] if x is not None else "-" for x in away_ps],
-                            'away_ps_line': [x[1] if x is not None else "-" for x in away_ps],
-                            'away_ps_pay': [x[2] if x is not None else "-" for x in away_ps],
-                            'home_ps_oid': [x[0] if x is not None else "-" for x in home_ps],
-                            'home_ps_line': [x[1] if x is not None else "-" for x in home_ps],
-                            'home_ps_pay': [x[2] if x is not None else "-" for x in home_ps],
-                            'over_oid': [x[0] if x is not None else "-" for x in over],
-                            'over_line': [x[1] if x is not None else "-" for x in over],
-                            'over_pay': [x[2] if x is not None else "-" for x in over],
-                            'under_oid': [x[0] if x is not None else "-" for x in under],
-                            'under_line': [x[1] if x is not None else "-" for x in under],
-                            'under_pay': [x[2] if x is not None else "-" for x in under],
-                            })
-    return df
-
-
-def get_best_bet(game_id, bt_id, side):
-    dir = 'ASC' if bt_id == 2 and side == 'O' else 'DESC'
-    statement = """
-    SELECT o_id, odds_line, odds_payout
-    FROM make_odds as m
-    WHERE m.g_id = '{g_id}'
-    AND m.bt_id = {bt_id}
-    AND m.odds_side = '{side}'
-    ORDER BY odds_time, m.odds_line {dir}, m.odds_payout DESC;
-    """.format(g_id=game_id, bt_id=bt_id, side=side, dir=dir)
-    return g.conn.execute(statement).fetchone()
 
 
 def get_bet_history(user_id):
