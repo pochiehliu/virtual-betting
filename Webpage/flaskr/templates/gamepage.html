@@ -5,11 +5,19 @@
 {% endblock %}
 
 {% block links %}
-  <ul>
-    <li><a href="{{ url_for('homepage') }}">Home Page</a>
-    <li><a href="{{ url_for('profile') }}">Profile</a>
-    <li><a href="{{ url_for('logout') }}">Log Out</a>
-  </ul>
+  {% if session['logged_in'] %}
+    <ul>
+      <li><a href="{{ url_for('homepage') }}">Home Page</a>
+      <li><a href="{{ url_for('profile') }}">Profile</a>
+      <li><a href="{{ url_for('logout') }}">Log Out</a>
+    </ul>
+  {% else %}
+    <ul>
+      <li><a href="{{ url_for('homepage') }}">Home Page</a>
+      <li><a href="{{ url_for('register') }}">Register</a>
+      <li><a href="{{ url_for('login') }}">Log In</a>
+    </ul>
+  {% endif %}
 {% endblock %}
 
 

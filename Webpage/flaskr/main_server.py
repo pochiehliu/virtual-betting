@@ -70,7 +70,7 @@ def homepage():
         context['logged_in'] = True
         user_id = session['user_id']
         statement = "SELECT first_name, balance FROM users WHERE u_id = {id};".format(id=user_id)
-        first, balance = engine.execute(statement).fetchone()
+        first, balance = g.conn.execute(statement).fetchone()
         context['first_name'] = first
         context['balance'] = '{:20,.2f}'.format(balance)
 
@@ -120,8 +120,7 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        user = engine.execute('SELECT * FROM users WHERE username = %s;',(username,)).fetchone()
-        print(user)
+        user = g.conn.execute('SELECT * FROM users WHERE username = %s;',(username,)).fetchone()
         if user is None:
             flash('Incorrect username.')
         elif password != user['password']:
@@ -149,13 +148,13 @@ def register():
         password = request.form['password']
         form_list = [username, first_name, last_name, password]
 
-        user = engine.execute('SELECT u_id FROM users WHERE username = %s', (username,)).fetchone()
+        user = g.conn.execute('SELECT u_id FROM users WHERE username = %s', (username,)).fetchone()
         if user is not None:
             flash('User "{}" is already registered.'.format(username))
         else:
             register_user(form_list)
             session.clear()
-            session['user_id'] = engine.execute('SELECT u_id FROM users WHERE username = %s', (username,)).fetchone()[0]
+            session['user_id'] = g.conn.execute('SELECT u_id FROM users WHERE username = %s', (username,)).fetchone()[0]
             flash('Thank you for joining, first_name! We have loaded your account with $1000 to bet with! Enjoy!'.format(username))
             return redirect('/')
     return render_template('register.html')
@@ -170,7 +169,7 @@ def profile():
         context = {}
         user_id = session['user_id']
         statement = "SELECT username, first_name, last_name, balance FROM users WHERE u_id = {id};".format(id=user_id)
-        username, first, last, balance = engine.execute(statement).fetchone()
+        username, first, last, balance = g.conn.execute(statement).fetchone()
         context['username'] = username
         context['first_name'] = first
         context['last_name'] = last
@@ -213,7 +212,7 @@ General Functions
 """
 
 def register_user(form_list):
-    engine.execute(
+    g.conn.execute(
         """INSERT INTO users (username, first_name, last_name, password, balance)
         VALUES (%s, %s, %s, %s, 1000);""", tuple(form_list)
     )
@@ -244,7 +243,7 @@ def db_select(statement):
 
 
 def get_betting_data():
-    df = pd.read_csv('betting_data.csv')
+    df = pd.read_csv('Webpage/flaskr/betting_data.csv')
     numeric_cols = ['away_ml_pay', 'home_ml_pay',
                     'away_ps_pay', 'away_ps_line',
                     'home_ps_pay', 'home_ps_line',
@@ -255,7 +254,7 @@ def get_betting_data():
 
 
 def get_bet_history(user_id):
-    with open('major_queries/user_history.sql', 'r') as file:
+    with open('Webpage/flaskr/major_queries/user_history.sql', 'r') as file:
         statement = file.read().replace('\n', ' ').replace('\t', ' ')
     df = pd.read_sql(statement.format(user=user_id), g.conn)
 
@@ -270,13 +269,13 @@ def get_bet_history(user_id):
 
 
 def get_head_to_head(g_id):
-    away, home = engine.execute("SELECT t_id_away, t_id_home FROM game WHERE g_id = '{}';".format(g_id)).fetchone()
-    with open('major_queries/head_to_head.sql', 'r') as file:
+    away, home = g.conn.execute("SELECT t_id_away, t_id_home FROM game WHERE g_id = '{}';".format(g_id)).fetchone()
+    with open('Webpage/flaskr/major_queries/head_to_head.sql', 'r') as file:
         statement = file.read().replace('\n', ' ').replace('\t', ' ')
 
     categories = ['Win %', 'Field Goal %', 'Three Point %', 'Rebound per Game', 'Turnover Per Game']
-    away_stats = [engine.execute(i.format(tid=away)).fetchone()[0] for i in statement.split(';')[:-1]]
-    home_stats = [engine.execute(i.format(tid=home)).fetchone()[0] for i in statement.split(';')[:-1]]
+    away_stats = [g.conn.execute(i.format(tid=away)).fetchone()[0] for i in statement.split(';')[:-1]]
+    home_stats = [g.conn.execute(i.format(tid=home)).fetchone()[0] for i in statement.split(';')[:-1]]
 
     df = pd.DataFrame(data={'category': categories, 'away_stat': away_stats,'home_stat': home_stats})
 
@@ -287,7 +286,7 @@ def get_last_five(g_id):
     teams = db_select("""SELECT * FROM team;""")
     teams = dict(zip(teams.t_id, teams.name))
     away, home = g.conn.execute("SELECT t_id_away, t_id_home FROM game WHERE g_id = '{}';".format(g_id)).fetchone()
-    with open('major_queries/last_five.sql', 'r') as file:
+    with open('Webpage/flaskr/major_queries/last_five.sql', 'r') as file:
         statement = file.read().replace('\n', ' ').replace('\t', ' ')
 
     df = pd.read_sql(statement.format(a=away, h=home), g.conn)
@@ -313,7 +312,7 @@ def get_game_info(g_id):
 def update_balance(u_id):
     def prof_loss_calc(row):
             return row.bet_size * row.odds_payout if row.win_lost== 'WON' else -1 * row.bet_size
-    with open('major_queries/user_history.sql', 'r') as file:
+    with open('Webpage/flaskr/major_queries/user_history.sql', 'r') as file:
         statement = file.read().replace('\n', ' ').replace('\t', ' ')
     df = pd.read_sql(statement.format(user=u_id), g.conn)
     balance = 1000 + df.apply(lambda row: prof_loss_calc(row), axis=1).sum() if len(df) > 0 else 1000
@@ -321,7 +320,7 @@ def update_balance(u_id):
 
 
 def get_yesterday():
-    with open('major_queries/yesterday_results.sql', 'r') as file:
+    with open('Webpage/flaskr/major_queries/yesterday_results.sql', 'r') as file:
         statement = file.read().replace('\n', ' ').replace('\t', ' ')
     return pd.read_sql(statement, g.conn)
 

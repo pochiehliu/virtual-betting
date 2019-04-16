@@ -1,7 +1,7 @@
 WITH y_g AS (
     SELECT *
     FROM game
-    WHERE game_time >= current_date - 2 AND game_time < current_date -1),
+    WHERE game_time >= current_date - 1 AND game_time < current_date),
 y_g_t AS (
     SELECT Y.g_id, T1.name AS H_name, T2.name AS A_name
     FROM y_g AS Y, team AS T1, team AS T2
