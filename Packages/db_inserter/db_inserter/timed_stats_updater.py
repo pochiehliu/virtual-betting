@@ -1,7 +1,5 @@
-"""
-This script will connect to the data base, find the most
-up-to-date data, and update with new data.
-"""
+import time
+from datetime import datetime, timedelta
 import datetime as dt
 from sqlalchemy import *
 from sqlalchemy import exc
@@ -11,19 +9,13 @@ from scraping.sbr_game_order import *
 from db_inserter.table_transformer import *
 from dateutil.relativedelta import *
 
-
-with open('./Packages/db_inserter/db_inserter/.DBurl.txt') as file:
-    DB_URL = file.readline()
-
-engine = create_engine(DB_URL)
-
 """
 GENERAL PURPOSE METHODS
 """
 
 
 def select_all(table_name):
-    return pd.read_sql("""SELECT * FROM """ + table_name + ";", engine)
+    return pd.read_sql("""SELECT * FROM """ + table_name + ";", conn)
 
 
 def insert_to_db(table_name, row, columns=''):
@@ -77,9 +69,9 @@ def _insert_new_games(new_games, done_games):
     for idx, game in new_games.iterrows():
         match = done_games.loc[done_games.g_id == game.g_id]
         if len(match) == 0:
-            engine.execute(insert_to_db(table_name='game', row=game))
+            conn.execute(insert_to_db(table_name='game', row=game))
         elif pd.to_datetime(game.game_time) != match.iloc[0].game_time:
-            engine.execute(_update_game(game))
+            conn.execute(_update_game(game))
 
 
 def update_game_table():
@@ -112,7 +104,7 @@ def _get_pdf_gdf(missing_games):
 
 def _update_game_stats_table(game_df):
     for idx, game in transform_game_stats(game_df).iterrows():
-        engine.execute(insert_to_db(table_name='game_stats', row=game))
+        conn.execute(insert_to_db(table_name='game_stats', row=game))
 
 
 def _update_player_table(player_df):
@@ -122,7 +114,7 @@ def _update_player_table(player_df):
     for idx, player in transform_player(player_df).iterrows():
         name = player.first_name + ' ' + player.last_name
         if name not in done_players:
-            engine.execute(insert_to_db(table_name='player', row=player[1:]))
+            conn.execute(insert_to_db(table_name='player', row=player[1:]))
 
 
 def _update_player_game_stats(player_df):
@@ -131,7 +123,7 @@ def _update_player_game_stats(player_df):
 
     for idx, player in transform_player_game_stats(player_df, players, teams).iterrows():
         if idx % 50 == 0:
-            engine.execute(insert_to_db(table_name='player_game_stats', row=player))
+            conn.execute(insert_to_db(table_name='player_game_stats', row=player))
 
 
 def update_stats_tables():
@@ -147,36 +139,30 @@ def update_stats_tables():
 
 
 """
-UPDATES MAKE_ODDS TABLE
-
-SHOULD BE CALLED INTERMITTENTLY (FEW TIMES/DAY)
-
-TAKES A GOOD 30 SEC
+INFINITE FOR LOOP :)
 """
 
 
-def _get_odds(date):
-    scraper = ScrapeSession()
-    scraper.lengths = ['']  # because we only want full game betting odds
-    return scraper.day_scraper([date])
+while 1:
+    # updates the database every 24 hours at 6am
+    try:
+        with open('./Packages/db_inserter/db_inserter/.DBurl.txt') as file:
+            DB_URL = file.readline()
 
+        engine = create_engine(DB_URL)
+        conn = engine.connect()
+        update_game_table()
+        update_stats_tables()
+        conn.close()
+        print('made a pass')
 
-def _get_team_order(date):
-    scraper = GameOrderScraper()
-    return scraper.day_scraper([date])
+    except Exception:
+        pass
 
+    dt_stats = datetime.now() + timedelta(days=1)
+    dt_stats = dt_stats.replace(hour=6)
 
-def update_make_odds():
-    date = get_date(day=True)
-    odds = _get_odds(date)
-    game_order = _get_team_order(date)
+    while datetime.now() < dt_stats:
+        time.sleep(3600)
 
-    games = select_all('game')
-    teams = select_all('team')
-
-    make_odds = transform_make_odds(odds, game_order, games, teams)
-    make_odds.loc[:, 'odds_time'] = str(dt.datetime.now())
-
-    for idx, line in make_odds.iterrows():
-        engine.execute(insert_to_db(table_name='make_odds', row=line[1:], columns=make_odds.columns[1:].tolist()))
 

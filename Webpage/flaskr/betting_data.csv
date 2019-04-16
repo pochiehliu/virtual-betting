@@ -1,3 +1,4 @@
 ,game_times,g_id,away_team,home_team,away_ml_oid,away_ml_pay,home_ml_oid,home_ml_pay,away_ps_oid,away_ps_line,away_ps_pay,home_ps_oid,home_ps_line,home_ps_pay,over_oid,over_line,over_pay,under_oid,under_line,under_pay
 0,Mon Apr 15 22:30:00 2019,201904150GSW,Los Angeles Clippers,Golden State Warriors,3181,10.25,3115,1.091,3096,13.5,1.952,3102,-13.5,1.952,3158,231.0,1.952,3104,231.0,1.962
-1,Mon Apr 15 20:00:00 2019,201904150PHI,Brooklyn Nets,Philadelphia 76ers,3106,4.1,3148,1.476,3153,8.0,1.952,3111,-8.0,1.98,3119,225.5,1.901,3161,227.0,1.952
+1,Tue Apr 16 21:00:00 2019,201904160DEN,San Antonio Spurs,Denver Nuggets,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
+2,Tue Apr 16 20:00:00 2019,201904160TOR,Orlando Magic,Toronto Raptors,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-

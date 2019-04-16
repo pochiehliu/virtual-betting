@@ -25,5 +25,5 @@ td.PENDING {color: darkblue;}
 td.TIE {color: darkblue;}
 td.LOST {color: red;}
 tr.even {background-color: #CC9999;}
-tr.odd {background-color: #377ba8;}
+tr.odd {background-color: #3399ff;}
 td.pagelink:hover {background-color: #6699CC;}

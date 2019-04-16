@@ -74,10 +74,14 @@ def homepage():
         context['first_name'] = first
         context['balance'] = '{:20,.2f}'.format(balance)
 
-    # store_betting_data()
+    store_betting_data()
     betting_data = get_betting_data()
     context['betting_data'] = betting_data
     context['games_indicator'] = True if len(betting_data) != 0 else False
+    yesterday_games = get_yesterday()
+    context['yes_games'] = yesterday_games
+    context['yes_games_indicator'] = True if len(yesterday_games) != 0 else False
+
 
     if request.method == 'POST':
         if session.get('user_id') is None:
@@ -90,18 +94,24 @@ def homepage():
         if bet == 'undefined' or match == 'undefined':
             bet_result = "Please select both a game and bet type."
         else:
-            o_id = int(context['betting_data'].iloc[int(match)][bet + '_oid'])
-            print(o_id)
-            error =  valid_amount(amount=amount)
-            if error is None:
-                u_id = int(session['user_id'])
-                statement = "INSERT INTO place_bet (o_id, u_id, bet_size) VALUES {};".format(str((o_id, u_id, amount)))
-                g.conn.execute(statement)
-                update_balance(u_id)
-                bet_result = 'Successfully placed bet!'
-                context['balance'] = g.conn.execute("SELECT balance FROM users WHERE u_id = {};".format(session.get('user_id'))).fetchone()[0]
+            try:
+                o_id = int(context['betting_data'].iloc[int(match)][bet + '_oid'])
+            except ValueError:
+                o_id = '-'
+
+            if o_id == '-':
+                bet_result = "Sorry, bet is not available."
             else:
-                bet_result = error
+                error =  valid_amount(amount=amount)
+                if error is None:
+                    u_id = int(session['user_id'])
+                    statement = "INSERT INTO place_bet (o_id, u_id, bet_size) VALUES {};".format(str((o_id, u_id, amount)))
+                    g.conn.execute(statement)
+                    update_balance(u_id)
+                    bet_result = 'Successfully placed bet!'
+                    context['balance'] = g.conn.execute("SELECT balance FROM users WHERE u_id = {};".format(session.get('user_id'))).fetchone()[0]
+                else:
+                    bet_result = error
         flash(bet_result)
     return render_template("homepage.html", **context)
 
@@ -226,6 +236,8 @@ def valid_amount(amount):
     balance = g.conn.execute("SELECT balance FROM users WHERE u_id = {};".format(session.get('user_id'))).fetchone()[0]
     if float(amount) > balance:
         return "Insufficient funds."
+    elif float(amount) <= 0:
+        return "Please insert postive value."
 
 
 def db_select(statement):
@@ -248,24 +260,14 @@ def store_betting_data():
     upper = (dt.datetime.now() + dt.timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
     bounds = """game_time > '""" + lower + "' AND game_time < '" + upper
     games_statement = """SELECT * FROM game WHERE {b}';""".format(b=bounds)
-    bet_statement = """
-    SELECT *
-    FROM make_odds AS mo
-    WHERE mo.g_id in (
-        SELECT game.g_id
-        FROM game
-        WHERE {b}')
-    AND mo.odds_time = (SELECT MAX(odds_time)
-                        FROM make_odds);""".format(b=bounds)
-    df = clean_display_data(db_select(games_statement), db_select(bet_statement))
+    df = clean_display_data(db_select(games_statement))
     df.to_csv('betting_data.csv')
 
 
-def clean_display_data(game_df, bet_df):
+def clean_display_data(game_df):
     teams = db_select("""SELECT * FROM team;""")
     teams = dict(zip(teams.t_id, teams.name))
     game_df[['t_id_home', 't_id_away']] = game_df.iloc[:, -2:].applymap(lambda x: teams[x])
-
     g_id = game_df.g_id
     game_times = game_df.game_time.map(lambda x: dt.datetime.strftime(x, '%c')).values
     away_team = game_df.t_id_away
@@ -280,22 +282,22 @@ def clean_display_data(game_df, bet_df):
                             'g_id': g_id,
                             'away_team': away_team,
                             'home_team': home_team,
-                            'away_ml_oid': [x[0] for x in away_ml],
-                            'away_ml_pay': [x[2] for x in away_ml],
-                            'home_ml_oid': [x[0] for x in home_ml],
-                            'home_ml_pay': [x[2] for x in home_ml],
-                            'away_ps_oid': [x[0] for x in away_ps],
-                            'away_ps_line': [x[1] for x in away_ps],
-                            'away_ps_pay': [x[2] for x in away_ps],
-                            'home_ps_oid': [x[0] for x in home_ps],
-                            'home_ps_line': [x[1] for x in home_ps],
-                            'home_ps_pay': [x[2] for x in home_ps],
-                            'over_oid': [x[0] for x in over],
-                            'over_line': [x[1] for x in over],
-                            'over_pay': [x[2] for x in over],
-                            'under_oid': [x[0] for x in under],
-                            'under_line': [x[1] for x in under],
-                            'under_pay': [x[2] for x in under],
+                            'away_ml_oid': [x[0] if x is not None else "-" for x in away_ml],
+                            'away_ml_pay': [x[2] if x is not None else "-" for x in away_ml],
+                            'home_ml_oid': [x[0] if x is not None else "-" for x in home_ml],
+                            'home_ml_pay': [x[2] if x is not None else "-" for x in home_ml],
+                            'away_ps_oid': [x[0] if x is not None else "-" for x in away_ps],
+                            'away_ps_line': [x[1] if x is not None else "-" for x in away_ps],
+                            'away_ps_pay': [x[2] if x is not None else "-" for x in away_ps],
+                            'home_ps_oid': [x[0] if x is not None else "-" for x in home_ps],
+                            'home_ps_line': [x[1] if x is not None else "-" for x in home_ps],
+                            'home_ps_pay': [x[2] if x is not None else "-" for x in home_ps],
+                            'over_oid': [x[0] if x is not None else "-" for x in over],
+                            'over_line': [x[1] if x is not None else "-" for x in over],
+                            'over_pay': [x[2] if x is not None else "-" for x in over],
+                            'under_oid': [x[0] if x is not None else "-" for x in under],
+                            'under_line': [x[1] if x is not None else "-" for x in under],
+                            'under_pay': [x[2] if x is not None else "-" for x in under],
                             })
     return df
 
@@ -308,9 +310,9 @@ def get_best_bet(game_id, bt_id, side):
     WHERE m.g_id = '{g_id}'
     AND m.bt_id = {bt_id}
     AND m.odds_side = '{side}'
-    ORDER BY m.odds_line {dir}, m.odds_payout DESC;
+    ORDER BY odds_time, m.odds_line {dir}, m.odds_payout DESC;
     """.format(g_id=game_id, bt_id=bt_id, side=side, dir=dir)
-    return engine.execute(statement).fetchone()
+    return g.conn.execute(statement).fetchone()
 
 
 def get_bet_history(user_id):
@@ -378,6 +380,11 @@ def update_balance(u_id):
     balance = 1000 + df.apply(lambda row: prof_loss_calc(row), axis=1).sum() if len(df) > 0 else 1000
     g.conn.execute("""UPDATE users SET balance = {b} WHERE u_id = {u}""".format(u=u_id, b=round(balance, 2)))
 
+
+def get_yesterday():
+    with open('major_queries/yesterday_results.sql', 'r') as file:
+        statement = file.read().replace('\n', ' ').replace('\t', ' ')
+    return pd.read_sql(statement, g.conn)
 
 
 if __name__ == "__main__":

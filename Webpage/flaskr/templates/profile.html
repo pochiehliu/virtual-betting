@@ -53,7 +53,7 @@
         </tr>
 
         {% for key,val in bet_history.iterrows() %}
-          <tr class="{% if key % 2 == 0 %}even{% else %}odds{% endif %}">
+          <tr class="{% if key % 2 == 0 %}even{% else %}odd{% endif %}">
             <td align="center">{{val['bet_time']}}</td>
             <td align="center">{{val['away']}}</td>
             <td align="center">{{val['home']}}</td>

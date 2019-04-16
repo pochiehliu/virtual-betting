@@ -71,7 +71,7 @@
         </tr>
 
         {% for key,val in last_five.iterrows() %}
-          <tr class="{% if key % 2 == 0 %}even{% else %}odds{% endif %}">
+          <tr class="{% if key % 2 == 0 %}even{% else %}odd{% endif %}">
             <td align="center">{{val['date']}}</td>
             <td align="center">{{val['away_team']}}</td>
             <td align="center">{{val['home_team']}}</td>
