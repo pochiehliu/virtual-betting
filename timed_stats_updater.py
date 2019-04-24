@@ -79,12 +79,12 @@ def _insert_new_games(new_games, stored_games):
             conn.execute(_update_game(game))
 
 
-def _remove_old_games(stored_games):
-    completed = set(pd.read_sql("SELECT g_id FROM game_stats;", conn).g_id.values)
-    stored_games = set(stored_games.loc[stored_games.game_time < dt.datetime.now() - timedelta(days=2)].g_id.values)
+def _remove_old_games(stored_games, new_games):
+    min_date = new_games.min()
+    stored_subset = stored_games[stored_games > min_date]
 
-    for game in stored_games - completed:
-        conn.execute("""DELETE FROM game WHERE g_id = {};""".format(game))
+    for game in set(stored_subset) - set(new_games):
+        conn.execute("""DELETE FROM game WHERE g_id = '{}';""".format(game))
 
 
 def update_game_table():
@@ -97,9 +97,9 @@ def update_game_table():
         new_games = _get_new_games(last_month)
         new_games.loc[:, ['t_id_home', 't_id_away']] = new_games.iloc[:, -2:].applymap(lambda x: team_id_map[x])
         _insert_new_games(new_games, stored_games)
+        _remove_old_games(stored_games.g_id.values, new_games.g_id.values)
         last_month = increment_date(last_month, day=False)
 
-    _remove_old_games(stored_games)
 
 """
 UPDATES GAME_STATS TABLE
