@@ -1,4 +1,5 @@
 import time
+from pytz import timezone
 from datetime import datetime, timedelta
 import datetime as dt
 from sqlalchemy import *
@@ -8,6 +9,7 @@ from scraping.sbr_betting import *
 from scraping.sbr_game_order import *
 from db_inserter.table_transformer import *
 from dateutil.relativedelta import *
+from db_inserter.Logger import Logger
 
 """
 GENERAL PURPOSE METHODS
@@ -31,7 +33,7 @@ def insert_to_db(table_name, row, columns=''):
 
 
 def get_date(day=False):
-    current = dt.datetime.now() + dt.timedelta(days=0 if day else 1)
+    current = datetime.now(timezone('US/Eastern')) + dt.timedelta(days=0 if day else 1)
     return current.strftime('%Y%m%d') if day else current.strftime('%Y%m')
 
 
@@ -84,9 +86,15 @@ UPDATE BET DISPLAY CSV FILE
 def store_betting_data():
     lower = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     upper = (dt.datetime.now() + dt.timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
-    bounds = """game_time > '""" + lower + "' AND game_time < '" + upper
-    games_statement = """SELECT * FROM game WHERE {b}';""".format(b=bounds)
-    df = clean_display_data(pd.read_sql(games_statement, conn))
+    bounds = """game_time > '{l}' AND game_time < '{u}'""".format(l=lower,
+                                                                  u=upper)
+    statement = """
+                SELECT *
+                FROM game
+                WHERE {b}
+                ORDER BY game_time ASC;
+                """.format(b=bounds)
+    df = clean_display_data(pd.read_sql(statement, conn))
     df.to_csv('Webpage/flaskr/betting_data.csv')
 
 
@@ -136,30 +144,30 @@ def get_best_bet(game_id, bt_id, side):
     WHERE m.g_id = '{g_id}'
     AND m.bt_id = {bt_id}
     AND m.odds_side = '{side}'
-    ORDER BY odds_time, m.odds_line {dir}, m.odds_payout DESC;
+    ORDER BY odds_time DESC, m.odds_line {dir}, m.odds_payout DESC;
     """.format(g_id=game_id, bt_id=bt_id, side=side, dir=direc)
     return conn.execute(statement).fetchone()
 
 
+logger = Logger('odds_update', '.')
 while 1:
-    # updates the odds every 30 min
     try:
-        with open('./Packages/db_inserter/db_inserter/.DBurl.txt') as file:
+        with open('./Webpage/flaskr/.DBurl.txt') as file:
             DB_URL = file.readline()
-
+        cur_time = datetime.now(timezone('US/Eastern')).strftime("%Y-%m-%d %H:%M:%S")
         engine = create_engine(DB_URL)
         conn = engine.connect()
         update_make_odds()
+        logger.log('Successful odds scrape for {}'.format(cur_time))
         store_betting_data()
+        logger.log('Successful betting storage for {}'.format(cur_time))
         conn.close()
 
     except Exception:
-        pass
+        logger.log('Scraping error for {}'.format(cur_time))
 
-    dt_odds = datetime.now() + timedelta(minutes=30)
-    dt_odds = dt_odds.replace(minute=5) if dt_odds.minute > 35 else dt_odds.replace(minute=5)
+    dt_odds = datetime.now() + timedelta(hours=1)
+    dt_odds = dt_odds.replace(minute=5)
 
     while datetime.now() < dt_odds:
-        time.sleep(120)
-
-
+        time.sleep(300)

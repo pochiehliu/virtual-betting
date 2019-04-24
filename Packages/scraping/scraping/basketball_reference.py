@@ -1,16 +1,7 @@
 """
-This program will scrape basketball reference and create a player
-data base with game stats for all players in all games. This is then
-saved to a CSV file.
-
-It must be run from command line and given argument of either 'full'
-or 'update', where the former will do a complete scraping from Oct
-2000 to present, and update will only get data from days since our
-most recent data.
-
-NOTE - The naming convention for the CSV files is "*_<MONTH><YEAR>",
-       where * is either 'player' or 'game', MONTH is the three
-       letter abbreviation, and YEAR is in the format YYYY.
+This BaskRefScraper class is capable of scraping basketball
+reference for historic data. Various functions can be called
+to achieve scrape different periods of time.
 """
 import pandas as pd
 import numpy as np
@@ -149,7 +140,7 @@ class BaskRefScraper:
         less than three referees found.
         """
         refs = list(self.box_page.children)[3].get_text().split('Officials:')[1].split('\n')[0].strip('\xa0')
-        refs = refs.split(', ') + np.repeat('MISSING', 3 - len(refs.split(', '))).tolist()
+        refs = refs.split(', ')[:3] + np.repeat('MISSING', 3 - min(len(refs.split(', ')), 3)).tolist()
         return refs
 
     def _get_pace(self):
@@ -283,6 +274,7 @@ class BaskRefScraper:
         for idx, row in enumerate(rows):
             if idx > 2 and idx != 7 and idx != len(rows) - 1:
                 yield row
+
 
 
 def main(arg):

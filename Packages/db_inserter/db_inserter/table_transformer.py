@@ -147,11 +147,11 @@ def transform_make_odds(sbr_bets, sbr_teams, games, teams):
             return teams[n.home]
         else:
             if n.home == 'Charlotte':
-                return 'CHA' if n.date < 20140701 else 'CHO'
+                return 'CHA' if n.date < '20140701' else 'CHO'
             elif n.home == 'Brooklyn':
-                return 'NJN' if n.date < 20120701 else 'BRK'
+                return 'NJN' if n.date < '20120701' else 'BRK'
             else:
-                return 'NOP' if n.date > 20130701 else ('NOK' if n.date < 20070701 else 'NOH')
+                return 'NOP' if n.date > '20130701' else ('NOK' if n.date < '20070701' else 'NOH')
 
     def fix_side(x):
         return x.odds_side if x.bt_id != 2 else ('O' if x.odds_side == 'V' else 'U')

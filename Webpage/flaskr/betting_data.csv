@@ -1,4 +1,5 @@
 ,game_times,g_id,away_team,home_team,away_ml_oid,away_ml_pay,home_ml_oid,home_ml_pay,away_ps_oid,away_ps_line,away_ps_pay,home_ps_oid,home_ps_line,home_ps_pay,over_oid,over_line,over_pay,under_oid,under_line,under_pay
-0,Mon Apr 15 22:30:00 2019,201904150GSW,Los Angeles Clippers,Golden State Warriors,3181,10.25,3115,1.091,3096,13.5,1.952,3102,-13.5,1.952,3158,231.0,1.952,3104,231.0,1.962
-1,Tue Apr 16 21:00:00 2019,201904160DEN,San Antonio Spurs,Denver Nuggets,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
-2,Tue Apr 16 20:00:00 2019,201904160TOR,Orlando Magic,Toronto Raptors,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
+0,Tue Apr 23 22:30:00 2019,201904230POR,Oklahoma City Thunder,Portland Trail Blazers,62987,2.65,62975,1.592,63057,5.0,1.909,62974,-4.5,1.98,63083,222.5,1.952,63000,223.0,1.971
+1,Wed Apr 24 13:00:00 2019,201904240BOS,Indiana Pacers,Boston Celtics,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
+2,Wed Apr 24 13:00:00 2019,201904240MIL,Detroit Pistons,Milwaukee Bucks,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
+3,Wed Apr 24 20:00:00 2019,201904240HOU,Utah Jazz,Houston Rockets,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-

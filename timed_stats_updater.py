@@ -1,4 +1,9 @@
+"""
+This script will update the basketball gama data.
+Currently set to run overnight.
+"""
 import time
+from pytz import timezone
 from datetime import datetime, timedelta
 import datetime as dt
 from sqlalchemy import *
@@ -8,6 +13,7 @@ from scraping.sbr_betting import *
 from scraping.sbr_game_order import *
 from db_inserter.table_transformer import *
 from dateutil.relativedelta import *
+from db_inserter.Logger import Logger
 
 """
 GENERAL PURPOSE METHODS
@@ -15,7 +21,7 @@ GENERAL PURPOSE METHODS
 
 
 def select_all(table_name):
-    return pd.read_sql("""SELECT * FROM """ + table_name + ";", conn)
+    return pd.read_sql("""SELECT * FROM {};""".format(table_name), conn)
 
 
 def insert_to_db(table_name, row, columns=''):
@@ -31,7 +37,7 @@ def insert_to_db(table_name, row, columns=''):
 
 
 def get_date(day=False):
-    current = dt.datetime.now() + dt.timedelta(days=0 if day else 1)
+    current = datetime.now(timezone('US/Eastern')) + dt.timedelta(days=0 if day else 1)
     return current.strftime('%Y%m%d') if day else current.strftime('%Y%m')
 
 
@@ -43,8 +49,6 @@ def increment_date(date, day=False):
 
 """
 UPDATES GAME TABLE
-
-THIS SHOULD BE CALLED ONCE A DAY
 """
 
 
@@ -65,27 +69,37 @@ def _update_game(game):
                                                                               g_id=game.g_id)
 
 
-def _insert_new_games(new_games, done_games):
+def _insert_new_games(new_games, stored_games):
+    # inserts / updates games in game table
     for idx, game in new_games.iterrows():
-        match = done_games.loc[done_games.g_id == game.g_id]
+        match = stored_games.loc[stored_games.g_id == game.g_id]
         if len(match) == 0:
             conn.execute(insert_to_db(table_name='game', row=game))
         elif pd.to_datetime(game.game_time) != match.iloc[0].game_time:
             conn.execute(_update_game(game))
 
 
+def _remove_old_games(stored_games):
+    completed = set(pd.read_sql("SELECT g_id FROM game_stats;", conn).g_id.values)
+    stored_games = set(stored_games.loc[stored_games.game_time < dt.datetime.now() - timedelta(days=2)].g_id.values)
+
+    for game in stored_games - completed:
+        conn.execute("""DELETE FROM game WHERE g_id = {};""".format(game))
+
+
 def update_game_table():
     team_id_map = _get_team_dict()
-    done_games = select_all('game ORDER BY g_id')
-    last_month = done_games.g_id.values[-1][:6]
+    stored_games = select_all('game ORDER BY g_id')
+    last_month = stored_games.g_id.values[-1][:6]
     current_month = get_date(day=False)
 
     while last_month <= current_month:
         new_games = _get_new_games(last_month)
         new_games.loc[:, ['t_id_home', 't_id_away']] = new_games.iloc[:, -2:].applymap(lambda x: team_id_map[x])
-        _insert_new_games(new_games, done_games)
+        _insert_new_games(new_games, stored_games)
         last_month = increment_date(last_month, day=False)
 
+    _remove_old_games(stored_games)
 
 """
 UPDATES GAME_STATS TABLE
@@ -129,7 +143,7 @@ def _update_player_game_stats(player_df):
 def update_stats_tables():
     all_games = select_all('game').g_id.values
     done_games = select_all('game_stats').g_id.values
-    missing_games = np.array(list(set(all_games).difference(set(done_games))))
+    missing_games = np.sort(np.array(list(set(all_games).difference(set(done_games)))))
 
     player_df, game_df = _get_pdf_gdf(missing_games)
 
@@ -143,26 +157,24 @@ INFINITE FOR LOOP :)
 """
 
 
+logger = Logger('bask_ref_log', '.')
 while 1:
-    # updates the database every 24 hours at 6am
     try:
-        with open('./Packages/db_inserter/db_inserter/.DBurl.txt') as file:
+        with open('./Webpage/flaskr/.DBurl.txt') as file:
             DB_URL = file.readline()
-
+        cur_time = datetime.now(timezone('US/Eastern')).strftime("%Y-%m-%d %H:%M:%S")
         engine = create_engine(DB_URL)
         conn = engine.connect()
         update_game_table()
         update_stats_tables()
         conn.close()
-        print('made a pass')
+        logger.log('Successful bask ref scrape at {}'.format(cur_time))
 
     except Exception:
-        pass
+        logger.log('Scraping error for {}'.format(cur_time))
 
-    dt_stats = datetime.now() + timedelta(days=1)
+    dt_stats = datetime.now(timezone('US/Eastern')) + timedelta(days=1)
     dt_stats = dt_stats.replace(hour=6)
 
-    while datetime.now() < dt_stats:
+    while datetime.now(timezone('US/Eastern')) < dt_stats:
         time.sleep(3600)
-
-

@@ -1,4 +1,3 @@
-
 WITH last_five AS (
   SELECT *
   FROM game_stats AS gs
@@ -14,5 +13,4 @@ WITH last_five AS (
 
 SELECT *
 FROM last_five INNER JOIN game
-ON last_five.g_id = game.g_id
-;
+ON last_five.g_id = game.g_id;
