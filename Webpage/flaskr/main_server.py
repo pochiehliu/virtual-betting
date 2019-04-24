@@ -130,6 +130,10 @@ def homepage():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if session.get('user_id') is not None:
+        flash('Already signed in')
+        return redirect('/')
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -230,6 +234,18 @@ def logout():
 def gamepage():
     g_id = request.args['gid']
     context = {}
+    if session.get('user_id') is not None:
+        user_id = session['user_id']
+        statement = """
+                    SELECT username, first_name, last_name, balance
+                    FROM users
+                    WHERE u_id = {id};
+                    """.format(id=user_id)
+        username, first, last, balance = g.conn.execute(statement).fetchone()
+        context['username'] = username
+        context['first_name'] = first
+        context['last_name'] = last
+        context['balance'] = '{:20,.2f}'.format(balance)
 
     game_info = get_game_info(g_id, g.conn)
     context['away_team'] = game_info.t_id_away

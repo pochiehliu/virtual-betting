@@ -1,5 +1,5 @@
 ,game_times,g_id,away_team,home_team,away_ml_oid,away_ml_pay,home_ml_oid,home_ml_pay,away_ps_oid,away_ps_line,away_ps_pay,home_ps_oid,home_ps_line,home_ps_pay,over_oid,over_line,over_pay,under_oid,under_line,under_pay
-0,Tue Apr 23 22:30:00 2019,201904230POR,Oklahoma City Thunder,Portland Trail Blazers,62987,2.65,62975,1.592,63057,5.0,1.909,62974,-4.5,1.98,63083,222.5,1.952,63000,223.0,1.971
-1,Wed Apr 24 13:00:00 2019,201904240BOS,Indiana Pacers,Boston Celtics,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
-2,Wed Apr 24 13:00:00 2019,201904240MIL,Detroit Pistons,Milwaukee Bucks,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
-3,Wed Apr 24 20:00:00 2019,201904240HOU,Utah Jazz,Houston Rockets,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
+0,Wed Apr 24 13:00:00 2019,201904240BOS,Indiana Pacers,Boston Celtics,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
+1,Wed Apr 24 13:00:00 2019,201904240MIL,Detroit Pistons,Milwaukee Bucks,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
+2,Wed Apr 24 20:00:00 2019,201904240HOU,Utah Jazz,Houston Rockets,64512,4.15,64518,1.29,64547,8.5,1.909,64565,-8.0,1.952,64561,212.5,1.952,64531,213.0,1.909
+3,Wed Apr 24 22:30:00 2019,201904240GSW,Los Angeles Clippers,Golden State Warriors,64551,51.0,64521,1.08,64550,14.5,1.87,64568,-14.0,1.952,64504,234.0,1.962,64606,235.0,1.909

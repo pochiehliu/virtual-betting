@@ -1,22 +1,31 @@
 {% extends 'homepage.html' %}
 
-<nav>
-  {% block header %}
-    <div class="header">
-      <h1 id=maintitle>PROFILE</h1>
-    </div>
-  {% endblock %}
-</nav>
+{% block header %}
+  <h1>  PROFILE</h1>
+{% endblock %}
 
+
+
+{% block links %}
+  <ul>
+    <li><a href="{{ url_for('homepage') }}">Home Page</a>
+    <li><a href="{{ url_for('profile') }}">Profile</a>
+    <li><a href="{{ url_for('logout') }}">Log Out</a>
+  </ul>
+{% endblock %}
 
 {% block content %}
   <section class="content">
     <div>
-      <header>User Information</header>
-      <p>Username:<font color="black"> &nbsp {{username}}</font></p>
-      <p>Name:<font color="black"> &nbsp {{first_name}} {{last_name}}</font></p>
-      <p>Balance:<font color="black"> &nbsp ${{balance}}</font></p>
-      <p>Bet Record:<font color="black"> &nbsp {{win_count}}-{{loss_count}}-{{tie_count}}</font></p>
+      <header> <font size="6px">User Information:</font></header>
+      <hr>
+      <p>Username: <b>{{username}}</b></p>
+
+      <p>Name: <b>{{first_name}} {{last_name}}</b></p>
+
+      <p>Balance: <b>${{balance}}</b></p>
+
+      <p>Bet Record: <b><font color='green'>{{win_count}}</font>-<font color='red'>{{loss_count}}</font>-<font color='darkblue'>{{tie_count}}</font></b></p>
     </div>
   </section>
 

@@ -8,34 +8,27 @@
 
 <nav>
   {% block header %}
-    <div class="header">
-      <h1 id=maintitle>  VIRTUAL NBA BETTING CENTRAL</h1>
-    </div>
+    <h1 id=maintitle>  VIRTUAL NBA BETTING CENTRAL</h1>
   {% endblock %}
-
   {% block links %}
     {% if session['logged_in'] %}
-    <div class="headerright">
-      <div class="links">
-        <a class="left" href="{{ url_for('homepage') }}">HOME PAGE</a>
-        <a class="mid" href="{{ url_for('profile') }}">PROFILE</a>
-        <a class="right" href="{{ url_for('logout') }}">LOG OUT</a>
-      </div>
-    {% block personal %}
-      <div class="personal">
-        <p>Welcome, {{first_name}}!<br>Balance: ${{balance}}</p>
-      </div>
-    {% endblock %}
-    </div>
+      <ul>
+        <li><span id=personal>Welcome, {{first_name}}!</span>
+        <li><span id=personal>Your balance is: ${{balance}}</span>
+      </ul>
+      <ul>
+        <li><a href="{{ url_for('homepage') }}">Home Page</a>
+        <li><a href="{{ url_for('profile') }}">Profile</a>
+        <li><a href="{{ url_for('logout') }}">Log Out</a>
+      </ul>
     {% else %}
-    <div class="headerright">
-      <div class="links">
-        <a class="left" href="{{ url_for('homepage') }}">HOME PAGE</a>
-        <a class="mid" href="{{ url_for('register') }}">REGISTER</a>
-        <a class="right" href="{{ url_for('login') }}">LOG IN</a>
-      </div>
-    </div>
+      <ul>
+        <li><a href="{{ url_for('homepage') }}">Home Page</a>
+        <li><a href="{{ url_for('register') }}">Register</a>
+        <li><a href="{{ url_for('login') }}">Log In</a>
+      </ul>
     {% endif %}
+
   {% endblock %}
 </nav>
 
@@ -49,9 +42,13 @@
     {% endfor %}
 
     {% if games_indicator %}
-      <header>
-        Upcoming Games<i> &nbsp - Click game number to see more!</i>
+      <header><font size="5px">
+        {% block games %}Upcoming Games
+      </font>
+      <font size="3px"><i> &nbsp - Click game number to see more!{% endblock %}
+      </i></font>
       </header>
+
       <p></p>
 
       <table border="2" frame=void cellpadding="2" style="width:100%">
@@ -123,13 +120,14 @@
 
   <section class="content">
     {% if yes_games_indicator %}
-      <header margin-left="10px">
+      <header margin-left="10px"> <font size="5px">
         {% block yesgames %}Yesterday's Games{% endblock %}
+      </font>
       </header>
 
       <p></p>
 
-      <table border="2" frame=void cellpadding="2" style="width:65%">
+      <table border="2" frame=void cellpadding="2" style="width:40%">
         <tr>
           <th width="(100/7)%">Team</th>
           <th width="(100/7)%">Q1</th>
@@ -168,9 +166,11 @@
       </table>
 
     {% else %}
-      <div>
-        <header>There were no games yesterday.</header>
-      </div>
+      <div><ul>
+      <header><font size="15px">
+        There were no games yesterday.
+      </font></header>
+      </ul></div>
     {% endif %}
   </section>
 

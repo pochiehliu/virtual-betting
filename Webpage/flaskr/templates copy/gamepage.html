@@ -1,33 +1,51 @@
 {% extends 'homepage.html' %}
 
-<nav>
-  {% block header %}
-    <div class="header">
-      <h1 id=maintitle>GAME PAGE</h1>
-    </div>
-  {% endblock %}
-</nav>
+{% block header %}
+  <h1>  GAME PAGE</h1>
+{% endblock %}
+
+{% block links %}
+  {% if session['logged_in'] %}
+    <ul>
+      <li><a href="{{ url_for('homepage') }}">Home Page</a>
+      <li><a href="{{ url_for('profile') }}">Profile</a>
+      <li><a href="{{ url_for('logout') }}">Log Out</a>
+    </ul>
+  {% else %}
+    <ul>
+      <li><a href="{{ url_for('homepage') }}">Home Page</a>
+      <li><a href="{{ url_for('register') }}">Register</a>
+      <li><a href="{{ url_for('login') }}">Log In</a>
+    </ul>
+  {% endif %}
+{% endblock %}
+
 
 
 {% block content %}
   <section class="content">
     <div>
-      <header> Game Information:</header>
-        <p>Match-up: <font color="black"> &nbsp {{away_team}} @ {{home_team}}</font></p>
-        <p>Game Time: <font color="black"> &nbsp {{game_time}}</font></p>
-        <p>Game Type: <font color="black"> &nbsp Post-Season</font></p>
+      <header> <font size="6px">Game Information:</font></header>
+
+        <hr>
+
+        <p style="font-size:160%;">{{away_team}} @ {{home_team}}</p>
+
+        <p>Game Time: <b>{{game_time}}</b></p>
+
+        <p>Game Type: <b>Post-Season</b></p>
 
     </div>
   </section>
 
   <section class="content">
-      <header>
-        Season Head to Head Stats
-      </header>
+      <header> <font size="6px">
+        {% block h2h %}Season Head to Head Stats{% endblock %}
+      </font></header>
 
       <p></p>
 
-      <table border="2" frame=void cellpadding="2" style="width:70%">
+      <table border="2" frame=void cellpadding="2" style="width:50%">
         <tr>
           <th width="(100/2)%">Category</th>
           <th bgcolor="#CC9999" width="(100/4)%">{{away_team}}</th>
@@ -36,22 +54,22 @@
 
         {% for key,val in head_to_head.iterrows() %}
           <tr>
-            <td bgcolor="#ade6bb" align="center">{{val['category']}}</td>
+            <td align="center">{{val['category']}}</td>
             <td bgcolor="#CC9999" align="center">{{val['away_stat']}}{% if key in [0, 1, 2] %}%{% endif %}</td>
-            <td bgcolor="#add8e6" align="center">{{val['home_stat']}}{% if key in [0, 1, 2] %}%{% endif %}</td>
+            <td bgcolor="#377ba8" align="center">{{val['home_stat']}}{% if key in [0, 1, 2] %}%{% endif %}</td>
           </tr>
         {% endfor %}
       </table>
   </section>
 
   <section class="content">
-      <header>
+      <header> <font size="6px">
         {% block l5 %}Last 5 Matches{% endblock %}
-      </header>
+      </font></header>
 
       <p></p>
 
-      <table border="2" frame=void cellpadding="2" style="width:70%">
+      <table border="2" frame=void cellpadding="2" style="width:60%">
         <tr>
           <th width="(100/5)%">Date</th>
           <th width="(100/5)%">Away Team</th>

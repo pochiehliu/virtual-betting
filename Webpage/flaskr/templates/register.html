@@ -1,8 +1,13 @@
 {% extends 'homepage.html' %}
 
-{% block header %}
-  <h1>  REGISTER</h1>
-{% endblock %}
+<nav>
+  {% block header %}
+    <div class="header">
+      <h1 id=maintitle>REGISTER</h1>
+    </div>
+  {% endblock %}
+  {% block personal %}{% endblock %}
+</nav>
 
 {% block content %}
   {% for message in get_flashed_messages() %}

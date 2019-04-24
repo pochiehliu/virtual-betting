@@ -6,3 +6,5 @@
 2019-04-23 19:38:33.988592: Successful betting storage for 2019-04-23 19:38:14
 2019-04-23 22:18:39.364325: Successful odds scrape for 2019-04-23 22:18:04
 2019-04-23 22:18:40.193080: Successful betting storage for 2019-04-23 22:18:04
+2019-04-24 09:04:26.336743: Successful odds scrape for 2019-04-24 09:04:03
+2019-04-24 09:04:27.133564: Successful betting storage for 2019-04-24 09:04:03
