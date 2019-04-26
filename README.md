@@ -1,4 +1,7 @@
 # virtual-betting
+
+Application link: http://35.231.52.41:8111/
+
 W4111 web-application project
 
 This repository contains the code used to develop our virtual sports betting web application. 
